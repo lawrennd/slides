@@ -492,8 +492,8 @@ style="maxwidth:100vw; max-height:100vh">
 </div>
 <aside class="notes">
 Fritz Heider and Marianne Simmel’s video of shapes from <span
-class="citation"
-data-cites="Heider:experimental44">(<strong>Heider:experimental44?</strong>)</span>.
+class="citation" data-cites="Heider-experimental44">Heider and Simmel
+(1944)</span>.
 </aside>
 </section>
 <section id="section-28" class="slide level2">
@@ -947,7 +947,159 @@ than to have an answer that might be wrong.</p>
 <p>Richard P. Feynmann in the <em>The Pleasure of Finding Things
 Out</em> 1981.</p>
 </blockquote>
+</section>
+<section id="section-63" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="albert-einstein-photo-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Albert_Einstein_photo_1921.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Albert Einstein’s 1905 paper on Brownian motion introduced stochastic
+differential equations which can be used to model the ‘curve of a simple
+molecule of air’.
+</aside>
+</section>
+<section id="section-64" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="russell-wiener-russell-figure" class="figure-frame">
+<table>
+<tr>
+<td width="30%">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//philosophy/Bertrand_Russell_1957.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+<center>
+<em>Betrand Russell</em>
+</center>
+</td>
+<td width="30%">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Albert_Einstein_photo_1921.jpg" width="85%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+<center>
+<em>Albert Einstein</em>
+</center>
+</td>
+<td width="30%">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Norbert_wiener.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+<center>
+<em>Norbert Wiener</em>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert
+Wiener, (1894-1964)
+</aside>
+<aside class="notes">
+Wiener came to Cambridge in 1913. Russell showed him Einstein’s 1905
+paper on Brownian motion (<span class="citation"
+data-cites="Einstein-brownian05">Einstein (1905)</span>)
+</aside>
+</section>
+<section id="section-65" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="brownian-motion-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/brownian-motion.gif" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Brownian motion of a large particle in a group of smaller particles. The
+movement is known as a <em>Wiener process</em> after Norbert Wiener.
+</aside>
+</section>
+<section id="section-66" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="norbert-wiener-yellow-peril-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Norbert_wiener.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="45%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/wiener-yellow-peril.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+Norbert Wiener (1894 - 1964). Founder of cybernetics and the information
+era. He used Gibbs’s ideas to develop a “theory of ignorance” that he
+deployed in early communication. On the right is Wiener’s wartime report
+that used stochastic processes in forecasting with applications in radar
+control (image from <span class="citation"
+data-cites="Coales-yellow14">Coales and Kane (2014)</span>).
+</aside>
 <!-- Lecture 2 -->
+</section>
+<section id="section-67" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="kappen-ball-figure" class="figure-frame">
+<div>
+<div style="width:900px;text-align:center;display:inline">
+<span style="float:left;">Score:
+<output id="kappenball-score">
+</output>
+</span> <span style="float:right;">Energy:
+<output id="kappenball-energy">
+</output>
+</span>
+<div style="clear: both;">
+
+</div>
+</div>
+<canvas id="kappenball-canvas" width="900" height="500" style="border:1px solid black;display:inline;text-align:center ">
+</canvas>
+<div>
+<input type="range" min="0" max="100" value="0" class="slider" id="kappenball-stochasticity" style="width:900px;"/>
+</div>
+<div>
+<button id="kappenball-newball" style="text-align:right">
+New Ball
+</button>
+<button id="kappenball-pause" style="text-align:right">
+Pause
+</button>
+</div>
+<output id="kappenball-count">
+</output>
+<script src="./scripts//ballworld/ballworld.js"></script>
+<script src="./scripts//ballworld/kappenball.js"></script>
+</div>
+</div>
+</div>
+<aside class="notes">
+Kappen Ball
+</aside>
+</section>
+<section id="section-68" class="slide level2">
+<h2></h2>
 <p>Time scales, how when you expand or contract time signal becomes
 noise and noise becomes signal illustrate with Dirac delta and and
 stochastic processes in Fourier space, ito calculus. Latent force
@@ -955,7 +1107,7 @@ models.</p>
 <p>Practical examples of what happens understochasticity:</p>
 <ol start="0" type="1">
 <li><p>Derive U = W + TS?? Go from microscopic to macroscopic.</p></li>
-<li><p>Kappenball — world in between where interesting thigns
+<li><p>Kappenball — world in between where interesting things
 happen,</p></li>
 <li><p>Queue efficiency (M/M/1 1/(1-))</p></li>
 <li><p>Input to the system being in the form of bias and variance (or
@@ -971,7 +1123,7 @@ Schroedinger’s bridge. Link to Optimal Transport (matching without the
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->
 </section>
-<section id="section-63" class="slide level2">
+<section id="section-69" class="slide level2">
 <h2></h2>
 <ul>
 <li>HAMs change how we share ambiguous information.</li>
@@ -979,9 +1131,12 @@ Schroedinger’s bridge. Link to Optimal Transport (matching without the
 proabilities.</li>
 </ul>
 </section>
-<section id="section-64" class="slide level2 scrollable">
+<section id="section-70" class="slide level2 scrollable">
 <h2 class="scrollable"></h2>
 <ul>
+<li><p>book: <a
+href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
+Atomic Human</a></p></li>
 <li><p>twitter: <a
 href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
 <li><p>podcast: <a href="http://thetalkingmachines.com">The Talking
@@ -995,10 +1150,27 @@ href="http://inverseprobability.com/2016/11/19/lies-damned-lies-big-data">Lies,
 Damned Lies and Big Data</a></p></li>
 </ul>
 </section>
-<section id="section-65" class="slide level2 unnumbered scrollable">
+<section id="section-71" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable"></h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
+<div id="ref-Coales-yellow14" class="csl-entry" role="listitem">
+Coales, J.F., Kane, S.J., 2014. The <span>“yellow peril”</span> and
+after. IEEE Control Systems Magazine 34, 65–69. <a
+href="https://doi.org/10.1109/MCS.2013.2287387">https://doi.org/10.1109/MCS.2013.2287387</a>
+</div>
+<div id="ref-Einstein-brownian05" class="csl-entry" role="listitem">
+Einstein, A., 1905. Über die von der molekularkinetischen
+<span>T</span>heorie der <span>W</span>ärme geforderte
+<span>B</span>ewegung von in ruhenden <span>F</span>lüssigkeiten
+suspendierten <span>T</span>eilchen. Annalen der Physik 322, 549–560. <a
+href="https://doi.org/10.1002/andp.19053220806">https://doi.org/10.1002/andp.19053220806</a>
+</div>
+<div id="ref-Heider-experimental44" class="csl-entry" role="listitem">
+Heider, F., Simmel, M., 1944. An experimental study of apparent
+behavior. The American Journal of Psychology 57, 243–259. <a
+href="https://doi.org/10.2307/1416950">https://doi.org/10.2307/1416950</a>
+</div>
 <div id="ref-Huang-inner22" class="csl-entry" role="listitem">
 Huang, W., Xia, F., Xiao, T., Chan, H., Liang, J., Florence, P., Zeng,
 A., Tompson, J., Mordatch, I., Chebotar, Y., Sermanet, P., Jackson, T.,
