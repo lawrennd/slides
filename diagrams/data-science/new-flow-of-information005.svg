@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="689.49585mm"
    height="603.67487mm"
    viewBox="0 0 689.49585 603.67487"
    id="svg3782"
-   sodipodi:docname="new-flow-of-information-ham.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+   sodipodi:docname="new-flow-of-information005.svg"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata3786">
     <rdf:RDF>
@@ -22,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,13 +36,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1763"
-     inkscape:window-height="1060"
+     inkscape:window-width="1680"
+     inkscape:window-height="921"
      id="namedview3784"
      showgrid="false"
      inkscape:zoom="0.26580535"
-     inkscape:cx="880.34345"
-     inkscape:cy="1312.9909"
+     inkscape:cx="863.41377"
+     inkscape:cy="1314.872"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
@@ -57,7 +58,7 @@
      inkscape:document-units="mm" />
   <defs
      id="defs3760">
-      <g
+    <g
        id="head">
       <g
          transform="scale(8.5) matrix(-1,0,0,1,0,0)"
@@ -67,7 +68,7 @@
            id="path54208" />
       </g>
     </g>
-  <marker
+    <marker
        style="overflow:visible"
        id="marker5051"
        refX="0"
@@ -1870,14 +1871,12 @@
          id="path2159-1-5" />
     </marker>
   </defs>
-      <use
-         xlink:href="#head"
-         style="fill:rgb(15,200,255);fill-opacity:1"
-         transform=""
-         x="340"
-         y="100"
-         id="front-row-1" />
-  
+  <use
+     xlink:href="#head"
+     style="fill:#0fc8ff;fill-opacity:1"
+     x="340"
+     y="100"
+     id="front-row-1" />
   <g
      clip-path="url(#clipEmfPath1)"
      id="g3768"
