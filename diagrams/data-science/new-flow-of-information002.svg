@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="689.49585mm"
    height="603.67487mm"
    viewBox="0 0 689.49585 603.67487"
    id="svg3782"
    sodipodi:docname="new-flow-of-information002.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata3786">
     <rdf:RDF>
@@ -23,7 +23,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,12 +35,12 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2191"
-     inkscape:window-height="1054"
+     inkscape:window-width="1440"
+     inkscape:window-height="788"
      id="namedview3784"
      showgrid="false"
      inkscape:zoom="0.26580535"
-     inkscape:cx="-568.08489"
+     inkscape:cx="-588.77671"
      inkscape:cy="1312.9909"
      inkscape:window-x="0"
      inkscape:window-y="25"
@@ -979,13 +978,19 @@
          id="path2159-1-8" />
     </marker>
   </defs>
-    <use
-       xlink:href="#head"
-       style="fill:rgb(15,200,255);fill-opacity:1"
-       transform=""
-       x="340"
-       y="100"
-       id="front-row-1" />
+  <g
+     id="g15403">
+    <g
+       id="g15399">
+      <use
+         xlink:href="#head"
+         style="fill:rgb(15,200,255);fill-opacity:1"
+         transform=""
+         x="340"
+         y="100"
+         id="front-row-1" />
+    </g>
+  </g>
   <g
      clip-path="url(#clipEmfPath1)"
      id="g3768"
@@ -1034,6 +1039,27 @@
      d="m 286.47616,452.55798 97.08821,0 0,-28.10448 56.20896,56.20897 -56.20896,56.20896 0,-28.10448 -97.08821,0 z"
      id="path3772-1"
      inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     x="575"
+     y="135"
+     class="mytext"
+     id="text2085"><tspan
+       sodipodi:role="line"
+       x="575"
+       y="135"
+       class="mytext"
+       id="tspan2087">classical</tspan><tspan
+       sodipodi:role="line"
+       x="575"
+       y="185"
+       class="mytext"
+       id="tspan2091">statistics</tspan></text>
+  <path
+     style="opacity:0.998;fill:none;stroke:#000000;stroke-width:2.64583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DotM)"
+     d="M 571.89886,198.10114 487,263 v 0"
+     id="path2093"
+     sodipodi:nodetypes="ccc" />
   <g
      id="g4580"
      transform="matrix(0.14715697,0,0,0.14715697,25.358911,360.06742)">
