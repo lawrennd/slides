@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- System boundary box -->
+  <rect x="50" y="50" width="700" height="300" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="700" y="80" text-anchor="end" fill="#666" font-family="Arial" font-size="16">System</text>
+  
+  <!-- User's Request -->
+  <text x="80" y="200" text-anchor="end" fill="#8B4513" font-family="Arial" font-size="14" font-weight="bold">User's
+    <tspan x="80" y="220">Request</tspan>
+  </text>
+
+  <!-- System's Outputs -->
+  <text x="720" y="200" fill="#8B4513" font-family="Arial" font-size="14" font-weight="bold">System's
+    <tspan x="720" y="220">Outputs</tspan>
+  </text>
+
+  <!-- Components -->
+  <rect x="125" y="100" width="120" height="60" fill="#FFB6C1" stroke="#000"/>
+  <text x="185" y="135" text-anchor="middle" font-family="Arial" font-size="14">Component 1</text>
+
+  <rect x="125" y="250" width="120" height="60" fill="#FFB6C1" stroke="#000"/>
+  <text x="185" y="285" text-anchor="middle" font-family="Arial" font-size="14">Component 2</text>
+
+  <rect x="350" y="250" width="120" height="60" fill="#FFB6C1" stroke="#000"/>
+  <text x="410" y="285" text-anchor="middle" font-family="Arial" font-size="14">Component 3</text>
+
+  <rect x="600" y="200" width="120" height="60" fill="#FFB6C1" stroke="#000"/>
+  <text x="660" y="235" text-anchor="middle" font-family="Arial" font-size="14">Component 4</text>
+
+  <!-- Learning Model -->
+  <rect x="350" y="100" width="120" height="60" fill="#00008B" stroke="#000"/>
+  <text x="410" y="135" text-anchor="middle" font-family="Arial" font-size="14" fill="white">Learning Model</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Connection lines -->
+  <line x1="100" y1="180" x2="150" y2="180" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="100" y1="280" x2="150" y2="280" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Input arrows to Learning Model -->
+  <line x1="270" y1="180" x2="300" y2="130" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="285" y="140" font-family="Arial" font-size="12" fill="#666">&lt;inputs&gt;</text>
+  
+  <line x1="270" y1="280" x2="300" y2="130" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="285" y="190" font-family="Arial" font-size="12" fill="#666">&lt;inputs&gt;</text>
+
+  <!-- Prediction arrow -->
+  <line x1="420" y1="130" x2="600" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="500" y="150" font-family="Arial" font-size="12" fill="#666">&lt;prediction&gt;</text>
+
+  <!-- Component connections -->
+  <line x1="270" y1="280" x2="400" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="520" y1="230" x2="600" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>
