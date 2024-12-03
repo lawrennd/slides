@@ -28,6 +28,9 @@
   <!--[if lt IE 9]>
   <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
+   <!-- Mermaid -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -37,6 +40,28 @@
     });
   </script>
   <script src="https://inverseprobability.com/assets/js/figure-animate.js"></script>
+   <!-- Initialize Mermaid after Reveal is loaded -->
+<script>
+  Reveal.addEventListener('ready', event => {
+    // Initialize mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      // These are the same theme variables we used above
+      themeVariables: {
+        primaryColor: '#4a90e2',
+        primaryTextColor: '#fff',
+        primaryBorderColor: '#357abd',
+        lineColor: '#67b246',
+        fontSize: '30px',
+        fontFamily: 'arial'
+	edgeLabelBackground: 'transparent',
+	tertiaryColor: 'transparent'	  
+      }
+    });
+  });
+</script>
+   
 </head>
 <body>
   <div class="reveal">
@@ -125,6 +150,15 @@ going to effect the professions.
 <li>UK outperforms USA and China</li>
 <li>Measures <em>health</em> and <em>education</em></li>
 </ul>
+</section>
+<section id="productivity-flywheel" class="slide level2">
+<h2>Productivity Flywheel</h2>
+<p>flowchart LR classDef default
+fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold linkStyle
+default stroke-width:5px fill:none color:#67b246 A[“R&amp;D Investment”]
+–&gt; |“Enables”| B[“Technical Innovation”] B –&gt; |“Creates”|
+C[“Productivity Gains”] C –&gt; |“Generates”| D[“Economic Surplus”] D
+–&gt; |“Funds”| A ```</p>
 </section>
 <section id="inflation-of-human-capital" class="slide level2">
 <h2>Inflation of Human Capital</h2>
