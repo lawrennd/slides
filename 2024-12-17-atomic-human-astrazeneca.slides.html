@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2024-12-16">
+  <meta name="dcterms.date" content="2024-12-17">
   <title>The Atomic Human</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,6 +28,9 @@
   <!--[if lt IE 9]>
   <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
+   <!-- Mermaid -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -37,6 +40,28 @@
     });
   </script>
   <script src="https://inverseprobability.com/assets/js/figure-animate.js"></script>
+   <!-- Initialize Mermaid after Reveal is loaded -->
+<script>
+  Reveal.addEventListener('ready', event => {
+    // Initialize mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      // These are the same theme variables we used above
+      themeVariables: {
+          primaryColor: '#4a90e2',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#357abd',
+          lineColor: '#67b246',
+          fontSize: '30px',
+          fontFamily: 'arial',
+	  edgeLabelBackground: 'transparent',
+	  tertiaryColor: 'transparent'
+      }
+    });
+  });
+</script>
+   
 </head>
 <body>
   <div class="reveal">
@@ -47,7 +72,7 @@
   <p class="subtitle" style="text-align:center">Understanding ourselves
 in the age of AI</p>
   <p class="author" style="text-align:center">Neil D. Lawrence</p>
-  <p class="date" style="text-align:center"><time>2024-12-16</time></p>
+  <p class="date" style="text-align:center"><time>2024-12-17</time></p>
   <p class="venue" style="text-align:center">The Astrazeneca Discovery
 Centre, Cambridge</p>
 </section>
@@ -999,7 +1024,7 @@ href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a>
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
-data-entry-spacing="0" role="list">
+role="list">
 <div id="ref-aicam-publicdialogue24" class="csl-entry" role="listitem">
 ai@cam, Hopkins Van Mil, 2024. <a
 href="https://ai.cam.ac.uk/assets/uploads/ai-cam-public-dialogue-report.pdf">AI
