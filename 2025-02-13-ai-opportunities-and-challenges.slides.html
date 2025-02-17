@@ -28,6 +28,9 @@
   <!--[if lt IE 9]>
   <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
+   <!-- Mermaid -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -37,6 +40,28 @@
     });
   </script>
   <script src="https://inverseprobability.com/assets/js/figure-animate.js"></script>
+   <!-- Initialize Mermaid after Reveal is loaded -->
+<script>
+  Reveal.addEventListener('ready', event => {
+    // Initialize mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      // These are the same theme variables we used above
+      themeVariables: {
+          primaryColor: '#4a90e2',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#357abd',
+          lineColor: '#67b246',
+          fontSize: '30px',
+          fontFamily: 'arial',
+	  edgeLabelBackground: 'transparent',
+	  tertiaryColor: 'transparent'
+      }
+    });
+  });
+</script>
+   
 </head>
 <body>
   <div class="reveal">
@@ -1159,29 +1184,39 @@ href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d
 Atomic Human</a></p></li>
 <li><p>twitter: <a
 href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
-<li><p><a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-bylawrence-neil-d/9780241625248">The
-Atomic Human</a> pages atomic human, the 13 , embodiment factor 13, 29,
-35, 79, 87, 105, 197, 216-217, 249, 269, 353, 369, Horizon scandal 371,
-Royal Society; machine learning review and 25, 321, 395, MONIAC 232-233,
-266, 343, human-analogue machine (HAMs) 343-347, 359-359,
-365-368.</p></li>
-<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking
-Machines</a></p></li>
+<li><p><a href="https://the-atomic-human.ai">The Atomic Human</a> pages
+atomic human, the 13 , embodiment factor 13, 29, 35, 79, 87, 105, 197,
+216-217, 249, 269, 353, 369, Horizon scandal 371, Royal Society; machine
+learning review and 25, 321, 395, MONIAC 232-233, 266, 343,
+human-analogue machine (HAMs) 343-347, 359-359, 365-368.</p></li>
 <li><p>Guardian article on <a
 href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How
 African can benefit from the data revolution</a></p></li>
 <li><p>Guardian article on <a
 href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">Data
 Science Africa</a></p></li>
-<li><p>blog: <a
-href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li><p>blog posts:</p>
+<p><a
+href="http://the-atomic-human.ai//images/dan-andrews-chapter-1/">Dan
+Andrews image of our reflective obsession with AI</a></p>
+<p><a
+href="http://the-atomic-human.ai//reflections/balancing-reflective-and-reflexive/">Balancing
+Reflective and Reflexive</a></p>
+<p><a
+href="http://the-atomic-human.ai//reflections/the-great-ai-fallacy/">The
+Great AI Fallacy</a></p>
+<p><a
+href="http://the-atomic-human.ai//reflections/playing-in-peoples-backyards/">Playing
+in People’s Backyards</a></p>
+<p><a
+href="http://the-atomic-human.ai//reflections/who-is-stepping-up/">Who
+is Stepping Up?</a></p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
-data-entry-spacing="0" role="list">
+role="list">
 <div id="ref-aicam-publicdialogue24" class="csl-entry" role="listitem">
 ai@cam, Hopkins Van Mil, 2024. <a
 href="https://ai.cam.ac.uk/assets/uploads/ai-cam-public-dialogue-report.pdf">AI
