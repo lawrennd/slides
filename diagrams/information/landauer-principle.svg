@@ -1,0 +1,40 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Information erasure process -->
+  <rect x="50" y="50" width="500" height="300" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- Initial state -->
+  <rect x="100" y="100" width="150" height="80" fill="lightblue" stroke="black"/>
+  <text x="175" y="145" text-anchor="middle" font-family="Arial" font-size="16">Bit = 0 or 1</text>
+  <text x="175" y="170" text-anchor="middle" font-family="Arial" font-size="14">(Two possible states)</text>
+  
+  <!-- Arrow -->
+  <line x1="250" y1="140" x2="350" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="300" y="125" text-anchor="middle" font-family="Arial" font-size="14">Erasure</text>
+  
+  <!-- Final state -->
+  <rect x="350" y="100" width="150" height="80" fill="lightpink" stroke="black"/>
+  <text x="425" y="145" text-anchor="middle" font-family="Arial" font-size="16">Bit = 0</text>
+  <text x="425" y="170" text-anchor="middle" font-family="Arial" font-size="14">(One known state)</text>
+  
+  <!-- Heat dissipation -->
+  <path d="M425,180 Q440,200 410,220 Q380,240 425,260 Q470,280 440,300" stroke="red" stroke-width="2" fill="none"/>
+  <text x="425" y="240" text-anchor="middle" font-family="Arial" font-size="16" fill="red">Heat Dissipation</text>
+  <text x="425" y="260" text-anchor="middle" font-family="Arial" font-size="16" fill="red">≥ kT ln(2)</text>
+  
+  <!-- Energy potential diagram -->
+  <path d="M100,350 Q175,250 250,350 L250,350 Q325,450 400,350 L400,350 Q475,250 550,350" stroke="black" stroke-width="2" fill="none"/>
+  <circle cx="175" cy="300" r="8" fill="blue"/>
+  <circle cx="425" cy="300" r="8" fill="blue"/>
+  <path d="M175,300 Q300,400 425,300" stroke="blue" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  
+  <!-- Labels -->
+  <text x="300" y="50" text-anchor="middle" font-family="Arial" font-size="20">Landauer's Principle</text>
+  <text x="300" y="380" text-anchor="middle" font-family="Arial" font-size="16">Energy Landscape of Bit States</text>
+  
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+</svg>

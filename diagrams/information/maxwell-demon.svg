@@ -1,0 +1,41 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Container -->
+  <rect x="50" y="50" width="500" height="300" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- Divider with door -->
+  <line x1="300" y1="50" x2="300" y2="175" stroke="green" stroke-width="4"/>
+  <line x1="300" y1="225" x2="300" y2="350" stroke="green" stroke-width="4"/>
+  
+  <!-- Demon -->
+  <circle cx="300" cy="200" r="20" fill="purple"/>
+  <circle cx="295" cy="195" r="5" fill="white"/> <!-- eye -->
+  <circle cx="305" cy="195" r="5" fill="white"/> <!-- eye -->
+  <path d="M290,210 Q300,220 310,210" stroke="white" stroke-width="2" fill="none"/> <!-- smile -->
+  
+  <!-- Cold particles (left) -->
+  <circle cx="150" cy="150" r="10" fill="blue"/>
+  <circle cx="100" cy="250" r="10" fill="blue"/>
+  <circle cx="200" cy="100" r="10" fill="blue"/>
+  <circle cx="220" cy="280" r="10" fill="blue"/>
+  
+  <!-- Hot particles (right) -->
+  <circle cx="400" cy="120" r="10" fill="red"/>
+  <circle cx="450" cy="200" r="10" fill="red"/>
+  <circle cx="380" cy="300" r="10" fill="red"/>
+  <circle cx="480" cy="100" r="10" fill="red"/>
+  
+  <!-- Arrows showing movement -->
+  <path d="M380,120 L350,120" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M220,280 L250,280" stroke="blue" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+  
+  <!-- Labels -->
+  <text x="150" y="40" font-family="Arial" font-size="16">Cold Side (Lower Energy)</text>
+  <text x="350" y="40" font-family="Arial" font-size="16">Hot Side (Higher Energy)</text>
+</svg>

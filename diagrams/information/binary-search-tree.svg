@@ -1,0 +1,45 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tree nodes -->
+  <circle cx="300" cy="50" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="300" y="55" text-anchor="middle" font-family="Arial" font-size="14">"Animal?"</text>
+  
+  <!-- Level 1 -->
+  <circle cx="150" cy="150" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="150" y="155" text-anchor="middle" font-family="Arial" font-size="14">"Plant?"</text>
+  
+  <circle cx="450" cy="150" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="450" y="155" text-anchor="middle" font-family="Arial" font-size="14">"Mammal?"</text>
+  
+  <!-- Level 2 left -->
+  <circle cx="75" cy="250" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="75" y="255" text-anchor="middle" font-family="Arial" font-size="14">"Tree?"</text>
+  
+  <circle cx="225" cy="250" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="225" y="255" text-anchor="middle" font-family="Arial" font-size="14">"Flower?"</text>
+  
+  <!-- Level 2 right -->
+  <circle cx="375" cy="250" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="375" y="255" text-anchor="middle" font-family="Arial" font-size="14">"Dog?"</text>
+  
+  <circle cx="525" cy="250" r="25" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="525" y="255" text-anchor="middle" font-family="Arial" font-size="14">"Cat?"</text>
+  
+  <!-- Connecting lines -->
+  <line x1="285" y1="70" x2="165" y2="130" stroke="black" stroke-width="2"/>
+  <line x1="315" y1="70" x2="435" y2="130" stroke="black" stroke-width="2"/>
+  
+  <line x1="135" y1="170" x2="90" y2="230" stroke="black" stroke-width="2"/>
+  <line x1="165" y1="170" x2="210" y2="230" stroke="black" stroke-width="2"/>
+  
+  <line x1="435" y1="170" x2="390" y2="230" stroke="black" stroke-width="2"/>
+  <line x1="465" y1="170" x2="510" y2="230" stroke="black" stroke-width="2"/>
+  
+  <!-- Labels on branches -->
+  <text x="215" y="90" font-family="Arial" font-size="14" fill="darkgreen">No</text>
+  <text x="385" y="90" font-family="Arial" font-size="14" fill="darkgreen">Yes</text>
+  
+  <!-- Entropy calculations -->
+  <text x="50" y="350" font-family="Arial" font-size="14">Initial Entropy: log₂(N)</text>
+  <text x="50" y="370" font-family="Arial" font-size="14">Each Question Reduces Entropy by ≈ 1 bit</text>
+  <text x="300" y="390" font-family="Arial" font-size="14" text-anchor="middle">Optimal Strategy: Divide Search Space in Half Each Time</text>
+</svg>
