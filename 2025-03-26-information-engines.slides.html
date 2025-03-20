@@ -90,8 +90,7 @@ class="slide level2">
 <h2>Information Theory and Thermodynamics</h2>
 <ul>
 <li>Information theory quantifies uncertainty and information</li>
-<li>Developed by Claude Shannon (1948)</li>
-<li>Core concepts parallel thermodynamics</li>
+<li>Core concepts inspired by thermodynamic ideas</li>
 <li>Information entropy <span
 class="math inline">\(\leftrightarrow\)</span> Thermodynamic entropy
 <ul>
@@ -101,12 +100,10 @@ class="math inline">\(\leftrightarrow\)</span> Thermodynamic entropy
 </section>
 <section id="entropy" class="slide level2">
 <h2>Entropy</h2>
-<ul>
-<li>Entropy: <span class="math display">\[S(X) = -\sum_i p(x_i) \log
-p(x_i)\]</span></li>
-<li>In thermodynamics preceded by Boltzmann’s constant, <span
-class="math inline">\(k_B\)</span></li>
-</ul>
+<p><span class="math display">\[
+S(X) = -\sum_X \rho(X) \log p(X)
+\]</span> * In thermodynamics preceded by Boltzmann’s constant, <span
+class="math inline">\(k_B\)</span></p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -127,14 +124,15 @@ information and thermodynamics.
 where <span class="math inline">\(h(Z)\)</span> is the base measure,
 <span class="math inline">\(\boldsymbol{\theta}\)</span> is the natural
 parameters, <span class="math inline">\(T(Z)\)</span> is the sufficient
-statistics and $A() is the log partition function. Its entropy can be
-computed as [ S(Z) = A() - ^<em>A() - E</em>{(Z)}, ] where <span
-class="math inline">\(E_{\rho(Z)}\left[\cdot\]\)</span> is the
-expectation under the distribution <span
-class="math inline">\(\rho(Z)\)</span>.</p>
+statistics and <span
+class="math inline">\(A(\boldsymbol{\theta})\)</span> is the log
+partition function. Its entropy can be computed as [ S(Z) = A() -
+^<em>A() - E</em>{(Z)}, ] where <span
+class="math inline">\(E_{\rho(Z)}[\cdot\]\)</span> is the expectation
+under the distribution <span class="math inline">\(\rho(Z)\)</span>.</p>
 <ul>
 <li>Exponential family: [ (Z) = h(Z) (^T(Z) + A()) ]</li>
-<li>Entropy is, [ S(Z) = A() - E_+ h(Z)] ]</li>
+<li>Entropy is, [ S(Z) = A() - E_]</li>
 <li>Where [ E_= _A() ] because <span
 class="math inline">\(A(\boldsymbol{\theta})\)</span> operates as a
 <em>cummulant generating function</em> for <span
@@ -146,9 +144,9 @@ class="math inline">\(\rho(Z)\)</span>.</li>
 <ul>
 <li><span class="math inline">\(A(\boldsymbol{\theta})\)</span> is
 Available (Free) Energy</li>
-<li><span class="math inline">\(U(\boldsymbol{\theta})) =
-E_\rho\left[\boldsymbol{\theta}^\top T(Z)\right] + \log
-h(Z)\right]\boldsymbol{\theta}^\top
+<li><span class="math inline">\(U(\boldsymbol{\theta}) =
+E_\rho\left[\boldsymbol{\theta}^\top T(Z) + \log h(Z)\right] =
+\boldsymbol{\theta}^\top
 \nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_\rho\left[\log
 h(Z)\right]\)</span> is total or internal energy.</li>
 <li>Traditional relationship
@@ -156,6 +154,14 @@ h(Z)\right]\)</span> is total or internal energy.</li>
 <li>A = U - TS</li>
 </ul></li>
 </ul>
+</section>
+<section id="work-through-measurement" class="slide level2">
+<h2>Work through Measurement</h2>
+</section>
+<section id="markov-blanket" class="slide level2">
+<h2>Markov Blanket</h2>
+<p>This gives us our first hint of the connection between information
+and energy.</p>
 <!-- SECTION The Entropy Game: Intelligence as Optimal Information Acquisition -->
 </section>
 <section
@@ -168,10 +174,15 @@ Acquisition</h2>
 <section id="the-entropy-game" class="slide level2">
 <h2>The Entropy Game</h2>
 <ul>
-<li>Intelligence as optimal uncertainty reduction</li>
+<li>Intelligence as optimal uncertainty reduction
+<ul>
 <li>20 Questions game as intuitive example</li>
 <li>Binary search exemplifies optimal strategy</li>
-<li>Information gain measures question quality</li>
+</ul></li>
+<li>Information gain measures question quality
+<ul>
+<li>Wordle as a more complex example</li>
+</ul></li>
 </ul>
 </section>
 <section id="the-20-questions-paradigm" class="slide level2">
@@ -191,13 +202,13 @@ dividing the search space in half with each question.
 <h2>Entropy Reduction as Intelligence</h2>
 <ul>
 <li>Entropy before question: <span
-class="math inline">\(H(X)\)</span></li>
+class="math inline">\(S(X)\)</span></li>
 <li>Entropy after answer: <span
-class="math inline">\(H(X|A)\)</span></li>
-<li>Information gain: <span class="math inline">\(I(X;A) = H(X) -
-H(X|A)\)</span></li>
+class="math inline">\(S(X|M)\)</span></li>
+<li>Information gain: <span class="math inline">\(I(X;M) = S(X) -
+S(X|M)\)</span></li>
 <li>Intelligent systems maximize <span
-class="math inline">\(I(X;A)\)</span> per unit cost</li>
+class="math inline">\(I(X;M)\)</span> per unit cost</li>
 </ul>
 </section>
 <section id="thermodynamic-parallels" class="slide level2">
