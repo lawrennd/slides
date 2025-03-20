@@ -92,20 +92,24 @@ class="slide level2">
 <li>Information theory quantifies uncertainty and information</li>
 <li>Developed by Claude Shannon (1948)</li>
 <li>Core concepts parallel thermodynamics</li>
-<li>Information entropy ↔︎ Thermodynamic entropy</li>
-<li>Free energy minimization appears in both domains</li>
+<li>Information entropy <span
+class="math inline">\(\leftrightarrow\)</span> Thermodynamic entropy
+<ul>
+<li>Free energy minimization common in both domains</li>
+</ul></li>
 </ul>
 </section>
-<section id="entropy-a-shared-concept" class="slide level2">
-<h2>Entropy: A Shared Concept</h2>
+<section id="entropy" class="slide level2">
+<h2>Entropy</h2>
 <ul>
-<li>Shannon entropy: <span class="math inline">\(H(X) = -\sum_i p(x_i)
-\log p(x_i)\)</span></li>
-<li>Thermodynamic entropy: <span class="math inline">\(S = k_B \log
-\Omega\)</span></li>
-<li>Both measure uncertainty and possible configurations</li>
-<li>Both increase naturally in closed systems</li>
+<li>Entropy: <span class="math display">\[S(X) = -\sum_i p(x_i) \log
+p(x_i)\]</span></li>
+<li>In thermodynamics preceded by Boltzmann’s constant, <span
+class="math inline">\(k_B\)</span></li>
 </ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="maxwell-demon-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information/maxwell-demon.svg" width="60%" style=" ">
@@ -117,15 +121,40 @@ Maxwell’s demon thought experiment illustrates the relationship between
 information and thermodynamics.
 </aside>
 </section>
-<section id="free-energy-principles" class="slide level2">
-<h2>Free Energy Principles</h2>
+<section id="exponential-family" class="slide level2">
+<h2>Exponential Family</h2>
+<p>{The exponential family has the form [ (Z) = h(Z) (^T(Z) + A()) ]
+where <span class="math inline">\(h(Z)\)</span> is the base measure,
+<span class="math inline">\(\boldsymbol{\theta}\)</span> is the natural
+parameters, <span class="math inline">\(T(Z)\)</span> is the sufficient
+statistics and $A() is the log partition function. Its entropy can be
+computed as [ S(Z) = A() - ^<em>A() - E</em>{(Z)}, ] where <span
+class="math inline">\(E_{\rho(Z)}\left[\cdot\]\)</span> is the
+expectation under the distribution <span
+class="math inline">\(\rho(Z)\)</span>.</p>
 <ul>
-<li>Thermodynamic free energy: <span class="math inline">\(F = U -
-TS\)</span></li>
-<li>Information free energy: <span class="math inline">\(F = E[energy] -
-entropy\)</span></li>
-<li>Minimized in physical and cognitive systems</li>
-<li>Provides framework for understanding adaptation</li>
+<li>Exponential family: [ (Z) = h(Z) (^T(Z) + A()) ]</li>
+<li>Entropy is, [ S(Z) = A() - E_+ h(Z)] ]</li>
+<li>Where [ E_= _A() ] because <span
+class="math inline">\(A(\boldsymbol{\theta})\)</span> operates as a
+<em>cummulant generating function</em> for <span
+class="math inline">\(\rho(Z)\)</span>.</li>
+</ul>
+</section>
+<section id="available-energy" class="slide level2">
+<h2>Available Energy</h2>
+<ul>
+<li><span class="math inline">\(A(\boldsymbol{\theta})\)</span> is
+Available (Free) Energy</li>
+<li><span class="math inline">\(U(\boldsymbol{\theta})) =
+E_\rho\left[\boldsymbol{\theta}^\top T(Z)\right] + \log
+h(Z)\right]\boldsymbol{\theta}^\top
+\nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_\rho\left[\log
+h(Z)\right]\)</span> is total or internal energy.</li>
+<li>Traditional relationship
+<ul>
+<li>A = U - TS</li>
+</ul></li>
 </ul>
 <!-- SECTION The Entropy Game: Intelligence as Optimal Information Acquisition -->
 </section>
@@ -220,11 +249,20 @@ class="slide level2">
 class="slide level2">
 <h2>Intelligence as a State-Change Process</h2>
 <ul>
-<li>Learning = reconfiguration of internal states</li>
-<li>Information storage as stable energy configurations</li>
+<li>Learning <span class="math inline">\(\equiv\)</span> reconfiguration
+of internal states</li>
+<li>Information storage as stable low entropy configurations
+<ul>
 <li>Memory as metastable thermodynamic states</li>
-<li>Intelligence navigates energy landscapes purposefully</li>
+</ul></li>
+<li>Intelligence navigates energy landscapes purposefully
+<ul>
+<li>But so does physics? cf Principle of Least Action (<span
+class="citation" data-cites="Feynman-volumeI63">Feynman et al.
+(1963)</span>, Sect. 26-5)</li>
+</ul></li>
 </ul>
+<p>}</p>
 </section>
 <section id="the-mathematics-of-optimal-questioning"
 class="slide level2">
@@ -507,8 +545,17 @@ Page</a></li>
 href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
-<section id="references" class="slide level2 scrollable">
-<h2 class="scrollable">References</h2>
+<section id="references" class="slide level2 unnumbered scrollable">
+<h2 class="unnumbered scrollable">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="list">
+<div id="ref-Feynman-volumeI63" class="csl-entry" role="listitem">
+Feynman, R.P., Leighton, R.B., Sands, M., 1963. The feynman lectures on
+physics, vol. <span>I</span>: <span>Mainly</span>
+<span>Mechanics</span>, <span>Radiation</span>, and <span>Heat</span>.
+Addison-Wesley.
+</div>
+</div>
 </section>
     </div>
   </div>
