@@ -145,7 +145,7 @@ class="math inline">\(\rho(Z)\)</span>.</li>
 <li><span class="math inline">\(A(\boldsymbol{\theta})\)</span> is
 Available (Free) Energy</li>
 <li><span class="math inline">\(U(\boldsymbol{\theta}) =
-E_\rho\left[\boldsymbol{\theta}^\top T(Z) + \log h(Z)\right] =
+E_\rho\left[\boldsymbol{\theta}^\top(Z) + \log h(Z)\right] =
 \boldsymbol{\theta}^\top
 \nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_\rho\left[\log
 h(Z)\right]\)</span> is total or internal energy.</li>
@@ -157,11 +157,7 @@ h(Z)\right]\)</span> is total or internal energy.</li>
 </section>
 <section id="work-through-measurement" class="slide level2">
 <h2>Work through Measurement</h2>
-</section>
-<section id="markov-blanket" class="slide level2">
-<h2>Markov Blanket</h2>
-<p>This gives us our first hint of the connection between information
-and energy.</p>
+<p><em>note on temperature here?</em></p>
 <!-- SECTION The Entropy Game: Intelligence as Optimal Information Acquisition -->
 </section>
 <section
@@ -169,10 +165,13 @@ id="the-entropy-game-intelligence-as-optimal-information-acquisition"
 class="slide level2">
 <h2>The Entropy Game: Intelligence as Optimal Information
 Acquisition</h2>
-<!-- SECTION The Entropy Game -->
+<!-- SECTION Entropy Games -->
 </section>
-<section id="the-entropy-game" class="slide level2">
-<h2>The Entropy Game</h2>
+<section id="entropy-games" class="slide level2">
+<h2>Entropy Games</h2>
+</section>
+<section id="the-animal-game" class="slide level2">
+<h2>The Animal Game</h2>
 <ul>
 <li>Intelligence as optimal uncertainty reduction
 <ul>
@@ -198,8 +197,8 @@ The optimal strategy in the Entropy Game resembles a binary search,
 dividing the search space in half with each question.
 </aside>
 </section>
-<section id="entropy-reduction-as-intelligence" class="slide level2">
-<h2>Entropy Reduction as Intelligence</h2>
+<section id="entropy-reduction-and-decisions" class="slide level2">
+<h2>Entropy Reduction and Decisions</h2>
 <ul>
 <li>Entropy before question: <span
 class="math inline">\(S(X)\)</span></li>
@@ -207,7 +206,7 @@ class="math inline">\(S(X)\)</span></li>
 class="math inline">\(S(X|M)\)</span></li>
 <li>Information gain: <span class="math inline">\(I(X;M) = S(X) -
 S(X|M)\)</span></li>
-<li>Intelligent systems maximize <span
+<li>Optimal decision maximise <span
 class="math inline">\(I(X;M)\)</span> per unit cost</li>
 </ul>
 </section>
@@ -219,61 +218,178 @@ class="math inline">\(I(X;M)\)</span> per unit cost</li>
 <li>Both operate under resource constraints</li>
 <li>Both bound by fundamental efficiency limits</li>
 </ul>
-<!-- SECTION Intelligence as an Energy-Efficient Process -->
 </section>
-<section id="intelligence-as-an-energy-efficient-process"
-class="slide level2">
-<h2>Intelligence as an Energy-Efficient Process</h2>
+<section id="jaynes-world" class="slide level2">
+<h2>Jaynes’ World</h2>
+<p><span class="math display">\[
+\rho(Z) = h(Z) \exp(\boldsymbol{\theta}^\top T(Z) -
+A(\boldsymbol{\theta})),
+\]</span> where <span class="math inline">\(h(Z)\)</span> is the base
+measure, <span class="math inline">\(T(Z)\)</span> are sufficient
+statistics, <span class="math inline">\(A(\boldsymbol{\theta})\)</span>
+is the log-partition function, <span
+class="math inline">\(\boldsymbol{\theta}\)</span> are the <em>natural
+parameters</em> of the distribution.}</p>
 </section>
-<section id="measurement-as-a-thermodynamic-process"
-class="slide level2">
-<h2>Measurement as a Thermodynamic Process</h2>
+<section id="fourier-duality" class="slide level2">
+<h2>Fourier Duality</h2>
+</section>
+<section id="markovian-decomposition" class="slide level2">
+<h2>Markovian Decomposition</h2>
+<p>then we can expand around the values <span
+class="math inline">\(\boldsymbol{\theta}\)</span> and we assume that
+the entropy of these parameters <span
+class="math inline">\(S(\boldsymbol{\theta})\)</span> is so low as to be
+neglibible. allowing us to rewrite the distribution in a conditional
+form. - <span class="math inline">\(c(M)\)</span>: Maps to high-entropy
+capacity variables</p>
 <ul>
-<li>Observation requires energy expenditure</li>
-<li>Landauer’s principle: erasing information costs energy</li>
-<li>Measurement precision limited by energy availability</li>
-<li>Quantum limit: <span class="math inline">\(\Delta E \cdot \Delta t
-\geq \hbar/2\)</span></li>
+<li><em>Parameter-Capacity Uncertainty</em>: <span
+class="math inline">\(\Delta\boldsymbol{\theta}(M) \cdot \Delta c(M)
+\geq k\)</span></li>
 </ul>
+<p>Parameters <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
+variables <span class="math inline">\(c(M)\)</span> form a Fourier-dual
+pair, <span class="math display">\[
+c(M) = \mathcal{F}[\boldsymbol{\theta}(M)],
+\]</span> This duality is particularly important at saddle points where
+direct gradient ascent stalls.</p>
+</section>
+<section id="system-evolution" class="slide level2">
+<h2>System Evolution</h2>
+</section>
+<section id="start-state" class="slide level2">
+<h2>Start State</h2>
+<ul>
+<li>Low entropy, near lower bound</li>
+<li>Highly structured information in <span
+class="math inline">\(M\)</span></li>
+<li>Strong temporal dependencies (high non-Markovian component)</li>
+<li>Precise values for <span
+class="math inline">\(\boldsymbol{\theta}\)</span> uncertainty in other
+parameter characteristics.</li>
+</ul>
+</section>
+<section id="end-state" class="slide level2">
+<h2>End State</h2>
+<ul>
+<li>Maximum entropy, approaching upper bound <span
+class="math inline">\(N\)</span></li>
+<li>Zeno’s paradox: <span
+class="math inline">\(\nabla_{\boldsymbol{\theta}}S \approx
+0\)</span></li>
+<li>Primarily Markovian dynamics</li>
+<li>Steady state with no further entropy increase possible</li>
+</ul>
+<!-- SECTION Information Geometry -->
+</section>
+<section id="information-geometry" class="slide level2">
+<h2>Information Geometry</h2>
+</section>
+<section id="fisher-information" class="slide level2">
+<h2>Fisher Information</h2>
+</section>
+<section id="saddle-point" class="slide level2">
+<h2>Saddle Point</h2>
+</section>
+<section id="variable-transitions" class="slide level2">
+<h2>Variable Transitions</h2>
+<p><span class="math display">\[
+M_Z(t) = E[e^{t \cdot Z}] = \exp(A(\boldsymbol{\theta}+t) -
+A(\boldsymbol{\theta}))
+\]</span></p>
+</section>
+<section id="saddle-point-seeking-behaviour" class="slide level2">
+<h2>Saddle Point Seeking Behaviour</h2>
+</section>
+<section id="conceptual-framework" class="slide level2">
+<h2>Conceptual Framework</h2>
+</section>
+<section id="histogram-game" class="slide level2">
+<h2>Histogram Game</h2>
+</section>
+<section id="prediction-of-f_8-from-f_1" class="slide level2">
+<h2>Prediction of <span class="math inline">\(f_{8}\)</span> from <span
+class="math inline">\(f_{1}\)</span></h2>
+<script>
+showDivs(13, 'four-bin-histogram');
+</script>
+<p><small></small>
+<input id="range-four-bin-histogram" type="range" min="13" max="17" value="13" onchange="setDivs('four-bin-histogram')" oninput="setDivs('four-bin-histogram')">
+<button onclick="plusDivs(-1, 'four-bin-histogram')">❮</button>
+<button onclick="plusDivs(1, 'four-bin-histogram')">❯</button></p>
+<div class="two_point_sample3" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//gp/two_point_sample013.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//gp/two_point_sample014.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//gp/two_point_sample015.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//gp/two_point_sample016.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//gp/two_point_sample017.svg" width="80%" style=" ">
+</object>
+</div>
 <div class="figure">
-<div id="landauer-principle-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information/landauer-principle.svg" width="60%" style=" ">
+<div id="four-bin-histogram-entropy-vs-iterations-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-entropy-vs-iterations.svg" width="70%" style=" ">
 </object>
 </div>
 </div>
 <aside class="notes">
-Landauer’s principle establishes the minimum energy required to erase
-one bit of information, connecting computation to thermodynamics.
+Four bin histogram entropy game. The plot shows the increasing entropy
+against the number of iterations.
 </aside>
+<!-- SECTION Information Engines: Intelligence as an Energy-Efficiency -->
 </section>
-<section id="model-approximations-and-thermodynamic-efficiency"
+<section id="information-engines-intelligence-as-an-energy-efficiency"
 class="slide level2">
-<h2>Model Approximations and Thermodynamic Efficiency</h2>
+<h2>Information Engines: Intelligence as an Energy-Efficiency</h2>
+</section>
+<section
+id="measurement-as-a-thermodynamic-process-information-modified-second-law"
+class="slide level2">
+<h2>Measurement as a Thermodynamic Process: Information-Modified Second
+Law</h2>
+<p><span class="math display">\[
+I(X;M) = \sum_{x,m} \rho(x,m) \log \frac{\rho(x,m)}{\rho(x)\rho(m)},
+\]</span> where <span class="math inline">\(\rho(x,m)\)</span> is the
+joint probability of the system and measurement (see e.g. eq 14 in <span
+class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
+(2008)</span>). This can be written as <span class="math display">\[
+W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
+\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
+extractable work and it is upper bounded by the negative change in free
+energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
+energy gained from measurement, <span
+class="math inline">\(k_BTI(X;M)\)</span>. This is the
+information-modified second law.}</p>
 <ul>
-<li>Perfect models require infinite resources</li>
-<li>Approximations minimize free energy</li>
-<li>Bounded rationality as thermodynamic constraint</li>
-<li>Intelligence optimized for energy efficiency, not accuracy</li>
+<li>Measurement is a thermodynamic process.</li>
+<li>The engine can return <span
+class="math inline">\(k_BTI(X;M)\)</span> Joules of energy.</li>
+<li>If this is greater than available energy used in measurement, the
+process has a thermodynamic return.</li>
 </ul>
 </section>
-<section id="intelligence-as-a-state-change-process"
+<section id="efficacy-and-efficiency-of-feedback-control"
 class="slide level2">
-<h2>Intelligence as a State-Change Process</h2>
-<ul>
-<li>Learning <span class="math inline">\(\equiv\)</span> reconfiguration
-of internal states</li>
-<li>Information storage as stable low entropy configurations
-<ul>
-<li>Memory as metastable thermodynamic states</li>
-</ul></li>
-<li>Intelligence navigates energy landscapes purposefully
-<ul>
-<li>But so does physics? cf Principle of Least Action (<span
-class="citation" data-cites="Feynman-volumeI63">Feynman et al.
-(1963)</span>, Sect. 26-5)</li>
-</ul></li>
-</ul>
-<p>}</p>
+<h2>Efficacy and Efficiency of Feedback Control</h2>
+<p>where <span class="math inline">\(\mathcal{I}(X;M) = \log
+\frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
+measurement, and the mutual information is recovered <span
+class="math inline">\(I(X;M) = \langle \mathcal{I}(X;M) \rangle\)</span>
+as the average information gain.}</p>
 </section>
 <section id="the-mathematics-of-optimal-questioning"
 class="slide level2">
@@ -560,11 +676,10 @@ href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a>
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
-<div id="ref-Feynman-volumeI63" class="csl-entry" role="listitem">
-Feynman, R.P., Leighton, R.B., Sands, M., 1963. The feynman lectures on
-physics, vol. <span>I</span>: <span>Mainly</span>
-<span>Mechanics</span>, <span>Radiation</span>, and <span>Heat</span>.
-Addison-Wesley.
+<div id="ref-Sagawa-second08" class="csl-entry" role="listitem">
+Sagawa, T., Ueda, M., 2008. Second law of thermodynamics with discrete
+quantum feedback control. Physical Review Letters 100, 080403. <a
+href="https://doi.org/10.1103/PhysRevLett.100.080403">https://doi.org/10.1103/PhysRevLett.100.080403</a>
 </div>
 </div>
 </section>
