@@ -236,25 +236,6 @@ parameters</em> of the distribution.}</p>
 </section>
 <section id="markovian-decomposition" class="slide level2">
 <h2>Markovian Decomposition</h2>
-<p>then we can expand around the values <span
-class="math inline">\(\boldsymbol{\theta}\)</span> and we assume that
-the entropy of these parameters <span
-class="math inline">\(S(\boldsymbol{\theta})\)</span> is so low as to be
-neglibible. allowing us to rewrite the distribution in a conditional
-form. - <span class="math inline">\(c(M)\)</span>: Maps to high-entropy
-capacity variables</p>
-<ul>
-<li><em>Parameter-Capacity Uncertainty</em>: <span
-class="math inline">\(\Delta\boldsymbol{\theta}(M) \cdot \Delta c(M)
-\geq k\)</span></li>
-</ul>
-<p>Parameters <span
-class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
-variables <span class="math inline">\(c(M)\)</span> form a Fourier-dual
-pair, <span class="math display">\[
-c(M) = \mathcal{F}[\boldsymbol{\theta}(M)],
-\]</span> This duality is particularly important at saddle points where
-direct gradient ascent stalls.</p>
 </section>
 <section id="system-evolution" class="slide level2">
 <h2>System Evolution</h2>
@@ -282,29 +263,9 @@ class="math inline">\(\nabla_{\boldsymbol{\theta}}S \approx
 <li>Primarily Markovian dynamics</li>
 <li>Steady state with no further entropy increase possible</li>
 </ul>
-<!-- SECTION Information Geometry -->
 </section>
-<section id="information-geometry" class="slide level2">
-<h2>Information Geometry</h2>
-</section>
-<section id="fisher-information" class="slide level2">
-<h2>Fisher Information</h2>
-</section>
-<section id="saddle-point" class="slide level2">
-<h2>Saddle Point</h2>
-</section>
-<section id="variable-transitions" class="slide level2">
-<h2>Variable Transitions</h2>
-<p><span class="math display">\[
-M_Z(t) = E[e^{t \cdot Z}] = \exp(A(\boldsymbol{\theta}+t) -
-A(\boldsymbol{\theta}))
-\]</span></p>
-</section>
-<section id="saddle-point-seeking-behaviour" class="slide level2">
-<h2>Saddle Point Seeking Behaviour</h2>
-</section>
-<section id="conceptual-framework" class="slide level2">
-<h2>Conceptual Framework</h2>
+<section id="valid-games" class="slide level2">
+<h2>Valid Games</h2>
 </section>
 <section id="histogram-game" class="slide level2">
 <h2>Histogram Game</h2>
@@ -359,9 +320,6 @@ Four bin histogram entropy game. The plot shows the increasing entropy
 against the number of turns.
 </aside>
 </section>
-<section id="valid-games" class="slide level2">
-<h2>Valid Games</h2>
-</section>
 <section id="jaynes-world-histogram-valid-games-example"
 class="slide level2">
 <h2>Jaynes World Histogram Valid Games Example</h2>
@@ -405,6 +363,128 @@ class="figure-frame">
 <aside class="notes">
 Jaynes world histogram valid games path.
 </aside>
+</section>
+<section id="two-bin-histogram-example" class="slide level2">
+<h2>Two-Bin Histogram Example</h2>
+<ul>
+<li>Simplest example: Two-bin system</li>
+<li>States represented by probability <span
+class="math inline">\(p\)</span> (with <span
+class="math inline">\(1-p\)</span> in second bin)</li>
+<li>Entropy: <span class="math inline">\(S(p) = -p\log p -
+(1-p)\log(1-p)\)</span></li>
+<li>Maximum entropy at <span class="math inline">\(p = 0.5\)</span></li>
+<li>Minimal entropy at <span class="math inline">\(p = 0\)</span> or
+<span class="math inline">\(p = 1\)</span></li>
+</ul>
+</section>
+<section id="four-bin-saddle-point-example" class="slide level2">
+<h2>Four-Bin Saddle Point Example</h2>
+<ul>
+<li>Four-bin system creates 3D parameter space</li>
+<li>Saddle points appear where:
+<ul>
+<li>Gradient is zero</li>
+<li>Some directions increase entropy</li>
+<li>Other directions decrease entropy</li>
+</ul></li>
+<li>Information reservoirs form in critically slowed directions</li>
+</ul>
+</section>
+<section id="saddle-points" class="slide level2">
+<h2>Saddle Points</h2>
+</section>
+<section id="saddle-point-seeking-behaviour" class="slide level2">
+<h2>Saddle Point Seeking Behaviour</h2>
+</section>
+<section id="gradient-flow-and-least-action-principles"
+class="slide level2">
+<h2>Gradient Flow and Least Action Principles</h2>
+<ul>
+<li>Steepest ascent of entropy ≈ Path of least action</li>
+<li>System follows geodesics in information geometry</li>
+<li>Action integral: <span class="math inline">\(\mathcal{A} = \int
+L(\theta, \dot{\theta})dt\)</span></li>
+<li>Information-theoretic Lagrangian: <span class="math inline">\(L =
+\frac{1}{2}\dot{\theta}^TG(\theta)\dot{\theta} - S(\theta)\)</span></li>
+</ul>
+</section>
+<section id="uncertainty-principle" class="slide level2">
+<h2>Uncertainty Principle</h2>
+</section>
+<section id="quantum-vs-classical-information-reservoirs"
+class="slide level2">
+<h2>Quantum vs Classical Information Reservoirs</h2>
+</section>
+<section id="visualising-the-parameter-capacity-uncertainty-principle"
+class="slide level2">
+<h2>Visualising the Parameter-Capacity Uncertainty Principle</h2>
+<ul>
+<li>Uncertainty principle: <span class="math inline">\(\Delta\theta
+\cdot \Delta c \geq k\)</span></li>
+<li>Minimal uncertainty states form ellipses in phase space</li>
+<li>Quantum-like properties emerge from information constraints</li>
+<li>Different uncertainty states visualized as probability
+distributions</li>
+</ul>
+</section>
+<section id="detecting-transitions-with-moment-generating-functions"
+class="slide level2">
+<h2>Detecting Transitions with Moment Generating Functions</h2>
+<ul>
+<li>MGF: <span class="math inline">\(M_Z(t) = \mathbb{E}[e^{tZ}] =
+\exp(A(\theta+t) - A(\theta))\)</span></li>
+<li>Cumulant generating function: <span class="math inline">\(K_Z(t) =
+\log M_Z(t)\)</span></li>
+<li>Quantum-like variables: Oscillatory MGF behavior</li>
+<li>Classical variables: Monotonic MGF growth</li>
+<li>MGF reveals channel properties without needing state
+information</li>
+</ul>
+</section>
+<section id="information-reservoirs" class="slide level2">
+<h2>Information Reservoirs</h2>
+</section>
+<section id="classical-hierarchical-memory-structure"
+class="slide level2">
+<h2>Classical Hierarchical Memory Structure</h2>
+<p><span class="math display">\[
+p(X|M) \approx \prod_i p(X_i|M_{\text{pa}(i)})
+\]</span></p>
+</section>
+<section id="variable-transitions" class="slide level2">
+<h2>Variable Transitions</h2>
+<p><span class="math display">\[
+M_Z(t) = E[e^{t \cdot Z}] = \exp(A(\boldsymbol{\theta}+t) -
+A(\boldsymbol{\theta})).
+\]</span></p>
+<p><span class="math display">\[
+K_Z(t) = \log M_Z(t) = A(\boldsymbol{\theta}+t) -
+A(\boldsymbol{\theta}).
+\]</span></p>
+<p><span class="math display">\[
+\frac{d^2}{dt_i^2}K_Z(t)|_{t=0} = \frac{\partial^2
+A(\boldsymbol{\theta})}{\partial \theta_i^2}.
+\]</span></p>
+</section>
+<section id="hierarchical-memory-organization-example"
+class="slide level2">
+<h2>Hierarchical Memory Organization Example</h2>
+<ul>
+<li>Classical information reservoirs organize hierarchically</li>
+<li>Variables separate into distinct timescale bands</li>
+<li>Fast variables: rapidly changing, high processing capacity</li>
+<li>Slow variables: gradually changing, high memory capacity</li>
+<li>Connections across scales create efficient information
+processing</li>
+</ul>
+</section>
+<section id="conceptual-framework" class="slide level2">
+<h2>Conceptual Framework</h2>
+<!-- SECTION Conclusion -->
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
 <!-- SECTION Information Engines: Intelligence as an Energy-Efficiency -->
 </section>
 <section id="information-engines-intelligence-as-an-energy-efficiency"
