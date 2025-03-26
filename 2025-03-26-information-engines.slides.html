@@ -833,6 +833,9 @@ showDivs(0, 'four-bin-histogram');
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-04.svg" width="80%" style=" ">
 </object>
 </div>
+</section>
+<section id="four-bin-histogram-entropy-game" class="slide level2">
+<h2>Four Bin Histogram Entropy Game</h2>
 <div class="figure">
 <div id="four-bin-histogram-entropy-vs-turns-figure"
 class="figure-frame">
@@ -852,8 +855,14 @@ against the number of turns across 15000 iterations of gradient ascent.
 <li>States represented by probability <span
 class="math inline">\(p\)</span> (with <span
 class="math inline">\(1-p\)</span> in second bin)</li>
-<li>Entropy: <span class="math inline">\(S(p) = -p\log p -
-(1-p)\log(1-p)\)</span></li>
+</ul>
+</section>
+<section id="entropy-1" class="slide level2">
+<h2>Entropy</h2>
+<ul>
+<li>Entropy <span class="math display">\[
+S(p) = -p\log p - (1-p)\log(1-p)
+\]</span></li>
 <li>Maximum entropy at <span class="math inline">\(p = 0.5\)</span></li>
 <li>Minimal entropy at <span class="math inline">\(p = 0\)</span> or
 <span class="math inline">\(p = 1\)</span></li>
@@ -867,7 +876,7 @@ class="math inline">\(1-p\)</span> in second bin)</li>
 \]</span> <span class="math display">\[
 G(\theta) = p(1-p)
 \]</span> <span class="math display">\[
-\Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p),
+\Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p)
 \]</span></p>
 </section>
 <section id="section-14" class="slide level2">
@@ -896,6 +905,17 @@ Entropy gradients of the two bin histogram agains position.
 <li>Information reservoirs form in critically slowed directions</li>
 </ul>
 </section>
+<section id="saddle-point-example" class="slide level2">
+<h2>Saddle Point Example</h2>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot Visualisation of a saddle point projected down to two dimensions." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style="simplified-saddle-point-example ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
 <section id="saddle-points" class="slide level2">
 <h2>Saddle Points</h2>
 </section>
@@ -908,11 +928,31 @@ class="slide level2">
 <ul>
 <li>Steepest ascent of entropy ≈ Path of least action</li>
 <li>System follows geodesics in information geometry</li>
-<li>Action integral: <span class="math inline">\(\mathcal{A} = \int
-L(\theta, \dot{\theta})dt\)</span></li>
-<li>Information-theoretic Lagrangian: <span class="math inline">\(L =
-\frac{1}{2}\dot{\theta}^TG(\theta)\dot{\theta} - S(\theta)\)</span></li>
 </ul>
+</section>
+<section id="information-theoretic-action" class="slide level2">
+<h2>Information-Theoretic Action</h2>
+<ul>
+<li>Action integral <span class="math display">\[
+\mathcal{A} = \int L(\theta, \dot{\theta}) \text{d}t
+\]</span></li>
+<li>Information-theoretic Lagrangian <span class="math display">\[
+L = \frac{1}{2}\dot{\theta}^\top G(\theta)\dot{\theta} - S(\theta)
+\]</span></li>
+<li>cf <span class="citation"
+data-cites="Frieden-physics98">(<strong>Frieden-physics98?</strong>)</span>.</li>
+</ul>
+</section>
+<section id="gradient-flow-and-least-action-path" class="slide level2">
+<h2>Gradient Flow and Least Action Path</h2>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot Visualisation of the gradient flow and least action path." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/gradient-flow-least-action.svg" width="70%" style="gradient-flow-least-action ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
 </section>
 <section id="uncertainty-principle" class="slide level2">
 <h2>Uncertainty Principle</h2>
