@@ -301,6 +301,67 @@ mathematically, building on the work of Maxwell, Gibbs and Boltzmann.
 <span class="citation" data-cites="Eddington:nature29">Eddington
 (1929)</span>
 </aside>
+</section>
+<section id="maxwells-demon" class="slide level2">
+<h2>Maxwell’s Demon</h2>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div class="centered" style="">
+<a
+href="https://play.google.com/books/reader?id=0p8AAAAAMAAJ&amp;pg=PA308"><img
+data-src="https://inverseprobability.com/talks/../slides/diagrams//books/0p8AAAAAMAAJ-PA308.png" /></a>
+</div>
+</div>
+</div>
+<aside class="notes">
+Maxwell’s demon was designed to highlight the statistical nature of the
+second law of thermodynamics.
+</aside>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div>
+<div style="width:68%;float:left">
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left">
+</canvas>
+</div>
+<div style="width:28%;float:right;margin:auto">
+<div style="float:right;width:100%;margin:auto">
+Entropy:
+<output id="maxwell-entropy">
+</output>
+</div>
+<div id="maxwell-histogram-canvas"
+style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
+
+</div>
+</div>
+</div>
+<div>
+<button id="maxwell-newball" style="text-align:right">
+New Ball
+</button>
+<button id="maxwell-pause" style="text-align:right">
+Pause
+</button>
+<button id="maxwell-skip" style="text-align:right">
+Skip 1000s
+</button>
+<button id="maxwell-histogram" style="text-align:right">
+Histogram
+</button>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
+</div>
+</div>
+<aside class="notes">
+Maxwell’s Demon. The demon decides balls are either cold (blue) or hot
+(red) according to their velocity. Balls are allowed to pass the green
+membrane from right to left only if they are cold, and from left to
+right, only if they are hot.
+</aside>
 <!-- SECTION Information Theory and Thermodynamics -->
 </section>
 <section id="information-theory-and-thermodynamics"
@@ -323,7 +384,7 @@ S(X) = -\sum_X \rho(X) \log p(X)
 \]</span> * In thermodynamics preceded by Boltzmann’s constant, <span
 class="math inline">\(k_B\)</span></p>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="maxwell-demon-figure" class="figure-frame">
@@ -365,18 +426,6 @@ h(Z)\right]\)</span> is total or internal energy.</li>
 </section>
 <section id="work-through-measurement" class="slide level2">
 <h2>Work through Measurement</h2>
-<p><em>note on temperature here?</em></p>
-<!-- SECTION The Entropy Game: Intelligence as Optimal Information Acquisition -->
-</section>
-<section
-id="the-entropy-game-intelligence-as-optimal-information-acquisition"
-class="slide level2">
-<h2>The Entropy Game: Intelligence as Optimal Information
-Acquisition</h2>
-<!-- SECTION Entropy Games -->
-</section>
-<section id="entropy-games" class="slide level2">
-<h2>Entropy Games</h2>
 </section>
 <section id="the-animal-game" class="slide level2">
 <h2>The Animal Game</h2>
@@ -426,6 +475,106 @@ class="math inline">\(I(X;M)\)</span> per unit cost</li>
 <li>Both operate under resource constraints</li>
 <li>Both bound by fundamental efficiency limits</li>
 </ul>
+</section>
+<section id="the-mathematics-of-optimal-questioning"
+class="slide level2">
+<h2>The Mathematics of Optimal Questioning</h2>
+<ul>
+<li>Optimal question splits probability mass evenly</li>
+<li>Expected information gain: <span class="math display">\[IG(A) = H(X)
+- \left[P(A)H(X|A) + P(A^c)H(X|A^c)\right]\]</span></li>
+<li>Maximum information gain when <span class="math inline">\(P(A)
+\approx 0.5\)</span></li>
+<li>Each optimal question reduces entropy by ~1 bit</li>
+<li>Intelligence metric: efficiency of entropy reduction</li>
+</ul>
+</section>
+<section id="entropy-game-as-intelligence" class="slide level2">
+<h2>Entropy Game as Intelligence</h2>
+<ul>
+<li>Intelligence metrics:
+<ul>
+<li>Questions needed vs. theoretical minimum</li>
+<li>Adaptability to changing probabilities</li>
+<li>Handling partial information</li>
+<li>Sequential decision optimization</li>
+</ul></li>
+<li>Human vs. AI questioning strategies</li>
+</ul>
+<!-- SECTION Information Engines: Intelligence as an Energy-Efficiency -->
+</section>
+<section id="information-engines-intelligence-as-an-energy-efficiency"
+class="slide level2">
+<h2>Information Engines: Intelligence as an Energy-Efficiency</h2>
+</section>
+<section
+id="measurement-as-a-thermodynamic-process-information-modified-second-law"
+class="slide level2">
+<h2>Measurement as a Thermodynamic Process: Information-Modified Second
+Law</h2>
+<p><span class="math display">\[
+I(X;M) = \sum_{x,m} \rho(x,m) \log \frac{\rho(x,m)}{\rho(x)\rho(m)},
+\]</span> where <span class="math inline">\(\rho(x,m)\)</span> is the
+joint probability of the system and measurement (see e.g. eq 14 in <span
+class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
+(2008)</span>). This can be written as <span class="math display">\[
+W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
+\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
+extractable work and it is upper bounded by the negative change in free
+energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
+energy gained from measurement, <span
+class="math inline">\(k_BTI(X;M)\)</span>. This is the
+information-modified second law.}</p>
+<ul>
+<li>Measurement is a thermodynamic process.</li>
+<li>The engine can return <span
+class="math inline">\(k_BTI(X;M)\)</span> Joules of energy.</li>
+<li>If this is greater than available energy used in measurement, the
+process has a thermodynamic return.</li>
+</ul>
+</section>
+<section id="efficacy-and-efficiency-of-feedback-control"
+class="slide level2">
+<h2>Efficacy and Efficiency of Feedback Control</h2>
+<p>where <span class="math inline">\(\mathcal{I}(X;M) = \log
+\frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
+measurement, and the mutual information is recovered <span
+class="math inline">\(I(X;M) = \langle \mathcal{I}(X;M) \rangle\)</span>
+as the average information gain.}</p>
+</section>
+<section id="channel-coding-perspective-on-memory" class="slide level2">
+<h2>Channel Coding Perspective on Memory</h2>
+<!-- SECTION Decomposition into Past and Future -->
+</section>
+<section id="decomposition-into-past-and-future" class="slide level2">
+<h2>Decomposition into Past and Future</h2>
+</section>
+<section id="model-approximations-and-thermodynamic-efficiency"
+class="slide level2">
+<h2>Model Approximations and Thermodynamic Efficiency</h2>
+<ul>
+<li>Perfect models require infinite resources</li>
+<li>Approximations minimize free energy</li>
+<li>Bounded rationality as a response to thermodynamic constraints</li>
+<li>Intelligence has context</li>
+</ul>
+</section>
+<section id="markov-blanket" class="slide level2">
+<h2>Markov Blanket</h2>
+<!--Start Include here -->
+</section>
+<section id="at-what-scales-does-this-apply" class="slide level2">
+<h2>At What Scales Does this Apply?</h2>
+</section>
+<section id="small-scale-biochemical-systems-and-information-processing"
+class="slide level2">
+<h2>Small-Scale Biochemical Systems and Information Processing</h2>
+</section>
+<section id="molecular-machines-as-information-engines"
+class="slide level2">
+<h2>Molecular Machines as Information Engines</h2>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/kXpzp4RDGJI?start=130" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 </section>
 <section id="jaynes-world" class="slide level2">
 <h2>Jaynes’ World</h2>
@@ -484,7 +633,7 @@ class="math inline">\(\nabla_{\boldsymbol{\theta}}S \approx
 The entropy of a four bin histogram.
 </aside>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <script>
 showDivs(0, 'four-bin-histogram');
@@ -583,7 +732,7 @@ class="math inline">\(1-p\)</span> in second bin)</li>
 <span class="math inline">\(p = 1\)</span></li>
 </ul>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="two-bin-histogram-entropy-gradients-figure"
@@ -630,8 +779,10 @@ L(\theta, \dot{\theta})dt\)</span></li>
 <section id="uncertainty-principle" class="slide level2">
 <h2>Uncertainty Principle</h2>
 </section>
-<section id="fourier-duality" class="slide level2">
-<h2>Fourier Duality</h2>
+<section id="capacity-rightarrow-precision-paradox"
+class="slide level2">
+<h2>Capacity <span class="math inline">\(\rightarrow\)</span> Precision
+Paradox</h2>
 </section>
 <section id="quantum-vs-classical-information-reservoirs"
 class="slide level2">
@@ -706,221 +857,6 @@ processing</li>
 </section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
-<!-- SECTION Information Engines: Intelligence as an Energy-Efficiency -->
-</section>
-<section id="information-engines-intelligence-as-an-energy-efficiency"
-class="slide level2">
-<h2>Information Engines: Intelligence as an Energy-Efficiency</h2>
-</section>
-<section
-id="measurement-as-a-thermodynamic-process-information-modified-second-law"
-class="slide level2">
-<h2>Measurement as a Thermodynamic Process: Information-Modified Second
-Law</h2>
-<p><span class="math display">\[
-I(X;M) = \sum_{x,m} \rho(x,m) \log \frac{\rho(x,m)}{\rho(x)\rho(m)},
-\]</span> where <span class="math inline">\(\rho(x,m)\)</span> is the
-joint probability of the system and measurement (see e.g. eq 14 in <span
-class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
-(2008)</span>). This can be written as <span class="math display">\[
-W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
-\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
-extractable work and it is upper bounded by the negative change in free
-energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
-energy gained from measurement, <span
-class="math inline">\(k_BTI(X;M)\)</span>. This is the
-information-modified second law.}</p>
-<ul>
-<li>Measurement is a thermodynamic process.</li>
-<li>The engine can return <span
-class="math inline">\(k_BTI(X;M)\)</span> Joules of energy.</li>
-<li>If this is greater than available energy used in measurement, the
-process has a thermodynamic return.</li>
-</ul>
-</section>
-<section id="efficacy-and-efficiency-of-feedback-control"
-class="slide level2">
-<h2>Efficacy and Efficiency of Feedback Control</h2>
-<p>where <span class="math inline">\(\mathcal{I}(X;M) = \log
-\frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
-measurement, and the mutual information is recovered <span
-class="math inline">\(I(X;M) = \langle \mathcal{I}(X;M) \rangle\)</span>
-as the average information gain.}</p>
-</section>
-<section id="the-mathematics-of-optimal-questioning"
-class="slide level2">
-<h2>The Mathematics of Optimal Questioning</h2>
-<ul>
-<li>Optimal question splits probability mass evenly</li>
-<li>Expected information gain: <span class="math display">\[IG(A) = H(X)
-- \left[P(A)H(X|A) + P(A^c)H(X|A^c)\right]\]</span></li>
-<li>Maximum information gain when <span class="math inline">\(P(A)
-\approx 0.5\)</span></li>
-<li>Each optimal question reduces entropy by ~1 bit</li>
-<li>Intelligence metric: efficiency of entropy reduction</li>
-</ul>
-</section>
-<section id="entropy-game-as-intelligence" class="slide level2">
-<h2>Entropy Game as Intelligence</h2>
-<ul>
-<li>Intelligence metrics:
-<ul>
-<li>Questions needed vs. theoretical minimum</li>
-<li>Adaptability to changing probabilities</li>
-<li>Handling partial information</li>
-<li>Sequential decision optimization</li>
-</ul></li>
-<li>Human vs. AI questioning strategies</li>
-</ul>
-<!-- SECTION Intelligence as an Information Engine -->
-</section>
-<section id="intelligence-as-an-information-engine"
-class="slide level2">
-<h2>Intelligence as an Information Engine</h2>
-</section>
-<section id="maxwells-demon" class="slide level2">
-<h2>Maxwell’s Demon</h2>
-<div class="figure">
-<div id="maxwells-demon-figure" class="figure-frame">
-<div class="centered" style="">
-<a
-href="https://play.google.com/books/reader?id=0p8AAAAAMAAJ&amp;pg=PA308"><img
-data-src="https://inverseprobability.com/talks/../slides/diagrams//books/0p8AAAAAMAAJ-PA308.png" /></a>
-</div>
-</div>
-</div>
-<aside class="notes">
-Maxwell’s demon was designed to highlight the statistical nature of the
-second law of thermodynamics.
-</aside>
-</section>
-<section id="section-11" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="maxwells-demon-figure" class="figure-frame">
-<div>
-<div style="width:68%;float:left">
-<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left">
-</canvas>
-</div>
-<div style="width:28%;float:right;margin:auto">
-<div style="float:right;width:100%;margin:auto">
-Entropy:
-<output id="maxwell-entropy">
-</output>
-</div>
-<div id="maxwell-histogram-canvas"
-style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
-
-</div>
-</div>
-</div>
-<div>
-<button id="maxwell-newball" style="text-align:right">
-New Ball
-</button>
-<button id="maxwell-pause" style="text-align:right">
-Pause
-</button>
-<button id="maxwell-skip" style="text-align:right">
-Skip 1000s
-</button>
-<button id="maxwell-histogram" style="text-align:right">
-Histogram
-</button>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
-</div>
-</div>
-<aside class="notes">
-Maxwell’s Demon. The demon decides balls are either cold (blue) or hot
-(red) according to their velocity. Balls are allowed to pass the green
-membrane from right to left only if they are cold, and from left to
-right, only if they are hot.
-</aside>
-</section>
-<section id="szilard-intelligence" class="slide level2">
-<h2>Szilard Intelligence</h2>
-<p>The objective is to provide a mathematical definition of intelligence
-that grounds our intelligence in the physical sciences. Previous efforts
-at mathematically defining universal intelligence have reviewed the
-literature to distil the facets of intelligence, taking a descriptive
-approach to modeling intelligence.</p>
-<p>Our definition is inspired by statistical mechanics descriptions of
-the universe and the simple idea that an intelligent decision is one
-that achieves a desired state change within the universe with the
-minimal use of resource. From a physical perspective there are two
-principal resources we can consider:</p>
-<ul>
-<li>Time</li>
-<li>Energy</li>
-</ul>
-<p>In practice energy is conserved, so the resource of interest is
-<em>free energy</em> - the energy available to us to do work.</p>
-</section>
-<section id="information-engines-intelligence-as-thermodynamic-work"
-class="slide level2">
-<h2>Information Engines: Intelligence as Thermodynamic Work</h2>
-<ul>
-<li>Maxwell’s demon thought experiment:
-<ul>
-<li>Observes molecular velocities</li>
-<li>Operates door to separate fast/slow molecules</li>
-<li>Creates temperature gradient (useful work)</li>
-<li>Appears to decrease entropy</li>
-</ul></li>
-<li>Resolution: Information processing requires energy
-<ul>
-<li>Measurement has thermodynamic cost</li>
-<li>Intelligence bound by physics</li>
-</ul></li>
-<li>Intelligence as information engine:
-<ul>
-<li>Convert information → useful work</li>
-<li>Efficiency = work output / information input</li>
-</ul></li>
-</ul>
-</section>
-<section id="information-engine-cycle" class="slide level2">
-<h2>Information Engine Cycle</h2>
-<ul>
-<li>The intelligent cycle:
-<ol type="1">
-<li>Observe (acquire information)</li>
-<li>Process (update model)</li>
-<li>Act (generate work)</li>
-<li>Repeat</li>
-</ol></li>
-<li>Each step has energetic cost</li>
-<li>Intelligence maximizes efficiency</li>
-<li>Entropy game: Each question = one cycle</li>
-</ul>
-</section>
-<section id="free-energy-and-intelligence" class="slide level2">
-<h2>Free Energy and Intelligence</h2>
-<ul>
-<li>Free energy: Energy available to do useful work</li>
-<li>Intelligence minimizes free energy through:
-<ul>
-<li>Accurate perception (reducing prediction errors)</li>
-<li>Adaptive action (changing environmental states)</li>
-</ul></li>
-<li>Entropy game parallel: Questions reduce free energy of belief
-state</li>
-</ul>
-</section>
-<section id="energy-and-intelligence" class="slide level2">
-<h2>Energy and Intelligence</h2>
-<ul>
-<li>Intelligence requires energy to operate</li>
-<li>Two fundamental resources:
-<ul>
-<li>Time</li>
-<li>Free Energy</li>
-</ul></li>
-<li>Free energy is the capacity to do work</li>
-<li>Intelligence optimizes use of these resources</li>
-</ul>
 <!-- SECTION Least Action Principles and Entropy Games -->
 </section>
 <section id="least-action-principles-and-entropy-games"
