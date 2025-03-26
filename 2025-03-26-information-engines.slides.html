@@ -379,10 +379,13 @@ class="math inline">\(\leftrightarrow\)</span> Thermodynamic entropy
 </section>
 <section id="entropy" class="slide level2">
 <h2>Entropy</h2>
-<p><span class="math display">\[
+<ul>
+<li><p>Entropy <span class="math display">\[
 S(X) = -\sum_X \rho(X) \log p(X)
-\]</span> * In thermodynamics preceded by Boltzmann’s constant, <span
-class="math inline">\(k_B\)</span></p>
+\]</span></p></li>
+<li><p>In thermodynamics preceded by Boltzmann’s constant, <span
+class="math inline">\(k_B\)</span></p></li>
+</ul>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
@@ -400,12 +403,29 @@ information and thermodynamics.
 <section id="exponential-family" class="slide level2">
 <h2>Exponential Family</h2>
 <ul>
-<li>Exponential family: [ (Z) = h(Z) (^T(Z) + A()) ]</li>
-<li>Entropy is, [ S(Z) = A() - E_]</li>
-<li>Where [ E_= _A() ] because <span
-class="math inline">\(A(\boldsymbol{\theta})\)</span> operates as a
-<em>cummulant generating function</em> for <span
-class="math inline">\(\rho(Z)\)</span>.</li>
+<li>Exponential family: <span class="math display">\[
+\rho(Z) = h(Z) \exp\left(\boldsymbol{\theta}^\top T(Z) +
+A(\boldsymbol{\theta})\right)
+\]</span></li>
+</ul>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<ul>
+<li>Entropy is, <span class="math display">\[
+S(Z) =   A(\boldsymbol{\theta}) -  E_\rho\left[\boldsymbol{\theta}^\top
+T(Z)  + \log h(Z)\right]
+\]</span></li>
+</ul>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<ul>
+<li><p>Where [ E_= _A() ] because <span
+class="math inline">\(A(\boldsymbol{\theta})\)</span> is log partition
+function.</p></li>
+<li><p>operates as a <em>cummulant generating function</em> for <span
+class="math inline">\(\rho(Z)\)</span>.</p></li>
 </ul>
 </section>
 <section id="available-energy" class="slide level2">
@@ -418,6 +438,11 @@ E_\rho\left[\boldsymbol{\theta}^\top(Z) + \log h(Z)\right] =
 \boldsymbol{\theta}^\top
 \nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_\rho\left[\log
 h(Z)\right]\)</span> is total or internal energy.</li>
+</ul>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<ul>
 <li>Traditional relationship
 <ul>
 <li>A = U - TS</li>
@@ -426,6 +451,50 @@ h(Z)\right]\)</span> is total or internal energy.</li>
 </section>
 <section id="work-through-measurement" class="slide level2">
 <h2>Work through Measurement</h2>
+<ul>
+<li>Split system <span class="math inline">\(Z\)</span> into two parts:
+<ul>
+<li>Variables <span class="math inline">\(X\)</span> - stochastically
+evolving</li>
+<li>Memory <span class="math inline">\(M\)</span> - low entropy
+partition</li>
+</ul></li>
+</ul>
+</section>
+<section id="joint-entropy-decomposition" class="slide level2">
+<h2>Joint Entropy Decomposition</h2>
+<ul>
+<li><p>Joint entropy can be decomposed <span class="math display">\[
+S(Z) = S(X,M) = S(X|M) + S(M) = S(X) - I(X;M) + S(M)
+\]</span></p></li>
+<li><p>Mutual information <span class="math inline">\(I(X;M)\)</span>
+connects information and energy</p></li>
+</ul>
+</section>
+<section id="measurement-and-available-energy" class="slide level2">
+<h2>Measurement and Available Energy</h2>
+<ul>
+<li><p>Measurement changes system entropy by <span
+class="math inline">\(-I(X;M)\)</span></p></li>
+<li><p>Increases available energy</p></li>
+<li><p>Difference in available energy: <span class="math display">\[
+\Delta A = A(X) - A(Z|M) = I(X;M)
+\]</span></p></li>
+<li><p>Can recover <span class="math inline">\(k_B T \cdot
+I(X;M)\)</span> in work from the system</p></li>
+</ul>
+</section>
+<section id="information-to-work-conversion" class="slide level2">
+<h2>Information to Work Conversion</h2>
+<ul>
+<li>Maxwell’s demon thought experiment in practice</li>
+<li>Information gain <span class="math inline">\(I(X;M)\)</span> can be
+converted to work</li>
+<li>Maximum extractable work: <span class="math inline">\(W_{max} = k_B
+T \cdot I(X;M)\)</span></li>
+<li>Measurement creates a non-equilibrium state</li>
+<li>Information is a physical resource</li>
+</ul>
 </section>
 <section id="the-animal-game" class="slide level2">
 <h2>The Animal Game</h2>
@@ -475,32 +544,6 @@ class="math inline">\(I(X;M)\)</span> per unit cost</li>
 <li>Both operate under resource constraints</li>
 <li>Both bound by fundamental efficiency limits</li>
 </ul>
-</section>
-<section id="the-mathematics-of-optimal-questioning"
-class="slide level2">
-<h2>The Mathematics of Optimal Questioning</h2>
-<ul>
-<li>Optimal question splits probability mass evenly</li>
-<li>Expected information gain: <span class="math display">\[IG(A) = H(X)
-- \left[P(A)H(X|A) + P(A^c)H(X|A^c)\right]\]</span></li>
-<li>Maximum information gain when <span class="math inline">\(P(A)
-\approx 0.5\)</span></li>
-<li>Each optimal question reduces entropy by ~1 bit</li>
-<li>Intelligence metric: efficiency of entropy reduction</li>
-</ul>
-</section>
-<section id="entropy-game-as-intelligence" class="slide level2">
-<h2>Entropy Game as Intelligence</h2>
-<ul>
-<li>Intelligence metrics:
-<ul>
-<li>Questions needed vs. theoretical minimum</li>
-<li>Adaptability to changing probabilities</li>
-<li>Handling partial information</li>
-<li>Sequential decision optimization</li>
-</ul></li>
-<li>Human vs. AI questioning strategies</li>
-</ul>
 <!-- SECTION Information Engines: Intelligence as an Energy-Efficiency -->
 </section>
 <section id="information-engines-intelligence-as-an-energy-efficiency"
@@ -519,12 +562,7 @@ joint probability of the system and measurement (see e.g. eq 14 in <span
 class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
 (2008)</span>). This can be written as <span class="math display">\[
 W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
-\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
-extractable work and it is upper bounded by the negative change in free
-energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
-energy gained from measurement, <span
-class="math inline">\(k_BTI(X;M)\)</span>. This is the
-information-modified second law.}</p>
+\]</span></p>
 <ul>
 <li>Measurement is a thermodynamic process.</li>
 <li>The engine can return <span
@@ -576,6 +614,105 @@ class="slide level2">
 <iframe width="800" height="600" src="https://www.youtube.com/embed/kXpzp4RDGJI?start=130" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 </section>
+<section id="least-action-principles-in-information-acquisition"
+class="slide level2">
+<h2>Least Action Principles in Information Acquisition</h2>
+<ul>
+<li>Physics: Principle of least action
+<ul>
+<li>Systems follow paths minimizing action</li>
+<li>Action = <span class="math inline">\(\int L(q,\dot{q},t)
+dt\)</span></li>
+<li>Unifies physical laws</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<ul>
+<li>Information analog:
+<ul>
+<li>Information action = <span class="math inline">\(S[q] =
+\sum_{i=0}^{n-1} H(p_i)\)</span></li>
+<li>Optimal questioning minimizes information action</li>
+<li>Intelligence follows least action paths in information space</li>
+</ul></li>
+</ul>
+</section>
+<section id="variational-principles-in-intelligence"
+class="slide level2">
+<h2>Variational Principles in Intelligence</h2>
+<ul>
+<li>Intelligent systems:
+<ul>
+<li>Minimize cumulative uncertainty</li>
+<li>Find optimal paths through information space</li>
+<li>Balance immediate vs. future entropy reduction</li>
+<li>Equivalent to solving variational problems</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<ul>
+<li>Applications:
+<ul>
+<li>Active learning strategies</li>
+<li>Information-theoretic planning</li>
+<li>Curiosity-driven exploration</li>
+</ul></li>
+</ul>
+<!-- SECTION Schrödinger's Bridge: Connecting Paths in Probability Space -->
+</section>
+<section id="schrödingers-bridge-connecting-paths-in-probability-space"
+class="slide level2">
+<h2>Schrödinger’s Bridge: Connecting Paths in Probability Space</h2>
+<ul>
+<li>Schrödinger’s bridge: Optimal transport between probability
+distributions</li>
+<li>Entropy game parallel: Transforming uncertain distribution to
+certain one</li>
+<li>Intelligence as optimal path through probability space</li>
+<li>Questioning as control over stochastic processes</li>
+</ul>
+</section>
+<section id="schrödingers-bridge-and-optimal-information-transport"
+class="slide level2">
+<h2>Schrödinger’s Bridge and Optimal Information Transport</h2>
+<ul>
+<li>Schrödinger’s bridge problem:
+<ul>
+<li>Find most likely stochastic process between two distributions</li>
+<li>Minimum relative entropy solution</li>
+<li>Optimal transport of probability mass</li>
+</ul></li>
+<li>Entropy game parallel:
+<ul>
+<li>Initial state: Maximum uncertainty (uniform distribution)</li>
+<li>Final state: Certainty (point mass)</li>
+<li>Questions: Control actions steering distribution</li>
+<li>Goal: Find optimal “bridge” between states</li>
+</ul></li>
+</ul>
+</section>
+<section id="intelligence-as-optimal-control" class="slide level2">
+<h2>Intelligence as Optimal Control</h2>
+<ul>
+<li>Intelligent questioning as stochastic control:
+<ul>
+<li>Control variables: Questions asked</li>
+<li>State: Current probability distribution</li>
+<li>Objective: Minimize questions to certainty</li>
+<li>Solution: Schrödinger bridge-like path</li>
+</ul></li>
+<li>Broader implications:
+<ul>
+<li>Intelligence as optimal control in belief space</li>
+<li>Learning as finding efficient bridges between distributions</li>
+<li>Planning as constructing information bridges to goals</li>
+</ul></li>
+</ul>
+</section>
 <section id="jaynes-world" class="slide level2">
 <h2>Jaynes’ World</h2>
 <p><span class="math display">\[
@@ -618,8 +755,10 @@ class="math inline">\(\nabla_{\boldsymbol{\theta}}S \approx
 <li>Steady state with no further entropy increase possible</li>
 </ul>
 </section>
-<section id="valid-games" class="slide level2">
-<h2>Valid Games</h2>
+<section id="key-point" class="slide level2">
+<h2>Key Point</h2>
+<p>Both minimal and maximal entropy distribution belong to
+<em>exponential family</em>.</p>
 </section>
 <section id="histogram-game" class="slide level2">
 <h2>Histogram Game</h2>
@@ -633,7 +772,7 @@ class="math inline">\(\nabla_{\boldsymbol{\theta}}S \approx
 The entropy of a four bin histogram.
 </aside>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <script>
 showDivs(0, 'four-bin-histogram');
@@ -674,50 +813,6 @@ Four bin histogram entropy game. The plot shows the increasing entropy
 against the number of turns across 15000 iterations of gradient ascent.
 </aside>
 </section>
-<section id="jaynes-world-histogram-valid-games-example"
-class="slide level2">
-<h2>Jaynes World Histogram Valid Games Example</h2>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-example-1-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-example-1.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Jaynes world histogram valid games example 1.
-</aside>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-origin-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-origin.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Jaynes world histogram valid games example 2.
-</aside>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-end-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-end.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Jaynes world histogram valid games example 3.
-</aside>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-path-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-path.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Jaynes world histogram valid games path.
-</aside>
-</section>
 <section id="two-bin-histogram-example" class="slide level2">
 <h2>Two-Bin Histogram Example</h2>
 <ul>
@@ -732,7 +827,18 @@ class="math inline">\(1-p\)</span> in second bin)</li>
 <span class="math inline">\(p = 1\)</span></li>
 </ul>
 </section>
-<section id="section-11" class="slide level2">
+<section id="natural-gradients-vs-steepest-ascent" class="slide level2">
+<h2>Natural Gradients vs Steepest Ascent</h2>
+<p><span class="math display">\[
+\Delta \theta_{\text{steepest}} = \eta \frac{\text{d}S}{\text{d}\theta}
+= \eta p(1-p)(\log(1-p) - \log p).
+\]</span> <span class="math display">\[
+G(\theta) = p(1-p)
+\]</span> <span class="math display">\[
+\Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p),
+\]</span></p>
+</section>
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="two-bin-histogram-entropy-gradients-figure"
@@ -862,95 +968,6 @@ processing</li>
 <section id="least-action-principles-and-entropy-games"
 class="slide level2">
 <h2>Least Action Principles and Entropy Games</h2>
-</section>
-<section id="least-action-principles-in-information-acquisition"
-class="slide level2">
-<h2>Least Action Principles in Information Acquisition</h2>
-<ul>
-<li>Physics: Principle of least action
-<ul>
-<li>Systems follow paths minimizing action</li>
-<li>Action = <span class="math inline">\(\int L(q,\dot{q},t)
-dt\)</span></li>
-<li>Unifies physical laws</li>
-</ul></li>
-<li>Information analog:
-<ul>
-<li>Information action = <span class="math inline">\(S[q] =
-\sum_{i=0}^{n-1} H(p_i)\)</span></li>
-<li>Optimal questioning minimizes information action</li>
-<li>Intelligence follows least action paths in information space</li>
-</ul></li>
-</ul>
-</section>
-<section id="variational-principles-in-intelligence"
-class="slide level2">
-<h2>Variational Principles in Intelligence</h2>
-<ul>
-<li>Intelligent systems:
-<ul>
-<li>Minimize cumulative uncertainty</li>
-<li>Find optimal paths through information space</li>
-<li>Balance immediate vs. future entropy reduction</li>
-<li>Equivalent to solving variational problems</li>
-</ul></li>
-<li>Applications:
-<ul>
-<li>Active learning strategies</li>
-<li>Information-theoretic planning</li>
-<li>Curiosity-driven exploration</li>
-</ul></li>
-</ul>
-<!-- SECTION Schrödinger's Bridge: Connecting Paths in Probability Space -->
-</section>
-<section id="schrödingers-bridge-connecting-paths-in-probability-space"
-class="slide level2">
-<h2>Schrödinger’s Bridge: Connecting Paths in Probability Space</h2>
-<ul>
-<li>Schrödinger’s bridge: Optimal transport between probability
-distributions</li>
-<li>Entropy game parallel: Transforming uncertain distribution to
-certain one</li>
-<li>Intelligence as optimal path through probability space</li>
-<li>Questioning as control over stochastic processes</li>
-</ul>
-</section>
-<section id="schrödingers-bridge-and-optimal-information-transport"
-class="slide level2">
-<h2>Schrödinger’s Bridge and Optimal Information Transport</h2>
-<ul>
-<li>Schrödinger’s bridge problem:
-<ul>
-<li>Find most likely stochastic process between two distributions</li>
-<li>Minimum relative entropy solution</li>
-<li>Optimal transport of probability mass</li>
-</ul></li>
-<li>Entropy game parallel:
-<ul>
-<li>Initial state: Maximum uncertainty (uniform distribution)</li>
-<li>Final state: Certainty (point mass)</li>
-<li>Questions: Control actions steering distribution</li>
-<li>Goal: Find optimal “bridge” between states</li>
-</ul></li>
-</ul>
-</section>
-<section id="intelligence-as-optimal-control" class="slide level2">
-<h2>Intelligence as Optimal Control</h2>
-<ul>
-<li>Intelligent questioning as stochastic control:
-<ul>
-<li>Control variables: Questions asked</li>
-<li>State: Current probability distribution</li>
-<li>Objective: Minimize questions to certainty</li>
-<li>Solution: Schrödinger bridge-like path</li>
-</ul></li>
-<li>Broader implications:
-<ul>
-<li>Intelligence as optimal control in belief space</li>
-<li>Learning as finding efficient bridges between distributions</li>
-<li>Planning as constructing information bridges to goals</li>
-</ul></li>
-</ul>
 <!-- SECTION Unifying Perspectives on Intelligence -->
 </section>
 <section id="unifying-perspectives-on-intelligence"
