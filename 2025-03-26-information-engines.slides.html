@@ -421,7 +421,10 @@ T(Z)  + \log h(Z)\right]
 <section id="section-11" class="slide level2">
 <h2></h2>
 <ul>
-<li><p>Where [ E_= _A() ] because <span
+<li><p>Where <span class="math display">\[
+E_\rho\left[T(Z)\right] =
+\nabla_\boldsymbol{\theta}A(\boldsymbol{\theta})
+\]</span> because <span
 class="math inline">\(A(\boldsymbol{\theta})\)</span> is log partition
 function.</p></li>
 <li><p>operates as a <em>cummulant generating function</em> for <span
@@ -431,22 +434,22 @@ class="math inline">\(\rho(Z)\)</span>.</p></li>
 <section id="available-energy" class="slide level2">
 <h2>Available Energy</h2>
 <ul>
-<li><span class="math inline">\(A(\boldsymbol{\theta})\)</span> is
-Available (Free) Energy</li>
-<li><span class="math inline">\(U(\boldsymbol{\theta}) =
-E_\rho\left[\boldsymbol{\theta}^\top(Z) + \log h(Z)\right] =
-\boldsymbol{\theta}^\top
-\nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_\rho\left[\log
-h(Z)\right]\)</span> is total or internal energy.</li>
+<li>Available energy: <span class="math display">\[
+A(\boldsymbol{\theta})
+\]</span></li>
+<li>Internal energy: <span class="math display">\[
+U(\boldsymbol{\theta}) = A(\boldsymbol{\theta}) + T
+S(\boldsymbol{\theta})
+\]</span></li>
 </ul>
 </section>
 <section id="section-12" class="slide level2">
 <h2></h2>
 <ul>
-<li>Traditional relationship
-<ul>
-<li>A = U - TS</li>
-</ul></li>
+<li>Traditional relationship <span class="math display">\[
+A = U - TS
+\]</span></li>
+<li>Legendre transformation of entropy</li>
 </ul>
 </section>
 <section id="work-through-measurement" class="slide level2">
@@ -478,7 +481,7 @@ connects information and energy</p></li>
 class="math inline">\(-I(X;M)\)</span></p></li>
 <li><p>Increases available energy</p></li>
 <li><p>Difference in available energy: <span class="math display">\[
-\Delta A = A(X) - A(Z|M) = I(X;M)
+\Delta A = A(X) - A(X|M) = I(X;M)
 \]</span></p></li>
 <li><p>Can recover <span class="math inline">\(k_B T \cdot
 I(X;M)\)</span> in work from the system</p></li>
