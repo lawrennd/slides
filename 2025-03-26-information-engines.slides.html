@@ -1036,43 +1036,8 @@ Visualisaiton of the uncertainty trade-off between parameter precision
 and capacity.
 </aside>
 <!---->
-</section>
-<section id="information-reservoirs" class="slide level2">
-<h2>Information Reservoirs</h2>
-</section>
-<section id="classical-hierarchical-memory-structure"
-class="slide level2">
-<h2>Classical Hierarchical Memory Structure</h2>
-<p><span class="math display">\[
-p(X|M) \approx \prod_i p(X_i|M_{\text{pa}(i)})
-\]</span></p>
-</section>
-<section id="variable-transitions" class="slide level2">
-<h2>Variable Transitions</h2>
-<p><span class="math display">\[
-M_Z(t) = E[e^{t \cdot Z}] = \exp(A(\boldsymbol{\theta}+t) -
-A(\boldsymbol{\theta})).
-\]</span></p>
-<p><span class="math display">\[
-K_Z(t) = \log M_Z(t) = A(\boldsymbol{\theta}+t) -
-A(\boldsymbol{\theta}).
-\]</span></p>
-<p><span class="math display">\[
-\frac{d^2}{dt_i^2}K_Z(t)|_{t=0} = \frac{\partial^2
-A(\boldsymbol{\theta})}{\partial \theta_i^2}.
-\]</span></p>
-</section>
-<section id="hierarchical-memory-organization-example"
-class="slide level2">
-<h2>Hierarchical Memory Organization Example</h2>
-<ul>
-<li>Classical information reservoirs organize hierarchically</li>
-<li>Variables separate into distinct timescale bands</li>
-<li>Fast variables: rapidly changing, high processing capacity</li>
-<li>Slow variables: gradually changing, high memory capacity</li>
-<li>Connections across scales create efficient information
-processing</li>
-</ul>
+<!--include{_information-game/includes/jaynes-world-information-reservoirs.md}-->
+<!--include{_information-game/includes/hierarchical-memory-example.md}-->
 </section>
 <section id="conceptual-framework" class="slide level2">
 <h2>Conceptual Framework</h2>
@@ -1080,12 +1045,6 @@ processing</li>
 </section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
-<!-- SECTION Least Action Principles and Entropy Games -->
-</section>
-<section id="least-action-principles-and-entropy-games"
-class="slide level2">
-<h2>Least Action Principles and Entropy Games</h2>
-<!-- SECTION Unifying Perspectives on Intelligence -->
 </section>
 <section id="unifying-perspectives-on-intelligence"
 class="slide level2">
