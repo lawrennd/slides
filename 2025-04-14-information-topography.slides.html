@@ -159,6 +159,168 @@ class="math display">\[
 <li>Follows the gradient of entropy in parameter space</li>
 </ul>
 </section>
+<section id="histogram-game" class="slide level2">
+<h2>Histogram Game</h2>
+<div class="figure">
+<div id="four-bin-histogram-entropy-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The entropy of a four bin histogram.
+</aside>
+</section>
+<section id="two-bin-histogram-example" class="slide level2">
+<h2>Two-Bin Histogram Example</h2>
+<ul>
+<li>Simplest example: Two-bin system</li>
+<li>States represented by probability <span
+class="math inline">\(p\)</span> (with <span
+class="math inline">\(1-p\)</span> in second bin)</li>
+</ul>
+</section>
+<section id="entropy" class="slide level2">
+<h2>Entropy</h2>
+<ul>
+<li>Entropy <span class="math display">\[
+S(p) = -p\log p - (1-p)\log(1-p)
+\]</span></li>
+<li>Maximum entropy at <span class="math inline">\(p = 0.5\)</span></li>
+<li>Minimal entropy at <span class="math inline">\(p = 0\)</span> or
+<span class="math inline">\(p = 1\)</span></li>
+</ul>
+</section>
+<section id="natural-gradients-vs-steepest-ascent" class="slide level2">
+<h2>Natural Gradients vs Steepest Ascent</h2>
+<p><span class="math display">\[
+\Delta \theta_{\text{steepest}} = \eta \frac{\text{d}S}{\text{d}\theta}
+= \eta p(1-p)(\log(1-p) - \log p).
+\]</span> <span class="math display">\[
+G(\theta) = p(1-p)
+\]</span> <span class="math display">\[
+\Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p)
+\]</span></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="two-bin-histogram-entropy-gradients-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-entropy-gradients.svg" width="95%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Entropy gradients of the two bin histogram agains position.
+</aside>
+</section>
+<section id="gradient-ascent-in-natural-parameter-space"
+class="slide level2">
+<h2>Gradient Ascent in Natural Parameter Space</h2>
+</section>
+<section id="gradient-ascent-evolution" class="slide level2">
+<h2>Gradient Ascent Evolution</h2>
+<div class="figure">
+<div id="two-bin-histogram-evolution-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-evolution.svg" width="95%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Evolution of the two-bin histogram during gradient ascent in natural
+parameter space.
+</aside>
+</section>
+<section id="entropy-evolution" class="slide level2">
+<h2>Entropy Evolution</h2>
+<div class="figure">
+<div id="two-bin-entropy-evolution-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-entropy-evolution.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Entropy evolution during gradient ascent for the two-bin histogram.
+</aside>
+</section>
+<section id="trajectory-in-natural-parameter-space"
+class="slide level2">
+<h2>Trajectory in Natural Parameter Space</h2>
+<div class="figure">
+<div id="two-bin-trajectory-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-trajectory.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Gradient ascent trajectory in the natural parameter space for the
+two-bin histogram.
+</aside>
+</section>
+<section id="four-bin-histogram-entropy-game" class="slide level2">
+<h2>Four Bin Histogram Entropy Game</h2>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<script>
+showDivs(0, 'four-bin-histogram');
+</script>
+<p><small></small>
+<input id="range-four-bin-histogram" type="range" min="0" max="9" value="0" onchange="setDivs('four-bin-histogram')" oninput="setDivs('four-bin-histogram')">
+<button onclick="plusDivs(-1, 'four-bin-histogram')">❮</button>
+<button onclick="plusDivs(1, 'four-bin-histogram')">❯</button></p>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-00.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-01.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-02.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-03.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-04.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-05.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-06.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-07.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="four-bin-histogram" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-08.svg" width="80%" style=" ">
+</object>
+</div>
+</section>
+<section id="four-bin-histogram-entropy-game-1" class="slide level2">
+<h2>Four Bin Histogram Entropy Game</h2>
+<div class="figure">
+<div id="four-bin-histogram-entropy-vs-turns-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-entropy-vs-turns.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Four bin histogram entropy game. The plot shows the increasing entropy
+against the number of turns across 15000 iterations of gradient ascent.
+</aside>
+</section>
 <section id="constructed-quantities-and-lemmas" class="slide level2">
 <h2>Constructed Quantities and Lemmas</h2>
 </section>
@@ -215,6 +377,43 @@ class="math inline">\(|\dot{\theta}_k| \geq \varepsilon\)</span>, then
 threshold</li>
 <li>Mechanism for emergence of new active variables</li>
 </ul>
+</section>
+<section id="four-bin-saddle-point-example" class="slide level2">
+<h2>Four-Bin Saddle Point Example</h2>
+<ul>
+<li>Four-bin system creates 3D parameter space</li>
+<li>Saddle points appear where:
+<ul>
+<li>Gradient is zero</li>
+<li>Some directions increase entropy</li>
+<li>Other directions decrease entropy</li>
+</ul></li>
+<li>Information reservoirs form in critically slowed directions</li>
+</ul>
+</section>
+<section id="saddle-point-example" class="slide level2">
+<h2>Saddle Point Example</h2>
+<div class="figure">
+<div id="simplified-saddle-point-example-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Visualisation of a saddle point projected down to two dimensions.
+</aside>
+</section>
+<section id="entropy-evolution-1" class="slide level2">
+<h2>Entropy Evolution</h2>
+<div class="figure">
+<div id="four-bin-entropy-evolution-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-entropy-evolution.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Entropy evolution during gradient ascent on the four-bin system.
+</aside>
 </section>
 <section id="entropy-time" class="slide level2">
 <h2>Entropy-Time</h2>
