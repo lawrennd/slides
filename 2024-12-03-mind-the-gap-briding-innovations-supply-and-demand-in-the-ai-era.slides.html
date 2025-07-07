@@ -28,6 +28,9 @@
   <!--[if lt IE 9]>
   <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
+   <!-- Mermaid -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -37,6 +40,28 @@
     });
   </script>
   <script src="https://inverseprobability.com/assets/js/figure-animate.js"></script>
+   <!-- Initialize Mermaid after Reveal is loaded -->
+<script>
+  Reveal.addEventListener('ready', event => {
+    // Initialize mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      // These are the same theme variables we used above
+      themeVariables: {
+          primaryColor: '#4a90e2',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#357abd',
+          lineColor: '#67b246',
+          fontSize: '30px',
+          fontFamily: 'arial',
+	  edgeLabelBackground: 'transparent',
+	  tertiaryColor: 'transparent'
+      }
+    });
+  });
+</script>
+   
 </head>
 <body>
   <div class="reveal">
@@ -71,7 +96,7 @@ Lecture, The Bennett Institute</p>
 </div>
 </div>
 <aside class="notes">
-The Alchemist by Joseph Wright of Derby (1771). The picture depcits
+The Alchemist by Joseph Wright of Derby (1771). The picture depicts
 Hennig Brand discovering the element phosphorus when searching for the
 Philosopher’s Stone.
 </aside>
@@ -124,8 +149,8 @@ going to effect the professions.
 <section id="human-capital-index" class="slide level2">
 <h2>Human Capital Index</h2>
 <ul>
-<li>World Bank Human Capital Index</li>
-<li>UK outperforms USA and China</li>
+<li>World Bank Human Capital Index 2020</li>
+<li><em>Italy</em> outperforms USA and China</li>
 <li>Measures <em>health</em> and <em>education</em></li>
 </ul>
 </section>
@@ -144,7 +169,7 @@ The productivity flywheel suggests technical innovation is reinvested.
 <section id="inflation-of-human-capital" class="slide level2">
 <h2>Inflation of Human Capital</h2>
 <ul>
-<li>Strength in Human Capital double edged sword.</li>
+<li>Strength in Human Capital double-edged sword.</li>
 <li>Automation creates efficiency.</li>
 <li>But skills risk becoming redundant.</li>
 </ul>
@@ -165,21 +190,28 @@ The productivity flywheel suggests technical innovation is reinvested.
 <li>Essential aspects of humanity are the <em>hardest to
 measure</em></li>
 </ul></li>
-<li>Implies: atomic human is difficult to quantify</li>
+<li>Implies: atomic human is <em>difficult to quantify</em></li>
 </ul>
 </section>
 <section id="homo-atomicus" class="slide level2">
-<h2>Homo Atomicus</h2>
+<h2><em>Homo Atomicus</em></h2>
+<ul>
+<li>Where we have <em>homo economicus</em> the machine can step in.</li>
+<li>Quantitative vs Qualitative gap</li>
+<li>Homo atomicus is …
 <ul>
 <li>Not in A-level results</li>
 <li>Not in hospital waiting lists</li>
 <li>In the quality of human interaction</li>
+</ul></li>
 </ul>
 </section>
 <section id="new-productivity-paradox" class="slide level2">
 <h2>New Productivity Paradox</h2>
 <ul>
-<li>Current productivity flywheel relies on measurement</li>
+<li>Current productivity flywheel relies on measurement to translate
+innovation into productivity.</li>
+<li>Without measurement how does the wheel spin?</li>
 </ul>
 </section>
 <section id="coin-pusher" class="slide level2">
@@ -554,18 +586,28 @@ chains</li>
 <section id="supply-chain-of-ideas-1" class="slide level2">
 <h2>Supply Chain of Ideas</h2>
 <ul>
-<li>Current imbalance between supply and demand sides</li>
-<li>Current focus on creating new technologies/companies</li>
-<li>Under-focus on real-world needs</li>
+<li>Current imbalance between supply and demand sides
+<ul>
+<li>Mismatch between macroeconomic interventions and microeconomic
+need</li>
+</ul></li>
+<li>Over-Focus on solutionism
+<ul>
+<li>technologies/companies</li>
+</ul></li>
+<li>Under-focus on real-world needs … disconnect between
+<em>government</em> and <em>citizens</em> … disconnect between
+<em>companies</em> and <em>customers</em></li>
 </ul>
 </section>
 <section id="supply-chain-of-ideas-2" class="slide level2">
 <h2>Supply Chain of Ideas</h2>
 <ul>
-<li>Need to map idea demand to supply</li>
-<li>Focus on understanding current “stock” of ideas</li>
-<li>Active management of idea resources</li>
-<li>Shaping supply to meet demand</li>
+<li>Need to map idea problems demand to idea supply</li>
+<li>Need to understand … problems (demand) … current “stock” of
+solutions (supply)</li>
+<li>Requires <em>active management</em> of idea resources</li>
+<li>Shape supply to meet demand</li>
 </ul>
 </section>
 <section id="ai-cannot-replace-atomic-human" class="slide level2">
@@ -584,8 +626,8 @@ piece in the FT</a> that describes the idea of a social flywheel to
 drive the targeted growth we need in AI innovation.
 </aside>
 </section>
-<section id="new-attention-flywheel" class="slide level2">
-<h2>New Attention Flywheel</h2>
+<section id="attention-reinvestment-cycle" class="slide level2">
+<h2>Attention Reinvestment Cycle</h2>
 <div class="figure">
 <div id="attention-flywheel-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//economics/attention-flywheel.svg" width="60%" style=" ">
@@ -683,12 +725,9 @@ href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d
 Atomic Human</a></p></li>
 <li><p>twitter: <a
 href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
-<li><p><a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-bylawrence-neil-d/9780241625248">The
-Atomic Human</a> pages cuneiform 337, 360, 390 , Horizon scandal 371,
-Royal Society; machine learning review and 25, 321, 395.</p></li>
-<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking
-Machines</a></p></li>
+<li><p><a href="https://the-atomic-human.ai">The Atomic Human</a> pages
+cuneiform 337, 360, 390 , Horizon scandal 371, Royal Society; machine
+learning review and 25, 321, 395.</p></li>
 <li><p>Guardian article on <a
 href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How
 African can benefit from the data revolution</a></p></li>
@@ -702,7 +741,7 @@ href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a>
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
-data-entry-spacing="0" role="list">
+role="list">
 <div id="ref-aicam-publicdialogue24" class="csl-entry" role="listitem">
 ai@cam, Hopkins Van Mil, 2024. <a
 href="https://ai.cam.ac.uk/assets/uploads/ai-cam-public-dialogue-report.pdf">AI
