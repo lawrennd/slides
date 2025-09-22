@@ -1,1 +1,1 @@
-Allocate each data point to the nearest cluster centre.
+Iteration 1: Update centres to mean of assigned points

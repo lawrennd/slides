@@ -1,1 +1,1 @@
-Data set to be analyzed. Initialize cluster centres.
+Data set to be analysed and initialise cluster centres.
