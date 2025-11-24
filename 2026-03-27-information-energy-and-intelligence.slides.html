@@ -1182,6 +1182,83 @@ thermodynamics</em></p>
 <p><strong>Flips the usual derivation:</strong> <span
 class="math display">\[\text{Information axioms} \Rightarrow
 \text{Thermodynamics}\]</span></p>
+</section>
+<section id="example-harmonic-oscillator-generic-dynamics"
+class="slide level2">
+<h2>Example: Harmonic Oscillator GENERIC Dynamics</h2>
+<p><strong>Harmonic Oscillator with Thermalisation</strong></p>
+<ul>
+<li>Position <span class="math inline">\(x\)</span> and momentum <span
+class="math inline">\(p\)</span> variables</li>
+<li>Constraint: <span class="math inline">\(h(X) + h(P) = C\)</span>
+(entropy conservation)</li>
+<li>Dynamics: <span class="math inline">\(\dot{\boldsymbol{\theta}} =
+-G(\boldsymbol{\theta})\boldsymbol{\theta} -
+\nu(\boldsymbol{\theta})a(\boldsymbol{\theta})\)</span></li>
+</ul>
+<div class="figure">
+<div id="harmonic-oscillator-generic-dynamics-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/harmonic-oscillator-generic-dynamics.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Harmonic oscillator GENERIC dynamics. Top left: Trajectory in parameter
+space from out-of-equilibrium initial state toward thermal equilibrium.
+Top right: Total entropy <span class="math inline">\(h(X) +
+h(P)\)</span> conserved throughout evolution. Bottom left: Individual
+marginal entropies exchange while maintaining sum. Bottom right:
+Variances approach equipartition theorem values (both equal to 1.0 at
+equilibrium).
+</aside>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Entropy conservation: <span class="math inline">\(h(X) + h(P) =
+C\)</span> maintained</li>
+<li>Thermalisation: Cold → hot exchange until equilibrium</li>
+<li>GENERIC decomposition: <span class="math inline">\(M = S +
+A\)</span></li>
+<li>Equilibrium: Equipartition theorem satisfied</li>
+</ul>
+</section>
+<section id="computational-validation-three-binary-variables"
+class="slide level2">
+<h2>Computational Validation: Three Binary Variables</h2>
+<p><strong>System:</strong> 3 binary variables</p>
+<ul>
+<li>Parameters: <span class="math inline">\(\boldsymbol{\theta} =
+(\theta_1, \theta_2, \theta_3, \theta_{12}, \theta_{13},
+\theta_{23})\)</span></li>
+<li>Constraint: <span class="math inline">\(\sum_i h_i = C\)</span> (sum
+of marginal entropies)</li>
+<li>Dynamics: Constrained MEP with GENERIC structure</li>
+</ul>
+<div class="figure">
+<div id="n3-ising-simulation-validation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/n3-ising-simulation-validation.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Computational validation for 3 binary variables. Top left: Constraint
+<span class="math inline">\(\sum_i h_i = C\)</span> maintained to
+machine precision. Top right: Individual marginal entropies exchange
+while sum is conserved. Bottom left: Interaction parameters evolve from
+frustrated initial state. Bottom right: Ratio <span
+class="math inline">\(\|A\|/\|S\|\)</span> varies with local geometry—no
+single “regime” throughout parameter space.
+</aside>
+<p><strong>Validation Results:</strong></p>
+<ul>
+<li>✓ Constraint maintained (<span class="math inline">\(&lt;
+10^{-12}\)</span> error)</li>
+<li>✓ GENERIC decomposition <span class="math inline">\(M = S +
+A\)</span> at all points</li>
+<li>✓ Regime ratio <span class="math inline">\(\|A\|/\|S\|\)</span>
+varies with geometry</li>
+<li>✓ No universal “regime” for all parameter space</li>
+</ul>
 <!-- SECTION Information Topography -->
 </section>
 <section id="information-topography" class="slide level2">
@@ -1457,6 +1534,44 @@ temperature</p>
 <p><strong>Reverses usual logic:</strong> <span
 class="math display">\[\text{Information theory} \Rightarrow
 \text{Thermodynamics}\]</span></p>
+</section>
+<section id="analytical-validation-curie-weiss-model"
+class="slide level2">
+<h2>Analytical Validation: Curie-Weiss Model</h2>
+<p><strong>Curie-Weiss Model</strong></p>
+<ul>
+<li><span class="math inline">\(n\)</span> interacting spins: <span
+class="math inline">\(E = -\frac{J}{2n}(\sum_i x_i)^2\)</span></li>
+<li>Phase transition at <span class="math inline">\(T_c =
+J\)</span></li>
+<li>Mean-field exact in limit <span class="math inline">\(n \to
+\infty\)</span></li>
+<li>Tests equivalence across phase boundary</li>
+</ul>
+<div class="figure">
+<div id="curie-weiss-phase-transition-validation-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/curie-weiss-phase-transition-validation.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Testing energy-entropy equivalence across the Curie-Weiss phase
+transition. Left: Magnetization <span class="math inline">\(m\)</span>
+as a function of temperature, showing ferromagnetic transition at <span
+class="math inline">\(T_c = J\)</span>. Right: Gradient of accessible
+information <span class="math inline">\(|\nabla_m I|\)</span> is small
+in the disordered phase (equivalence holds) but large in the ordered
+phase (equivalence fails), confirming the theorem’s predictions.
+</aside>
+<p><strong>Validation Results:</strong></p>
+<p>Disordered phase (<span class="math inline">\(T &gt; T_c\)</span>): *
+<span class="math inline">\(m \approx 0\)</span>, <span
+class="math inline">\(|\nabla_m I| \approx 0\)</span> ✓</p>
+<p>Ordered phase (<span class="math inline">\(T &lt; T_c\)</span>): *
+<span class="math inline">\(m \neq 0\)</span>, <span
+class="math inline">\(|\nabla_m I| \gg 0\)</span> ✓</p>
+<p><strong>Confirms theorem predictions!</strong></p>
 </section>
 <section id="generic-and-thermodynamics" class="slide level2">
 <h2>GENERIC and Thermodynamics</h2>
