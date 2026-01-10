@@ -88,9 +88,13 @@ D. Lawrence</a></p>
 </section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
-<p><strong>For ML + information geometry folks:</strong></p>
+<p><strong>For ML + info-geometry folks:</strong></p>
 <p>Same structure, one new obstacle (noncommutativity)</p>
-<p>Classical exponential families → quantum exponential families</p>
+<p>Classical exponential families <span
+class="math inline">\(\rightarrow\)</span> quantum exponential
+families</p>
+<p><em>Focus:</em> states, expectations, reversible dynamics (not
+measurement)</p>
 <!-- SECTION From Classical to Quantum: The Exponential Family Bridge -->
 </section>
 <section id="from-classical-to-quantum-the-exponential-family-bridge"
@@ -129,13 +133,15 @@ representation)</h2>
 <p><span
 class="math display">\[\rho(\theta)=\exp(K(\theta)-\psi(\theta)),\quad
 K=\sum_i\theta_i F_i\]</span></p>
+<p>(Physics: <span class="math inline">\(K=-\beta H\)</span>; we absorb
+signs into <span class="math inline">\(\theta\)</span>)</p>
 <p><strong>What stays the same:</strong></p>
 <ul>
 <li><span class="math inline">\(\langle
-F_i\rangle=\partial_i\psi\)</span> (expectations from <span
-class="math inline">\(\psi\)</span>)</li>
+F_i\rangle=\partial_i\psi\)</span> (trace cyclicity + Duhamel preserves
+this)</li>
 <li><span class="math inline">\(G_{ij}=\partial_i\partial_j\psi\)</span>
-(Fisher-like metric, now BKM)</li>
+(BKM metric—canonical quantum Fisher)</li>
 <li><span class="math inline">\(\psi\)</span> is still a scalar
 real-valued function</li>
 </ul>
@@ -230,6 +236,94 @@ etc.</li>
 </ol>
 <p><strong>If you know exp. families + Fisher info, you’re 90%
 there.</strong></p>
+<!-- SECTION Worked Example: Pauli Matrices (2×2 Case) -->
+</section>
+<section id="worked-example-pauli-matrices-22-case"
+class="slide level2">
+<h2>Worked Example: Pauli Matrices (2×2 Case)</h2>
+<p><strong>Concrete example:</strong> 2×2 qubit exponential family</p>
+<p>Shows: where noncommutativity bites + how Duhamel fixes it</p>
+</section>
+<section id="concrete-example-22-pauli-exponential-family"
+class="slide level2">
+<h2>Concrete Example: 2×2 Pauli Exponential Family</h2>
+<p><strong>Concrete 2×2 example:</strong></p>
+<p>Pauli matrices (qubit sufficient statistics)</p>
+</section>
+<section id="the-pauli-basis" class="slide level2">
+<h2>The Pauli basis</h2>
+<p><strong>Pauli matrices:</strong></p>
+<p><span class="math display">\[\sigma_x =
+\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\quad \sigma_z =
+\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\]</span></p>
+<p><strong>Key property:</strong> <span
+class="math inline">\([\sigma_x,\sigma_z]\neq 0\)</span>
+(noncommuting)</p>
+</section>
+<section id="quantum-exponential-family-for-a-qubit"
+class="slide level2">
+<h2>Quantum exponential family for a qubit</h2>
+<p><strong>Qubit exponential family:</strong></p>
+<p><span
+class="math display">\[\rho(\theta)=\frac{1}{Z(\theta)}e^{\theta_1\sigma_x+\theta_2\sigma_z}\]</span></p>
+<p><span
+class="math display">\[\psi(\theta)=\log\text{tr}\,e^{\theta_1\sigma_x+\theta_2\sigma_z}\]</span></p>
+<p>Goal: compute <span class="math inline">\(\partial_1\psi = \langle
+\sigma_x\rangle\)</span></p>
+</section>
+<section id="why-the-classical-formula-fails" class="slide level2">
+<h2>Why the classical formula fails</h2>
+<p><strong>Classical:</strong> <span class="math inline">\(\partial_1
+e^{\theta_1 F_1+\theta_2 F_2} = F_1 e^{\theta_1 F_1+\theta_2
+F_2}\)</span> ✓</p>
+<p><strong>Quantum:</strong> <span class="math inline">\(\partial_1
+e^{\theta_1\sigma_x+\theta_2\sigma_z} \neq \sigma_x
+e^{\theta_1\sigma_x+\theta_2\sigma_z}\)</span> ✗</p>
+<p>(because <span class="math inline">\(\sigma_x\)</span> and <span
+class="math inline">\(\sigma_z\)</span> don’t commute)</p>
+</section>
+<section id="duhamel-formula-fixes-it" class="slide level2">
+<h2>Duhamel formula fixes it</h2>
+<p><strong>Duhamel formula:</strong></p>
+<p><span class="math display">\[\partial_1 e^K = \int_0^1
+e^{(1-s)K}\sigma_x e^{sK}\,\text{d}s\]</span></p>
+<p><strong>Key trick:</strong> trace cyclicity makes <span
+class="math inline">\(s\)</span> disappear:</p>
+<p><span class="math display">\[\text{tr}(e^{(1-s)K}\sigma_x
+e^{sK})=\text{tr}(e^K\sigma_x)\]</span></p>
+<p><strong>Result:</strong> <span
+class="math inline">\(\partial_1\psi=\langle\sigma_x\rangle\)</span>
+✓</p>
+</section>
+<section id="the-bkm-metric-quantum-fisher-information"
+class="slide level2">
+<h2>The BKM metric (quantum Fisher information)</h2>
+<p><strong>BKM metric (quantum Fisher):</strong></p>
+<p><span
+class="math display">\[G_{ij}=\partial_i\partial_j\psi\]</span></p>
+<p><strong>Classical:</strong> <span
+class="math inline">\(G_{ij}=\text{Cov}(F_i,F_j)\)</span></p>
+<p><strong>Quantum:</strong> <span class="math inline">\(G_{ij}\)</span>
+involves operator orderings (Kubo–Mori), not just covariance</p>
+<p>At <span class="math inline">\(\theta=0\)</span>: <span
+class="math inline">\(G_{ij}(0)=\frac{1}{2}\delta_{ij}\)</span></p>
+</section>
+<section id="summary-what-noncommutativity-changes"
+class="slide level2">
+<h2>Summary: what noncommutativity changes</h2>
+<p><strong>Take-home from 2×2 example:</strong></p>
+<ol type="1">
+<li>Structure: <span class="math inline">\(\rho=e^{K-\psi}\)</span>
+(same as classical)</li>
+<li>Expectations: <span class="math inline">\(\partial_i\psi=\langle
+F_i\rangle\)</span> (with Duhamel + trace trick)</li>
+<li>Derivatives: need Duhamel (can’t pull <span
+class="math inline">\(F_i\)</span> down naively)</li>
+<li>Metric: BKM <span class="math inline">\(\neq\)</span> covariance
+(operator orderings matter)</li>
+</ol>
+<p>If you can do matrix exp + trace, you can do quantum exp
+families!</p>
 <!-- SECTION Reversible Dynamics and Unitarity -->
 </section>
 <section id="reversible-dynamics-and-unitarity" class="slide level2">
@@ -259,8 +353,9 @@ class="math inline">\(\omega(A)=\text{tr}(\rho A)\)</span></li>
 <section id="reversible-transformations-no-information-loss"
 class="slide level2">
 <h2>Reversible transformations (no information loss)</h2>
-<p><strong>Reversible (entropy-preserving) ⇒ unitary:</strong></p>
+<p><strong>Reversible (closed system) ⇒ unitary:</strong></p>
 <p><span class="math inline">\(\rho \mapsto U\rho U^\dagger\)</span></p>
+<p>(Open systems: CPTP maps; unitary = reversible case)</p>
 </section>
 <section id="infinitesimal-form-commutator-dynamics"
 class="slide level2">
@@ -273,6 +368,28 @@ id="commutative-sanity-check-diagonals-recover-classical-probability"
 class="slide level2">
 <h2>Commutative sanity check: diagonals recover classical
 probability</h2>
+<p>Now look at reversible transformations. If we want to stay inside the
+diagonal algebra, the allowed unitaries are permutations of the basis.
+Let <span class="math inline">\(U_\pi\)</span> be the permutation matrix
+for a bijection <span
+class="math inline">\(\pi:\Omega\to\Omega\)</span>. Then conjugation
+gives <span class="math display">\[
+\alpha_\pi(A)=U_\pi^\dagger A U_\pi =
+\text{diag}(a_{\pi(1)},\dots,a_{\pi(d)}),
+\]</span> which is literally ``relabel the outcomes’’.</p>
+<p>On states, <span class="math display">\[
+\rho^\prime = U_\pi\rho U_\pi^\dagger =
+\text{diag}(p_{\pi^{-1}(1)},\dots,p_{\pi^{-1}(d)}),
+\]</span> which is the same relabelling acting on the probability
+vector.</p>
+<p>Note what disappears in the commuting restriction: if both <span
+class="math inline">\(H\)</span> and <span
+class="math inline">\(\rho\)</span> are diagonal, then <span
+class="math inline">\([H,\rho]=H \rho - \rho H=0\)</span> and the
+commutator dynamics is trivial. The only reversible transformations that
+preserve diagonality are discrete relabellings (permutations), whereas
+general unitaries give you the genuinely noncommutative ``rotation’’,
+i.e. basis-change behaviour.}</p>
 <p><strong>Commutative sanity check (diagonals):</strong></p>
 <ul>
 <li><span class="math inline">\(\rho=\text{diag}(p)\)</span>, <span
@@ -307,14 +424,29 @@ class="math inline">\(e^{K(\theta)}\)</span></p>
 <p>Noncommuting matrices <span
 class="math inline">\(\Rightarrow\)</span> Duhamel integral</p>
 </section>
-<section id="the-duhamel-formula-derivative-of-a-matrix-exponential"
+<section
+id="the-duhamel-formula-fréchet-derivative-of-the-matrix-exponential"
 class="slide level2">
-<h2>The Duhamel formula (derivative of a matrix exponential)</h2>
-<p><strong>Duhamel formula:</strong></p>
+<h2>The Duhamel formula (Fréchet derivative of the matrix
+exponential)</h2>
+<p><strong>Duhamel formula (Fréchet derivative):</strong></p>
 <p><span class="math display">\[
 \partial_i e^{K}
 =\int_0^1 e^{(1-s)K}F_i e^{sK}\,\mathrm{d}s
 \]</span></p>
+<p>Also written: <span class="math inline">\(L_{\exp}(K,F_i)\)</span>
+(directional derivative)</p>
+</section>
+<section id="how-to-compute-the-fréchet-derivative-efficiently"
+class="slide level2">
+<h2>How to compute the Fréchet derivative efficiently</h2>
+<p><strong>Computational trick:</strong></p>
+<p><span
+class="math display">\[L_{\exp}(K,F)=\exp\begin{pmatrix}K&amp;F\\0&amp;K\end{pmatrix}_{(1,2)}\]</span></p>
+<p>One <span class="math inline">\(2n\times 2n\)</span> matrix
+exponential!</p>
+<p><strong>For ML:</strong> autodiff through <code>expm</code> uses this
+trick</p>
 </section>
 <section
 id="kubomori-derivatives-and-the-bkm-metric-quantum-fisher-information"
@@ -434,12 +566,15 @@ class="slide level2">
 <h2>Conclusion: Quantum as Extended Probabilistic Modeling</h2>
 <p><strong>Take-home for ML folks:</strong></p>
 <ol type="1">
-<li>Quantum = probabilistic modeling + noncommutativity</li>
+<li>Quantum (states/dynamics) = probabilistic modeling +
+noncommutativity</li>
 <li>Exponential families work the same way (with Duhamel for
 derivatives)</li>
-<li>BKM metric = quantum Fisher information (Hessian of <span
+<li>BKM metric = canonical quantum Fisher (Hessian of <span
 class="math inline">\(\psi\)</span>)</li>
-<li>Unitarity = reversibility (entropy preservation)</li>
+<li>Unitarity = reversibility (closed systems, entropy
+preservation)</li>
+<li>Measurement layer adds more structure (Born rule, POVMs)</li>
 <li>You already have 90% of the conceptual framework</li>
 </ol>
 </section>
