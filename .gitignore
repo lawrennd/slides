@@ -1,0 +1,26 @@
+# OS / editor cruft
+.DS_Store
+*~
+*.swp
+*.swo
+
+# Inkscape backup files
+*.svg~
+
+# Logs / build artifacts
+*.log
+texput.log
+
+# Vector/raster sources that are typically generated/export-only
+*.emf
+*.xcf
+
+# Local workspace files
+*.code-workspace
+*.code-workspace~
+
+# Known generated duplicate directories
+diagrams/datasets/datasets/
+diagrams/dimred/dimred/
+diagrams/ml/ml/
+
