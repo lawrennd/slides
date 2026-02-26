@@ -14,6 +14,17 @@
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
+      /* scrollable slides: start content at top, left-align text */
+      .reveal section.scrollable {
+          overflow-y: auto !important;
+          height: 100% !important;
+          top: 0 !important;
+          text-align: left;
+      }
+      .reveal section.scrollable > h2:first-child,
+      .reveal section.scrollable > h2.scrollable:first-child {
+          margin-top: 0.2em;
+      }
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
@@ -69,13 +80,10 @@
 
 <section id="title-slide">
   <h1 class="title">The Atomic Human</h1>
-  <p class="subtitle" style="text-align:center">Understanding Ourselves
-in the Age of AI</p>
-  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil
-D. Lawrence</a></p>
+  <p class="subtitle" style="text-align:center">Understanding Ourselves in the Age of AI</p>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
   <p class="date" style="text-align:center"><time>2026-02-26</time></p>
-  <p class="venue" style="text-align:center">Banca d’Italia Seminar,
-Palazzo Koch, Via Nazionale 91, Roma</p>
+  <p class="venue" style="text-align:center">Banca d’Italia Seminar, Palazzo Koch, Via Nazionale 91, Roma</p>
 </section>
 
 <section class="slide level2">
@@ -90,6 +98,9 @@ Audience: Central bankers, monetary economists, financial system experts -->
 </section>
 <section id="artificial-general-vehicle" class="slide level2">
 <h2>Artificial General Vehicle</h2>
+</section>
+<section id="artificial-general-vehicle-1" class="slide level2">
+<h2>Artificial General Vehicle</h2>
 <div class="figure">
 <div id="artificial-general-vehicle-figure" class="figure-frame">
 <div class="centered" style="">
@@ -98,39 +109,36 @@ Audience: Central bankers, monetary economists, financial system experts -->
 </div>
 </div>
 <aside class="notes">
-The notion of artificial general intelligence is as absurd as the notion
-of an artificial general vehicle - no single vehicle is optimal for
-every journey. (Illustration by Dan Andrews inspired by a conversation
-about “The Atomic Human” <span class="citation"
-data-cites="Lawrence-atomic24">Lawrence (2024)</span>)
+The notion of artificial general intelligence is as absurd as the notion of an artificial general vehicle - no single vehicle is optimal for every journey. (Illustration by Dan Andrews inspired by a conversation about “The Atomic Human” <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span>)
 </aside>
 </section>
 <section id="philosophers-stone" class="slide level2">
 <h2>Philosopher’s Stone</h2>
 <div class="figure">
 <div id="the-alchemist-figure" class="figure-frame">
-<div class="centered" style="">
+<div class="centered centered" style="">
 <img class="" src="https://inverseprobability.com/talks/../slides/diagrams//paintings/Joseph_Wright_of_Derby_The_Alchemist.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
 <aside class="notes">
-The Alchemist by Joseph Wright of Derby (1771). The picture depicts
-Hennig Brand discovering the element phosphorus when searching for the
-Philosopher’s Stone.
+The Alchemist by Joseph Wright of Derby (1771). The picture depicts Hennig Brand discovering the element phosphorus when searching for the Philosopher’s Stone.
 </aside>
 </section>
 <section id="the-attention-economy" class="slide level2">
 <h2>The Attention Economy</h2>
+<div>
+<ul>
+<li class="fragment">Human intelligence is locked-in</li>
+<li class="fragment">This makes it a bottleneck</li>
+</ul>
+</div>
 </section>
 <section id="herbert-simon-on-information" class="slide level2">
 <h2>Herbert Simon on Information</h2>
 <blockquote>
-<p>What information consumes is rather obvious: it consumes the
-attention of its recipients. Hence a wealth of information creates a
-poverty of attention …</p>
-<p><span class="citation" data-cites="Simon-information71">Simon
-(1971)</span></p>
+<p>What information consumes is rather obvious: it consumes the attention of its recipients. Hence a wealth of information creates a poverty of attention …</p>
+<p><span class="citation" data-cites="Simon-information71">Simon (1971)</span></p>
 </blockquote>
 </section>
 <section id="section" class="slide level2">
@@ -143,29 +151,29 @@ poverty of attention …</p>
 </div>
 </div>
 <aside class="notes">
-This is the drawing Dan was inspired to create for Chapter 9. It
-captures the core idea in the Great AI Fallacy, that over time it has
-been us adapting to the machine rather than the machine adapting to us.
+This is the drawing Dan was inspired to create for Chapter 9. It captures the core idea in the Great AI Fallacy, that over time it has been us adapting to the machine rather than the machine adapting to us.
 </aside>
 <p>.</p>
 </section>
-<section id="human-capital-and-economic-measurement"
-class="slide level2">
-<h2>Human Capital and Economic Measurement</h2>
-<ul>
-<li>Central Banks Measure Economic Variables</li>
-<li>Human Capital Index: Skills + Health = Economic Value?</li>
-<li>Goodhart’s Law: Measure → Target → Breakdown</li>
-<li>The Productivity Paradox Returns</li>
-</ul>
-</section>
 <section id="human-capital-index" class="slide level2">
 <h2>Human Capital Index</h2>
+<div>
 <ul>
-<li>World Bank Human Capital Index 2020</li>
-<li><em>UK</em> outperforms USA and China</li>
-<li>Measures <em>health</em> and <em>education</em></li>
+<li class="fragment">World Bank Human Capital Index 2020</li>
+<li class="fragment">Measures <em>health</em> and <em>education</em></li>
 </ul>
+</div>
+</section>
+<section id="ranking" class="slide level2">
+<h2>Ranking</h2>
+<div>
+<ul>
+<li class="fragment">UK 0.78 11th globally</li>
+<li class="fragment">Italy 0.73 30th globally</li>
+<li class="fragment">US 0.70 <em>35th</em> globally</li>
+<li class="fragment">China 0.65 45th globally</li>
+</ul>
+</div>
 </section>
 <section id="productivity-flywheel" class="slide level2">
 <h2>Productivity Flywheel</h2>
@@ -181,20 +189,13 @@ The productivity flywheel suggests technical innovation is reinvested.
 </section>
 <section id="inflation-of-human-capital" class="slide level2">
 <h2>Inflation of Human Capital</h2>
+<div>
 <ul>
-<li>Strength in Human Capital double-edged sword.</li>
-<li>Automation creates efficiency.</li>
-<li>But skills risk becoming redundant.</li>
+<li class="fragment">Strength in Human Capital double-edged sword.</li>
+<li class="fragment">Automation creates efficiency.</li>
+<li class="fragment">But skills risk becoming redundant.</li>
 </ul>
-</section>
-<section id="ai-agents-and-economic-agency" class="slide level2">
-<h2>AI Agents and Economic Agency</h2>
-<ul>
-<li>From LLMs to Economic Agents</li>
-<li>No Sleep, No Fatigue, No Context</li>
-<li>Markets with Hybrid Intelligence</li>
-<li>What’s the Role of Human Judgment?</li>
-</ul>
+</div>
 </section>
 <section id="inflation-proof-human-capital" class="slide level2">
 <h2>Inflation Proof Human Capital</h2>
@@ -209,8 +210,7 @@ The productivity flywheel suggests technical innovation is reinvested.
 <li>Machines rely on measurable outputs
 <ul>
 <li>Quantified aspects of humans <em>easier to automate</em></li>
-<li>Essential aspects of humanity are the <em>hardest to
-measure</em></li>
+<li>Essential aspects of humanity are the <em>hardest to measure</em></li>
 </ul></li>
 <li>Implies: atomic human is <em>difficult to quantify</em></li>
 </ul>
@@ -231,26 +231,14 @@ measure</em></li>
 <section id="new-productivity-paradox" class="slide level2">
 <h2>New Productivity Paradox</h2>
 <ul>
-<li>Current productivity flywheel relies on measurement to translate
-innovation into productivity.</li>
+<li>Current productivity flywheel relies on measurement to translate innovation into productivity.</li>
 <li>Without measurement how does the wheel spin?</li>
-</ul>
-</section>
-<section id="the-attention-economy-and-financial-markets"
-class="slide level2">
-<h2>The Attention Economy and Financial Markets</h2>
-<ul>
-<li>Attention as New Capital Form</li>
-<li>Data as Collateral?</li>
-<li>Platform Economics ≠ Traditional Markets</li>
-<li>Systemic Risk in Attention Monopolies</li>
 </ul>
 </section>
 <section id="supply-chain-of-ideas" class="slide level2">
 <h2>Supply Chain of Ideas</h2>
 <ul>
-<li>Ideas flow from creation to application like physical supply
-chains</li>
+<li>Ideas flow from creation to application like physical supply chains</li>
 <li>Parallels with traditional economic supply chain management</li>
 <li>Particularly relevant for IT and AI solutions</li>
 </ul>
@@ -260,24 +248,20 @@ chains</li>
 <ul>
 <li>Current imbalance between supply and demand sides
 <ul>
-<li>Mismatch between macroeconomic interventions and microeconomic
-need</li>
+<li>Mismatch between macroeconomic interventions and microeconomic need</li>
 </ul></li>
 <li>Over-Focus on solutionism
 <ul>
 <li>technologies/companies</li>
 </ul></li>
-<li>Under-focus on real-world needs … disconnect between
-<em>government</em> and <em>citizens</em> … disconnect between
-<em>companies</em> and <em>customers</em></li>
+<li>Under-focus on real-world needs … disconnect between <em>government</em> and <em>citizens</em> … disconnect between <em>companies</em> and <em>customers</em></li>
 </ul>
 </section>
 <section id="supply-chain-of-ideas-2" class="slide level2">
 <h2>Supply Chain of Ideas</h2>
 <ul>
 <li>Need to map idea problems demand to idea supply</li>
-<li>Need to understand … problems (demand) … current “stock” of
-solutions (supply)</li>
+<li>Need to understand … problems (demand) … current “stock” of solutions (supply)</li>
 <li>Requires <em>active management</em> of idea resources</li>
 <li>Shape supply to meet demand</li>
 </ul>
@@ -292,10 +276,7 @@ solutions (supply)</li>
 </div>
 </div>
 <aside class="notes">
-<a
-href="https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316">Opinion
-piece in the FT</a> that describes the idea of a social flywheel to
-drive the targeted growth we need in AI innovation.
+<a href="https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316">Opinion piece in the FT</a> that describes the idea of a social flywheel to drive the targeted growth we need in AI innovation.
 </aside>
 </section>
 <section id="attention-reinvestment-cycle" class="slide level2">
@@ -309,28 +290,45 @@ drive the targeted growth we need in AI innovation.
 <aside class="notes">
 The attention flywheel focusses on reinvesting human capital.
 </aside>
+<div class="figure">
+<div id="packhorse-bridge-burbage-brook-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//supply-chain/packhorse-bridge-burbage-brook.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Packhorse Bridge under Burbage Edge. This packhorse route climbs steeply out of Hathersage and heads towards Sheffield. Packhorses were the main route for transporting goods across the Peak District. The high cost of transport is one driver of the ‘smith’ model, where there is a local skilled person responsible for assembling or creating goods (e.g. a blacksmith).
+</aside>
 </section>
-<section id="economic-models-and-human-complexity" class="slide level2">
-<h2>Economic Models and Human Complexity</h2>
-<ul>
-<li>Traditional Models: Rational Agents</li>
-<li>AI Systems: Statistical Patterns</li>
-<li>Challenge: Modeling Hybrid Intelligence</li>
-<li>Question: What’s the New Equilibrium?</li>
-</ul>
+<section id="cromford" class="slide level2">
+<h2>Cromford</h2>
+<div class="figure">
+<div id="cromford-mill-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//supply-chain/cromford-mill.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Richard Arkwright is regarded of the founder of the modern factory system. Factories exploit distribution networks to centralize production of goods. Arkwright located his factory in Cromford due to proximity to Nottingham Weavers (his market) and availability of water power from the tributaries of the Derwent river. When he first arrived there was almost no transportation network. Over the following 200 years The Cromford Canal (1790s), a Turnpike (now the A6, 1816-18) and the High Peak Railway (now closed, 1820s) were all constructed to improve transportation access as the factory blossomed.
+</aside>
 </section>
-<section id="implications-for-economic-policy" class="slide level2">
-<h2>Implications for Economic Policy</h2>
+<section id="distretti-industriali" class="slide level2">
+<h2>Distretti Industriali</h2>
 <ul>
-<li>Opportunities: Forecasting, Risk, Surveillance</li>
-<li>Challenges: New Transmission Mechanisms</li>
-<li>Wage-Setting by Algorithm?</li>
-<li>Credit Allocation by ML?</li>
-<li>Human Judgment Still Essential</li>
+<li>18th Century Emilia Romagna: Silk, Paper</li>
+<li>The Black Country</li>
+<li>Exhibit: Strength in Community Strength in Diversity Poor economies of scale</li>
+<li>Requires: Strength in Europe</li>
 </ul>
+<!--include{_business/includes/attention-flywheel-example-dsa.md}-->
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+</section>
+<section id="wicked-problems" class="slide level2">
+<h2>Wicked Problems</h2>
 <div class="figure">
 <div id="societys-wicked-problems-figure" class="figure-frame">
 <div class="centered" style="">
@@ -339,23 +337,8 @@ The attention flywheel focusses on reinvesting human capital.
 </div>
 </div>
 <aside class="notes">
-Society faces many wicked problems in health, education, security, and
-social care that require carefully deploying AI toward meaningful
-societal challenges rather than focusing on commercially appealing
-applications. (Illustration by Dan Andrews inspired by the Epilogue of
-“The Atomic Human” <span class="citation"
-data-cites="Lawrence-atomic24">Lawrence (2024)</span>)
+Society faces many wicked problems in health, education, security, and social care that require carefully deploying AI toward meaningful societal challenges rather than focusing on commercially appealing applications. (Illustration by Dan Andrews inspired by the Epilogue of “The Atomic Human” <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span>)
 </aside>
-</section>
-<section id="the-path-forward" class="slide level2">
-<h2>The Path Forward</h2>
-<ul>
-<li>AI Cannot Replace Atomic Human</li>
-<li>Not Technical Limitation—Fundamental Necessity</li>
-<li>Human Judgment in Uncertainty</li>
-<li>Central Banks’ Role: Framework Design</li>
-<li>Goal: AI Serving Society, Not Metrics</li>
-</ul>
 </section>
 <section id="example-cambridge-approach" class="slide level2">
 <h2>Example: Cambridge Approach</h2>
@@ -370,15 +353,10 @@ data-cites="Lawrence-atomic24">Lawrence (2024)</span>)
 </div>
 </div>
 <aside class="notes">
-<a
-href="https://www.cam.ac.uk/system/files/aicam_review_april22.pdf">ai@cam</a>
-is a Flagship Programme that supports AI research <a
-href="https://www.cam.ac.uk/stories/ai-at-cam">across the
-University</a>.
+<a href="https://www.cam.ac.uk/system/files/aicam_review_april22.pdf">ai@cam</a> is a Flagship Programme that supports AI research <a href="https://www.cam.ac.uk/stories/ai-at-cam">across the University</a>.
 </aside>
 </section>
-<section id="how-aicam-is-addressing-innovation-challenges"
-class="slide level2">
+<section id="how-aicam-is-addressing-innovation-challenges" class="slide level2">
 <h2>How ai@cam is Addressing Innovation Challenges</h2>
 <ul>
 <li>A-Ideas (across 20 departments)</li>
@@ -399,40 +377,23 @@ class="slide level2">
 <h2 class="scrollable">Thanks!</h2>
 <ul>
 <li><p>company: <a href="https://trent.ai">Trent AI</a></p></li>
-<li><p>book: <a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
-Atomic Human</a></p></li>
-<li><p>twitter: <a
-href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
-<li><p><a href="https://the-atomic-human.ai">The Atomic
-Human</a></p></li>
-<li><p>newspaper: <a
-href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile
-Page</a></p></li>
+<li><p>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></p></li>
+<li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
+<li><p><a href="https://the-atomic-human.ai">The Atomic Human</a></p></li>
+<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
 <li><p>blog posts:</p>
-<p><a
-href="http://the-atomic-human.ai//reflections/the-great-ai-fallacy/">The
-Great AI Fallacy</a></p>
-<p><a
-href="http://the-atomic-human.ai//reflections/who-is-stepping-up/">Who
-is Stepping Up?</a></p>
-<p><a
-href="http://the-atomic-human.ai//reflections/who-is-stepping-up/">Who
-is Stepping Up?</a></p></li>
+<p><a href="http://the-atomic-human.ai//reflections/the-great-ai-fallacy/">The Great AI Fallacy</a></p>
+<p><a href="http://the-atomic-human.ai//reflections/who-is-stepping-up/">Who is Stepping Up?</a></p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent"
-role="list">
-<div id="ref-Lawrence-atomic24" class="csl-entry" role="listitem">
-Lawrence, N.D., 2024. <a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
-atomic human: Understanding ourselves in the age of AI</a>. Allen Lane.
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Lawrence-atomic24" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2024. The atomic human: Understanding ourselves in the age of AI. Allen Lane.
 </div>
-<div id="ref-Simon-information71" class="csl-entry" role="listitem">
-Simon, H.A., 1971. Designing organizations for an information-rich
-world. Johns Hopkins University Press, Baltimore, MD.
+<div id="ref-Simon-information71" class="csl-entry" role="doc-biblioentry">
+Simon, H.A., 1971. Designing organizations for an information-rich world. Johns Hopkins University Press, Baltimore, MD.
 </div>
 </div>
 </section>
@@ -447,39 +408,10 @@ world. Johns Hopkins University Press, Baltimore, MD.
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        // Display controls in the bottom right corner
-        controls: true,
-        // Display a presentation progress bar
-        progress: true,
         // Push each slide change to the browser history
         history: true,
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-        // Enable the slide overview mode
-        overview: true,
-        // Vertical centering of slides
-        center: true,
-        // Enables touch navigation on devices with touch input
-        touch: true,
-        // Turns fragments on and off globally
-        fragments: true,
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
-        // Transition speed
-        transitionSpeed: 'default', // default/fast/slow
-        // Transition style for full page slide backgrounds
-        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
           config: 'TeX-AMS_HTML-full',
