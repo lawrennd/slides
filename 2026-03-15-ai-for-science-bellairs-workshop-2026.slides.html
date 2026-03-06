@@ -106,12 +106,26 @@ Suggested pacing (flexible): 10 mins shared AI vocabulary; 15 mins philosophy + 
 <li class="fragment"><strong>What’s the emerging playbook for AI-for-science</strong> (and what tools are still missing)?</li>
 </ul>
 </div>
+<!-- SECTION The Structure of Scientific Revolutions -->
+</section>
+<section id="the-structure-of-scientific-revolutions" class="slide level2">
+<h2>The Structure of Scientific Revolutions</h2>
+<div class="figure">
+<div id="the-structure-of-scientific-revolutions-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/structure-of-scientific-revolutions.png" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+<a href="https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions">The Structure of Scientific Revolutions by Thomas S. Kuhn</a> suggests scientific paradigms are recorded in books <span class="citation" data-cites="Kuhn-structure62">(Kuhn, 1962)</span>.
+</aside>
 <aside class="notes">
 This is an opening talk, not a survey. The aim is to offer a shared set of “handles” and vocabulary that we can re-use all week: paradigms/mediums, understanding/agency, playbooks/tools.
 </aside>
 <div>
 <ul>
-<li class="fragment">Paradigms: shift in <em>science</em> or in <em>storage medium</em>?</li>
+<li class="fragment">Paradigms: shift in <em>science</em> or in <em>underpinning information infrastructure</em>?</li>
 <li class="fragment">Understanding: what do we still demand (and from whom)?</li>
 <li class="fragment">Omni-models vs specialists: what’s gained/lost?</li>
 </ul>
@@ -119,41 +133,269 @@ This is an opening talk, not a survey. The aim is to offer a shared set of “ha
 <aside class="notes">
 We’ll unroll each into a few concrete “design questions” that show up repeatedly in AI-for-science systems.
 </aside>
-<!-- SECTION A minimal shared vocabulary for modern AI -->
+<div>
+<ul>
+<li class="fragment"><em>A model family</em> <span class="math inline">\(f_\theta\)</span> that maps inputs to outputs.</li>
+<li class="fragment"><em>A learning objective</em> that scores how well <span class="math inline">\(f_\theta\)</span> matches data (and priors/constraints).</li>
+<li class="fragment"><em>Optimisation + scale</em>: we fit <span class="math inline">\(\theta\)</span> with large compute and large datasets.</li>
+</ul>
+</div>
+<div>
+<ul>
+<li class="fragment">AlphaFold</li>
+<li class="fragment">GraphCast/Aardvark</li>
+</ul>
+</div>
 </section>
-<section id="a-minimal-shared-vocabulary-for-modern-ai" class="slide level2">
-<h2>A minimal shared vocabulary for modern AI</h2>
+<section id="generalist-models" class="slide level2">
+<h2>Generalist Models</h2>
+</section>
+<section id="generalist-examples" class="slide level2">
+<h2>Generalist Examples</h2>
+<ul>
+<li>ImageNet</li>
+<li>BERT</li>
+<li>Chat interfaces</li>
+<li>Polymathic</li>
+</ul>
+</section>
+<section id="the-unreasonable-effectiveness-of-orchestration" class="slide level2">
+<h2>The Unreasonable Effectiveness of Orchestration</h2>
 <div>
 <ul>
-<li class="fragment"><strong>A model family</strong> (f_) that maps inputs to outputs.</li>
-<li class="fragment"><strong>A learning objective</strong> that scores how well (f_) matches data (and priors/constraints).</li>
-<li class="fragment"><strong>Optimisation + scale</strong>: we fit () with large compute and large datasets.</li>
+<li class="fragment">LLMs emulate human behaviour</li>
+<li class="fragment">Unsurprising that the work better “in collaboration”</li>
+<li class="fragment">Also with rapid access to information infrastructure.</li>
 </ul>
 </div>
-<aside class="notes">
-Assume most people know the mathematics, but not the modern practice: large-scale optimisation, representations, pretraining/finetuning, and why “scale” changes what is feasible.
-</aside>
+</section>
+<section id="agent-examples" class="slide level2">
+<h2>Agent Examples</h2>
 <div>
 <ul>
-<li class="fragment"><strong>Pretraining</strong>: learn representations from broad data with weak/self supervision.</li>
-<li class="fragment"><strong>Adaptation</strong>: finetune, prompt, or condition on domain data + tools.</li>
-<li class="fragment"><strong>What changes</strong>: models become <em>interfaces</em> (to text, code, images, scientific workflows).</li>
+<li class="fragment">Denario</li>
+<li class="fragment">Claude Code</li>
+<li class="fragment">Codex</li>
 </ul>
 </div>
+<!-- SECTION Conjectures and Refutations -->
+</section>
+<section id="conjectures-and-refutations" class="slide level2">
+<h2>Conjectures and Refutations</h2>
+<div class="figure">
+<div id="conjectures-and-refutations-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/conjectures-and-refutations.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
 <aside class="notes">
-Set up the idea that large models are an <em>information interface</em> more than a “solver” in the classical sense. That matters for how paradigms live and move.
+Conjectures and Refutations by Karl Popper presents his philosophy of science based on falsification.
 </aside>
+</section>
+<section id="what-are-we-delegating" class="slide level2">
+<h2>What are we Delegating?</h2>
 <div>
 <ul>
-<li class="fragment">LLMs compress reading/writing/coding into a single interface.</li>
+<li class="fragment">Science as technology</li>
+<li class="fragment">Science as understanding</li>
+</ul>
+</div>
+</section>
+<section id="judgement-examples" class="slide level2">
+<h2>Judgement Examples</h2>
+<div>
+<ul>
+<li class="fragment">Covid19 Epidemiological Modelling</li>
+<li class="fragment">Does your model account for Facemasks?</li>
+<li class="fragment">Does your model account for Hotel Closures?</li>
+</ul>
+<blockquote>
+<p>We might not have data, but we can do some arithmetic</p>
+</blockquote>
+</div>
+</section>
+<section id="intellectual-debt" class="slide level2">
+<h2>Intellectual Debt</h2>
+<div class="figure">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/2020-02-12-intellectual-debt.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.
+</aside>
+</section>
+<section id="technical-debt" class="slide level2">
+<h2>Technical Debt</h2>
+<div>
+<ul>
+<li class="fragment">Compare with <em>technical debt</em>.</li>
+<li class="fragment">Highlighted by <span class="citation" data-cites="Sculley:debt15">Sculley et al. (2015)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="separation-of-concerns" class="slide level2">
+<h2>Separation of Concerns</h2>
+<div>
+<ul>
+<li class="fragment">Decompose your complex problem/task into parts.</li>
+<li class="fragment">Each part manageable (e.g. by a small team)</li>
+<li class="fragment">Recompose to solve total problem</li>
+</ul>
+</div>
+</section>
+<section id="addresses-complex-challenge" class="slide level2">
+<h2>Addresses Complex Challenge</h2>
+<div>
+<ul>
+<li class="fragment">Highly successful approach to complex tasks.</li>
+<li class="fragment">Tuned to the human bandwidth limitation.</li>
+<li class="fragment">But the whole system still hard to understand.</li>
+</ul>
+</div>
+</section>
+<section id="intellectual-debt-1" class="slide level2">
+<h2>Intellectual Debt</h2>
+<div>
+<ul>
+<li class="fragment">Technical debt is the inability to <em>maintain</em> your complex software system.</li>
+<li class="fragment">Intellectual debt is the inability to <em>explain</em> your software system.</li>
+</ul>
+</div>
+</section>
+<section id="agentic-debt" class="slide level2">
+<h2>Agentic Debt</h2>
+<div>
+<ul>
+<li class="fragment">Agentic AI could <em>pay down</em> technical and intellectual debt.</li>
+<li class="fragment">But it can create <em>agentic debt</em>: delegation without authority/authorship</li>
+</ul>
+</div>
+</section>
+<section id="agentic-debt-1" class="slide level2">
+<h2>Agentic Debt</h2>
+<div>
+<ul>
+<li class="fragment">Delegation of workflows without crisp boundaries.</li>
+<li class="fragment">Agentic debt is about unsafe or illegible delegation.</li>
+</ul>
+</div>
+</section>
+<section id="judgment-layer" class="slide level2">
+<h2>Judgment Layer</h2>
+<div>
+<ul>
+<li class="fragment">Agentic Orchestration compress reading/writing/coding into a single interface.</li>
 <li class="fragment">Tool use turns text into action: search, code execution, lab automation, simulation pipelines.</li>
-<li class="fragment">This shifts the bottleneck to <strong>verification</strong> and <strong>scientific judgement</strong>.</li>
+<li class="fragment">This shifts the bottleneck to <em>verification</em> and <em>scientific judgement</em>.</li>
 </ul>
 </div>
-<!-- SECTION A useful taxonomy (via Terence Tao, IMO 2024) -->
+<div>
+<ul>
+<li class="fragment"><em>Operational understanding</em>: can I use it safely and know when it fails?</li>
+<li class="fragment"><em>Mechanistic understanding</em>: do I have an interpretable causal/mechanistic story?</li>
+<li class="fragment"><em>Paradigm understanding</em>: can the community reproduce, contest, and extend it?</li>
+<li class="fragment"><em>Social understanding</em>: are the ideas understood in the wider public and other fields?</li>
+</ul>
+</div>
+<div>
+<ul>
+<li class="fragment">The “judgement layer” in organisations is often <em>tacit</em>: norms, exceptions, escalation paths, and context that rarely makes it into documentation.</li>
+<li class="fragment">It lives in handoffs and approvals: what gets challenged, what gets waived, and what triggers a halt.</li>
+<li class="fragment">Ceding this tacit knowlege without making it explicit is how we accumulate <em>agentic debt</em>.</li>
+</ul>
+</div>
+<!-- SECTION The Information Infrastructure -->
 </section>
-<section id="a-useful-taxonomy-via-terence-tao-imo-2024" class="slide level2">
-<h2>A useful taxonomy (via Terence Tao, IMO 2024)</h2>
+<section id="the-information-infrastructure" class="slide level2">
+<h2>The Information Infrastructure</h2>
+</section>
+<section id="communication-bandwidth" class="slide level2">
+<h2>Communication Bandwidth</h2>
+<div>
+<ul>
+<li class="fragment">Human communication: walking pace (2000 bits/minute)</li>
+<li class="fragment">Machine communication: light speed (billions of bits/second)</li>
+<li class="fragment">Our sharing walks, machine sharing …</li>
+</ul>
+</div>
+</section>
+<section id="new-flow-of-information" class="slide level2">
+<h2>New Flow of Information</h2>
+<div class="figure">
+<div id="new-flow-of-information-1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information001.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="new-flow-of-information-1" class="slide level2">
+<h2>New Flow of Information</h2>
+<div class="figure">
+<div id="new-flow-of-information-1a-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information001a.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="evolved-relationship" class="slide level2">
+<h2>Evolved Relationship</h2>
+<div class="figure">
+<div id="new-flow-of-information-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information002.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="evolved-relationship-1" class="slide level2">
+<h2>Evolved Relationship</h2>
+<div class="figure">
+<div id="new-flow-of-information-3-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information003.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
+</aside>
+</section>
+<section id="ham" class="slide level2">
+<h2>HAM</h2>
+<div class="figure">
+<div id="new-flow-of-information-4-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information004.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
+</aside>
+</section>
+<section id="ham-1" class="slide level2">
+<h2>HAM</h2>
+<div class="figure">
+<div id="new-flow-of-information-ham-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information-ham.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The HAM now sits between us and the traditional digital computer.
+</aside>
+</section>
+<section id="in-mathematical-context" class="slide level2">
+<h2>In Mathematical Context</h2>
+<iframe width height src="https://www.youtube.com/embed/?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 <div>
 <ul>
 <li class="fragment"><strong>Databases / tables</strong> (OEIS): store patterns and prior results.</li>
@@ -166,204 +408,19 @@ Adapted from Terence Tao’s IMO 2024 talk “AI and Mathematics” (AIMO Prize)
 </aside>
 <div>
 <ul>
-<li class="fragment"><strong>Databases</strong>: literature, datasets, code, simulators (where paradigms live).</li>
-<li class="fragment"><strong>Simulators/solvers</strong>: expensive ground truth and constraint engines.</li>
-<li class="fragment"><strong>Modern triad</strong>: ML surrogates (speed), LLMs (interface), verification (trust boundary).</li>
-</ul>
-</div>
-<aside class="notes">
-In maths, verification can literally mean proof assistants (Lean/Coq). In most sciences, verification is protocols, calibration, provenance, and reproducible pipelines. The point is the same: useful AI shifts work toward the verification boundary.
-</aside>
-<!-- SECTION Science as knowledge vs science as technology -->
-</section>
-<section id="science-as-knowledge-vs-science-as-technology" class="slide level2">
-<h2>Science as knowledge vs science as technology</h2>
-<div>
-<ul>
-<li class="fragment"><strong>Science as knowledge</strong>: explanatory, communicable, builds intuition (textbooks, mechanisms).</li>
-<li class="fragment"><strong>Science as technology</strong>: reliable performance without shared intuition (black-box but validated).</li>
-<li class="fragment">AI accelerates <em>technology</em>; we need to decide what happens to <em>knowledge</em>.</li>
-</ul>
-</div>
-<aside class="notes">
-This is a deliberately provocative distinction. The question is not whether black boxes exist (they do), but what we choose to teach, certify, and rely on as scientists.
-</aside>
-<div>
-<ul>
-<li class="fragment"><strong>Operational understanding</strong>: can I use it safely and know when it fails?</li>
-<li class="fragment"><strong>Mechanistic understanding</strong>: do I have an interpretable causal/mechanistic story?</li>
-<li class="fragment"><strong>Social understanding</strong>: can the community reproduce, contest, and extend it?</li>
-</ul>
-</div>
-<aside class="notes">
-In AI-for-science, we often have operational understanding (benchmarks; validation) without mechanistic understanding. Social understanding depends on shared artefacts and interfaces.
-</aside>
-<!-- SECTION Popper, Kuhn, and what “progress” looks like -->
-</section>
-<section id="popper-kuhn-and-what-progress-looks-like" class="slide level2">
-<h2>Popper, Kuhn, and what “progress” looks like</h2>
-<div>
-<ul>
-<li class="fragment"><strong>Popper</strong>: bold conjectures + hard refutation; science advances by <em>falsifiable risk</em>.</li>
-<li class="fragment"><strong>Kuhn</strong>: “normal science” solves puzzles within a paradigm; revolutions shift the paradigm.</li>
-<li class="fragment">Both are partly about <strong>institutions</strong>: communities, incentives, and shared artefacts.</li>
-</ul>
-</div>
-<aside class="notes">
-Use this to reframe “AI paradigm shift” talk. Is AI changing the epistemic norms (Popper) or the infrastructure/paradigm carriers (Kuhn), or both?
-</aside>
-<div>
-<ul>
-<li class="fragment"><strong>Text</strong>: papers, books, review articles, pedagogy.</li>
-<li class="fragment"><strong>Math</strong>: equations, theorems, proofs, identifiability arguments.</li>
-<li class="fragment"><strong>Code</strong>: simulators, pipelines, datasets, benchmarks, notebooks.</li>
-</ul>
-</div>
-<aside class="notes">
-Add a fourth (often ignored) carrier: tacit judgement embedded in labs, collaborations, and review. That becomes visible when you try to automate parts of science.
-</aside>
-<div>
-<ul>
-<li class="fragment">The “judgement layer” in organisations is often <em>tacit</em>: norms, exceptions, escalation paths, and context that rarely makes it into documentation.</li>
-<li class="fragment">It lives in handoffs and approvals: what gets challenged, what gets waived, and what triggers a halt.</li>
-<li class="fragment">Ceding this tacit knowlege without making it explicit is how we accumulate <em>agentic debt</em>.</li>
-</ul>
-</div>
-<!-- SECTION Debt as a lens for AI-for-science -->
-</section>
-<section id="debt-as-a-lens-for-ai-for-science" class="slide level2">
-<h2>Debt as a lens for AI-for-science</h2>
-<div>
-<ul>
-<li class="fragment"><strong>Technical debt</strong>: brittle pipelines, undocumented glue code, irreproducible workflows.</li>
-<li class="fragment"><strong>Intellectual debt</strong>: results we can <em>run</em> (or simulate) but can’t fully <em>grasp</em>.</li>
-<li class="fragment"><strong>Scientific debt</strong> (agentic debt): delegated workflows without crisp boundaries for evidence and action.</li>
-</ul>
-</div>
-<aside class="notes">
-This is borrowed from the framing in the ai and security talks. It maps well: technical debt is the engineering substrate; intellectual debt is the growing gap between what we can build/use and what we can explain; “scientific debt” (agentic debt, in this context) appears when we delegate steps (analysis, code, even lab actions) without explicit authority, provenance, and recovery paths.
-</aside>
-<div>
-<ul>
-<li class="fragment">Weather: large simulations, but anchored in physics + measurement; debt is often <em>manageable</em> via calibration/ensembles.</li>
-<li class="fragment">Covid: “physics” includes behaviour, institutions, and interventions; debt is larger and more contestable.</li>
-<li class="fragment">Scientific debt: action-facing modelling needs explicit <strong>evidence → decision → authorship/accountability</strong>.</li>
-</ul>
-</div>
-<aside class="notes">
-The point isn’t that weather is easy or Covid is impossible; it’s that in Covid-like settings the tacit layer is thicker, the data is more biased/happenstance, and interventions feed back on the system. That’s where intellectual debt (opaque model reliance) and scientific/agentic debt (delegated recommendations/actions without provenance or sign-off) bite hardest.
-</aside>
-<div>
-<ul>
-<li class="fragment">We can hold <strong>humans</strong> to account for judgement (even when it’s wrong).</li>
-<li class="fragment">We can’t hold <strong>models</strong> to account; they don’t bear responsibility or liability.</li>
+<li class="fragment">We can hold <em>humans</em> to account for judgement (even when it’s wrong).</li>
+<li class="fragment">We can’t hold <em>models</em> to account; they don’t bear responsibility or liability.</li>
 <li class="fragment">So we must design systems where a <em>named actor</em> signs off, with traceable evidence.</li>
 </ul>
 </div>
-<aside class="notes">
-This is the practical meaning of “accountability” here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.
-</aside>
-<!-- SECTION A pragmatic AI-for-science playbook -->
 </section>
-<section id="a-pragmatic-ai-for-science-playbook" class="slide level2">
-<h2>A pragmatic AI-for-science playbook</h2>
-<div>
-<ul>
-<li class="fragment">Start with a <strong>slow but trusted simulator/experiment</strong> (ground truth with caveats).</li>
-<li class="fragment">Fit <strong>surrogates</strong> to accelerate inference, optimisation, and design loops.</li>
-<li class="fragment">Wrap with <strong>uncertainty</strong> + validation to know when the surrogate is lying.</li>
-</ul>
-</div>
-<aside class="notes">
-This corresponds closely to the workshop prompt: accurate but slow simulators, amortised surrogates, differentiable pipelines. The key addition is: validation/certification loops.
-</aside>
-<div>
-<ul>
-<li class="fragment"><strong>Distribution shift</strong>: the interesting regime is off the training manifold.</li>
-<li class="fragment"><strong>Confounding/causality</strong>: correlations guide action poorly (interventions differ from prediction).</li>
-<li class="fragment"><strong>Interface errors</strong>: humans misread outputs; models misread instructions/data provenance.</li>
-</ul>
-</div>
-<aside class="notes">
-These are not just “ML problems”; they are socio-technical. They show up as bad scientific decisions, not just bad metrics.
-</aside>
-<div>
-<ul>
-<li class="fragment"><strong>Stress tests</strong>: deliberately probe extremes, counterfactuals, and “nasty” corners.</li>
-<li class="fragment"><strong>Calibration</strong>: uncertainty that tracks real error, not just confidence.</li>
-<li class="fragment"><strong>Decision-aware validation</strong>: validate the <em>decision pipeline</em>, not only pointwise error.</li>
-</ul>
-</div>
-<aside class="notes">
-This is a key workshop theme: what tools do we have vs what tools are missing? Much of the missing tooling is about evaluation under action, not prediction.
-</aside>
-<!-- SECTION Omni-models vs specialists -->
-</section>
-<section id="omni-models-vs-specialists" class="slide level2">
-<h2>Omni-models vs specialists</h2>
-<div>
-<ul>
-<li class="fragment"><strong>Generalists</strong>: great interfaces; transfer across domains; help with “glue work.”</li>
-<li class="fragment"><strong>Specialists</strong>: better inductive bias; easier validation; clearer failure modes.</li>
-<li class="fragment">The frontier is <strong>hybrids</strong>: generalist interface + specialist cores + explicit tests.</li>
-</ul>
-</div>
-<aside class="notes">
-Make this a design choice rather than a religious war. A generalist model can still be part of a specialist scientific system if we control the interface and verification boundary.
-</aside>
-<!-- SECTION Agents and open-ended discovery -->
-</section>
-<section id="agents-and-open-ended-discovery" class="slide level2">
-<h2>Agents and open-ended discovery</h2>
-<div>
-<ul>
-<li class="fragment">They turn model capability into <strong>workflow</strong>: read → plan → compute → revise.</li>
-<li class="fragment">They externalise cognition into <strong>teams</strong> (multiple models/tools/roles).</li>
-<li class="fragment">They force us to specify <strong>division of labour</strong>: what humans do vs what machines do.</li>
-</ul>
-</div>
-<aside class="notes">
-This is where your point lands: LLMs look like “human analogue machines” and become more useful when we put them in human-like teams. That reveals what intelligence we’ve actually captured.
-</aside>
-<div>
-<ul>
-<li class="fragment">We can accelerate <strong>search</strong> (literature, designs, hypotheses) and <strong>synthesis</strong> (code, text).</li>
-<li class="fragment">We struggle with <strong>grounded novelty</strong>: new concepts that survive hard refutation.</li>
-<li class="fragment">The bottleneck becomes <strong>experimental design + verification + instrumentation</strong>.</li>
-</ul>
-</div>
-<aside class="notes">
-Lead into later talks: lab automation, closed-loop experimentation, mechanistic discovery, causal discovery, symbolic regression, theorem proving, etc.
-</aside>
-<!-- SECTION What tools do we have, and what tools are missing? -->
-</section>
-<section id="what-tools-do-we-have-and-what-tools-are-missing" class="slide level2">
-<h2>What tools do we have, and what tools are missing?</h2>
-<div>
-<ul>
-<li class="fragment"><strong>Provenance</strong>: what evidence supports this claim? which data/code produced it?</li>
-<li class="fragment"><strong>Interfaces</strong>: how do humans ask good questions and detect bad answers?</li>
-<li class="fragment"><strong>Governance</strong>: who is accountable for decisions made with model-mediated evidence?</li>
-</ul>
-</div>
-<aside class="notes">
-This connects back to paradigms: paradigms live in institutions and interfaces as much as in equations.
-</aside>
-<div>
-<ul>
-<li class="fragment">In maths, formal proof assistants are close to a gold standard for verifiable claims.</li>
-<li class="fragment">In many sciences, knowledge is entangled with <strong>context</strong> and <strong>measurement</strong>.</li>
-<li class="fragment">LLMs may encode that context — but verification must move to <em>interfaces + protocols</em>.</li>
-</ul>
-</div>
-<aside class="notes">
-This is your Lean / repository-of-knowledge riff, without overcommitting. The point is: the verification unit changes by domain, but science still needs verifiable claims.
-</aside>
+<section id="developing-science" class="slide level2">
+<h2>Developing Science</h2>
 <div>
 <ul>
 <li class="fragment">What do we want trainees to be able to <strong>explain</strong>, <strong>verify</strong>, and <strong>challenge</strong>?</li>
-<li class="fragment">Where should we place the <strong>verification boundary</strong> in AI-for-science systems?</li>
-<li class="fragment">Which artefacts should become our new “textbooks”: datasets, simulators, model cards, tests?</li>
+<li class="fragment">Where is the <em>verification boundary</em> in AI-for-science systems?</li>
+<li class="fragment">Which artefacts are the new paradigm stores?</li>
 </ul>
 </div>
 </section>
@@ -373,13 +430,21 @@ This is your Lean / repository-of-knowledge riff, without overcommitting. The po
 <li>company: <a href="https://trent.ai">Trent AI</a></li>
 <li>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li><a href="https://the-atomic-human.ai">The Atomic Human</a></li>
+<li><a href="https://the-atomic-human.ai">The Atomic Human</a> pages Kuhn, Thomas: <em>The Structure of Scientific Revolutions</em> 295–299 , Popper, Karl: <em>Conjectures and Refutations</em> 327,328, intellectual debt 84, 85, 349, 365, separation of concerns 84-85, 103, 109, 199, 284, 371, intellectual debt 84-85, 349, 365, 376, topography, information 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5, anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342, human-analogue machine (HAMs) 343-347, 359-359, 365-368.</li>
 <li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
-<section id="references" class="slide level2 scrollable">
-<h2 class="scrollable">References</h2>
+<section id="references" class="slide level2 unnumbered scrollable">
+<h2 class="unnumbered scrollable">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Kuhn-structure62" class="csl-entry" role="doc-biblioentry">
+Kuhn, T.S., 1962. The structure of scientific revolutions. University of Chicago Press, Chicago, IL.
+</div>
+<div id="ref-Sculley:debt15" class="csl-entry" role="doc-biblioentry">
+Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., Dennison, D., 2015. Hidden technical debt in machine learning systems, in: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 28. Curran Associates, Inc., pp. 2503–2511.
+</div>
+</div>
 </section>
     </div>
   </div>
