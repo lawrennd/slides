@@ -96,6 +96,9 @@
 </section>
 <section id="context-and-objective" class="slide level2">
 <h2>Context and objective</h2>
+</section>
+<section id="building-on-our-previous-trent-session" class="slide level2">
+<h2>Building on our previous Trent session</h2>
 <div>
 <ul>
 <li class="fragment">Last time: explicit intent and shared context reduce misimplementation.</li>
@@ -103,6 +106,9 @@
 <li class="fragment">Core question: how do we keep institutional judgement while scaling delegation?</li>
 </ul>
 </div>
+</section>
+<section id="security-at-machine-speed" class="slide level2">
+<h2>Security at machine speed</h2>
 <div>
 <ul>
 <li class="fragment">Agentic systems turn language into <em>actions</em> (tools, APIs, workflows).</li>
@@ -110,6 +116,9 @@
 <li class="fragment">The bottleneck shifts to judgement, coordination, and timely escalation.</li>
 </ul>
 </div>
+</section>
+<section id="institutional-tacit-knowledge" class="slide level2">
+<h2>Institutional tacit knowledge</h2>
 <div>
 <ul>
 <li class="fragment">The “judgement layer” in organisations is often <em>tacit</em>: norms, exceptions, escalation paths, and context that rarely makes it into documentation.</li>
@@ -121,6 +130,9 @@
 </section>
 <section id="architecture-doagents" class="slide level2">
 <h2>Architecture: DOAgents</h2>
+</section>
+<section id="doagents-for-agent-networks" class="slide level2">
+<h2>DOAgents for agent networks</h2>
 <div>
 <ul>
 <li class="fragment">Use a <em>data-oriented</em> interface between agents: shared state, explicit contracts, typed handoffs.</li>
@@ -128,6 +140,9 @@
 <li class="fragment">Analyse at the graph level, not just individual prompts.</li>
 </ul>
 </div>
+</section>
+<section id="why-this-helps-trent-now" class="slide level2">
+<h2>Why this helps Trent now</h2>
 <div>
 <ul>
 <li class="fragment">Makes the judgement layer inspectable: what each agent saw, decided, and handed off.</li>
@@ -149,6 +164,9 @@
 <li class="fragment"><p>This models an ideal thinker or reasoning AI.</p></li>
 </ul>
 </div>
+</section>
+<section id="consistent-reasoning-paradox-crp" class="slide level2">
+<h2>Consistent Reasoning Paradox (CRP)</h2>
 <div>
 <ul>
 <li class="fragment"><p>The paradox shows that an agent that is:</p></li>
@@ -158,6 +176,9 @@
 <li class="fragment"><p>cannot maintain all those properties simultaneously.</p></li>
 </ul>
 </div>
+</section>
+<section id="the-missing-primitive-i-dont-know" class="slide level2">
+<h2>The missing primitive: “I don’t know”</h2>
 <div>
 <ul>
 <li class="fragment">Agents need an explicit <em>I don’t know</em> action, not just low-confidence prose.</li>
@@ -187,6 +208,9 @@
 <li class="fragment">Agentic debt is about unsafe or illegible delegation.</li>
 </ul>
 </div>
+</section>
+<section id="time-bounded-delegation-in-doagent-graphs" class="slide level2">
+<h2>Time-bounded delegation in DOAgent graphs</h2>
 <div>
 <ul>
 <li class="fragment">Assign each node/subgraph a time budget <span class="math inline">\(\tau_i\)</span> and termination policy.</li>
@@ -194,6 +218,9 @@
 <li class="fragment">Optional prompt augmentation: agents see remaining time and adapt search depth.</li>
 </ul>
 </div>
+</section>
+<section id="choosing-time-budgets-tau_i" class="slide level2">
+<h2>Choosing time budgets (<span class="math inline">\(\tau_i\)</span>)</h2>
 <div>
 <ul>
 <li class="fragment">Tune empirically from traces: success rate, escalation rate, and incident outcomes.</li>
@@ -201,6 +228,9 @@
 <li class="fragment">Different tasks need different <span class="math inline">\(\tau_i\)</span>: triage may be short; remediation planning longer.</li>
 </ul>
 </div>
+</section>
+<section id="minute-takeaway" class="slide level2">
+<h2>20-minute takeaway</h2>
 <div>
 <ul>
 <li class="fragment">Institutional tacit knowledge is the judgement layer; don’t silently cede it.</li>
