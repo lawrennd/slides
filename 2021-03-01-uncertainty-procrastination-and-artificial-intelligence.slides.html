@@ -14,9 +14,20 @@
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
+      /* scrollable slides: start content at top, left-align text */
+      .reveal section.scrollable {
+          overflow-y: auto !important;
+          height: 100% !important;
+          top: 0 !important;
+          text-align: left;
+      }
+      .reveal section.scrollable > h2:first-child,
+      .reveal section.scrollable > h2.scrollable:first-child {
+          margin-top: 0.2em;
+      }
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
-  <link rel="stylesheet" href="../assets/css/talks.css"/>
+  <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -28,6 +39,9 @@
   <!--[if lt IE 9]>
   <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
+   <!-- Mermaid -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -36,7 +50,29 @@
       }
     });
   </script>
-  <script src="../assets/js/figure-animate.js"></script>
+  <script src="https://inverseprobability.com/assets/js/figure-animate.js"></script>
+   <!-- Initialize Mermaid after Reveal is loaded -->
+<script>
+  Reveal.addEventListener('ready', event => {
+    // Initialize mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      // These are the same theme variables we used above
+      themeVariables: {
+          primaryColor: '#4a90e2',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#357abd',
+          lineColor: '#67b246',
+          fontSize: '30px',
+          fontFamily: 'arial',
+	  edgeLabelBackground: 'transparent',
+	  tertiaryColor: 'transparent'
+      }
+    });
+  });
+</script>
+   
 </head>
 <body>
   <div class="reveal">
@@ -59,7 +95,7 @@
 <section id="section" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
-<a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2"><img data-src="../slides/diagrams/books/1YQPAAAAQAAJ-PR17-IA2.png" /></a>
+<a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2"><img data-src="https://inverseprobability.com/talks/../slides/diagrams//books/1YQPAAAAQAAJ-PR17-IA2.png" /></a>
 </div>
 <aside class="notes">
 This notion is known as <em>Laplace’s demon</em> or <em>Laplace’s superman</em>.
@@ -70,11 +106,12 @@ This notion is known as <em>Laplace’s demon</em> or <em>Laplace’s superman</
 <div class="figure">
 <div id="laplaces-demon-cropped-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/physics/philosophicaless00lapliala_16_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/philosophicaless00lapliala_16_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
 <aside class="notes">
+English translation of Laplace’s demon, taken from the Philosophical Essay on probabilities <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 3.
 </aside>
 <blockquote>
 <p><em>Philosophical Essay on Probabilities</em> <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 3</p>
@@ -84,7 +121,7 @@ This notion is known as <em>Laplace’s demon</em> or <em>Laplace’s superman</
 <h2></h2>
 <center>
 <span class="math display">\[
-\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span>
+\text{model} + \text{data} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span>
 </center>
 </section>
 <section id="section-3" class="slide level2">
@@ -99,200 +136,220 @@ This notion is known as <em>Laplace’s demon</em> or <em>Laplace’s superman</
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="life-rules-loneliness-figure" class="figure-frame">
-<table>
-<tr>
-<td width="70%">
-<table>
-<tr>
-<td width="30%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 70%; max-width:70%;">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
-<object class data="../slides/diagrams/simulation/life-rules-1-0.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-1-0.svg" width="100%" style=" ">
 </object>
 </center>
-</td>
-<td width="39%">
+</div>
+<div style="flex:0 0 39%; max-width:39%;">
 <center>
 <em>loneliness</em>
 </center>
 <center>
-<object class="svgplot " data="../slides/diagrams/util/right-arrow.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
 </object>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
-<object class data="../slides/diagrams/simulation/life-rules-1-1.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-1-1.svg" width="100%" style=" ">
 </object>
 </center>
-</td>
-</tr>
-</table>
-</td>
-<td width="30%">
+</div>
+</div>
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
-</td>
-</tr>
-</table>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
 ‘Death’ through loneliness in Conway’s game of life. If a cell is surrounded by less than three cells, it ‘dies’ through loneliness.
 </aside>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="life-rules-crowding-figure" class="figure-frame">
-<table>
-<tr>
-<td width="70%">
-<table>
-<tr>
-<td width="30%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 70%; max-width:70%;">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
-<object class data="../slides/diagrams/simulation/life-rules-2-0.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-2-0.svg" width="100%" style=" ">
 </object>
 </center>
-</td>
-<td width="39%">
+</div>
+<div style="flex:0 0 39%; max-width:39%;">
 <center>
 <em>overcrowding</em>
 </center>
 <center>
-<object class="svgplot " data="../slides/diagrams/util/right-arrow.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
 </object>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
-<object class data="../slides/diagrams/simulation/life-rules-2-1.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-2-1.svg" width="100%" style=" ">
 </object>
 </center>
-</td>
-</tr>
-</table>
-</td>
-<td width="30%">
+</div>
+</div>
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
-</td>
-</tr>
-</table>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
 ‘Death’ through overpopulation in Conway’s game of life. If a cell is surrounded by more than three cells, it ‘dies’ through loneliness.
 </aside>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="life-rules-crowding-figure" class="figure-frame">
-<table>
-<tr>
-<td width="70%">
-<table>
-<tr>
-<td width="30%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 70%; max-width:70%;">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
-<object class data="../slides/diagrams/simulation/life-rules-3-0.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-3-0.svg" width="100%" style=" ">
 </object>
 </center>
-</td>
-<td width="39%">
+</div>
+<div style="flex:0 0 39%; max-width:39%;">
 <center>
 <em>birth</em>
 </center>
 <center>
-<object class="svgplot " data="../slides/diagrams/util/right-arrow.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
 </object>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
-<object class data="../slides/diagrams/simulation/life-rules-3-1.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-3-1.svg" width="100%" style=" ">
 </object>
 </center>
-</td>
-</tr>
-</table>
-</td>
-<td width="30%">
+</div>
+</div>
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
-</td>
-</tr>
-</table>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
-Birth in Conway’s life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.
-</aside>
-</section>
-<section id="section-8" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="glider-loafer-conway-figure" class="figure-frame">
-<table>
-<tr>
-<td width="45%">
-<center>
-<em>Glider (1969)</em>
-</center>
-<center>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/simulation/Glider.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</center>
-</td>
-<td width="45%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<aside class="notes">
-<em>Left</em> A Glider pattern discovered 1969 by Richard K. Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).
+Birth in Conway’s life. Any position surrounded by precisely three live cells will give birth to a new cell at the next turn.
 </aside>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
 <div class="figure">
+<div id="life-blinker-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-blinker.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Evolution of a simple oscillator (blinker) in the Game of Life.
+</aside>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p><br />
+</p>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div class="figure">
 <div id="glider-loafer-conway-figure" class="figure-frame">
-<table>
-<tr>
-<td width="45%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 45%; max-width:45%;">
+<center>
+<em>Glider (1969)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/glider.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</div>
+<div style="flex:0 0 45%; max-width:45%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<em>Left</em> A Glider pattern discovered 1969 by Richard K. Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020). The glider is an oscillator that moves diagonally after creation.
+</aside>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="gosper-glider-gun-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/gosper-glider-gun.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The Gosper glider gun is a configuration that creates gliders. A new glider is released after every 30 turns.
+</aside>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="the-loafer-spaceship-figure" class="figure-frame">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 45%; max-width:45%;">
 <center>
 <em>Loafer (2013)</em>
 </center>
 <center>
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/simulation/Loafer.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/loafer.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
-</td>
-<td width="45%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</td>
-</tr>
-</table>
+<div style="flex:0 0 45%; max-width:45%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
@@ -302,12 +359,12 @@ Birth in Conway’s life. Any position surounded by precisely three live cells w
 The phenomenon of emergent behaviour also applies to real world simulations like climate and weather. E.g. Niall Robinson defining a hurricane to search for hurricane’s im climate simulations.
 </aside>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="probability-relative-in-part-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/physics/philosophicaless00lapliala_18_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/philosophicaless00lapliala_18_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -317,13 +374,16 @@ To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to 
 <blockquote>
 <p><em>Philosophical Essay on Probabilities</em> <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 5</p>
 </blockquote>
+<aside class="notes">
+I like to refer to this notion as “Laplace’s Gremlin,” because the lack of knowledge is the “gremlin of uncertainty” that inhibits the “deterministic demon”
+</aside>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="germlins-think-its-fun-to-hurt-you-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ai/gremlins-think-its-fun-to-hurt-you.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/gremlins-think-its-fun-to-hurt-you.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -331,29 +391,27 @@ To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to 
 Gremlins are seen as the cause of a number of challenges in this World War II poster.
 </aside>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="lap-engine-boulton-watt-figure" class="figure-frame">
-<table>
-<tr>
-<td width="60%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 60%; max-width:60%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/physics/lap-engine.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/lap-engine.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
 <em>Lap Engine (1788)</em>
 </center>
-</td>
-<td width="40%">
+</div>
+<div style="flex:0 0 40%; max-width:40%;">
 <center>
 total energy <br> = <br> available energy <br> + <br> temperature <br> <span class="math inline">\(\times\)</span> <br>entropy
 </center>
-</td>
-</tr>
-</table>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
@@ -361,44 +419,55 @@ James Watt’s Lap Engine which incorporates many of his innovations to the stea
 </aside>
 <!--THEORY of IGNORANCE-->
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-18" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="albert-einstein-photo-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Albert_Einstein_photo_1921.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Albert Einstein’s 1905 paper on Brownian motion introduced stochastic differential equations which can be used to model the ‘curve of a simple molecule of air.’
+</aside>
+</section>
+<section id="section-19" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="russell-wiener-russell-figure" class="figure-frame">
-<table>
-<tr>
-<td width="30%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/philosophy/Bertrand_Russell_1957.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//philosophy/Bertrand_Russell_1957.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
 <em>Betrand Russell</em>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/physics/Albert_Einstein_photo_1921.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Albert_Einstein_photo_1921.jpg" width="85%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
 <em>Albert Einstein</em>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/physics/Norbert_wiener.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Norbert_wiener.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
 <em>Norbert Wiener</em>
 </center>
-</td>
-</tr>
-</table>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
@@ -408,12 +477,12 @@ Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894
 Wiener came to Cambridge in 1913. Russell showed him Einstein’s 1905 paper on Brownian motion (<span class="citation" data-cites="Einstein-brownian05">Einstein (1905)</span>)
 </aside>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="brownian-motion-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/physics/brownian-motion.gif" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/brownian-motion.gif" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -421,96 +490,121 @@ Wiener came to Cambridge in 1913. Russell showed him Einstein’s 1905 paper on 
 Brownian motion of a large particle in a group of smaller particles. The movement is known as a <em>Wiener process</em> after Norbert Wiener.
 </aside>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-21" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="norbert-wiener-yellow-peril-figure" class="figure-frame">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 45%; max-width:45%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/Norbert_wiener.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div style="flex:0 0 45%; max-width:45%;">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/wiener-yellow-peril.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+Norbert Wiener (1894 - 1964). Founder of cybernetics and the information era. He used Gibbs’s ideas to develop a “theory of ignorance” that he deployed in early communication. On the right is Wiener’s wartime report that used stochastic processes in forecasting with applications in radar control (image from <span class="citation" data-cites="Coales-yellow14">Coales and Kane (2014)</span>).
+</aside>
+</section>
+<section id="section-22" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="maxwell-boltzmann-gibbs-figure" class="figure-frame">
-<table>
-<tr>
-<td width="30%">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/physics/james-clerk-maxwell.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/james-clerk-maxwell.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
 <em>James Clerk Maxwell</em>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/physics/boltzmann2.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/boltzmann2.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
 <em>Ludwig Boltzmann</em>
 </center>
-</td>
-<td width="30%">
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/physics/j-w-gibbs.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/j-w-gibbs.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
 <em>Josiah Willard Gibbs</em>
 </center>
-</td>
-</tr>
-</table>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
 James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)
 </aside>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="entropy-billiards-js-figure" class="figure-frame">
-<div>
-<div style="width:68%;float:left">
-<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left ">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
 </canvas>
 </div>
-<div style="width:28%;float:right;margin:auto">
-<div style="float:right;width:100%;margin:auto">
-Entropy:
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
 <output id="multiball-entropy">
 </output>
 </div>
-<div id="multiball-histogram-canvas" style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
+<div id="multiball-histogram-canvas" style="width:100%;height:250px">
 
 </div>
-</div>
-</div>
-<div>
-<button id="multiball-newball" style="text-align:right">
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="multiball-newball">
 New Ball
 </button>
-<button id="multiball-pause" style="text-align:right">
+<button id="multiball-pause">
 Pause
 </button>
-<button id="multiball-skip" style="text-align:right">
+<button id="multiball-skip">
 Skip 1000s
 </button>
-<button id="multiball-histogram" style="text-align:right">
+<button id="multiball-histogram">
 Histogram
 </button>
 </div>
+</div>
+</div>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="../scripts/ballworld/ballworld.js"></script>
-<script src="../scripts/ballworld/multiball.js"></script>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/multiball.js"></script>
 </div>
 </div>
 <aside class="notes">
-Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls.
+Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
 </aside>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="maxwells-demon-figure" class="figure-frame">
-<object class data="../slides/diagrams/physics/maxwells-demon.svg" width="100%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/maxwells-demon.svg" width="100%" style=" ">
 </object>
 </div>
 </div>
@@ -518,83 +612,80 @@ Bernoulli’s simple kinetic models of gases assume that the molecules of air op
 Maxwell’s demon opens and closes a door which allows fast particles to pass from left to right and slow particles to pass from right to left. This makes the left hand side colder than the right.
 </aside>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="maxwells-demon-figure" class="figure-frame">
-<div>
-<div style="width:68%;float:left">
-<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
 </canvas>
 </div>
-<div style="width:28%;float:right;margin:auto">
-<div style="float:right;width:100%;margin:auto">
-Entropy:
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
 <output id="maxwell-entropy">
 </output>
 </div>
-<div id="maxwell-histogram-canvas" style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
+<div id="maxwell-histogram-canvas" style="width:100%;height:250px">
 
 </div>
-</div>
-</div>
-<div>
-<button id="maxwell-newball" style="text-align:right">
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="maxwell-newball">
 New Ball
 </button>
-<button id="maxwell-pause" style="text-align:right">
+<button id="maxwell-pause">
 Pause
 </button>
-<button id="maxwell-skip" style="text-align:right">
+<button id="maxwell-skip">
 Skip 1000s
 </button>
-<button id="maxwell-histogram" style="text-align:right">
+<button id="maxwell-histogram">
 Histogram
 </button>
 </div>
-<script src="../scripts/ballworld/maxwell.js"></script>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
 </div>
 </div>
 <aside class="notes">
-Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right, only if they are hot.
+Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right only if they are hot. The displayed entropy is the Shannon entropy of the velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
 </aside>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-27" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="kappen-ball-figure" class="figure-frame">
-<div>
-<div style="width:900px;text-align:center;display:inline">
-<span style="float:left;">Score:
+<div style="max-width:800px">
+<div style="display:flex;justify-content:space-between">
+<span>Score:
 <output id="kappenball-score">
 </output>
-</span> <span style="float:right;">Energy:
+</span> <span>Energy:
 <output id="kappenball-energy">
 </output>
-</span>
-<div style="clear: both;">
-
+<p></span></p>
 </div>
-</div>
-<canvas id="kappenball-canvas" width="900" height="500" style="border:1px solid black;display:inline;text-align:center ">
+<canvas id="kappenball-canvas" width="800" height="450" style="border:1px solid black;display:block;width:100%">
 </canvas>
 <div>
-<input type="range" min="0" max="100" value="0" class="slider" id="kappenball-stochasticity" style="width:900px;"/>
+<p><input type="range" min="0" max="100" value="0" class="slider" id="kappenball-stochasticity" style="width:100%;"/></p>
 </div>
-<div>
-<button id="kappenball-newball" style="text-align:right">
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="kappenball-newball">
 New Ball
 </button>
-<button id="kappenball-pause" style="text-align:right">
+<button id="kappenball-pause">
 Pause
 </button>
 </div>
 <output id="kappenball-count">
 </output>
-<script src="../scripts/ballworld/kappenball.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/kappenball.js"></script>
 </div>
 </div>
 </div>
@@ -602,13 +693,13 @@ Pause
 Kappen Ball
 </aside>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-28" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="claude-shannon-figure" class="figure-frame">
 <center>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ClaudeShannon_MFO3807.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </center>
 <center>
@@ -623,7 +714,7 @@ Claude Shannon (1916-2001)
 Just as we measure temperature. Just as Celsius gave us the scale for temperature, so entropy measures ignorance. Formalised most famously by Claude Shannon
 </aside>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-29" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="embodiment-factors-table-figure" class="figure-frame">
@@ -632,11 +723,11 @@ Just as we measure temperature. Just as Celsius gave us the scale for temperatur
 <td>
 </td>
 <td align="center">
-<object class="svgplot " data="../slides/diagrams/computer.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor.svg" width="15%" style=" ">
 </object>
 </td>
 <td align="center">
-<object class="svgplot " data="../slides/diagrams/human.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//human.svg" width="60%" style=" ">
 </object>
 </td>
 </tr>
@@ -653,7 +744,7 @@ billions
 </tr>
 <tr>
 <td>
-billion<br>calculations/s
+billion <br>calculations/s
 </td>
 <td align="center">
 ~100
@@ -680,66 +771,66 @@ embodiment
 Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second’s worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years.
 </aside>
 </section>
-<section id="section-23" class="slide level2">
-<h2></h2>
-</section>
-<section id="section-24" class="slide level2">
-<h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation000.svg" width="70%" style=" ">
-</object>
-</div>
-</section>
-<section id="section-25" class="slide level2">
-<h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation001.svg" width="70%" style=" ">
-</object>
-</div>
-</section>
-<section id="section-26" class="slide level2">
-<h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation002.svg" width="70%" style=" ">
-</object>
-</div>
-</section>
-<section id="section-27" class="slide level2">
-<h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation003.svg" width="70%" style=" ">
-</object>
-</div>
-</section>
-<section id="section-28" class="slide level2">
-<h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation004.svg" width="70%" style=" ">
-</object>
-</div>
-</section>
-<section id="section-29" class="slide level2">
-<h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation005.svg" width="70%" style=" ">
-</object>
-</div>
-</section>
 <section id="section-30" class="slide level2">
 <h2></h2>
-<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
-</object>
-</div>
 </section>
 <section id="section-31" class="slide level2">
 <h2></h2>
 <div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation000.svg" width="70%" style=" ">
 </object>
 </div>
 </section>
 <section id="section-32" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation001.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-33" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation002.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation003.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-35" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation004.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-36" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation005.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-37" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation006.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-38" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation007.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-39" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="heider-simmel-shapes-figure" class="figure-frame">
@@ -748,60 +839,60 @@ Embodiment factors are the ratio between our ability to compute and our ability 
 </div>
 </div>
 <aside class="notes">
-Fritz Heider and Marianne Simmel’s video of shapes from <span class="citation" data-cites="Heider:experimental44">Heider and Simmel (1944)</span>.
+Fritz Heider and Marianne Simmel’s video of shapes from <span class="citation" data-cites="Heider-experimental44">Heider and Simmel (1944)</span>.
 </aside>
-</section>
-<section id="section-33" class="slide level2">
-<h2></h2>
-</section>
-<section id="section-34" class="slide level2">
-<h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation000.svg" width="80%" style=" ">
-</object>
-</section>
-<section id="section-35" class="slide level2">
-<h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation001.svg" width="80%" style=" ">
-</object>
-</section>
-<section id="section-36" class="slide level2">
-<h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation002.svg" width="80%" style=" ">
-</object>
-</section>
-<section id="section-37" class="slide level2">
-<h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation003.svg" width="80%" style=" ">
-</object>
-</section>
-<section id="section-38" class="slide level2">
-<h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation004.svg" width="80%" style=" ">
-</object>
-</section>
-<section id="section-39" class="slide level2">
-<h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation005.svg" width="80%" style=" ">
-</object>
 </section>
 <section id="section-40" class="slide level2">
 <h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation006.svg" width="80%" style=" ">
-</object>
 </section>
 <section id="section-41" class="slide level2">
 <h2></h2>
-<object class="svgplot " data="../slides/diagrams/anne-computer-conversation007.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation000.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-42" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation001.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-43" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation002.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-44" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation003.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-45" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation004.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-46" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation005.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-47" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation006.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="section-48" class="slide level2">
+<h2></h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-computer-conversation007.svg" width="80%" style=" ">
 </object>
 <aside class="notes">
 This can be disturbing to humans because we are used to a low bandwidth communication rate.
 </aside>
 </section>
-<section id="section-42" class="slide level2">
+<section id="section-49" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="human-computers-interacting-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/human-computers-interacting.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/human-computers-interacting.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
@@ -809,11 +900,11 @@ This can be disturbing to humans because we are used to a low bandwidth communic
 Humans and computers interacting should be a major focus of our research and engineering efforts.
 </aside>
 </section>
-<section id="section-43" class="slide level2">
+<section id="section-50" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="human-culture-interacting-figure" class="figure-frame">
-<object class data="../slides/diagrams/ai/human-culture-interacting.svg" width="80%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//ai/human-culture-interacting.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
@@ -821,39 +912,35 @@ Humans and computers interacting should be a major focus of our research and eng
 Humans use culture, facts and ‘artefacts’ to communicate.
 </aside>
 </section>
-<section id="section-44" class="slide level2">
+<section id="section-51" class="slide level2">
 <h2></h2>
 <blockquote>
 <p>One thing is I can live with is doubt, and uncertainty and not knowing. I think it’s much more interesting to live with not knowing than to have an answer that might be wrong.</p>
 <p>Richard P. Feynmann in the <em>The Pleasure of Finding Things Out</em> 1981.</p>
 </blockquote>
 </section>
-<section id="section-45" class="slide level2 scrollable">
+<section id="section-52" class="slide level2 scrollable">
 <h2 class="scrollable"></h2>
 <ul>
+<li>company: <a href="https://trent.ai">Trent AI</a></li>
+<li>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li><a href="https://the-atomic-human.ai">The Atomic Human</a> pages psychological representation 326–329, 344–345, 353, 361, 367 , telepathy 248-50, anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342.</li>
 <li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
-<section id="section-46" class="slide level2 unnumbered scrollable">
+<section id="section-53" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable"></h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Einstein-brownian05" class="csl-entry" role="doc-biblioentry">
-Einstein, A., 1905. Über die von der molekularkinetischen <span>T</span>heorie der <span>W</span>ärme geforderte <span>B</span>ewegung von in ruhenden <span>F</span>lüssigkeiten suspendierten <span>T</span>eilchen. Annalen der Physik 322, 549–560. <a href="https://doi.org/10.1002/andp.19053220806">https://doi.org/10.1002/andp.19053220806</a>
+<div id="ref-Coales-yellow14" class="csl-entry" role="doc-biblioentry">
+Coales, J.F., Kane, S.J., 2014. The <span>“yellow peril”</span> and after. IEEE Control Systems Magazine 34, 65–69. <a href="https://doi.org/10.1109/MCS.2013.2287387">https://doi.org/10.1109/MCS.2013.2287387</a>
 </div>
 <div id="ref-Einstein-brownian05" class="csl-entry" role="doc-biblioentry">
 Einstein, A., 1905. Über die von der molekularkinetischen <span>T</span>heorie der <span>W</span>ärme geforderte <span>B</span>ewegung von in ruhenden <span>F</span>lüssigkeiten suspendierten <span>T</span>eilchen. Annalen der Physik 322, 549–560. <a href="https://doi.org/10.1002/andp.19053220806">https://doi.org/10.1002/andp.19053220806</a>
 </div>
-<div id="ref-Heider:experimental44" class="csl-entry" role="doc-biblioentry">
-Heider, F., Simmel, M., 1944. An experimental study of apparent behavior. The American Journal of Psychology 57, 243–259.
-</div>
-<div id="ref-Heider:experimental44" class="csl-entry" role="doc-biblioentry">
-Heider, F., Simmel, M., 1944. An experimental study of apparent behavior. The American Journal of Psychology 57, 243–259.
-</div>
-<div id="ref-Laplace-essai14" class="csl-entry" role="doc-biblioentry">
-Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.
+<div id="ref-Heider-experimental44" class="csl-entry" role="doc-biblioentry">
+Heider, F., Simmel, M., 1944. An experimental study of apparent behavior. The American Journal of Psychology 57, 243–259. <a href="https://doi.org/10.2307/1416950">https://doi.org/10.2307/1416950</a>
 </div>
 <div id="ref-Laplace-essai14" class="csl-entry" role="doc-biblioentry">
 Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.
