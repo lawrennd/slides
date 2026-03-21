@@ -14,6 +14,17 @@
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
+      /* scrollable slides: start content at top, left-align text */
+      .reveal section.scrollable {
+          overflow-y: auto !important;
+          height: 100% !important;
+          top: 0 !important;
+          text-align: left;
+      }
+      .reveal section.scrollable > h2:first-child,
+      .reveal section.scrollable > h2.scrollable:first-child {
+          margin-top: 0.2em;
+      }
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
@@ -125,6 +136,196 @@ David playing ultimate. Picture is taken from <a href="https://itila.blogspot.co
 <li>Create a self-adjudicating zero-player information game</li>
 </ul>
 </section>
+<section id="a-tautology" class="slide level2">
+<h2>A Tautology</h2>
+<blockquote>
+<p>Self-governing systems cannot refer to external arbitration.</p>
+</blockquote>
+</section>
+<section id="formalisation" class="slide level2">
+<h2>Formalisation</h2>
+<ul>
+<li>Use information theory.</li>
+<li>Introduced to me in David’s group meetings from February 1998.</li>
+</ul>
+</section>
+<section id="entropy-billiards" class="slide level2">
+<h2>Entropy Billiards</h2>
+<div class="figure">
+<div id="entropy-billiards-js-figure" class="figure-frame">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
+<output id="multiball-entropy">
+</output>
+</div>
+<div id="multiball-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="multiball-newball">
+New Ball
+</button>
+<button id="multiball-pause">
+Pause
+</button>
+<button id="multiball-skip">
+Skip 1000s
+</button>
+<button id="multiball-histogram">
+Histogram
+</button>
+</div>
+</div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/multiball.js"></script>
+</div>
+</div>
+<aside class="notes">
+Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
+</aside>
+</section>
+<section id="joint-and-marginal-entropy" class="slide level2">
+<h2>Joint and Marginal Entropy</h2>
+<p><strong>Joint vs Marginal Entropy:</strong></p>
+<p><span class="math display">\[H(v_x, v_y) \leq H(v_x) + H(v_y)\]</span></p>
+<ul>
+<li>Equality ↔︎ (v_x v_y) (statistical independence)</li>
+<li>Mutual information (I(v_x;v_y) = H(v_x)+H(v_y)-H(v_x,v_y))</li>
+<li>Billiards: correlated start → (I) large; equilibrium → (I )</li>
+</ul>
+<div class="figure">
+<div id="joint-marginal-entropy-js-figure" class="figure-frame">
+<div style="width:100%;max-width:800px">
+<canvas id="jointentropy-canvas" width="800" height="450" style="border:1px solid black;display:block;width:100%">
+</canvas>
+<table style="width:100%;margin-top:8px;border-collapse:collapse;font-family:monospace;font-size:0.9em">
+<tr>
+<td style="padding:3px 8px">
+(H(v_x)) marginal (bits):
+</td>
+<td>
+<output id="jointentropy-hx">
+0.000
+</output>
+</td>
+</tr>
+<tr>
+<td style="padding:3px 8px">
+(H(v_y)) marginal (bits):
+</td>
+<td>
+<output id="jointentropy-hy">
+0.000
+</output>
+</td>
+</tr>
+<tr style="border-top:1px solid #ccc">
+<td style="padding:3px 8px">
+(H(v_x) + H(v_y)) (bits):
+</td>
+<td>
+<output id="jointentropy-hxphy">
+0.000
+</output>
+</td>
+</tr>
+<tr>
+<td style="padding:3px 8px">
+(H(v_x,,v_y)) joint (bits):
+</td>
+<td>
+<output id="jointentropy-hxy">
+0.000
+</output>
+</td>
+</tr>
+<tr style="border-top:1px solid #ccc;font-weight:bold">
+<td style="padding:3px 8px">
+(I(v_x;,v_y)) mutual info (bits):
+</td>
+<td>
+<output id="jointentropy-mi">
+0.000
+</output>
+</td>
+</tr>
+</table>
+<div style="margin-top:6px;display:flex;gap:4px">
+<button id="jointentropy-newball">
+Reset
+</button>
+<button id="jointentropy-pause">
+Pause / Resume
+</button>
+<button id="jointentropy-skip">
+Skip 1000s
+</button>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/jointentropy.js"></script>
+</div>
+</div>
+<aside class="notes">
+The billiard gas starts with circularly-distributed velocities so that (v_x) and (v_y) are correlated. As elastic collisions thermalise the gas the mutual information (I(v_x;v_y)) falls toward zero, demonstrating that at equilibrium the velocity components become statistically independent and the joint entropy equals the sum of the marginals.
+</aside>
+<!-- SECTION Foundations: Information Loss and Entropy -->
+</section>
+<section id="foundations-information-loss-and-entropy" class="slide level2">
+<h2>Foundations: Information Loss and Entropy</h2>
+</section>
+<section id="the-inaccessible-game-setup" class="slide level2">
+<h2>The Inaccessible Game Setup</h2>
+</section>
+<section id="information-isolation" class="slide level2">
+<h2>Information Isolation</h2>
+<p><strong>The Fourth Axiom: Information Isolation</strong></p>
+<ul>
+<li>First three axioms: information loss (Baez-Fritz-Leinster)</li>
+<li>Fourth axiom: the game is <em>isolated from observation</em></li>
+<li>No external observer can extract or inject information</li>
+</ul>
+<p><em>Analogous to energy conservation in thermodynamics</em></p>
+</section>
+<section id="conservation-of-marginal-entropy" class="slide level2">
+<h2>Conservation of Marginal Entropy</h2>
+<p><strong>Marginal Entropy Conservation:</strong> <span class="math display">\[
+\sum_{i=1}^N h_i = C
+\]</span></p>
+<ul>
+<li>Exchangeable: holds for any finite subset of variables</li>
+<li>Extensive: scales linearly with system size</li>
+<li>Analogous to energy conservation — but for information</li>
+</ul>
+</section>
+<section id="why-this-form" class="slide level2">
+<h2>Why This Form?</h2>
+<p><strong>Uniqueness of the Form:</strong></p>
+<p>Any exchangeable, extensive conservation law over marginal entropies must be: <span class="math display">\[Q(\{h_i\}) = \sum_i f(h_i), \quad f(h) = c \cdot h\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math inline">\(\sum_i h_i = C\)</span></p>
+</section>
+<section id="coordinate-free-interpretation" class="slide level2">
+<h2>Coordinate-Free Interpretation</h2>
+<p><strong>Information Isolation:</strong></p>
+<ul>
+<li>Enforces <em>internality</em>: no external reference structures</li>
+<li>Enforces <em>relationality</em>: all quantities defined internally</li>
+<li>Variable partition <span class="math inline">\(\{X_i\}\)</span> is model specification, not external imposition</li>
+</ul>
+<p><em>Marginal entropy conservation = information geometry’s built-in potential</em></p>
+</section>
 <section id="the-no-barber-principle" class="slide level2">
 <h2>The No-Barber Principle</h2>
 <p><strong>Russell’s Barber Paradox:</strong></p>
@@ -166,110 +367,84 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <h2>What This Excludes</h2>
 <p><strong>Violations of No-Barber:</strong> * Partial conservation (some variables isolated) → privileges variables * Time-varying <span class="math inline">\(C\)</span> → needs external clock * Observer-relative isolation → needs external observer * Probabilistic isolation → needs external measure</p>
 <p><em>All smuggle in external structure</em></p>
-<!-- SECTION Foundations: Information Loss and Entropy -->
 </section>
-<section id="foundations-information-loss-and-entropy" class="slide level2">
-<h2>Foundations: Information Loss and Entropy</h2>
-</section>
-<section id="the-three-axioms" class="slide level2">
-<h2>The Three Axioms</h2>
-</section>
-<section id="baez-fritz-leinster-characterization-of-information-loss" class="slide level2">
-<h2>Baez-Fritz-Leinster Characterization of Information Loss</h2>
-<p><strong><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>:</strong> * Entropy from category theory * Three axioms uniquely determine information loss * No probability needed initially</p>
-</section>
-<section id="the-three-axioms-1" class="slide level2">
-<h2>The Three Axioms</h2>
-<p><strong>Axiom 1: Functoriality</strong> <span class="math display">\[F(f \circ g) = F(f) + F(g)\]</span></p>
+<section id="lawvere-diagonalisation" class="slide level2">
+<h2>Lawvere Diagonalisation</h2>
+<p><strong>Impossibility results sharing a structure:</strong></p>
 <ul>
-<li>Information loss is additive</li>
-<li>Compose processes → add losses</li>
+<li>Russell’s paradox</li>
+<li>Cantor’s theorem</li>
+<li>Gödel incompleteness</li>
+<li>Turing’s halting problem</li>
+<li>Tarski’s undefinability</li>
 </ul>
+<p><em>Unified by Lawvere diagonalisation</em> <span class="citation" data-cites="Lawvere-diagonal69">(<strong>Lawvere-diagonal69?</strong>)</span></p>
 </section>
-<section id="convex-linearity" class="slide level2">
-<h2>Convex Linearity</h2>
-<p><strong>Axiom 2: Convex Linearity</strong> <span class="math display">\[F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g)\]</span></p>
+<section id="the-five-move-recipe" class="slide level2">
+<h2>The Five-Move Recipe</h2>
+<p><strong>Lawvere’s Five-Move Recipe:</strong></p>
+<ol type="1">
+<li>Rules: operations from inputs to outputs</li>
+<li>Universal evaluator: run any rule on any input</li>
+<li>Internalise syntax: rules can reference all operations</li>
+<li>Self-application: rules can serve as their own input</li>
+<li>Twist: negate or complement outputs</li>
+</ol>
+<p><em>When all five hold: contradiction is derivable</em></p>
+</section>
+<section id="the-barber-paradox-as-lawvere-diagonalisation" class="slide level2">
+<h2>The Barber Paradox as Lawvere Diagonalisation</h2>
+<p><strong>Barber as Lawvere:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Barber interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rules</td>
+<td>shaving rules <span class="math inline">\(R\)</span></td>
+</tr>
+<tr class="even">
+<td>Evaluator</td>
+<td><span class="math inline">\(\text{shaves}((R,p),q)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Internalisation</td>
+<td>each person <span class="math inline">\(p\)</span> carries rule <span class="math inline">\(R_p\)</span></td>
+</tr>
+<tr class="even">
+<td>Self-application</td>
+<td><span class="math inline">\(R_p(p)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Twist</td>
+<td><span class="math inline">\(T(p) = \neg R_p(p)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\Rightarrow\)</span> contradiction: <span class="math inline">\(\text{shaves}(B,b) = \neg\text{shaves}(B,b)\)</span></p>
+</section>
+<section id="blocking-diagonalisation-by-blocking-copying" class="slide level2">
+<h2>Blocking Diagonalisation by Blocking Copying</h2>
+<p><strong>Blocking the Construction:</strong></p>
+<p>Self-application requires <em>cloning</em>: <span class="math display">\[\Delta : A \to A \times A, \quad \Delta(a) = (a,a)\]</span></p>
 <ul>
-<li>Probabilistic mixture of processes</li>
-<li>Linear in probability weights</li>
+<li><strong>Cartesian category</strong>: canonical <span class="math inline">\(\Delta\)</span> exists — Lawvere diagonalisation possible</li>
+<li><strong>Symmetric monoidal category</strong>: no canonical <span class="math inline">\(\Delta\)</span> — self-application step fails</li>
 </ul>
+<p><em>Removing free copying blocks the diagonal construction</em></p>
 </section>
-<section id="continuity" class="slide level2">
-<h2>Continuity</h2>
-<p><strong>Axiom 3: Continuity</strong></p>
-<ul>
-<li>Small change in process</li>
-<li>Small change in information loss</li>
-<li><span class="math inline">\(F(f)\)</span> continuous in <span class="math inline">\(f\)</span></li>
-</ul>
-</section>
-<section id="the-main-result" class="slide level2">
-<h2>The Main Result</h2>
-<p><strong>Theorem:</strong></p>
-<p>Three axioms <span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math display">\[F(f) = c(H(p) - H(q))\]</span></p>
-<ul>
-<li>Information loss = scaled entropy difference</li>
-<li>Shannon entropy emerges from axioms</li>
-<li>No other measure satisfies all three</li>
-</ul>
-</section>
-<section id="information-isolation-selected-by-no-barber" class="slide level2">
-<h2>Information Isolation: Selected by No-Barber</h2>
-</section>
-<section id="information-isolation-selected-not-assumed" class="slide level2">
-<h2>Information Isolation: Selected, Not Assumed</h2>
-<p><strong>Earlier:</strong> Fourth axiom (assumed)</p>
-<p><strong>Now:</strong> Selected by no-barber principle</p>
-<p><em>Not independent assumption</em></p>
-</section>
-<section id="why-this-selection" class="slide level2">
-<h2>Why This Selection?</h2>
-<p><strong>Alternatives Violate No-Barber:</strong></p>
-<ul>
-<li>Partial conservation → privileges variables</li>
-<li>Time-varying <span class="math inline">\(C(t)\)</span> → needs external clock</li>
-<li>Observer-relative → needs external observer</li>
-<li>Probabilistic → needs external measure</li>
-</ul>
-<p><em>All require external structure</em></p>
-</section>
-<section id="the-unique-internal-choice" class="slide level2">
-<h2>The Unique Internal Choice</h2>
-<p><strong>Why <span class="math inline">\(\sum h_i = C\)</span>?</strong></p>
-<p>Properties: * Exchangeable across subsystems * Extensive (scales with <span class="math inline">\(n\)</span>) * Internal (reduced descriptions only) * Time-independent (constant <span class="math inline">\(C\)</span>) * Observer-independent (absolute)</p>
-<p><em>Strongest constraint without external structure</em></p>
-</section>
-<section id="implication-not-just-another-axiom" class="slide level2">
-<h2>Implication: Not “Just Another Axiom”</h2>
-<p><strong>Conceptual Shift:</strong></p>
-<p>Not: “Here’s a fourth axiom”</p>
-<p>But: “Internal adjudicability forces this”</p>
-<p><span class="math display">\[\text{No-barber principle} \Rightarrow \sum_i h_i = C\]</span></p>
-<p><em>Derived necessity, not arbitrary choice</em></p>
-</section>
-<section id="constraints-vs-selections" class="slide level2">
-<h2>Constraints vs Selections</h2>
-<p><strong>Two Kinds of Claims:</strong></p>
-<ul>
-<li><strong>Constraints</strong>: required to avoid external structure</li>
-<li><strong>Selections</strong>: internally motivated choices (not yet unique)</li>
-<li><strong>Open</strong>: which selections are actually forced?</li>
-</ul>
-</section>
-<section id="smuggled-outcomes-shannon-vs-von-neumann" class="slide level2">
-<h2>Smuggled Outcomes: Shannon vs von Neumann</h2>
-<p><strong>Smuggled Outcomes:</strong></p>
-<ul>
-<li>Shannon needs labelled outcomes / measure structure (FinProb in category theory)</li>
-<li>That labelling is not in the game’s internal language</li>
-<li>von Neumann entropy is basis-free / algebraic (C* algebra in category theory)</li>
-</ul>
-<!-- SECTION The Inaccessible Game -->
+<section id="linear-logic-and-no-cloning" class="slide level2">
+<h2>Linear Logic and No-Cloning</h2>
+<p><strong>Two programmes that block copying:</strong></p>
+<p><strong>Linear logic</strong> <span class="citation" data-cites="Girard-linear87">(<strong>Girard-linear87?</strong>)</span>: * Assumptions are resources — can’t duplicate freely * Cartesian <span class="math inline">\(\to\)</span> symmetric monoidal</p>
+<p><strong>Quantum probability (no-cloning)</strong>: * No canonical <span class="math inline">\(A \to A \otimes A\)</span> for unknown states * Noncommutative <span class="math inline">\(C^*\)</span>-algebras replace Boolean event spaces</p>
+<p><em>Both satisfy the no-barber constraint for independent reasons</em></p>
 </section>
 <section id="the-inaccessible-game" class="slide level2">
-<h2>The Inaccessible Game</h2>
-</section>
-<section id="the-inaccessible-game-1" class="slide level2">
 <h2>The Inaccessible Game</h2>
 <p><strong>The Inaccessible Game:</strong> * System isolated from observation * External observer cannot extract information * Internal state is inaccessible * Zero-player game with information-theoretic rules</p>
 </section>
@@ -1342,9 +1517,6 @@ G_{ij} = \delta_{ij}\pi_i - \pi_i\pi_j
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
-Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
-</div>
 <div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
 Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
 </div>
