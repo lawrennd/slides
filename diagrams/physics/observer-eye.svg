@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 500 280"
+     width="500" height="280">
+
+  <defs>
+    <radialGradient id="iris" cx="45%" cy="42%" r="52%" fx="45%" fy="42%">
+      <stop offset="0%"   stop-color="#62bae8"/>
+      <stop offset="50%"  stop-color="#2a78a8"/>
+      <stop offset="100%" stop-color="#103c5a"/>
+    </radialGradient>
+    <clipPath id="eyeClip">
+      <path d="M 70 160 C 178 70 322 70 430 160 C 322 201 178 201 70 160 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sclera -->
+  <path d="M 70 160 C 178 70 322 70 430 160 C 322 201 178 201 70 160 Z"
+        fill="#fdfaf4" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Iris -->
+  <circle cx="250" cy="160" r="46.5"
+          fill="url(#iris)" clip-path="url(#eyeClip)"/>
+
+  <!-- Pupil -->
+  <circle cx="250" cy="160" r="22"
+          fill="#0d0d0d" clip-path="url(#eyeClip)"/>
+
+  <!-- Specular highlight -->
+  <circle cx="240" cy="150" r="7"
+          fill="white" fill-opacity="0.92" clip-path="url(#eyeClip)"/>
+
+  <!-- Upper eyelid line (thick) -->
+  <path d="M 70 160 C 178 70 322 70 430 160"
+        fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Lower eyelid line (thin) -->
+  <path d="M 430 160 C 322 201 178 201 70 160"
+        fill="none" stroke="#666666" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Eyelashes: M base Q control tip  (computed from upper-lid bezier normals) -->
+  <!-- t=0.08  far-left, upper-left direction -->
+  <path d="M 96.6 140.1 Q 91.4 126.1  80.5 116.0"
+        fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- t=0.20  left -->
+  <path d="M 138.5 116.8 Q 135.1  98.5 123.6  83.8"
+        fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- t=0.34  left-centre -->
+  <path d="M 189.8  99.4 Q 190.0  77.0 180.0  57.0"
+        fill="none" stroke="#1a1a1a" stroke-width="1.7" stroke-linecap="round"/>
+  <!-- t=0.50  centre (longest), slight rightward curl -->
+  <path d="M 250.0  92.5 Q 256.5  65.5 250.0  38.5"
+        fill="none" stroke="#1a1a1a" stroke-width="1.9" stroke-linecap="round"/>
+  <!-- t=0.66  right-centre -->
+  <path d="M 310.2  99.4 Q 310.0  79.4 320.0  57.0"
+        fill="none" stroke="#1a1a1a" stroke-width="1.7" stroke-linecap="round"/>
+  <!-- t=0.80  right -->
+  <path d="M 361.5 116.8 Q 372.9 102.1 376.4  83.8"
+        fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- t=0.92  far-right, upper-right direction -->
+  <path d="M 403.4 140.1 Q 414.4 131.0 419.5 116.0"
+        fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+
+</svg>
