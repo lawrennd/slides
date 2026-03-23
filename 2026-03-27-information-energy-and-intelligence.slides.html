@@ -229,7 +229,7 @@ Pause / Resume
 <button id="multigame-skip">
 Skip 1000s
 </button>
-<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="2d">2D joint p(vₓ,vᵧ)</option> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> </select> </span></p>
+<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
 </div>
 </div>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
@@ -295,7 +295,7 @@ Nine billiard balls on a 3×3 grid. The histogram grid tracks each ball’s cumu
 <div class="figure">
 <div id="munchkin-game-cover-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="\slidesDiagrams/information-game/Munchkin_game_cover.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="\dirDiagrams/information-game/Munchkin_game_cover.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -310,15 +310,23 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="no-external-adjudicators" class="slide level2">
 <h2>No External Adjudicators</h2>
-<p><strong>No-Barber Principle:</strong></p>
-<p>Rules must be <em>internally adjudicable</em></p>
-<p><strong>Forbidden:</strong> * External observer * Pre-specified outcome space * Privileged decomposition * External time parameter</p>
+<p><strong>Forbidden:</strong></p>
+<ul>
+<li>External observer</li>
+<li>Pre-specified outcome space</li>
+<li>Privileged decomposition</li>
+<li>External time parameter</li>
+</ul>
 <p><em>No appeal to structure outside the game</em></p>
 </section>
 <section id="entropic-exchangeability" class="slide level2">
 <h2>Entropic Exchangeability</h2>
-<p><strong>Entropic Exchangeability:</strong></p>
-<p>Admissible rules must: 1. Use only reduced descriptions 2. Be relabeling-invariant 3. Not require global distinguishability</p>
+<p>Admissible rules must:</p>
+<ol type="1">
+<li>Use only reduced descriptions</li>
+<li>Be relabeling-invariant</li>
+<li>Not require global distinguishability</li>
+</ol>
 </section>
 <section id="what-this-excludes" class="slide level2">
 <h2>What This Excludes</h2>
