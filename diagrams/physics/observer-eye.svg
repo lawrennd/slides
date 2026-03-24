@@ -19,15 +19,15 @@
         fill="#fdfaf4" stroke="#2a2a2a" stroke-width="1.5"/>
 
   <!-- Iris -->
-  <circle cx="250" cy="160" r="46.5"
+  <circle cx="250" cy="145" r="46.5"
           fill="url(#iris)" clip-path="url(#eyeClip)"/>
 
   <!-- Pupil -->
-  <circle cx="250" cy="160" r="22"
+  <circle cx="250" cy="145" r="22"
           fill="#0d0d0d" clip-path="url(#eyeClip)"/>
 
   <!-- Specular highlight -->
-  <circle cx="240" cy="150" r="7"
+  <circle cx="240" cy="135" r="7"
           fill="white" fill-opacity="0.92" clip-path="url(#eyeClip)"/>
 
   <!-- Upper eyelid line (thick) -->
