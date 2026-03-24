@@ -197,6 +197,18 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
 </aside>
 </section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="gaussian-histogram-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).
+</aside>
+</section>
 <section id="thermalisation-from-different-initial-conditions" class="slide level2">
 <h2>Thermalisation from Different Initial Conditions</h2>
 <p><strong>Thermalisation from Different Initial Conditions</strong></p>
@@ -204,7 +216,7 @@ Bernoulli’s simple kinetic models of gases assume that the molecules of air op
 <li>9 balls on a <span class="math inline">\(3 \times 3\)</span> grid;</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="multigame-entropy-figure" class="figure-frame">
@@ -327,11 +339,61 @@ showDivs(0, 'correlated_velocities');
 </div>
 </div>
 </section>
+<section id="jaynes-and-maximum-entropy" class="slide level2">
+<h2>Jaynes and Maximum Entropy</h2>
+<div class="figure">
+<div id="e-t-jaynes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Ed Jaynes who developed the maximum entropy principle
+</aside>
+</section>
+<section id="maximum-entropy-motivation" class="slide level2">
+<h2>Maximum Entropy Motivation</h2>
+<ul>
+<li><span class="citation" data-cites="Jaynes-information57">Jaynes (1957)</span>: Statistical mechanics as inference with incomplete information</li>
+<li>Maximum entropy principle: maximise uncertainty given constraints</li>
+<li>Avoids unwarranted assumptions beyond available data</li>
+</ul>
+</section>
+<section id="dice-example" class="slide level2">
+<h2>Dice Example</h2>
+<ul>
+<li>Dice example: Average result 4.5 instead of 3.5</li>
+<li>Constraints:
+<ul>
+<li><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
+<li><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-general-maximum-entropy-formalism" class="slide level2">
+<h2>The General Maximum-Entropy Formalism</h2>
+</section>
+<section id="waterhouse-mackay-and-robinson" class="slide level2">
+<h2>Waterhouse, MacKay and Robinson</h2>
+<div class="figure">
+<div id="waterhouse-mackay-robinson-separable-posterior-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/waterhouse-mackay-robinson-separable-posterior.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Paragraph from <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span> just after equation (10) introducing a separable (mean-field) approximation to the full Bayesian posterior and the independent optimisation of each component.
+</aside>
+<p>From <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span></p>
+</section>
 <section id="the-classical-observer" class="slide level2">
 <h2>The Classical Observer</h2>
 <div class="figure">
 <div id="fig:observer-eye-figure" class="figure-frame">
-<p>\includediagramslide{https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye}{60%}</p>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye.svg" width="60%" style=" ">
+</object>
 </div>
 </div>
 <aside class="notes">
@@ -347,7 +409,7 @@ A classical physics observer: watching from outside the system, never disturbing
 <li>As entropy rises, the centroid stills — nothing left to follow.</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="observer-outside-figure" class="figure-frame">
@@ -391,7 +453,7 @@ Nine billiard balls with a classical observer eye to the right. The pupil tracks
 <li><em>Moral:</em> once inside, the observer cannot help but disturb the system.</li>
 </ul>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="observer-inside-figure" class="figure-frame">
@@ -404,9 +466,6 @@ Reset
 </button>
 <button id="observer-inside-pause">
 Pause / Resume
-</button>
-<button id="observer-inside-skip">
-Skip 1000s
 </button>
 <p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="observer-inside-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span></p>
 </div>
@@ -850,14 +909,16 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <section id="constrained-maximum-entropy-production" class="slide level2">
 <h2>Constrained Maximum Entropy Production</h2>
 <p><strong>Information Relaxation Principle:</strong></p>
-<p>Among all paths with <span class="math inline">\(\sum h_i = C\)</span>:</p>
-<p><span class="math display">\[\text{Follow path that maximizes } \dot{H}\]</span></p>
+<p>Among all paths with <span class="math inline">\(\sum h_i = C\)</span>: <span class="math display">\[
+\text{Follow path that maximizes } \dot{H}
+\]</span></p>
 <p><em>Steepest entropy ascent on constraint surface</em></p>
 </section>
 <section id="unconstrained-vs-constrained-dynamics" class="slide level2">
 <h2>Unconstrained vs Constrained Dynamics</h2>
-<p><strong>Unconstrained MEP:</strong></p>
-<p><span class="math display">\[\dot{\boldsymbol{\theta}} = \nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}\]</span></p>
+<p><strong>Unconstrained MEP:</strong> <span class="math display">\[
+\dot{\boldsymbol{\theta}} = \nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}
+\]</span></p>
 <ul>
 <li>Natural gradient ascent</li>
 <li>Flows to <span class="math inline">\(\boldsymbol{\theta} = \mathbf{0}\)</span> (max entropy)</li>
@@ -867,7 +928,9 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <section id="adding-the-constraint" class="slide level2">
 <h2>Adding the Constraint</h2>
 <p><strong>Lagrangian Formulation:</strong></p>
-<p><span class="math display">\[\mathscr{L}(\boldsymbol{\theta}, \nu) = -H + \nu\left(\sum h_i - C\right)\]</span></p>
+<p><span class="math display">\[
+\mathscr{L}(\boldsymbol{\theta}, \nu) = -H + \nu\left(\sum h_i - C\right)
+\]</span></p>
 <ul>
 <li><span class="math inline">\(\nu\)</span>: Lagrange multiplier</li>
 <li>Enforces constraint</li>
@@ -877,17 +940,21 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <section id="the-constrained-dynamics" class="slide level2">
 <h2>The Constrained Dynamics</h2>
 <p><strong>Constrained Dynamics:</strong></p>
-<p><span class="math display">\[\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} + \nu(\tau) \mathbf{a}\]</span></p>
-<p>where <span class="math inline">\(\mathbf{a} = \nabla\left(\sum_i h_i\right)\)</span></p>
+<p><span class="math display">\[
+\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} + \nu(\tau) \mathbf{a}
+\]</span> where <span class="math inline">\(\mathbf{a} = \nabla\left(\sum_i h_i\right)\)</span></p>
 <p><strong>Constraint maintenance:</strong> <span class="math display">\[\mathbf{a}^\top \dot{\boldsymbol{\theta}} = 0\]</span></p>
 </section>
 <section id="solving-for-the-lagrange-multiplier" class="slide level2">
 <h2>Solving for the Lagrange Multiplier</h2>
 <p><strong>Solution:</strong></p>
-<p><span class="math display">\[\nu(\tau) = \frac{\mathbf{a}^\top G\boldsymbol{\theta}}{\|\mathbf{a}\|^2}\]</span></p>
+<p><span class="math display">\[
+\nu(\tau) = \frac{\mathbf{a}^\top G\boldsymbol{\theta}}{\|\mathbf{a}\|^2}
+\]</span></p>
 <p><strong>Projection Form:</strong></p>
-<p><span class="math display">\[\dot{\boldsymbol{\theta}} = -\Pi_\parallel G\boldsymbol{\theta}\]</span></p>
-<p>where <span class="math inline">\(\Pi_\parallel\)</span> projects onto tangent space</p>
+<p><span class="math display">\[
+\dot{\boldsymbol{\theta}} = -\Pi_\parallel G\boldsymbol{\theta}
+\]</span> where <span class="math inline">\(\Pi_\parallel\)</span> projects onto tangent space</p>
 </section>
 <section id="physical-interpretation" class="slide level2">
 <h2>Physical Interpretation</h2>
@@ -928,7 +995,7 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <li>Irreversible (thermodynamics, dissipation)</li>
 </ul>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p><strong>Examples:</strong></p>
 <ul>
@@ -1698,6 +1765,9 @@ Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
+<div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
+Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
+</div>
 <div id="ref-Lawrence-embodiment17" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.
 </div>
@@ -1712,6 +1782,9 @@ Moravec, H., 1999. Robot: Mere machine to transcendent mind. Oxford University P
 </div>
 <div id="ref-Sandberg-whole08" class="csl-entry" role="doc-biblioentry">
 Sandberg, A., Bostrom, N., 2008. Whole brain emulation: A roadmap (Technical Report No. 2008-3). Future of Humanity Institute, Oxford University.
+</div>
+<div id="ref-Waterhouse-bayesian96" class="csl-entry" role="doc-biblioentry">
+Waterhouse, S., MacKay, D.J.C., Robinson, T., n.d. <span>B</span>ayesian methods for mixtures of experts. pp. 351–357.
 </div>
 </div>
 </section>
