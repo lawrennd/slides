@@ -76,10 +76,10 @@
   -->
   <!-- Sclera: cream region enclosed by the two eyelid curves and the left iris arc -->
   <path
-      d="M 88,180
+      d="M 158,180
 	 Q 210,115 350,80 Q 350,80 350,90
 	 A 104,104 0 0,0 350,270 Q 350,270
-	 350, 280 Q 210,245 88,180 Z"
+	 350, 280 Q 210,245 158,180 Z"
      fill="#fdfaf4"
      stroke="none"
      id="path763" />
@@ -113,7 +113,7 @@
        =================================================== -->
   <!-- Upper eyelid -->
   <path
-     d="M 88,180 Q 210,115 350,80 Q 350,80 360,80"
+     d="M 158,180 Q 210,115 350,80 Q 350,80 360,80"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="4.5"
@@ -121,7 +121,7 @@
      id="path771" />
   <!-- Lower eyelid -->
   <path
-     d="M 88,180 Q 210,245 350,280 Q 350,280 360,280"
+     d="M 158,180 Q 210,245 350,280 Q 350,280 360,280"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="3.5"
@@ -139,7 +139,7 @@
        =================================================== -->
   <!-- Apex serif: upper flare -->
   <path
-     d="M 88,180 Q 72,163 55,148"
+     d="M 158,180 Q 72,163 55,148"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="4.0"
@@ -147,7 +147,7 @@
      id="path775" />
   <!-- Apex serif: lower flare -->
   <path
-     d="M 88,180 Q 72,197 55,212"
+     d="M 158,180 Q 72,197 55,212"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="3.5"
@@ -155,18 +155,18 @@
      id="path777" />
   <!-- Iris-top serif (hook at end of upper eyelid) -->
   <path
-     d="M 350,80 Q 366,66 380,54"
+     d="M 360,80 Q 376,66 380,54"
      fill="none"
      stroke="#0d0d0d"
-     stroke-width="2.6"
+     stroke-width="2"
      stroke-linecap="round"
      id="path779" />
   <!-- Iris-bottom serif (hook at end of lower eyelid) -->
   <path
-     d="M 350,280 Q 366,294 380,306"
+     d="M 360,280 Q 376,294 380,306"
      fill="none"
      stroke="#0d0d0d"
-     stroke-width="2.2"
+     stroke-width="2"
      stroke-linecap="round"
      id="path781" />
   <!-- ===================================================
@@ -176,7 +176,7 @@
        =================================================== -->
   <!-- t=0.22  base ~(148,149)  direction: up-left -->
   <path
-     d="m 148,149 q -9,-20 -18,-39"
+     d="m 188,149 q -9,-20 -18,-39"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.3"
@@ -184,7 +184,7 @@
      id="path783" />
   <!-- t=0.35  base ~(185,132)  direction: up -->
   <path
-     d="m 185,132 q -4,-22 -9,-43"
+     d="m 210,132 q -4,-22 -9,-43"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.5"
@@ -192,7 +192,7 @@
      id="path785" />
   <!-- t=0.50  base ~(218,121)   direction: up -->
   <path
-     d="M 218,121 Q 217,98 215,76"
+     d="M 238,121 q -1,-23 -2,-40"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.7"
@@ -228,7 +228,7 @@
        =================================================== -->
   <!-- t=0.22  base ~(148,213)  direction: down-left -->
   <path
-     d="m 148,213 q -9,20 -19,39"
+     d="m 188,213 q -9,20 -19,39"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="1.9"
@@ -236,7 +236,7 @@
      id="path795" />
   <!-- t=0.50  base ~(218,239)  direction: down -->
   <path
-     d="m 218,239 q -3,21 -6,42"
+     d="m 228,239 q -3,21 -6,42"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2"
