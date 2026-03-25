@@ -214,7 +214,7 @@
   <!-- GROUP 2: Box cover (opacity=0 in static; animate to 1 to hide microstate) -->
   <g
      id="box-cover"
-     opacity="0">
+     opacity="1">
     <rect
        x="35"
        y="45"
@@ -246,7 +246,7 @@
        y="250"
        text-anchor="middle"
        font-family="sans-serif"
-       font-size="12"
+       font-size="22"
        fill="#aaa"
        letter-spacing="1"
        id="text1140">closed</text>
@@ -409,48 +409,27 @@
        opacity="0.7"
        transform="rotate(45 665 330)"
        id="ellipse1174" />
-    <!-- 6 scatter points: svg_x = 665 + 50*x, svg_y = 330 - 50*y -->
-    <circle
-       cx="726"
-       cy="376"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1176" />
-    <circle
-       cx="632"
-       cy="284"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1178" />
-    <circle
-       cx="632"
-       cy="286"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1180" />
-    <circle
-       cx="620"
-       cy="285"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1182" />
-    <circle
-       cx="705"
-       cy="364"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1184" />
-    <circle
-       cx="617"
-       cy="275"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1186" />
+    <ellipse
+       cx="665"
+       cy="330"
+       rx="69.8"
+       ry="11.18"
+       fill="none"
+       stroke="#2471a3"
+       stroke-width="3"
+       opacity="0.7"
+       transform="rotate(-45 665 330)"
+       id="ellipse1174" />
+    <ellipse
+       cx="665"
+       cy="330"
+       rx="50"
+       ry="50"
+       fill="none"
+       stroke="#2471a3"
+       stroke-width="3"
+       opacity="0.7"
+       transform="rotate(-45 665 330)"
+       id="ellipse1174" />
   </g>
 </svg>
