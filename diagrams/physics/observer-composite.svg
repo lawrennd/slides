@@ -102,111 +102,110 @@
        rx="2"
        id="rect1107" />
     <!-- Velocity arrows (drawn under balls) -->
-    <!-- Ball 1 centre (120,110), unit vel (0.864, 0.504), 55px shaft -->
+    <!-- Ball 1 centre (120,110), unit vel (0.327, -0.436), 55px shaft -->
     <line
-       x1="131"
-       y1="117"
-       x2="168"
-       y2="138"
+       x1="120"
+       y1="110"
+       x2="144"
+       y2="80"
        stroke="#c0392b"
        stroke-width="2.5"
        marker-end="url(#vel-arrow)"
        id="line1109" />
-    <!-- Ball 2 centre (260,155), unit vel (-0.822, 0.569) -->
-    <line
-       x1="249"
-       y1="162"
-       x2="215"
-       y2="186"
-       stroke="#c0392b"
-       stroke-width="2.5"
-       marker-end="url(#vel-arrow)"
-       id="line1111" />
-    <!-- Ball 3 centre (90,255), unit vel (0.928,-0.371) -->
-    <line
-       x1="102"
-       y1="250"
-       x2="141"
-       y2="235"
-       stroke="#c0392b"
-       stroke-width="2.5"
-       marker-end="url(#vel-arrow)"
-       id="line1113" />
-    <!-- Ball 4 centre (310,290), unit vel (-0.581,-0.813) -->
-    <line
-       x1="302"
-       y1="279"
-       x2="278"
-       y2="245"
-       stroke="#c0392b"
-       stroke-width="2.5"
-       marker-end="url(#vel-arrow)"
-       id="line1115" />
-    <!-- Ball 5 centre (195,315), unit vel (0.406, 0.914) -->
-    <line
-       x1="200"
-       y1="327"
-       x2="217"
-       y2="365"
-       stroke="#c0392b"
-       stroke-width="2.5"
-       marker-end="url(#vel-arrow)"
-       id="line1117" />
-    <!-- Ball 6 centre (340,92), unit vel (-0.970, 0.243) -->
-    <line
-       x1="327"
-       y1="95"
-       x2="287"
-       y2="105"
-       stroke="#c0392b"
-       stroke-width="2.5"
-       marker-end="url(#vel-arrow)"
-       id="line1119" />
-    <!-- Balls -->
     <circle
        cx="120"
        cy="110"
-       r="13"
+       r="10"
        fill="#2980b9"
        stroke="#1a5c88"
        stroke-width="2"
        id="circle1121" />
+    <!-- Ball 2 centre (260,155), unit vel (0.236, 0.963) -->
+    <line
+       x1="260"
+       y1="155"
+       x2="276"
+       y2="90"
+       stroke="#c0392b"
+       stroke-width="2.5"
+       marker-end="url(#vel-arrow)"
+       id="line1111" />
     <circle
        cx="260"
        cy="155"
-       r="13"
+       r="10"
        fill="#2980b9"
        stroke="#1a5c88"
        stroke-width="2"
        id="circle1123" />
+    <!-- Ball 3 centre (90,255), unit vel (0.945,-0.236) -->
+    <line
+       x1="90"
+       y1="255"
+       x2="154"
+       y2="239"
+       stroke="#c0392b"
+       stroke-width="2.5"
+       marker-end="url(#vel-arrow)"
+       id="line1110" />
     <circle
        cx="90"
        cy="255"
-       r="13"
+       r="10"
        fill="#2980b9"
        stroke="#1a5c88"
        stroke-width="2"
        id="circle1125" />
+    <!-- Ball 4 centre (310,290), unit vel (-0.436,0.4) -->
+    <line
+       x1="310"
+       y1="290"
+       x2="280"
+       y2="317"
+       stroke="#c0392b"
+       stroke-width="2.5"
+       marker-end="url(#vel-arrow)"
+       id="line1115" />
     <circle
        cx="310"
        cy="290"
-       r="13"
+       r="10"
        fill="#2980b9"
        stroke="#1a5c88"
        stroke-width="2"
        id="circle1127" />
+    <!-- Ball 5 centre (195,315), unit vel (-0.181, -1.072) -->
+    <line
+       x1="195"
+       y1="315"
+       x2="183"
+       y2="243"
+       stroke="#c0392b"
+       stroke-width="2.5"
+       marker-end="url(#vel-arrow)"
+       id="line1117" />
     <circle
        cx="195"
        cy="315"
-       r="13"
+       r="10"
        fill="#2980b9"
        stroke="#1a5c88"
        stroke-width="2"
        id="circle1129" />
+    <!-- Ball 6 centre (340,92), unit vel (-0.163, 0.254) -->
+    <line
+       x1="340"
+       y1="92"
+       x2="329"
+       y2="109"
+       stroke="#c0392b"
+       stroke-width="2.5"
+       marker-end="url(#vel-arrow)"
+       id="line1119" />
     <circle
        cx="340"
        cy="92"
-       r="13"
+       r="10"
        fill="#2980b9"
        stroke="#1a5c88"
        stroke-width="2"
@@ -400,239 +399,56 @@
     <ellipse
        cx="665"
        cy="330"
-       rx="65"
-       ry="27"
+       rx="50"
+       ry="50"
        fill="none"
        stroke="#2471a3"
-       stroke-width="1.5"
-       stroke-dasharray="6 3"
+       stroke-width="3"
        opacity="0.7"
        transform="rotate(-45 665 330)"
        id="ellipse1174" />
-    <!-- 32 scatter points: svg_x = 665 + 50*x, svg_y = 330 - 50*y -->
+    <!-- 6 scatter points: svg_x = 665 + 50*x, svg_y = 330 - 50*y -->
     <circle
-       cx="575"
-       cy="395"
+       cx="683"
+       cy="306"
        r="3.5"
        fill="#2471a3"
        opacity="0.75"
        id="circle1176" />
     <circle
-       cx="585"
-       cy="385"
+       cx="678"
+       cy="277"
        r="3.5"
        fill="#2471a3"
        opacity="0.75"
        id="circle1178" />
     <circle
-       cx="590"
-       cy="375"
+       cx="717"
+       cy="317"
        r="3.5"
        fill="#2471a3"
        opacity="0.75"
        id="circle1180" />
     <circle
-       cx="600"
-       cy="405"
+       cx="641"
+       cy="352"
        r="3.5"
        fill="#2471a3"
        opacity="0.75"
        id="circle1182" />
     <circle
-       cx="610"
-       cy="365"
+       cx="655"
+       cy="271"
        r="3.5"
        fill="#2471a3"
        opacity="0.75"
        id="circle1184" />
     <circle
-       cx="615"
-       cy="345"
+       cx="656"
+       cy="344"
        r="3.5"
        fill="#2471a3"
        opacity="0.75"
        id="circle1186" />
-    <circle
-       cx="620"
-       cy="355"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1188" />
-    <circle
-       cx="625"
-       cy="365"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1190" />
-    <circle
-       cx="630"
-       cy="360"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1192" />
-    <circle
-       cx="635"
-       cy="325"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1194" />
-    <circle
-       cx="640"
-       cy="350"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1196" />
-    <circle
-       cx="645"
-       cy="370"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1198" />
-    <circle
-       cx="650"
-       cy="340"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1200" />
-    <circle
-       cx="655"
-       cy="325"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1202" />
-    <circle
-       cx="665"
-       cy="320"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1204" />
-    <circle
-       cx="670"
-       cy="345"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1206" />
-    <circle
-       cx="675"
-       cy="295"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1208" />
-    <circle
-       cx="680"
-       cy="305"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1210" />
-    <circle
-       cx="685"
-       cy="300"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1212" />
-    <circle
-       cx="685"
-       cy="335"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1214" />
-    <circle
-       cx="690"
-       cy="315"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1216" />
-    <circle
-       cx="695"
-       cy="290"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1218" />
-    <circle
-       cx="700"
-       cy="310"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1220" />
-    <circle
-       cx="705"
-       cy="275"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1222" />
-    <circle
-       cx="710"
-       cy="265"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1224" />
-    <circle
-       cx="715"
-       cy="300"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1226" />
-    <circle
-       cx="720"
-       cy="280"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1228" />
-    <circle
-       cx="725"
-       cy="285"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1230" />
-    <circle
-       cx="730"
-       cy="260"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1232" />
-    <circle
-       cx="735"
-       cy="250"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1234" />
-    <circle
-       cx="740"
-       cy="270"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1236" />
-    <circle
-       cx="750"
-       cy="255"
-       r="3.5"
-       fill="#2471a3"
-       opacity="0.75"
-       id="circle1238" />
   </g>
 </svg>
