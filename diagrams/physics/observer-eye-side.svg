@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Side-view (profile) eye.
+  Shape: arrowhead triangle pointing left; iris as vertical vesica piscis
+  on the right where the triangle base would be.
+  Iris/pupil colours from observer-eye.svg blue palette.
+-->
+
+<svg
+   viewBox="0 0 480 370"
+   width="480"
+   height="370"
+   version="1.1"
+   id="svg801"
+   sodipodi:docname="observer-eye-tribal.svg"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview803"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.63783784"
+     inkscape:cx="231.25"
+     inkscape:cy="59.576271"
+     inkscape:window-width="734"
+     inkscape:window-height="480"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg801" />
+  <defs
+     id="defs761">
+    <!-- Blue iris gradient (userSpaceOnUse so it sits correctly on the vesica) -->
+    <radialGradient
+       id="iris-grad"
+       cx="322"
+       cy="148"
+       r="118"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#7ed0f5"
+         id="stop751" />
+      <stop
+         offset="52%"
+         stop-color="#2a80b8"
+         id="stop753" />
+      <stop
+         offset="100%"
+         stop-color="#0f3c5a"
+         id="stop755" />
+    </radialGradient>
+    <!-- Clip the highlight to the iris outline -->
+    <clipPath
+       id="iris-clip">
+      <path
+         d="M 350,90 A 104,104 0 0,0 350,270 A 104,104 0 0,0 350,90 Z"
+         id="path758" />
+    </clipPath>
+  </defs>
+  <!--
+    Iris vesica piscis geometry:
+      Two circles each of radius r=104, centres 104 apart.
+      Left centre  (298, 180), right centre (402, 180).
+      Intersection points (vertical tips): (350, 90) and (350, 270).
+      Vesica width at y=180: 104px  (from x=298 to x=402).
+  -->
+  <!-- Sclera: cream region enclosed by the two eyelid curves and the left iris arc -->
+  <path
+      d="M 88,180
+	 Q 210,115 350,80 Q 350,80 350,90
+	 A 104,104 0 0,0 350,270 Q 350,270
+	 350, 280 Q 210,245 88,180 Z"
+     fill="#fdfaf4"
+     stroke="none"
+     id="path763" />
+  <!-- Iris (full vesica piscis) -->
+  <path
+     d="M 350,90                A 104,104 0 0,0 350,270                A 104,104 0 0,0 350,90 Z"
+     fill="url(#iris-grad)"
+     id="path765" />
+  <!--
+    Pupil vesica piscis:
+      r=60, centres (320,180) and (380,180).
+      Vertical tips: (350,128) and (350,232).
+  -->
+  <path
+     d="M 388,128                A 90,90 0 0,0 388, 232                A 90,90 0 0,0 388, 128 Z"
+     fill="#0d0d0d"
+     id="path767" />
+  <!-- Specular highlight -->
+  <circle
+     cx="366"
+     cy="122"
+     r="9"
+     fill="white"
+     fill-opacity="0.88"
+     clip-path="url(#iris-clip)"
+     id="circle769" />
+  <!-- ===================================================
+       EYELID OUTLINES
+       Upper eyelid: apex -> iris top
+       Lower eyelid: apex -> iris bottom
+       =================================================== -->
+  <!-- Upper eyelid -->
+  <path
+     d="M 88,180 Q 210,115 350,80 360,80"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="4.5"
+     stroke-linecap="round"
+     id="path771" />
+  <!-- Lower eyelid -->
+  <path
+     d="M 88,180 Q 210,245 350,280 360,280"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="3.5"
+     stroke-linecap="round"
+     id="path773" />
+  <!-- ===================================================
+       SERIFS on the triangle corners
+
+       Apex (left): two short flared strokes, one curving
+       up-left and one curving down-left, like the foot
+       serifs on a capital letter.
+
+       Iris top/bottom: small outward hooks where the
+       eyelid meets the iris vesica.
+       =================================================== -->
+  <!-- Apex serif: upper flare -->
+  <path
+     d="M 88,180 Q 72,163 55,148"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="4.0"
+     stroke-linecap="round"
+     id="path775" />
+  <!-- Apex serif: lower flare -->
+  <path
+     d="M 88,180 Q 72,197 55,212"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="3.5"
+     stroke-linecap="round"
+     id="path777" />
+  <!-- Iris-top serif (hook at end of upper eyelid) -->
+  <path
+     d="M 350,80 Q 366,66 380,54"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.6"
+     stroke-linecap="round"
+     id="path779" />
+  <!-- Iris-bottom serif (hook at end of lower eyelid) -->
+  <path
+     d="M 350,280 Q 366,294 380,306"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.2"
+     stroke-linecap="round"
+     id="path781" />
+  <!-- ===================================================
+       UPPER EYELASHES
+       Bases sampled along the upper-eyelid bezier.
+       Directions perpendicular to the lid, pointing outward.
+       =================================================== -->
+  <!-- t=0.22  base ~(148,149)  direction: up-left -->
+  <path
+     d="m 148,149 q -9,-20 -18,-39"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.3"
+     stroke-linecap="round"
+     id="path783" />
+  <!-- t=0.35  base ~(185,132)  direction: up -->
+  <path
+     d="m 185,132 q -4,-22 -9,-43"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.5"
+     stroke-linecap="round"
+     id="path785" />
+  <!-- t=0.50  base ~(218,121)   direction: up -->
+  <path
+     d="M 218,121 Q 217,98 215,76"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.7"
+     stroke-linecap="round"
+     id="path787" />
+  <!-- t=0.64  base ~(258,108)   direction: up -->
+  <path
+     d="m 258,108 q 0,-23 -1,-45"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.7"
+     stroke-linecap="round"
+     id="path789" />
+  <!-- t=0.78  base ~(300,90)   direction: up, slight right -->
+  <path
+     d="m 300,90 q 3,-23 5,-45"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.5"
+     stroke-linecap="round"
+     id="path791" />
+  <!-- t=0.90  base ~(334,84)   direction: up-right -->
+  <path
+     d="m 334,84 q 5,-22 9,-43"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2.2"
+     stroke-linecap="round"
+     id="path793" />
+  <!-- ===================================================
+       LOWER EYELASHES
+       Bases sampled along the lower-eyelid bezier.
+       =================================================== -->
+  <!-- t=0.22  base ~(148,213)  direction: down-left -->
+  <path
+     d="m 148,213 q -9,20 -19,39"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="1.9"
+     stroke-linecap="round"
+     id="path795" />
+  <!-- t=0.50  base ~(218,239)  direction: down -->
+  <path
+     d="m 218,239 q -3,21 -6,42"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path797" />
+  <!-- t=0.78  base ~(300,267)  direction: down-right -->
+  <path
+     d="m 300,267 q 2,21 4,41"
+     fill="none"
+     stroke="#0d0d0d"
+     stroke-width="1.9"
+     stroke-linecap="round"
+     id="path799" />
+</svg>
