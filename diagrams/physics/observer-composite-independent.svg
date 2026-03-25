@@ -78,16 +78,16 @@
   <!-- Connecting arrows (narrative flow) -->
   <!-- Box to Observer: curved dashed arrow crossing panel divider -->
   <!-- Observer to Gaussian: short dashed vertical arrow -->
-  <line
-     x1="665"
-     y1="195"
-     x2="665"
-     y2="207"
-     stroke="#999"
-     stroke-width="1.5"
-     stroke-dasharray="3 2"
-     marker-end="url(#grey-arrow)"
-     id="line1105" />
+  <!-- <line -->
+  <!--    x1="665" -->
+  <!--    y1="195" -->
+  <!--    x2="665" -->
+  <!--    y2="207" -->
+  <!--    stroke="#999" -->
+  <!--    stroke-width="1.5" -->
+  <!--    stroke-dasharray="3 2" -->
+  <!--    marker-end="url(#grey-arrow)" -->
+  <!--    id="line1105" /> -->
   <!-- GROUP 1: Billiard box with stationary balls, velocity shown as red arrows -->
   <g
      id="billiard-box">
@@ -266,7 +266,7 @@
      transform="translate(800,50) scale(-0.5,0.5)"
      preserveAspectRatio="xMidYMid slice" />
   <!-- GROUP 4: Gaussian scatter plot -->
-  <!-- Centre (665, 330); scale 50px per sigma; correlated sample rho~0.7 -->
+  <!-- Centre (665, 330); scale 50px per sigma; independent sample -->
   <g
      id="gaussian-scatter">
     <!-- Axes -->
@@ -295,7 +295,7 @@
        x2="565"
        y2="334"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1148" />
     <line
        x1="615"
@@ -303,7 +303,7 @@
        x2="615"
        y2="334"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1150" />
     <line
        x1="715"
@@ -311,7 +311,7 @@
        x2="715"
        y2="334"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1152" />
     <line
        x1="765"
@@ -319,7 +319,7 @@
        x2="765"
        y2="334"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1154" />
     <!-- y-axis ticks -->
     <line
@@ -328,7 +328,7 @@
        x2="669"
        y2="430"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1156" />
     <line
        x1="661"
@@ -336,7 +336,7 @@
        x2="669"
        y2="380"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1158" />
     <line
        x1="661"
@@ -344,7 +344,7 @@
        x2="669"
        y2="280"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1160" />
     <line
        x1="661"
@@ -352,14 +352,14 @@
        x2="669"
        y2="230"
        stroke="#666"
-       stroke-width="1"
+       stroke-width="2"
        id="line1162" />
     <!-- Axis labels -->
     <text
        x="796"
        y="335"
        font-family="Georgia,serif"
-       font-size="14"
+       font-size="24"
        font-style="italic"
        fill="#444"
        id="text1164">v</text>
@@ -367,7 +367,8 @@
        x="803"
        y="338"
        font-family="Georgia,serif"
-       font-size="9"
+       font-size="15"
+       font-style="italic"
        fill="#444"
        id="text1166">x</text>
     <text
@@ -375,15 +376,16 @@
        y="212"
        text-anchor="end"
        font-family="Georgia,serif"
-       font-size="14"
+       font-size="24"
        font-style="italic"
        fill="#444"
        id="text1168">v</text>
     <text
-       x="673"
+       x="659"
        y="215"
        font-family="Georgia,serif"
-       font-size="9"
+       font-size="15"
+       font-style="italic"
        fill="#444"
        id="text1170">y</text>
     <!-- sigma label on x-axis positive tick -->
@@ -392,7 +394,7 @@
        y="344"
        text-anchor="middle"
        font-family="Georgia,serif"
-       font-size="9"
+       font-size="15"
        fill="#999"
        id="text1172">σ</text>
     <!-- 1-sigma contour ellipse (rho=0.7, major semi-axis ~65, minor ~27, tilted -45deg) -->
