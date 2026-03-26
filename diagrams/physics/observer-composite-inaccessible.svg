@@ -324,4 +324,36 @@
        transform="rotate(-45 665 330)"
        id="ellipse1174" />
   </g>
+
+  <!-- GROUP 5: Hand-drawn question mark centred over the ellipses at (665,330).
+       Drawn as a thick bezier path + dot rather than a text glyph to preserve
+       the hand-made character and convey genuine uncertainty. -->
+  <g id="question-mark">
+    <!--
+      ? body: starts at the bottom of the hook (659,338), curves upward
+      through the neck (665,320) and into the top arc, which sweeps right,
+      up and back left around (665,276), terminating at the opening of the hook.
+      Two cubic bezier segments give the classic ? shape.
+    -->
+    <path
+       d="M 659,338
+          C 658,326 660,320 666,317
+          C 676,312 686,304 686,291
+          C 686,278 677,270 665,271
+          C 653,272 645,280 646,292"
+       fill="none"
+       stroke="#2c3e50"
+       stroke-width="8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       opacity="0.82"
+       id="qmark-body"/>
+    <!-- ? dot -->
+    <circle
+       cx="659" cy="354" r="6"
+       fill="#2c3e50"
+       opacity="0.82"
+       id="qmark-dot"/>
+  </g>
+
 </svg>
