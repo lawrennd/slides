@@ -641,50 +641,16 @@ Here the observer is monitoring the movements of the particles, but here their m
 <aside class="notes">
 Here the observer is blocked from monitoring anything inside the sytem.
 </aside>
-<!-- SECTION Foundations: Information Loss and Entropy -->
 </section>
-<section id="foundations-information-loss-and-entropy" class="slide level2">
-<h2>Foundations: Information Loss and Entropy</h2>
-</section>
-<section id="the-inaccessible-game-setup" class="slide level2">
-<h2>The Inaccessible Game Setup</h2>
-</section>
-<section id="information-isolation" class="slide level2">
-<h2>Information Isolation</h2>
-<p><strong>The Fourth Axiom: Information Isolation</strong></p>
+<section id="entropy-and-impossibility" class="slide level2">
+<h2>Entropy and Impossibility</h2>
+<div>
 <ul>
-<li>First three axioms: information loss (Baez-Fritz-Leinster)</li>
-<li>Fourth axiom: the game is <em>isolated from observation</em></li>
-<li>No external observer can extract or inject information</li>
+<li class="fragment">`Forget’ underlying probability.</li>
+<li class="fragment">Manipulate entropy directly.</li>
+<li class="fragment">Discover constraints on possibility.</li>
 </ul>
-<p><em>Analogous to energy conservation in thermodynamics</em></p>
-</section>
-<section id="conservation-of-marginal-entropy" class="slide level2">
-<h2>Conservation of Marginal Entropy</h2>
-<p><strong>Marginal Entropy Conservation:</strong> <span class="math display">\[
-\sum_{i=1}^N h_i = C
-\]</span></p>
-<ul>
-<li>Exchangeable: holds for any finite subset of variables</li>
-<li>Extensive: scales linearly with system size</li>
-<li>Analogous to energy conservation — but for information</li>
-</ul>
-</section>
-<section id="why-this-form" class="slide level2">
-<h2>Why This Form?</h2>
-<p><strong>Uniqueness of the Form:</strong></p>
-<p>Any exchangeable, extensive conservation law over marginal entropies must be: <span class="math display">\[Q(\{h_i\}) = \sum_i f(h_i), \quad f(h) = c \cdot h\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math inline">\(\sum_i h_i = C\)</span></p>
-</section>
-<section id="coordinate-free-interpretation" class="slide level2">
-<h2>Coordinate-Free Interpretation</h2>
-<p><strong>Information Isolation:</strong></p>
-<ul>
-<li>Enforces <em>internality</em>: no external reference structures</li>
-<li>Enforces <em>relationality</em>: all quantities defined internally</li>
-<li>Variable partition <span class="math inline">\(\{X_i\}\)</span> is model specification, not external imposition</li>
-</ul>
-<p><em>Marginal entropy conservation = information geometry’s built-in potential</em></p>
+</div>
 </section>
 <section id="the-no-barber-principle" class="slide level2">
 <h2>The No-Barber Principle</h2>
@@ -692,26 +658,6 @@ Here the observer is blocked from monitoring anything inside the sytem.
 <p><em>Barber shaves all who don’t shave themselves</em></p>
 <p>Does the barber shave themselves?</p>
 <p><strong>Paradox:</strong> Definition includes itself in scope</p>
-</section>
-<section id="the-munchkin-provision-1" class="slide level2">
-<h2>The Munchkin Provision</h2>
-<div class="figure">
-<div id="munchkin-game-cover-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//information-game/Munchkin_game_cover.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-The Munchkin card came has both cards and rules. The game explicitly acknowledges that this can lead to inconsistencies which should be resolved by the game owner.
-</aside>
-<div>
-<p><strong>Munchkin Card Game <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span>:</strong></p>
-<p><em>Rules may be inconsistent</em></p>
-<p><strong>Resolution:</strong> “Loud arguments, with owner having last word”</p>
-<p><strong>For foundations:</strong> Need something better!</p>
-<p><em>No external referee for mathematics</em></p>
-</div>
 </section>
 <section id="no-external-adjudicators" class="slide level2">
 <h2>No External Adjudicators</h2>
@@ -725,181 +671,73 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </ul>
 <p><em>No appeal to structure outside the game</em></p>
 </div>
+<!-- SECTION Foundations: Information Loss and Entropy -->
 </section>
-<section id="entropic-exchangeability" class="slide level2">
-<h2>Entropic Exchangeability</h2>
+<section id="foundations-information-loss-and-entropy" class="slide level2">
+<h2>Foundations: Information Loss and Entropy</h2>
+</section>
+<section id="the-inaccessible-game-setup" class="slide level2">
+<h2>The Inaccessible Game Setup</h2>
 <div>
-<p>Admissible rules must:</p>
-<ol type="1">
-<li class="fragment">Use only reduced descriptions</li>
-<li class="fragment">Be relabeling-invariant</li>
-<li class="fragment">Not require global distinguishability</li>
-</ol>
+<ul>
+<li class="fragment">Avoid external structure.</li>
+<li class="fragment">Represent information loss (via Entropy)</li>
+<li class="fragment">Enforce information conservation (information isolation, <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span>)</li>
+</ul>
 </div>
 </section>
-<section id="what-this-excludes" class="slide level2">
-<h2>What This Excludes</h2>
+<section id="marginal-entropy-conservation" class="slide level2">
+<h2>Marginal Entropy Conservation</h2>
 <div>
-<p><strong>Violations of No-Barber:</strong></p>
+<p><span class="math display">\[
+\sum_{i=1}^N h_i = C
+\]</span></p>
 <ul>
-<li class="fragment">Partial conservation (some variables isolated) → privileges variables</li>
-<li class="fragment">Time-varying <span class="math inline">\(C\)</span> → needs external clock</li>
-<li class="fragment">Observer-relative isolation → needs external observer</li>
-<li class="fragment">Probabilistic isolation → needs external measure</li>
+<li class="fragment">Exchangeable: holds for any finite subset of variables</li>
+<li class="fragment">Extensive: scales linearly with system size</li>
+<li class="fragment">Analogous to energy conservation — but for information</li>
 </ul>
-<p><em>All smuggle in external structure</em></p>
 </div>
-</section>
-<section id="lawvere-diagonalisation" class="slide level2">
-<h2>Lawvere Diagonalisation</h2>
-<p><strong>Impossibility results sharing a structure:</strong></p>
-<ul>
-<li>Russell’s paradox</li>
-<li>Cantor’s theorem</li>
-<li>Gödel incompleteness</li>
-<li>Turing’s halting problem</li>
-<li>Tarski’s undefinability</li>
-</ul>
-<p><em>Unified by Lawvere diagonalisation</em> <span class="citation" data-cites="Lawvere-diagonal69">(Lawvere, 1969)</span></p>
-</section>
-<section id="the-five-move-recipe" class="slide level2">
-<h2>The Five-Move Recipe</h2>
-<p><strong>Lawvere’s Five-Move Recipe:</strong></p>
-<ol type="1">
-<li>Rules: operations from inputs to outputs</li>
-<li>Universal evaluator: run any rule on any input</li>
-<li>Internalise syntax: rules can reference all operations</li>
-<li>Self-application: rules can serve as their own input</li>
-<li>Twist: negate or complement outputs</li>
-</ol>
-<p><em>When all five hold: contradiction is derivable</em></p>
-</section>
-<section id="the-barber-paradox-as-lawvere-diagonalisation" class="slide level2">
-<h2>The Barber Paradox as Lawvere Diagonalisation</h2>
-<p><strong>Barber as Lawvere:</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>Step</th>
-<th>Barber interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Rules</td>
-<td>shaving rules <span class="math inline">\(R\)</span></td>
-</tr>
-<tr class="even">
-<td>Evaluator</td>
-<td><span class="math inline">\(\text{shaves}((R,p),q)\)</span></td>
-</tr>
-<tr class="odd">
-<td>Internalisation</td>
-<td>each person <span class="math inline">\(p\)</span> carries rule <span class="math inline">\(R_p\)</span></td>
-</tr>
-<tr class="even">
-<td>Self-application</td>
-<td><span class="math inline">\(R_p(p)\)</span></td>
-</tr>
-<tr class="odd">
-<td>Twist</td>
-<td><span class="math inline">\(T(p) = \neg R_p(p)\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><span class="math inline">\(\Rightarrow\)</span> contradiction: <span class="math inline">\(\text{shaves}(B,b) = \neg\text{shaves}(B,b)\)</span></p>
-</section>
-<section id="blocking-diagonalisation-by-blocking-copying" class="slide level2">
-<h2>Blocking Diagonalisation by Blocking Copying</h2>
-<p><strong>Blocking the Construction:</strong></p>
-<p>Self-application requires <em>cloning</em>: <span class="math display">\[\Delta : A \to A \times A, \quad \Delta(a) = (a,a)\]</span></p>
-<ul>
-<li><strong>Cartesian category</strong>: canonical <span class="math inline">\(\Delta\)</span> exists — Lawvere diagonalisation possible</li>
-<li><strong>Symmetric monoidal category</strong>: no canonical <span class="math inline">\(\Delta\)</span> — self-application step fails</li>
-</ul>
-<p><em>Removing free copying blocks the diagonal construction</em></p>
-</section>
-<section id="linear-logic-and-no-cloning" class="slide level2">
-<h2>Linear Logic and No-Cloning</h2>
-<p><strong>Two programmes that block copying:</strong></p>
-<p><strong>Linear logic</strong> <span class="citation" data-cites="Girard-linear87">(Girard, 1987)</span>: * Assumptions are resources — can’t duplicate freely * Cartesian <span class="math inline">\(\to\)</span> symmetric monoidal</p>
-<p><strong>Quantum probability (no-cloning)</strong>: * No canonical <span class="math inline">\(A \to A \otimes A\)</span> for unknown states * Noncommutative <span class="math inline">\(C^*\)</span>-algebras replace Boolean event spaces</p>
-<p><em>Both satisfy the no-barber constraint for independent reasons</em></p>
-</section>
-<section id="the-inaccessible-game" class="slide level2">
-<h2>The Inaccessible Game</h2>
-<ul>
-<li>System isolated from observation</li>
-<li>External observer cannot extract information</li>
-<li>Internal state is inaccessible</li>
-<li>Zero-player game with information-theoretic rules</li>
-</ul>
-</section>
-<section id="why-inaccessible" class="slide level2">
-<h2>Why “Inaccessible?”</h2>
-<p><strong>Why “Inaccessible?”</strong></p>
-<p>From BLF axioms: Info gained = <span class="math inline">\(H(p) - H(q)\)</span></p>
-<p>Our axiom: <span class="math inline">\(\sum h_i = C\)</span> (constant)</p>
-<p><span class="math display">\[\Delta(\sum h_i) = 0 \Rightarrow \text{observer learns nothing!}\]</span></p>
-</section>
-<section id="what-makes-it-a-game" class="slide level2">
-<h2>What Makes It a Game?</h2>
-<p><strong>Game Characteristics:</strong></p>
-<ul>
-<li>Zero-player game</li>
-<li>State = probability distribution <span class="math inline">\(p(\mathbf{x}|\boldsymbol{\theta})\)</span></li>
-<li>Rule = maximize entropy production</li>
-<li>Constraint = <span class="math inline">\(\sum h_i = C\)</span></li>
-<li>Dynamics = emerge from information geometry</li>
-</ul>
-</section>
-<section id="connection-to-physical-reality" class="slide level2">
-<h2>Connection to Physical Reality</h2>
-<p><strong>Physical Connections:</strong></p>
-<ul>
-<li>GENERIC structure emerges</li>
-<li>Energy ↔︎ Entropy equivalence</li>
-<li>Landauer’s principle derivable</li>
-<li>Bridge between information and physics</li>
-</ul>
-<!-- SECTION Information Dynamics -->
-</section>
-<section id="information-dynamics" class="slide level2">
-<h2>Information Dynamics</h2>
 </section>
 <section id="the-conservation-law" class="slide level2">
 <h2>The Conservation Law</h2>
 </section>
 <section id="the-i-h-c-structure" class="slide level2">
 <h2>The <span class="math inline">\(I + H = C\)</span> Structure</h2>
-<p><strong>The Fourth Axiom:</strong> <span class="math display">\[
+<div>
+<p><span class="math display">\[
 \sum_{i=1}^N h_i = C
 \]</span></p>
 <p><em>What does this conservation imply for dynamics?</em></p>
+</div>
 </section>
 <section id="multi-information-measuring-correlation" class="slide level2">
 <h2>Multi-Information: Measuring Correlation</h2>
-<p><strong>Multi-Information:</strong> <span class="math display">\[
+<div>
+<p><span class="math display">\[
 I = \sum_{i=1}^N h_i - H
 \]</span></p>
 <ul>
-<li><span class="math inline">\(I = 0\)</span>: Independent variables</li>
-<li><span class="math inline">\(I &gt; 0\)</span>: Correlated variables</li>
-<li>Larger <span class="math inline">\(I\)</span> = more correlation</li>
+<li class="fragment"><span class="math inline">\(I = 0\)</span>: Independent variables</li>
+<li class="fragment"><span class="math inline">\(I &gt; 0\)</span>: Correlated variables</li>
+<li class="fragment">Larger <span class="math inline">\(I\)</span> = more correlation</li>
 </ul>
 <p><em>Measures “shared information”</em></p>
+</div>
 </section>
-<section id="the-information-action-principle-i-h-c" class="slide level2">
-<h2>The Information Action Principle: <span class="math inline">\(I + H = C\)</span></h2>
-<p><strong>Information Action Principle:</strong> <span class="math display">\[
+<section id="information-action" class="slide level2">
+<h2>`Information Action’</h2>
+<div>
+<p><span class="math display">\[
 I + H = C
 \]</span></p>
 <p><em>Conserved quantity splits into two parts</em></p>
 <p><strong>Analogy to classical mechanics:</strong></p>
 <ul>
-<li>Energy: <span class="math inline">\(T + V = E\)</span></li>
-<li>Information: <span class="math inline">\(I + H = C\)</span></li>
+<li class="fragment">Energy: <span class="math inline">\(T + V = E\)</span></li>
+<li class="fragment">Information: <span class="math inline">\(I + H = C\)</span></li>
 </ul>
+</div>
 </section>
 <section id="physical-analogy" class="slide level2">
 <h2>Physical Analogy</h2>
@@ -927,20 +765,25 @@ I + H = C
 </table>
 <p><em>System “rolls downhill” from correlation to entropy</em></p>
 </section>
-<section id="the-information-relaxation-principle" class="slide level2">
-<h2>The Information Relaxation Principle</h2>
-<p><strong>Information Relaxation:</strong></p>
+<section id="information-relaxation" class="slide level2">
+<h2>Information Relaxation</h2>
+<div>
 <ul>
-<li>Second law: Entropy increases (<span class="math inline">\(\dot{H} &gt; 0\)</span>)</li>
-<li>Conservation: <span class="math inline">\(I + H = C\)</span> (constant)</li>
-<li>Therefore: Correlation decreases (<span class="math inline">\(\dot{I} &lt; 0\)</span>)</li>
+<li class="fragment">Second law: Entropy increases (<span class="math inline">\(\dot{H} &gt; 0\)</span>)</li>
+<li class="fragment">Conservation: <span class="math inline">\(I + H = C\)</span> (constant)</li>
+<li class="fragment">Therefore: Correlation decreases (<span class="math inline">\(\dot{I} &lt; 0\)</span>)</li>
 </ul>
-<p><strong>Physical intuition:</strong></p>
+</div>
+</section>
+<section id="physical-intuition" class="slide level2">
+<h2>Physical intuition</h2>
+<div>
 <ul>
-<li>Compressed spring <span class="math inline">\(\rightarrow\)</span> released energy</li>
-<li>Correlated variables <span class="math inline">\(\rightarrow\)</span> independent variables</li>
-<li>Potential <span class="math inline">\(\rightarrow\)</span> kinetic</li>
+<li class="fragment">Compressed spring <span class="math inline">\(\rightarrow\)</span> released energy</li>
+<li class="fragment">Correlated variables <span class="math inline">\(\rightarrow\)</span> independent variables</li>
+<li class="fragment">Potential <span class="math inline">\(\rightarrow\)</span> kinetic</li>
 </ul>
+</div>
 </section>
 <section id="visualisation-relaxation-dynamics" class="slide level2">
 <h2>Visualisation: Relaxation Dynamics</h2>
@@ -956,796 +799,58 @@ I + H = C
 <aside class="notes">
 Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.
 </aside>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Multi-information <span class="math inline">\(I\)</span> decreases (correlations break)</li>
-<li>Joint entropy <span class="math inline">\(H\)</span> increases (disorder grows)</li>
-<li>Conservation: <span class="math inline">\(I + H = C\)</span> (black line)</li>
-<li>Marginals: <span class="math inline">\(h_1\)</span>, <span class="math inline">\(h_2\)</span> constant (inaccessible!)</li>
-</ul>
-<p><em>Internal reorganisation invisible to external observer</em></p>
 </section>
-<section id="connection-to-marginal-entropy-conservation" class="slide level2">
-<h2>Connection to Marginal Entropy Conservation</h2>
-<p><strong>Key Insight:</strong></p>
-<p>Conservation <span class="math inline">\(\sum h_i = C\)</span> <span class="math inline">\(\iff\)</span> <span class="math inline">\(I + H = C\)</span></p>
-<ul>
-<li>External view: Marginals constant (inaccessible)</li>
-<li>Internal view: <span class="math inline">\(I \leftrightarrow H\)</span> (dynamic redistribution)</li>
-</ul>
-<p><strong>Dynamics = trading correlation for entropy</strong></p>
-</section>
-<section id="why-this-matters-for-dynamics" class="slide level2">
-<h2>Why This Matters for Dynamics</h2>
-<p><strong>Implications:</strong></p>
-<ol type="1">
-<li>Direction: High <span class="math inline">\(I\)</span> <span class="math inline">\(\rightarrow\)</span> High <span class="math inline">\(H\)</span></li>
-<li>Constraint: Only paths with <span class="math inline">\(I + H = C\)</span> allowed</li>
-<li>Coordinates: <span class="math inline">\(I\)</span> and <span class="math inline">\(H\)</span> are natural</li>
-<li>Variational principle: Derive dynamics from conservation</li>
-</ol>
-</section>
-<section id="information-relaxation" class="slide level2">
-<h2>Information Relaxation</h2>
-</section>
-<section id="from-information-relaxation-to-maximum-entropy-production" class="slide level2">
-<h2>From Information Relaxation to Maximum Entropy Production</h2>
-<p><strong>Question:</strong> How exactly does the system relax?</p>
-<p><strong>Answer:</strong> Through maximum entropy production</p>
-</section>
-<section id="the-direction-of-time-entropy-increases" class="slide level2">
-<h2>The Direction of Time: Entropy Increases</h2>
-<p><strong>Second Law:</strong> <span class="math display">\[
-\dot{H} \geq 0
-\]</span></p>
-<p><strong>Conservation:</strong> <span class="math display">\[
-I + H = C
-\]</span></p>
-<p><strong>Therefore:</strong> <span class="math display">\[
-\dot{I} \leq 0
-\]</span></p>
-<p><em>Correlations must decrease</em></p>
-</section>
-<section id="maximum-entropy-production-principle" class="slide level2">
-<h2>Maximum Entropy Production Principle</h2>
-<p><strong>Maximum Entropy Production (MEP):</strong></p>
-<ul>
-<li>Subject to constraints</li>
-<li>Maximize <span class="math inline">\(\dot{H}\)</span></li>
-<li>Steepest path to equilibrium</li>
-</ul>
-<p><strong>Observed across physics:</strong></p>
-<ul>
-<li>Thermodynamics (Beretta, Ziegler)</li>
-<li>Fluid mechanics</li>
-<li>Self-organising systems</li>
-</ul>
-</section>
-<section id="natural-parameters-and-the-entropy-gradient" class="slide level2">
-<h2>Natural Parameters and the Entropy Gradient</h2>
-<p><strong>Entropy in Natural Parameters:</strong> <span class="math display">\[
-H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^\top \nabla \mathcal{A}(\boldsymbol{\theta})
-\]</span></p>
-<p><strong>Gradient (steepest increase):</strong> <span class="math display">\[
-\nabla_{\boldsymbol{\theta}} H = -G(\boldsymbol{\theta})\boldsymbol{\theta}
-\]</span></p>
-<p><em>Fisher information emerges</em></p>
-</section>
-<section id="the-mep-dynamics" class="slide level2">
-<h2>The MEP Dynamics</h2>
-<p><strong>MEP Dynamics:</strong> <span class="math display">\[
-\dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta}
-\]</span></p>
-<ul>
-<li>Gradient ascent on entropy</li>
-<li>Fisher metric determines the flow</li>
-<li>Automatically preserves <span class="math inline">\(\sum h_i\)</span> (for right structure)</li>
-</ul>
-<p><em>Natural dynamics from information geometry</em></p>
-</section>
-<section id="why-this-is-the-unique-dynamics" class="slide level2">
-<h2>Why This Is the Unique Dynamics</h2>
-<p><strong>Why This Dynamics?</strong></p>
-<ol type="1">
-<li>Steepest ascent (Euclidean, <em>not</em> natural gradient)</li>
-<li>Maximizes entropy production rate</li>
-<li>Conserves marginal entropies (special case)</li>
-<li>Matches thermodynamic steepest ascent</li>
-</ol>
-<p><em>Determined by information relaxation + MEP</em></p>
-</section>
-<section id="the-information-relaxation-picture" class="slide level2">
-<h2>The Information Relaxation Picture</h2>
-<p><strong>Information Relaxation:</strong></p>
-<p><em>Start:</em> High <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span> (correlated, tense)</p>
-<p>↓ <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta}\)</span> (MEP)</p>
-<p><em>End:</em> Low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span> (independent, relaxed)</p>
-<p><strong>Throughout:</strong> <span class="math inline">\(\sum h_i = C\)</span> (inaccessible to observer)</p>
-</section>
-<section id="connection-to-physical-intuition" class="slide level2">
-<h2>Connection to Physical Intuition</h2>
-<p><strong>Physical Analogy: Gas Diffusion</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>Gas Molecules</th>
-<th>Information System</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Concentrated in corner</td>
-<td>High correlation (<span class="math inline">\(I\)</span>)</td>
-</tr>
-<tr class="even">
-<td>Diffuse throughout room</td>
-<td>Entropy increases (<span class="math inline">\(H ↑\)</span>)</td>
-</tr>
-<tr class="odd">
-<td>Uniform distribution</td>
-<td>Low correlation (independent)</td>
-</tr>
-<tr class="even">
-<td>Conservation: energy</td>
-<td>Conservation: <span class="math inline">\(\sum h_i\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><em>Same principle, different space</em></p>
-</section>
-<section id="preview-constrained-gradient-flow" class="slide level2">
-<h2>Preview: Constrained Gradient Flow</h2>
-<p><strong>Next Steps:</strong></p>
-<ul>
-<li>Lecture 4: Adding Lagrangian constraints</li>
-<li>Lecture 5: Poisson structure (conservation)</li>
-<li>Lecture 8: Full GENERIC framework</li>
-</ul>
-<p><em>MEP + constraints = complete dynamics</em></p>
-</section>
-<section id="constrained-maximum-entropy-production" class="slide level2">
-<h2>Constrained Maximum Entropy Production</h2>
-<p><strong>Information Relaxation Principle:</strong></p>
-<p>Among all paths with <span class="math inline">\(\sum h_i = C\)</span>: <span class="math display">\[
-\text{Follow path that maximizes } \dot{H}
-\]</span></p>
-<p><em>Steepest entropy ascent on constraint surface</em></p>
-</section>
-<section id="unconstrained-vs-constrained-dynamics" class="slide level2">
-<h2>Unconstrained vs Constrained Dynamics</h2>
-<p><strong>Unconstrained MEP:</strong> <span class="math display">\[
-\dot{\boldsymbol{\theta}} = \nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}
-\]</span></p>
-<ul>
-<li>Natural gradient ascent</li>
-<li>Flows to <span class="math inline">\(\boldsymbol{\theta} = \mathbf{0}\)</span> (max entropy)</li>
-<li>No constraint enforcement</li>
-</ul>
-</section>
-<section id="adding-the-constraint" class="slide level2">
-<h2>Adding the Constraint</h2>
-<p><strong>Lagrangian Formulation:</strong></p>
-<p><span class="math display">\[
-\mathscr{L}(\boldsymbol{\theta}, \nu) = -H + \nu\left(\sum h_i - C\right)
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\nu\)</span>: Lagrange multiplier</li>
-<li>Enforces constraint</li>
-<li>Projects onto tangent space</li>
-</ul>
-</section>
-<section id="the-constrained-dynamics" class="slide level2">
-<h2>The Constrained Dynamics</h2>
-<p><strong>Constrained Dynamics:</strong></p>
-<p><span class="math display">\[
-\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} + \nu(\tau) \mathbf{a}
-\]</span> where <span class="math inline">\(\mathbf{a} = \nabla\left(\sum_i h_i\right)\)</span></p>
-<p><strong>Constraint maintenance:</strong> <span class="math display">\[\mathbf{a}^\top \dot{\boldsymbol{\theta}} = 0\]</span></p>
-</section>
-<section id="solving-for-the-lagrange-multiplier" class="slide level2">
-<h2>Solving for the Lagrange Multiplier</h2>
-<p><strong>Solution:</strong></p>
-<p><span class="math display">\[
-\nu(\tau) = \frac{\mathbf{a}^\top G\boldsymbol{\theta}}{\|\mathbf{a}\|^2}
-\]</span></p>
-<p><strong>Projection Form:</strong></p>
-<p><span class="math display">\[
-\dot{\boldsymbol{\theta}} = -\Pi_\parallel G\boldsymbol{\theta}
-\]</span> where <span class="math inline">\(\Pi_\parallel\)</span> projects onto tangent space</p>
-</section>
-<section id="physical-interpretation" class="slide level2">
-<h2>Physical Interpretation</h2>
-<p><strong>Physical Picture:</strong></p>
-<ul>
-<li><span class="math inline">\(-G\boldsymbol{\theta}\)</span>: natural entropy gradient</li>
-<li><span class="math inline">\(\nu\mathbf{a}\)</span>: constraint force</li>
-<li><span class="math inline">\(\nu\)</span> small: flow naturally tangent</li>
-<li><span class="math inline">\(\nu\)</span> large: flow fights constraint</li>
-</ul>
-<p><em>Balance between geometry and constraint</em></p>
-</section>
-<section id="entropy-time-internal-clock" class="slide level2">
-<h2>Entropy Time (Internal Clock)</h2>
+<section id="long-story-short" class="slide level2">
+<h2>Long Story Short</h2>
 <div>
-<p><strong>Entropy Time:</strong></p>
 <ul>
-<li class="fragment">Avoid an externally supplied clock</li>
-<li class="fragment">Use entropy production to parameterise flow</li>
-<li class="fragment">Scale/offset are just unit conventions</li>
+<li class="fragment">Can derive GENERIC-like dynamics.</li>
+<li class="fragment">Origin suggests von Neumann entropy more natural than Shannon.</li>
 </ul>
 </div>
-<!--<!-- SECTION Emergent Structure: GENERIC -->
 </section>
-<section id="emergent-structure-generic" class="slide level2">
-<h2>Emergent Structure: GENERIC</h2>
-</section>
-<section id="what-is-generic" class="slide level2">
-<h2>What is GENERIC?</h2>
-</section>
-<section id="the-generic-framework" class="slide level2">
-<h2>The GENERIC Framework</h2>
-</section>
-<section id="historical-context-non-equilibrium-thermodynamics" class="slide level2">
-<h2>Historical Context: Non-Equilibrium Thermodynamics</h2>
-<p><strong>Non-Equilibrium Challenge (1980s-90s)</strong></p>
-<p>Real systems are <em>both</em>:</p>
+<section id="connections" class="slide level2">
+<h2>Connections</h2>
+<div>
 <ul>
-<li>Reversible (mechanics, conservation laws)</li>
-<li>Irreversible (thermodynamics, dissipation)</li>
-</ul>
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<p><strong>Examples:</strong></p>
+<li class="fragment">Nice connections between.
 <ul>
-<li>Fluids: momentum conservation + viscosity</li>
-<li>Reactions: kinetics + diffusion</li>
-<li>Materials: elasticity + plasticity</li>
-</ul>
-<p><strong>Solution:</strong> GENERIC framework (<span class="citation" data-cites="Grmela-dynamics97">Grmela and Öttinger (1997)</span>, <span class="citation" data-cites="Ottinger-generic97">Öttinger and Grmela (1997)</span>)</p>
-</section>
-<section id="what-problem-does-generic-solve" class="slide level2">
-<h2>What Problem Does GENERIC Solve?</h2>
-<p><strong>Two Worlds?</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>Classical Mechanics</th>
-<th>Classical Thermodynamics</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Time reversible</td>
-<td>Time irreversible</td>
-</tr>
-<tr class="even">
-<td>Energy conserved</td>
-<td>Entropy increases</td>
-</tr>
-<tr class="odd">
-<td>Antisymmetric ops</td>
-<td>Symmetric ops</td>
-</tr>
-<tr class="even">
-<td>Poisson structure</td>
-<td>Dissipation</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Problem:</strong> Real systems do <em>both</em>.</p>
-<p><em>Pendulum with friction</em>: Angular momentum (reversible) + heat loss (irreversible)</p>
-</section>
-<section id="the-generic-answer-coexistence-requires-structure" class="slide level2">
-<h2>The GENERIC Answer: Coexistence Requires Structure</h2>
-<p><strong>GENERIC Answer</strong></p>
-<p>Reversible + Irreversible can coexist</p>
-<p><strong>Requirements:</strong></p>
-<ol type="1">
-<li>Consistent energy &amp; entropy</li>
-<li>Second law: <span class="math inline">\(\dot{S} \geq 0\)</span></li>
-<li>Conserved quantities respected</li>
-<li>Constraints (Casimirs) obeyed</li>
-</ol>
-<p><strong>Key:</strong> Can’t add arbitrarily <span class="math inline">\(\rightarrow\)</span> need <em>degeneracy conditions</em></p>
-<p><strong>Remarkable:</strong> In typical GENERIC, degeneracy conditions are HARD to satisfy (must engineer carefully)</p>
-<p>(Axioms <span class="math inline">\(\rightarrow\)</span> geometry <span class="math inline">\(\rightarrow\)</span> thermodynamic consistency)</p>
-</section>
-<section id="why-generic-matters-for-information-dynamics" class="slide level2">
-<h2>Why “GENERIC” Matters for Information Dynamics</h2>
-<p><strong>Why GENERIC for Information Dynamics?</strong></p>
-<p>Structure we <em>derived</em> (L1-7) = Structure physicists <em>discovered</em> (GENERIC)</p>
-<p><strong>Connection:</strong></p>
-<ul>
-<li>Information dynamics = thermodynamics (Shannon/Jaynes)</li>
-<li>Information dynamics = dynamical system (constraints)</li>
-<li>GENERIC = inevitable consequence of combining both</li>
-</ul>
-<p><strong>Our system:</strong> <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} - \nu a\)</span></p>
-<ul>
-<li><span class="math inline">\(G\)</span>: Fisher information (friction/dissipation)</li>
-<li><span class="math inline">\(\nu a\)</span>: Constraint dynamics (reversible structure)</li>
-</ul>
-</section>
-<section id="preview-structure-of-the-generic-equation" class="slide level2">
-<h2>Preview: Structure of the GENERIC Equation</h2>
-<p><strong>Coming Up: The GENERIC Equation</strong></p>
-<p><span class="math display">\[\dot{x} = L(x) \nabla E(x) + M(x) \nabla S(x)\]</span></p>
-<ul>
-<li><span class="math inline">\(L\)</span>: Poisson (antisymmetric, reversible)</li>
-<li><span class="math inline">\(M\)</span>: Friction (symmetric, irreversible)</li>
-<li><span class="math inline">\(E\)</span>: Energy (conserved by <span class="math inline">\(L\)</span>)</li>
-<li><span class="math inline">\(S\)</span>: Entropy (increased by <span class="math inline">\(M\)</span>)</li>
-</ul>
-<p><strong>Our information dynamics:</strong></p>
-<ul>
-<li><span class="math inline">\(G \leftrightarrow M\)</span> (Fisher = friction)</li>
-<li>Constraints <span class="math inline">\(\leftrightarrow L\)</span> (structure)</li>
-<li><span class="math inline">\(\sum h_i = C\)</span> (Casimirs)</li>
-</ul>
-<p>Structure we built = GENERIC-like</p>
-</section>
-<section id="the-generic-equation" class="slide level2">
-<h2>The GENERIC Equation</h2>
-<p><strong>The GENERIC Equation</strong></p>
-<p><span class="math display">\[\dot{x} = L(x) \nabla E(x) + M(x) \nabla S(x)\]</span></p>
-<p><strong>Components:</strong> * <span class="math inline">\(x\)</span>: System state * <span class="math inline">\(E\)</span>: Energy functional * <span class="math inline">\(S\)</span>: Entropy functional * <span class="math inline">\(L\)</span>: Poisson operator (reversible) * <span class="math inline">\(M\)</span>: Friction operator (irreversible)</p>
-<p>Simple form <span class="math inline">\(\rightarrow\)</span> Deep structure!</p>
-</section>
-<section id="the-poisson-operator-lx" class="slide level2">
-<h2>The Poisson Operator <span class="math inline">\(L(x)\)</span></h2>
-<p><strong>Poisson Operator <span class="math inline">\(L(x)\)</span></strong> (Reversible part)</p>
-<p><strong>Properties:</strong> 1. <strong>Antisymmetric:</strong> <span class="math inline">\(\langle \nabla F, L \nabla G \rangle = -\langle \nabla G, L \nabla F \rangle\)</span> * Time reversible</p>
-<ol start="2" type="1">
-<li><strong>Jacobi identity:</strong> <span class="math inline">\(\{F, \{G, H\}\} + \text{cyclic} = 0\)</span>
-<ul>
-<li>Lie algebra (Lecture 5!)</li>
+<li class="fragment">Thermodynamics and Inference (Jaynes).</li>
+<li class="fragment">Information Geometry and GENERIC.</li>
+<li class="fragment">Inaccessibility and noncommutative probability.</li>
 </ul></li>
-<li><strong>Conserves energy:</strong> <span class="math inline">\(\langle \nabla E, L \nabla E \rangle = 0\)</span>
-<ul>
-<li><span class="math inline">\(\frac{\text{d}E}{\text{d}t}|_L = 0\)</span></li>
-</ul></li>
-</ol>
-<p><strong>Recall L5:</strong> This IS Hamiltonian/Poisson structure!</p>
-</section>
-<section id="the-friction-operator-mx" class="slide level2">
-<h2>The Friction Operator <span class="math inline">\(M(x)\)</span></h2>
-<p><strong>Friction Operator <span class="math inline">\(M(x)\)</span></strong> (Irreversible part)</p>
-<p><strong>Properties:</strong></p>
-<ol type="1">
-<li><strong>Symmetric:</strong> <span class="math inline">\(\langle \nabla F, M \nabla G \rangle = \langle \nabla G, M \nabla F \rangle\)</span>
-<ul>
-<li>Onsager reciprocity</li>
-</ul></li>
-<li><strong>Positive semi-definite:</strong> <span class="math inline">\(\langle \nabla F, M \nabla F \rangle \geq 0\)</span>
-<ul>
-<li>Entropy increases: <span class="math inline">\(\dot{S}|_M \geq 0\)</span></li>
-</ul></li>
-<li><strong>Conserves energy:</strong> <span class="math inline">\(\langle \nabla E, M \nabla S \rangle = 0\)</span>
-<ul>
-<li>First degeneracy condition</li>
-</ul></li>
-</ol>
-<p><strong>Recall L7:</strong> This <em>is</em> our symmetric part <span class="math inline">\(S\)</span>!</p>
-</section>
-<section id="the-degeneracy-conditions" class="slide level2">
-<h2>The Degeneracy Conditions</h2>
-<p><strong>Degeneracy Conditions</strong> (Coupling)</p>
-<p><strong>Condition 1:</strong> <span class="math inline">\(M \nabla E = 0\)</span> * Friction doesn’t change total energy * Only redistributes it</p>
-<p><strong>Condition 2:</strong> <span class="math inline">\(L \nabla S = 0\)</span> * Hamiltonian flow doesn’t change entropy * All entropy change from dissipation</p>
-<p><strong>Consequences:</strong> * First law: <span class="math inline">\(\frac{\text{d}E}{\text{d}t} = 0\)</span> ✓ * Second law: <span class="math inline">\(\frac{\text{d}S}{\text{d}t} = \langle \nabla S, M \nabla S \rangle \geq 0\)</span> ✓</p>
-<p>Without these <span class="math inline">\(\rightarrow\)</span> thermodynamics violated.</p>
-</section>
-<section id="casimir-functions-and-constraints" class="slide level2">
-<h2>Casimir Functions and Constraints</h2>
-<p><strong>Casimir Functions <span class="math inline">\(C_i(x)\)</span></strong></p>
-<p><span class="math display">\[L \nabla C_i = 0 \quad \text{AND} \quad M \nabla C_i = 0\]</span></p>
-<ul>
-<li>“Super-conserved” (both parts preserve)</li>
-<li>Fundamental constraints</li>
 </ul>
-<p><strong>Examples:</strong> * Momentum (mechanics) * Circulation (fluids) * Charge (electromagnetism) * <strong><span class="math inline">\(\sum h_i = C\)</span> (information)</strong></p>
-<p><strong>Effect:</strong> Stratify state space into symplectic leaves</p>
-<p>(Recall L5: Casimirs from symmetries)</p>
+</div>
 </section>
-<section id="why-this-structure" class="slide level2">
-<h2>Why This Structure?</h2>
-<p><strong>Why This Structure?</strong></p>
-<p>GENERIC is the <em>most general</em> structure that allows: * Time-reversal (reversible part) * Second law (irreversible part)<br />
-* Energy conservation (overall) * Casimirs (constraints)</p>
-<p><strong>Not a choice <span class="math inline">\(\rightarrow\)</span> Consequence of physics!</strong></p>
-<p><strong>Our result:</strong> GENERIC <em>emerged</em> from info axioms * Axioms (L2) + MEP (L3) + Constraints (L4) * <span class="math inline">\(\rightarrow\)</span> GENERIC structure (L5-7)</p>
-<p>GENERIC = deep physical principle, not modeling trick</p>
+<section id="energy" class="slide level2">
+<h2>Energy</h2>
+<div class="figure">
+<div id="sustainable-energy-without-the-hot-air-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/sustainable-energy-without-the-hot-air.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)</span> brought his clarity of thought to the challenge of sustainable energy.
+</aside>
+<p><span class="citation" data-cites="MacKay-energy08">MacKay (2008)</span></p>
 </section>
-<section id="a-worked-example-damped-harmonic-oscillator" class="slide level2">
-<h2>A Worked Example: Damped Harmonic Oscillator</h2>
-<p><strong>Example: Damped Harmonic Oscillator</strong></p>
-<p>State: <span class="math inline">\(x = (q,p)\)</span>, Energy: <span class="math inline">\(E = \frac{p^2}{2m} + \frac{1}{2}kq^2\)</span></p>
-<p><span class="math display">\[L = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}, \quad M = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; \gamma \end{pmatrix}\]</span></p>
-<p><strong>GENERIC:</strong> <span class="math display">\[\dot{q} = \frac{p}{m}, \quad \dot{p} = -kq - \gamma\beta\frac{p}{m}\]</span></p>
-<p><strong>Result:</strong> <span class="math inline">\(m\ddot{q} = -kq - \gamma\beta\dot{q}\)</span></p>
-<p>Damped oscillator from GENERIC! (Reversible + irreversible)</p>
-</section>
-<section id="automatic-degeneracy" class="slide level2">
-<h2>Automatic Degeneracy</h2>
-</section>
-<section id="automatic-degeneracy-conditions" class="slide level2">
-<h2>Automatic Degeneracy Conditions</h2>
-</section>
-<section id="the-generic-degeneracy-requirements" class="slide level2">
-<h2>The GENERIC Degeneracy Requirements</h2>
-<p><strong>Standard GENERIC Degeneracies:</strong></p>
-<ol type="1">
-<li><span class="math inline">\(A\nabla H = 0\)</span> (antisymmetric conserves entropy)</li>
-<li><span class="math inline">\(S\nabla E = 0\)</span> (symmetric conserves energy)</li>
-</ol>
-<p><strong>Problem:</strong> Hard to construct <span class="math inline">\(A\)</span>, <span class="math inline">\(S\)</span> satisfying both.</p>
-<p><em>Usually requires careful hand-crafting</em></p>
-</section>
-<section id="first-degeneracy-automatic-from-tangency" class="slide level2">
-<h2>First Degeneracy: Automatic from Tangency</h2>
-<p><strong>First Degeneracy (Automatic):</strong></p>
-<p>Constraint maintenance: <span class="math inline">\(\mathbf{a}^\top\dot{\boldsymbol{\theta}} = 0\)</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span> Dynamics tangent to surface</p>
-<p><span class="math inline">\(\Rightarrow\)</span> Antisymmetric part conserves entropy</p>
-<p><span class="math display">\[\boxed{A\nabla H = 0 \text{ holds automatically}}\]</span></p>
-<p><em>By construction, not by assumption!</em></p>
-</section>
-<section id="second-degeneracy-from-constraint-gradient" class="slide level2">
-<h2>Second Degeneracy: From Constraint Gradient</h2>
-<p><strong>Second Degeneracy (From Constraint):</strong></p>
-<p>Our constraint: <span class="math inline">\(\sum h_i = C\)</span></p>
-<p><span class="math display">\[S\nabla\left(\sum h_i\right) = 0\]</span></p>
-<p><em>Marginal entropy plays role of energy</em></p>
-<p>In thermodynamic limit: <span class="math inline">\(\nabla\left(\sum h_i\right) \parallel \nabla E\)</span></p>
-</section>
-<section id="energy-entropy-equivalence" class="slide level2">
-<h2>Energy-Entropy Equivalence</h2>
-<p><strong>Thermodynamic Limit:</strong></p>
-<p><span class="math display">\[\nabla\left(\sum h_i\right) \parallel \nabla E\]</span></p>
-<p>Therefore: <span class="math display">\[S\mathbf{a} = 0 \Leftrightarrow S\nabla E = 0\]</span></p>
-<p><em>Information framework <span class="math inline">\(\rightarrow\)</span> classical thermodynamics</em></p>
-</section>
-<section id="why-this-matters" class="slide level2">
-<h2>Why This Matters</h2>
-<p><strong>Why Automatic Matters:</strong></p>
-<ol type="1">
-<li>No guesswork—structure emerges</li>
-<li>Global validity—true everywhere</li>
-<li>Information-first foundation</li>
-<li>GENERIC as fundamental principle</li>
-</ol>
-<p><strong>Flips the usual derivation:</strong> <span class="math display">\[\text{Information axioms} \Rightarrow \text{Thermodynamics}\]</span></p>
-<!-- SECTION Information Topography -->
-</section>
-<section id="information-topography" class="slide level2">
-<h2>Information Topography</h2>
-</section>
-<section id="fisher-information-as-conductance-tensor" class="slide level2">
-<h2>Fisher Information as Conductance Tensor</h2>
-</section>
-<section id="the-electrical-circuit-analogy" class="slide level2">
-<h2>The Electrical Circuit Analogy</h2>
-<p><strong>Kirchhoff Networks:</strong> * Local charge conservation: <span class="math inline">\(\sum_j I_{ij} = 0\)</span> * Ohm’s law: <span class="math inline">\(I_{ij} = g_{ij}(V_i - V_j)\)</span> * Fixed conductances <span class="math inline">\(g_{ij}\)</span> * Linear equations → steady state</p>
-</section>
-<section id="information-networks-are-different" class="slide level2">
-<h2>Information Networks are Different</h2>
-<p><em>Information Conservation:</em> <span class="math display">\[\sum_{i=1}^n \log([G^{-1}]_{ii}) = C\]</span></p>
+<section id="energy-1" class="slide level2">
+<h2>Energy</h2>
+<div>
 <ul>
-<li><strong>Nonlocal:</strong> Every variable coupled through <span class="math inline">\(G^{-1}\)</span></li>
-<li><strong>Nonlinear:</strong> Logarithm and matrix inversion</li>
-<li><strong>Global:</strong> Changing <span class="math inline">\(\theta_i\)</span> affects all <span class="math inline">\(h_j\)</span></li>
+<li class="fragment">In certain thermodynamic limits:
+<ul>
+<li class="fragment">Marginal entropy conservation <span class="math inline">\(\equiv\)</span> Energy conservation</li>
+</ul></li>
 </ul>
-</section>
-<section id="dynamic-information-topography" class="slide level2">
-<h2>Dynamic Information Topography</h2>
-<p><em>Dynamic Topography:</em> * <span class="math inline">\(G(\boldsymbol{\theta})\)</span> changes with state * Not fixed conductances! * Analogous to memristive networks * “Conductances” and “voltages” co-evolve</p>
-</section>
-<section id="information-channels-and-bottlenecks" class="slide level2">
-<h2>Information Channels and Bottlenecks</h2>
-<p><strong>Channel Capacity:</strong> * Large <span class="math inline">\(\lambda_i\)</span>: easy information flow * Small <span class="math inline">\(\lambda_i\)</span>: information bottlenecks * Eigenvectors: flow directions</p>
-<p><strong>Generalised Ohm’s Law:</strong> <span class="math display">\[\dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta} + \nu \mathbf{a}\]</span></p>
-</section>
-<section id="why-topography" class="slide level2">
-<h2>Why “Topography?”</h2>
-<p><strong>Information Topography:</strong> * Geography: terrain shapes water flow * Information: <span class="math inline">\(G(\boldsymbol{\theta})\)</span> shapes information flow * Formalizes <em>Atomic Human</em> metaphor * Mathematical teeth for intuitive concept</p>
-</section>
-<section id="formalising-information-topography" class="slide level2">
-<h2>Formalising Information Topography</h2>
-<p><strong>From Metaphor to Mathematics:</strong></p>
-<p><em>Atomic Human:</em> “Information topography” = intuitive concept</p>
-<p><em>Inaccessible Game:</em> Fisher information = formal definition</p>
-</section>
-<section id="mathematical-definition" class="slide level2">
-<h2>Mathematical Definition</h2>
-<p><strong>Definition:</strong></p>
-<p>Information Topography = <span class="math inline">\((G(\boldsymbol{\theta}), \mathcal{M})\)</span></p>
-<p>where <span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2A\)</span></p>
-<p><strong>Determines:</strong> * Distances between distributions * Flow directions (geodesics) * Channel capacities (eigenvalues) * Bottlenecks (small eigenvalues)</p>
-</section>
-<section id="how-it-constrains-information-movement" class="slide level2">
-<h2>How It Constrains Information Movement</h2>
-<p><strong>Three Constraints:</strong></p>
-<ol type="1">
-<li><strong>Metric:</strong> <span class="math inline">\(\text{d}s^2 = \text{d}\boldsymbol{\theta}^\top G \text{d}\boldsymbol{\theta}\)</span>
-<ul>
-<li>Small eigenvalues = narrow passages</li>
-</ul></li>
-<li><strong>Gradient:</strong> <span class="math inline">\(\nabla H = -G\boldsymbol{\theta}\)</span>
-<ul>
-<li>Fisher info determines slope</li>
-</ul></li>
-<li><strong>Conservation:</strong> <span class="math inline">\(\dot{\boldsymbol{\theta}} = -\Pi_\parallel G\boldsymbol{\theta}\)</span>
-<ul>
-<li>Projection onto constraint surface</li>
-</ul></li>
-</ol>
-</section>
-<section id="dynamic-topography" class="slide level2">
-<h2>Dynamic Topography</h2>
-<p><strong>Dynamic Evolution:</strong></p>
-<p><span class="math display">\[\boldsymbol{\theta}(t) \rightarrow G(\boldsymbol{\theta}(t)) \rightarrow \dot{\boldsymbol{\theta}}(t) \rightarrow \boldsymbol{\theta}(t+\text{d}t)\]</span></p>
-<ul>
-<li>Topography shapes flow</li>
-<li>Flow changes state</li>
-<li>State reshapes topography</li>
-<li><em>Landscape evolves as you move!</em></li>
-</ul>
-</section>
-<section id="fisher-information-as-geometry" class="slide level2">
-<h2>Fisher Information as Geometry</h2>
-<p><strong>From last section:</strong> <span class="math display">\[
-G(\boldsymbol{\theta}) = \nabla^2 \mathcal{A}(\boldsymbol{\theta}) = \mathrm{Cov}_{\boldsymbol{\theta}}[T(\mathbf{x})]
-\]</span> * Now: What does this <em>mean</em> geometrically?</p>
-</section>
-<section id="the-statistical-manifold" class="slide level2">
-<h2>The Statistical Manifold</h2>
-<p><strong>Statistical Manifold:</strong> * Each point <span class="math inline">\(\boldsymbol{\theta}\)</span> = a probability distribution * Space of all distributions = curved manifold * Fisher information = metric (ruler) on this space * Measures “closeness” between distributions</p>
-</section>
-<section id="information-distance" class="slide level2">
-<h2>Information Distance</h2>
-<p><span class="math display">\[
-\text{d}s^2 = \text{d}\boldsymbol{\theta}^\top G(\boldsymbol{\theta}) \text{d}\boldsymbol{\theta}
-\]</span> * Measures information distance between distributions * Larger <span class="math inline">\(G\)</span> = distributions more distinguishable * Smaller <span class="math inline">\(G\)</span> = distributions harder to tell apart</p>
-</section>
-<section id="connection-to-statistical-estimation" class="slide level2">
-<h2>Connection to Statistical Estimation</h2>
-<p><em>Cramér-Rao Bound:</em> <span class="math display">\[
-\text{cov}(\hat{\boldsymbol{\theta}}) \succeq G^{-1}(\boldsymbol{\theta})
-\]</span> * <span class="math inline">\(G^{-1}\)</span> = best possible estimator covariance * High <span class="math inline">\(G\)</span> → small <span class="math inline">\(G^{-1}\)</span> → tight estimation * Low <span class="math inline">\(G\)</span> → large <span class="math inline">\(G^{-1}\)</span> → loose estimation * Geometric picture: <span class="math inline">\(G^{-1}\)</span> is “error ellipsoid”</p>
-</section>
-<section id="why-this-matters-for-dynamics-1" class="slide level2">
-<h2>Why This Matters for Dynamics</h2>
-<p><strong>Two Roles of Fisher Information:</strong> 1. Metric → defines distances between distributions 2. In gradient → <span class="math inline">\(\nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}\)</span></p>
-<p><span class="math display">\[
-\dot{\boldsymbol{\theta}} = \nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}
-\]</span></p>
-</section>
-<section id="examples-revisited" class="slide level2">
-<h2>Examples Revisited</h2>
-</section>
-<section id="gaussian-geometry-of-covariance" class="slide level2">
-<h2>Gaussian: Geometry of Covariance</h2>
-<p><strong>Gaussian:</strong> <span class="math inline">\(G(\boldsymbol{\theta}) = \Sigma\)</span> * Information metric = covariance * <span class="math inline">\(G^{-1} = \Sigma^{-1}\)</span> = precision<br />
-* Information ellipsoid = probability ellipsoid * Special to Gaussians in natural parameters</p>
-</section>
-<section id="categorical-simplex-geometry" class="slide level2">
-<h2>Categorical: Simplex Geometry</h2>
-<p><strong>Categorical:</strong> <span class="math display">\[
-G_{ij} = \delta_{ij}\pi_i - \pi_i\pi_j
-\]</span> * Defines probability simplex geometry * Center of simplex: balanced information * Corners: concentrated information * Metric captures curvature</p>
-</section>
-<section id="information-geometry-the-big-picture" class="slide level2">
-<h2>Information Geometry: The Big Picture</h2>
-<p><strong>Information Geometry:</strong> * Fisher metric → Riemannian geometry * Exponential families → dually flat structure * Geodesics → shortest paths between distributions * Zero curvature → special “flat” structure * <em>Key for constrained dynamics later</em></p>
-</section>
-<section id="why-this-matters-for-the-inaccessible-game" class="slide level2">
-<h2>Why This Matters for The Inaccessible Game</h2>
-<p><strong>Three Roles in TIG:</strong> 1. Gradient flow metric: appears in <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta}\)</span> 2. Information distance: measures distinguishability 3. Emergence indicator: structure changes signal regimes</p>
-<p><em>Fisher information as geometry → key to everything</em></p>
-<!-- SECTION Connecting Information to Energy -->
-</section>
-<section id="connecting-information-to-energy" class="slide level2">
-<h2>Connecting Information to Energy</h2>
-</section>
-<section id="the-thermodynamic-limit" class="slide level2">
-<h2>The Thermodynamic Limit</h2>
-</section>
-<section id="energy-entropy-equivalence-in-the-thermodynamic-limit" class="slide level2">
-<h2>Energy-Entropy Equivalence in the Thermodynamic Limit</h2>
-</section>
-<section id="the-energy-entropy-question" class="slide level2">
-<h2>The Energy-Entropy Question</h2>
-<p><strong>Question:</strong></p>
-<p>Does <span class="math inline">\(\nabla\left(\sum h_i\right) \parallel \nabla E\)</span> ?</p>
-<p><em>Connects information to thermodynamics</em></p>
-</section>
-<section id="conditions-for-equivalence" class="slide level2">
-<h2>Conditions for Equivalence</h2>
-<p><strong>Scaling Requirements:</strong></p>
-<p>Along order parameter <span class="math inline">\(m\)</span>: * <span class="math inline">\(\nabla_m I = \mathscr{O}(1)\)</span> — intensive * <span class="math inline">\(\nabla_m H = \mathscr{O}(n)\)</span> — extensive<br />
-* <span class="math inline">\(\nabla_m\left(\sum h_i\right) = \mathscr{O}(n)\)</span> — extensive</p>
-<p>As <span class="math inline">\(n \to \infty\)</span>: intensive correction negligible</p>
-</section>
-<section id="asymptotic-parallelism" class="slide level2">
-<h2>Asymptotic Parallelism</h2>
-<p><strong>In Thermodynamic Limit:</strong></p>
-<p><span class="math display">\[\nabla_m\left(\sum h_i\right) = \underbrace{\nabla_m H}_{\mathscr{O}(n)} + \underbrace{\nabla_m I}_{\mathscr{O}(1)}\]</span></p>
-<p><span class="math display">\[\Rightarrow \nabla_m\left(\sum h_i\right) \parallel \nabla_m H\]</span></p>
-<p><em>Intensive correction vanishes relative to extensive term</em></p>
-</section>
-<section id="connecting-to-energy" class="slide level2">
-<h2>Connecting to Energy</h2>
-<p><strong>Energy Definition:</strong></p>
-<p>Choose <span class="math inline">\(E(\mathbf{x}) = -\boldsymbol{\alpha}^\top T(\mathbf{x})\)</span> with <span class="math inline">\(\boldsymbol{\theta} = -\beta\boldsymbol{\alpha}\)</span></p>
-<p><span class="math display">\[\Rightarrow \nabla E = \frac{\nabla H}{\beta}\]</span></p>
-<p><strong>Result:</strong> <span class="math display">\[\boxed{\nabla E \parallel \nabla H \parallel \nabla\left(\sum h_i\right)}\]</span></p>
-<p><span class="math inline">\(\beta\)</span> emerges as inverse temperature</p>
-</section>
-<section id="when-does-this-hold" class="slide level2">
-<h2>When Does This Hold?</h2>
-<p><strong>Requirements:</strong></p>
-<ol type="1">
-<li>Macroscopic order parameter exists (e.g. magnetism)</li>
-<li>Finite correlation length (<span class="math inline">\(\xi &lt; \infty\)</span>)</li>
-<li>Translation invariance</li>
-<li>Large system (<span class="math inline">\(n \to \infty\)</span>)</li>
-</ol>
-<p><em>Not all systems satisfy these</em></p>
+<p>See <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span></p>
+</div>
+<!-- SECTION Implications -->
 </section>
 <section id="implications" class="slide level2">
 <h2>Implications</h2>
-<p><strong>Implications:</strong></p>
-<ul>
-<li>Energy = Information (in limit)</li>
-<li>Temperature emerges from geometry</li>
-<li>Landauer derivable</li>
-<li>“It from bit” justified</li>
-</ul>
-<p><strong>Reverses usual logic:</strong> <span class="math display">\[\text{Information theory} \Rightarrow \text{Thermodynamics}\]</span></p>
-</section>
-<section id="generic-and-thermodynamics" class="slide level2">
-<h2>GENERIC and Thermodynamics</h2>
-</section>
-<section id="generic-as-generalized-thermodynamics" class="slide level2">
-<h2>GENERIC as Generalized Thermodynamics</h2>
-<p><strong>Hierarchy of Thermodynamics</strong></p>
-<p><strong>Classical:</strong> Equilibrium only, no dynamics</p>
-<p><strong>Linear irreversible:</strong> Near equilibrium, linear response</p>
-<p><strong>GENERIC:</strong> Full dynamics, far from equilibrium</p>
-<p><span class="math display">\[\text{Classical} \subset \text{Linear} \subset \text{GENERIC}\]</span></p>
-<p>GENERIC = completion of thermodynamics!</p>
-</section>
-<section id="the-laws-of-thermodynamics-in-generic" class="slide level2">
-<h2>The Laws of Thermodynamics in GENERIC</h2>
-<p><strong>Laws in GENERIC</strong></p>
-<p><strong>0th Law:</strong> Equilibrium transitivity (uniqueness)</p>
-<p><strong>1st Law:</strong> Energy conserved <span class="math display">\[\frac{\text{d}E}{\text{d}t} = 0\]</span> * From antisymmetry + degeneracy 1</p>
-<p><strong>2nd Law:</strong> Entropy increases <span class="math display">\[\frac{\text{d}S}{\text{d}t} \geq 0\]</span> * From degeneracy 2 + positive semi-definite</p>
-<p>Laws = consequences of GENERIC structure!</p>
-</section>
-<section id="onsager-reciprocity-relations" class="slide level2">
-<h2>Onsager Reciprocity Relations</h2>
-<p><strong>Onsager Reciprocity</strong></p>
-<p>Near equilibrium: flux = response × force</p>
-<p><span class="math display">\[J = L X\]</span></p>
-<p>GENERIC: <span class="math inline">\(M\)</span> is symmetric → <span class="math inline">\(L_{ij} = L_{ji}\)</span></p>
-<p><strong>Onsager reciprocity = consequence of GENERIC!</strong></p>
-<p>(Not separate postulate, follows from structure)</p>
-<p>Historical: Onsager (1931) → GENERIC (1997)</p>
-<p>Now understood as special case!</p>
-</section>
-<section id="entropy-production" class="slide level2">
-<h2>Entropy Production</h2>
-<p><strong>Entropy Production</strong></p>
-<p><span class="math display">\[\frac{\text{d}S}{\text{d}t} = \sigma_S = \langle \nabla S, M \nabla S \rangle \geq 0\]</span></p>
-<p><strong>Properties:</strong> * Non-negative (always) * Zero at equilibrium * Measures irreversibility</p>
-<p><strong>Information dynamics:</strong> <span class="math display">\[\sigma_S = \boldsymbol{\theta}^\top G^2 \boldsymbol{\theta}\]</span></p>
-<p>Fisher <span class="math inline">\(G\)</span> = rate of entropy production!</p>
-<p>(Recall Lecture 3: Maximum entropy production)</p>
-</section>
-<section id="free-energy-and-dissipation" class="slide level2">
-<h2>Free Energy and Dissipation</h2>
-<p><strong>Free Energy Dissipation</strong></p>
-<p>Free energy: <span class="math inline">\(\mathcal{F} = E - TS\)</span></p>
-<p><strong>Rate of change:</strong> <span class="math display">\[\frac{\text{d}\mathcal{F}}{\text{d}t} = -T\sigma_S \leq 0\]</span></p>
-<p>Free energy decreases → equilibrium at minimum</p>
-<p><strong>Information dynamics:</strong> <span class="math display">\[\mathcal{F}(\boldsymbol{\theta}) = -A(\boldsymbol{\theta}) + \boldsymbol{\theta}^\top \mathbb{E}[T]\]</span></p>
-<p>Dynamics = gradient descent on <span class="math inline">\(\mathcal{F}\)</span> (under constraints)</p>
-</section>
-<section id="fluctuation-dissipation-relations" class="slide level2">
-<h2>Fluctuation-Dissipation Relations</h2>
-<p><strong>Fluctuation-Dissipation</strong></p>
-<p><strong>Theorem:</strong> Response <span class="math inline">\(\propto\)</span> Equilibrium fluctuations</p>
-<p><span class="math display">\[\chi_{ij} \propto \frac{\langle \delta x_i \delta x_j \rangle}{k_B T}\]</span></p>
-<p><strong>GENERIC:</strong> <span class="math inline">\(M\)</span> governs both dissipation and fluctuations</p>
-<p><strong>Information dynamics:</strong> <span class="math display">\[G^{-1} = \text{Cov}(T_i, T_j)\]</span></p>
-<p>Fisher (dissipation) <span class="math inline">\(\leftrightarrow\)</span> Covariance (fluctuations)</p>
-<p>Direct manifestation of theorem!</p>
-</section>
-<section id="maximum-entropy-production-principle-1" class="slide level2">
-<h2>Maximum Entropy Production Principle</h2>
-<p><strong>Maximum Entropy Production</strong></p>
-<p><strong>Principle:</strong> Non-equilibrium steady states maximize <span class="math inline">\(\dot{S}\)</span></p>
-<p><strong>Information dynamics (L3):</strong> <span class="math display">\[\dot{S} = \max \{-\boldsymbol{\theta}^\top G\dot{\boldsymbol{\theta}} : a^\top\dot{\boldsymbol{\theta}} = 0\}\]</span></p>
-<p><strong>MEPP emerges when:</strong> 1. <span class="math inline">\(M\)</span> related to entropy Hessian (Fisher!) 2. Constraints via Lagrange multipliers 3. No external driving</p>
-<p>GENERIC explains when/why MEPP applies!</p>
-</section>
-<section id="connection-to-non-equilibrium-statistical-mechanics" class="slide level2">
-<h2>Connection to Non-Equilibrium Statistical Mechanics</h2>
-<p><strong>Microscopic Foundations</strong></p>
-<p>GENERIC from: * Liouville equation (phase space) * BBGKY hierarchy (reductions) * Projection operators (Zwanzig-Mori)</p>
-<p><strong>Coarse-graining:</strong> * Fine → coarse: lose information * Reversible → irreversible * <span class="math inline">\(L\)</span>: Preserves structure * <span class="math inline">\(M\)</span>: Captures dissipation from unobserved DOF</p>
-<p>Information dynamics = coarse-grained stat-mech!</p>
-<!-- SECTION Landauer's Principle -->
-</section>
-<section id="landauers-principle" class="slide level2">
-<h2>Landauer’s Principle</h2>
-</section>
-<section id="landauers-principle-from-the-inaccessible-game" class="slide level2">
-<h2>Landauer’s Principle from the Inaccessible Game</h2>
-</section>
-<section id="information-erasure-as-a-process" class="slide level2">
-<h2>Information Erasure as a Process</h2>
-<p><strong>Bit Erasure:</strong> * Variable <span class="math inline">\(x_i \in \{0,1\}\)</span> * Reset to standard state: <span class="math inline">\(x_i \rightarrow 0\)</span> * Ensemble perspective: initial state random * Marginal entropy decreases: <span class="math inline">\(\Delta h(X_i) = -\log 2\)</span></p>
-</section>
-<section id="conservation-requires-redistribution" class="slide level2">
-<h2>Conservation Requires Redistribution</h2>
-<p><strong>Conservation Constraint:</strong> <span class="math display">\[\sum_{j \neq i} \Delta h(X_j) = +\log 2\]</span></p>
-<p><strong>Antisymmetric Part <span class="math inline">\(A\)</span>:</strong> * Reversible shuffling only * Moves information to other variables * Not true erasure!</p>
-</section>
-<section id="true-erasure-requires-dissipation" class="slide level2">
-<h2>True Erasure Requires Dissipation</h2>
-<p><strong>True Erasure:</strong></p>
-<p>Must increase <span class="math inline">\(H\)</span> (2nd law) with <span class="math inline">\(\sum h_i = C\)</span></p>
-<p><span class="math display">\[\Rightarrow \Delta I = \Delta(\sum h_i) - \Delta H &lt; 0\]</span></p>
-<ul>
-<li>Breaks correlations</li>
-<li>Requires dissipative part <span class="math inline">\(S\)</span></li>
-<li>Cannot be purely reversible</li>
-</ul>
-</section>
-<section id="energy-cost-from-energy-entropy-equivalence" class="slide level2">
-<h2>Energy Cost from Energy-Entropy Equivalence</h2>
-<p><strong>Energy-Entropy Equivalence:</strong></p>
-<p>In thermodynamic limit: <span class="math inline">\(\beta \langle E \rangle \approx \sum_i h_i\)</span></p>
-<p><strong>Erasure Cost:</strong> <span class="math display">\[\Delta \langle E \rangle = -\frac{\log 2}{\beta} = -k_BT\log 2\]</span></p>
-<p>Energy must be removed from system</p>
-</section>
-<section id="dissipation-bound" class="slide level2">
-<h2>Dissipation Bound</h2>
-<p><strong>Landauer’s Principle Emerges From:</strong></p>
-<ol type="1">
-<li>Marginal entropy conservation</li>
-<li>GENERIC structure (<span class="math inline">\(S\)</span> vs <span class="math inline">\(A\)</span>)</li>
-<li>Energy-entropy equivalence</li>
-</ol>
-<p><span class="math display">\[\boxed{Q_{\text{dissipated}} \geq k_BT\log 2}\]</span></p>
-</section>
-<section id="is-landauers-limit-related-to-shannons-gaussian-channel-capacity" class="slide level2">
-<h2>Is Landauer’s Limit Related to Shannon’s Gaussian Channel Capacity?</h2>
-<ul>
-<li><p>Memory <span class="math inline">\(\equiv\)</span> Communication through time</p></li>
-<li><p>Storage is transmission to future</p></li>
-<li><p>Both limited by thermal noise</p></li>
-<li><p>At Landauer’s limit: <span class="math inline">\(E = k_BT\)</span></p></li>
-<li><p>Gives <span class="math inline">\(\frac{S}{N} = 1\)</span></p></li>
-<li><p>Results in capacity of <span class="math inline">\(\frac{1}{2}\)</span> bit/s</p></li>
-<li><p>Fundamental connection between energy and information</p></li>
-</ul>
-</section>
-<section id="implications-for-information-engines" class="slide level2">
-<h2>Implications for Information Engines</h2>
-<ul>
-<li>Information engines must overcome thermal noise</li>
-<li>Related threshold for:
-<ul>
-<li>Information erasure</li>
-<li>Information transmission</li>
-</ul></li>
-<li>Temperature sets fundamental noise floor</li>
-</ul>
-<p>–&gt; <!-- SECTION Implications --> ## Implications</p>
 </section>
 <section id="information-theoretic-limits" class="slide level2">
 <h2>Information-Theoretic Limits</h2>
@@ -1817,8 +922,8 @@ G_{ij} = \delta_{ij}\pi_i - \pi_i\pi_j
 <p><strong>Same as perpetual motion:</strong></p>
 <p><em>Violates fundamental physical law</em></p>
 </section>
-<section id="a-thought-on-intelligence" class="slide level2">
-<h2>A Thought on Intelligence</h2>
+<section id="intelligence" class="slide level2">
+<h2>Intelligence</h2>
 </section>
 <section id="perpetual-motion-and-superintelligence" class="slide level2">
 <h2>Perpetual Motion and Superintelligence</h2>
@@ -1874,77 +979,26 @@ G_{ij} = \delta_{ij}\pi_i - \pi_i\pi_j
 <h2>Why the Hype Persists</h2>
 <p><strong>Why the Hype?</strong> * Confuse capability with unbounded intelligence * Ignore thermodynamic costs * Mistake scaling for fundamental progress * Economic incentives for bold claims</p>
 <p><em>Same reasons perpetual motion had investors!</em></p>
+</section>
+<section id="davids-approach" class="slide level2">
+<h2>David’s Approach</h2>
+<div>
+<ul>
+<li class="fragment">Make assumptions explicit</li>
+<li class="fragment">Explore consequences rigorously</li>
+<li class="fragment">Let mathematics reveal structure</li>
+<li class="fragment">Use reasoning to illuminate constraints</li>
+</ul>
+</div>
 <!-- SECTION Conclusions -->
 </section>
 <section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>
 <div>
-<p><strong>From Internal Adjudicability:</strong></p>
-<p>No-barber principle <span class="math inline">\(\Downarrow\)</span> Information isolation: <span class="math inline">\(\sum h_i = C\)</span> <span class="math inline">\(\Downarrow\)</span></p>
 <ul>
-<li class="fragment">GENERIC structure emerges</li>
-<li class="fragment">Energy-entropy equivalence</li>
-<li class="fragment">Landauer’s principle</li>
-<li class="fragment">Information bounds</li>
+<li class="fragment">I see that approach in others</li>
+<li class="fragment">I hope to find it in my own work</li>
 </ul>
-</div>
-</section>
-<section id="broader-relevance" class="slide level2">
-<h2>Broader Relevance?</h2>
-</section>
-<section id="implications-for-theory-construction" class="slide level2">
-<h2>Implications for Theory Construction</h2>
-<p><strong>A Thought:</strong></p>
-<p>Scientific theories = games against nature?</p>
-<p><strong>Question:</strong> Should theory rules avoid external adjudicators?</p>
-<p><em>Constraint on how we construct theories</em></p>
-</section>
-<section id="what-would-this-mean" class="slide level2">
-<h2>What Would This Mean?</h2>
-<p><strong>Common External Appeals:</strong> * Pre-existing spacetime * External simultaneity * Privileged coordinates * External observers * System/environment split</p>
-<p><strong>No-barber asks:</strong> What if these must emerge?</p>
-</section>
-<section id="not-a-grand-claim" class="slide level2">
-<h2>Not a Grand Claim</h2>
-<p><strong>Not claiming:</strong> * Reality = inaccessible game * All theories need no-barber * This solves foundations</p>
-<p><strong>Offering:</strong> * Principled constraint * Exploration of consequences * Mathematical illumination</p>
-<p><em>Question, not conclusion</em></p>
-</section>
-<section id="david-mackays-legacy" class="slide level2">
-<h2>David MacKay’s Legacy</h2>
-<div>
-<p><strong>MacKay’s Approach:</strong></p>
-<ul>
-<li class="fragment">Make assumptions explicit</li>
-<li class="fragment">Explore consequences rigorously<br />
-</li>
-<li class="fragment">Let mathematics reveal structure</li>
-<li class="fragment">Use reasoning to illuminate constraints</li>
-</ul>
-<p><strong>This work continues that tradition</strong></p>
-</div>
-</section>
-<section id="what-this-selects" class="slide level2">
-<h2>What This Selects</h2>
-<p><strong>No-Barber Selects:</strong></p>
-<ol type="1">
-<li><span class="math inline">\(\sum h_i = C\)</span> (information isolation)</li>
-<li>Von Neumann entropy (outcome-independent)</li>
-<li>Max entropy production (internal ordering)</li>
-<li>Qutrit substrate (<span class="math inline">\(d=3\)</span> optimal)</li>
-<li>Countable system (no arbitrary <span class="math inline">\(N\)</span>)</li>
-</ol>
-<p>According to <span class="citation" data-cites="Lawrence-nobarber26">(<strong>Lawrence-nobarber26?</strong>)</span>.</p>
-</section>
-<section id="open-questions" class="slide level2">
-<h2>Open Questions</h2>
-<div>
-<p><strong>Open Questions:</strong></p>
-<ul>
-<li class="fragment">Formalise no barber principle</li>
-<li class="fragment">What is the stage/game board/space</li>
-</ul>
-<p><em>Much to explore</em></p>
 </div>
 </section>
 <section id="thanks" class="slide level2 scrollable">
@@ -1961,29 +1015,23 @@ G_{ij} = \delta_{ij}\pi_i - \pi_i\pi_j
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Girard-linear87" class="csl-entry" role="doc-biblioentry">
-Girard, J.-Y., 1987. Linear logic. Theoretical Computer Science 50, 1–101. <a href="https://doi.org/10.1016/0304-3975(87)90045-4">https://doi.org/10.1016/0304-3975(87)90045-4</a>
-</div>
-<div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
-Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
-</div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
 <div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
 Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
 </div>
+<div id="ref-Lawrence-inaccessible25" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/arXiv.2511.06795">https://doi.org/10.48550/arXiv.2511.06795</a>
+</div>
 <div id="ref-Lawrence-embodiment17" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.
 </div>
-<div id="ref-Lawvere-diagonal69" class="csl-entry" role="doc-biblioentry">
-Lawvere, F.W., 1969. Diagonal arguments and cartesian closed categories, in: Category Theory, Homology Theory and Their Applications II, Lecture Notes in Mathematics. Springer, Berlin, pp. 134–145. <a href="https://doi.org/10.1007/BFb0080769">https://doi.org/10.1007/BFb0080769</a>
+<div id="ref-MacKay-energy08" class="csl-entry" role="doc-biblioentry">
+MacKay, D.J.C., 2008. Sustainable energy — without the hot air. UIT Cambridge, Cambridge, UK.
 </div>
 <div id="ref-Moravec-mind98" class="csl-entry" role="doc-biblioentry">
 Moravec, H., 1999. Robot: Mere machine to transcendent mind. Oxford University Press, New York.
-</div>
-<div id="ref-Ottinger-generic97" class="csl-entry" role="doc-biblioentry">
-Öttinger, H.C., Grmela, M., 1997. Dynamics and thermodynamics of complex fluids. <span>II</span>. <span>I</span>llustrations of a general formalism. Physical Review E 56, 6633–6655. <a href="https://doi.org/10.1103/PhysRevE.56.6633">https://doi.org/10.1103/PhysRevE.56.6633</a>
 </div>
 <div id="ref-Sandberg-whole08" class="csl-entry" role="doc-biblioentry">
 Sandberg, A., Bostrom, N., 2008. Whole brain emulation: A roadmap (Technical Report No. 2008-3). Future of Humanity Institute, Oxford University.
