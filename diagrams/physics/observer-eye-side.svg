@@ -12,7 +12,7 @@
    height="370"
    version="1.1"
    id="svg801"
-   sodipodi:docname="observer-eye-tribal.svg"
+   sodipodi:docname="observer-eye-side.svg"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -28,12 +28,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.63783784"
-     inkscape:cx="231.25"
-     inkscape:cy="59.576271"
-     inkscape:window-width="734"
-     inkscape:window-height="480"
-     inkscape:window-x="0"
+     inkscape:zoom="1.3153633"
+     inkscape:cx="276.72963"
+     inkscape:cy="189.30132"
+     inkscape:window-width="1043"
+     inkscape:window-height="692"
+     inkscape:window-x="367"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg801" />
@@ -76,10 +76,7 @@
   -->
   <!-- Sclera: cream region enclosed by the two eyelid curves and the left iris arc -->
   <path
-      d="M 158,180
-	 Q 210,115 350,80 Q 350,80 350,90
-	 A 204,204 0 0,0 350,270 Q 350,270
-	 350, 280 Q 210,245 158,180 Z"
+     d="M 158,180   Q 210,115 350,80 Q 350,80 350,90   A 204,204 0 0,0 350,270 Q 350,270   350, 280 Q 210,245 158,180 Z"
      fill="#fdfaf4"
      stroke="none"
      id="path763" />
@@ -155,12 +152,13 @@
      id="path777" />
   <!-- Iris-top serif (hook at end of upper eyelid) -->
   <path
-     d="M 360,80 Q 376,66 380,54"
+     d="m 360,80 c 10.66667,-9.333333 31.77801,-25.602462 34.44468,-33.602462"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2"
      stroke-linecap="round"
-     id="path779" />
+     id="path779"
+     sodipodi:nodetypes="cc" />
   <!-- Iris-bottom serif (hook at end of lower eyelid) -->
   <path
      d="M 360,280 Q 376,294 380,306"
@@ -176,20 +174,22 @@
        =================================================== -->
   <!-- t=0.22  base ~(148,149)  direction: up-left -->
   <path
-     d="m 188,149 q -9,-20 -18,-39"
+     d="m 188,149 c -6,-13.33333 -6.67828,-13.40915 -12.67828,-26.07581"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.3"
      stroke-linecap="round"
-     id="path783" />
+     id="path783"
+     sodipodi:nodetypes="cc" />
   <!-- t=0.35  base ~(185,132)  direction: up -->
   <path
-     d="m 210,132 q -4,-22 -9,-43"
+     d="m 210,132 c -2.66667,-14.66667 -1.10519,-14.55532 -5.19877,-33.877045"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.5"
      stroke-linecap="round"
-     id="path785" />
+     id="path785"
+     sodipodi:nodetypes="cc" />
   <!-- t=0.50  base ~(218,121)   direction: up -->
   <path
      d="M 238,121 q -1,-23 -2,-40"
@@ -200,54 +200,60 @@
      id="path787" />
   <!-- t=0.64  base ~(258,108)   direction: up -->
   <path
-     d="m 258,108 q 0,-23 -1,-45"
+     d="m 269.40369,104.19877 c 0.50926,-14.314812 1.08904,-27.488588 -1,-45.000001"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.7"
      stroke-linecap="round"
-     id="path789" />
+     id="path789"
+     sodipodi:nodetypes="cc" />
   <!-- t=0.78  base ~(300,90)   direction: up, slight right -->
   <path
-     d="m 300,90 q 3,-23 5,-45"
+     d="m 302.28074,90 c 2,-15.333333 6.70765,-20.450132 11.08197,-49.561477"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.5"
      stroke-linecap="round"
-     id="path791" />
+     id="path791"
+     sodipodi:nodetypes="cc" />
   <!-- t=0.90  base ~(334,84)   direction: up-right -->
   <path
-     d="m 334,84 q 5,-22 9,-43"
+     d="m 334,84 c 2.21784,-13.737092 7.86921,-14.657288 18.12295,-47.523273"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2.2"
      stroke-linecap="round"
-     id="path793" />
+     id="path793"
+     sodipodi:nodetypes="cc" />
   <!-- ===================================================
        LOWER EYELASHES
        Bases sampled along the lower-eyelid bezier.
        =================================================== -->
   <!-- t=0.22  base ~(148,213)  direction: down-left -->
   <path
-     d="m 188,213 q -9,20 -19,39"
+     d="m 188,213 c -6,13.33333 -3.19455,6.98062 -9.86122,19.64729"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="1.9"
      stroke-linecap="round"
-     id="path795" />
+     id="path795"
+     sodipodi:nodetypes="cc" />
   <!-- t=0.50  base ~(218,239)  direction: down -->
   <path
-     d="m 228,239 q -3,21 -6,42"
+     d="m 237.12295,242.04098 c 0.3188,13.38512 -0.52952,16.90267 -2.23697,22.64729"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="2"
      stroke-linecap="round"
-     id="path797" />
+     id="path797"
+     sodipodi:nodetypes="cc" />
   <!-- t=0.78  base ~(300,267)  direction: down-right -->
   <path
-     d="m 300,267 q 2,21 4,41"
+     d="m 300,267 c 1.33333,14 1.59152,6.57079 2.92485,19.90413"
      fill="none"
      stroke="#0d0d0d"
      stroke-width="1.9"
      stroke-linecap="round"
-     id="path799" />
+     id="path799"
+     sodipodi:nodetypes="cc" />
 </svg>
