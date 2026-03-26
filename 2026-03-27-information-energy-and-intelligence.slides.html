@@ -836,6 +836,75 @@ David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)
 </aside>
 <p><span class="citation" data-cites="MacKay-energy08">MacKay (2008)</span></p>
 </section>
+<section id="pendulum-animation" class="slide level2">
+<h2>Pendulum Animation</h2>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="fig-pendulum-energy-conservation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//physics/pendulum-energy-conservation.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Pendulum energy conservation: the pendulum (left) trades potential and kinetic energy while total energy (red line, right) remains constant. Green shows kinetic energy, orange shows potential energy.
+</aside>
+</section>
+<section id="maxwells-demon" class="slide level2">
+<h2>Maxwell’s Demon</h2>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div class="centered" style="">
+<a href="https://play.google.com/books/reader?id=0p8AAAAAMAAJ&amp;pg=PA308"><img data-src="https://inverseprobability.com/talks/../slides/diagrams//books/0p8AAAAAMAAJ-PA308.png" /></a>
+</div>
+</div>
+</div>
+<aside class="notes">
+Maxwell’s demon was designed to highlight the statistical nature of the second law of thermodynamics.
+</aside>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
+<output id="maxwell-entropy">
+</output>
+</div>
+<div id="maxwell-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="maxwell-newball">
+New Ball
+</button>
+<button id="maxwell-pause">
+Pause
+</button>
+<button id="maxwell-skip">
+Skip 1000s
+</button>
+<button id="maxwell-histogram">
+Histogram
+</button>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
+</div>
+</div>
+<aside class="notes">
+Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right only if they are hot. The displayed entropy is the Shannon entropy of the velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
+</aside>
+</section>
 <section id="energy-1" class="slide level2">
 <h2>Energy</h2>
 <div>
@@ -847,80 +916,7 @@ David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)
 </ul>
 <p>See <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span></p>
 </div>
-<!-- SECTION Implications -->
-</section>
-<section id="implications" class="slide level2">
-<h2>Implications</h2>
-</section>
-<section id="information-theoretic-limits" class="slide level2">
-<h2>Information-Theoretic Limits</h2>
-</section>
-<section id="information-theoretic-limits-on-intelligence" class="slide level2">
-<h2>Information-Theoretic Limits on Intelligence</h2>
-<p><strong>Thermodynamics limits mechanical engines</strong></p>
-<p><strong>Information theory limits information engines</strong></p>
-<p><em>Same kind of fundamental constraint</em></p>
-</section>
-<section id="what-intelligent-systems-must-do" class="slide level2">
-<h2>What Intelligent Systems Must Do</h2>
-<p><strong>Intelligence Requires:</strong> * Acquiring information (sensing) * Storing information (memory) * Processing information (computation)<br />
-* Erasing information (memory mgmt) * Acting on information (output)</p>
-<p><em>Each has thermodynamic cost</em></p>
-</section>
-<section id="the-landauer-bound-on-computation" class="slide level2">
-<h2>The Landauer Bound on Computation</h2>
-<p><strong>Landauer’s Principle:</strong></p>
-<p>Erasing 1 bit requires: <span class="math inline">\(Q \geq k_BT\log 2\)</span></p>
-<ul>
-<li>Not engineering limitation</li>
-<li>Fundamental thermodynamic bound</li>
-<li>Entropy must go somewhere</li>
-</ul>
-<p>At room temperature: <span class="math inline">\(\sim 3 \times 10^{-21}\)</span> Joules/bit</p>
-</section>
-<section id="implications-for-computation" class="slide level2">
-<h2>Implications for Computation</h2>
-<p><strong>Brain-Scale Computation:</strong></p>
-<p><span class="math inline">\(10^{15}\)</span>-<span class="math inline">\(10^{18}\)</span> ops/sec <span class="citation" data-cites="Lawrence-embodiment17 Sandberg-whole08 Moravec-mind98">(Lawrence, 2017; Moravec, 1999; Sandberg and Bostrom, 2008)</span></p>
-<p><span class="math inline">\(\sim 10^{15}\)</span> ops/sec running 1 year at 300K:</p>
-<p>Landauer bound: <span class="math inline">\(\sim 100\)</span> Joules (minimum)</p>
-<p><strong>But also need entropy production for:</strong> * Data acquisition * Data movement * Actual computation * Real (non-ideal) dissipation</p>
-<p><em>Human brain: <span class="math inline">\(\sim 6 \times 10^8\)</span> J/year (<span class="math inline">\(10^6 \times\)</span> Landauer)</em></p>
-</section>
-<section id="fisher-information-bounds-on-learning" class="slide level2">
-<h2>Fisher Information Bounds on Learning</h2>
-<p><strong>Fisher Information Bounds:</strong></p>
-<p>Cramér-Rao: <span class="math inline">\(\text{Var}(\hat{\boldsymbol{\theta}}) \geq G^{-1}\)</span></p>
-<ul>
-<li>Learning rate bounded by <span class="math inline">\(G\)</span></li>
-<li>Some directions hard to learn (small eigenvalues)</li>
-<li>Information topography constrains learning</li>
-</ul>
-<p><em>Can’t learn faster than information geometry allows</em></p>
-</section>
-<section id="embodiment-as-necessity-not-limitation" class="slide level2">
-<h2>Embodiment as Necessity, Not Limitation</h2>
-<p><strong>Embodiment = Information Topography:</strong></p>
-<p>Physical substrate determines <span class="math inline">\(G(\boldsymbol{\theta})\)</span></p>
-<ul>
-<li>Silicon ≠ neurons ≠ quantum systems</li>
-<li>Each has different channels/bottlenecks</li>
-<li>Each has different energy costs</li>
-<li>Each has different bandwidths</li>
-</ul>
-<p><strong>No substrate = no intelligence!</strong></p>
-</section>
-<section id="why-superintelligence-claims-fail" class="slide level2">
-<h2>Why Superintelligence Claims Fail</h2>
-<p><strong>Superintelligence Violates:</strong></p>
-<ol type="1">
-<li>Fisher bounds (can’t learn infinitely fast)</li>
-<li>Physical storage limits (finite memory)</li>
-<li>Landauer bounds (computation costs energy)</li>
-<li>Entropy production (can’t be perfectly efficient)</li>
-</ol>
-<p><strong>Same as perpetual motion:</strong></p>
-<p><em>Violates fundamental physical law</em></p>
+<!-- SECTION Intelligence -->
 </section>
 <section id="intelligence" class="slide level2">
 <h2>Intelligence</h2>
@@ -948,37 +944,38 @@ David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)
 <p><strong>Maxwell’s Demon:</strong> * “Intelligent” entity that violates 2nd law * Resolution: Landauer’s principle * Information erasure requires energy</p>
 <p><strong>Implication:</strong> * Intelligence has thermodynamic cost * Information processing has physical limits</p>
 </section>
-<section id="superintelligence-as-perpetual-motion" class="slide level2">
-<h2>Superintelligence as Perpetual Motion</h2>
-<p><em>Perpetual Motion:</em> Violates thermodynamics</p>
-<p><em>Superintelligence Singularity:</em> Violates information bounds</p>
-<p><em>Same pattern of impossible promises</em></p>
+<section id="information-theoretic-limits" class="slide level2">
+<h2>Information-Theoretic Limits</h2>
 </section>
-<section id="the-thermodynamic-constraint" class="slide level2">
-<h2>The Thermodynamic Constraint</h2>
-<p><strong>Perpetual Motion Fails:</strong> * 2nd law: entropy increases * 1st law: energy conserved<br />
-* Efficiency limited by temperature * <em>Fundamental, not engineering limits</em></p>
+<section id="information-theoretic-limits-on-intelligence" class="slide level2">
+<h2>Information-Theoretic Limits on Intelligence</h2>
+<div>
+<ul>
+<li class="fragment"><p>Thermodynamics limits mechanical engines</p></li>
+<li class="fragment"><p>Information theory limits information engines</p></li>
+</ul>
+<p><em>Same kind of fundamental constraint</em></p>
+</div>
 </section>
-<section id="the-information-theoretic-constraint" class="slide level2">
-<h2>The Information-Theoretic Constraint</h2>
-<p><strong>Superintelligence Fails:</strong> * Landauer: erasure costs energy * Conservation: can’t create information * Fisher bounds: finite channel capacity * GENERIC: dissipation unavoidable * <strong>Fundamental information limits</strong></p>
+<section id="what-intelligent-systems-must-do" class="slide level2">
+<h2>What Intelligent Systems Must Do</h2>
+<div>
+<p><strong>Intelligence Requires:</strong> * Acquiring information (sensing) * Storing information (memory) * Processing information (computation)<br />
+* Erasing information (memory mgmt) * Acting on information (output)</p>
+<p><em>What is the thermodynamic cost?</em></p>
+</div>
 </section>
-<section id="the-recursive-self-improvement-fallacy" class="slide level2">
-<h2>The Recursive Self-Improvement Fallacy</h2>
-<p><strong>Recursive Self-Improvement:</strong></p>
-<p>“AI makes itself smarter → makes itself better at getting smarter → runaway growth”</p>
-<p><strong>But requires:</strong> * Learning (Fisher-limited) * Memory (physically limited) * Computation (Landauer-limited) * Erasure (dissipative)</p>
-</section>
-<section id="embodiment-as-thermodynamic-necessity" class="slide level2">
-<h2>Embodiment as Thermodynamic Necessity</h2>
-<p><strong>Embodiment = Information Topography:</strong></p>
-<p>Physical substrate → Fisher information <span class="math inline">\(G(\boldsymbol{\theta})\)</span></p>
-<p><span class="math inline">\(G\)</span> determines: * Information flow rates * Channel capacities * Energy requirements</p>
-</section>
-<section id="why-the-hype-persists" class="slide level2">
-<h2>Why the Hype Persists</h2>
-<p><strong>Why the Hype?</strong> * Confuse capability with unbounded intelligence * Ignore thermodynamic costs * Mistake scaling for fundamental progress * Economic incentives for bold claims</p>
-<p><em>Same reasons perpetual motion had investors!</em></p>
+<section id="landauers-principle" class="slide level2">
+<h2>Landauer’s Principle</h2>
+<div>
+<p>Erasing 1 bit requires: <span class="math inline">\(Q \geq k_BT\log 2\)</span></p>
+<ul>
+<li class="fragment">Not engineering limitation</li>
+<li class="fragment">Fundamental thermodynamic bound</li>
+<li class="fragment">Entropy must go somewhere</li>
+</ul>
+<p>At room temperature: <span class="math inline">\(\sim 3 \times 10^{-21}\)</span> Joules/bit</p>
+</div>
 </section>
 <section id="davids-approach" class="slide level2">
 <h2>David’s Approach</h2>
@@ -1024,17 +1021,8 @@ Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Revie
 <div id="ref-Lawrence-inaccessible25" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/arXiv.2511.06795">https://doi.org/10.48550/arXiv.2511.06795</a>
 </div>
-<div id="ref-Lawrence-embodiment17" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.
-</div>
 <div id="ref-MacKay-energy08" class="csl-entry" role="doc-biblioentry">
 MacKay, D.J.C., 2008. Sustainable energy — without the hot air. UIT Cambridge, Cambridge, UK.
-</div>
-<div id="ref-Moravec-mind98" class="csl-entry" role="doc-biblioentry">
-Moravec, H., 1999. Robot: Mere machine to transcendent mind. Oxford University Press, New York.
-</div>
-<div id="ref-Sandberg-whole08" class="csl-entry" role="doc-biblioentry">
-Sandberg, A., Bostrom, N., 2008. Whole brain emulation: A roadmap (Technical Report No. 2008-3). Future of Humanity Institute, Oxford University.
 </div>
 <div id="ref-Ward-dasher00" class="csl-entry" role="doc-biblioentry">
 Ward, D.J., Blackwell, A.F., MacKay, D.J.C., 2000. Dasher—a data entry interface using continuous gestures and language models, in: Proceedings of the 13th Annual ACM Symposium on User Interface Software and Technology, UIST ’00. Association for Computing Machinery, New York, NY, USA, pp. 129--137. <a href="https://doi.org/10.1145/354401.354427">https://doi.org/10.1145/354401.354427</a>
