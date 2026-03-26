@@ -269,6 +269,15 @@
   <!-- Centre (665, 330); scale 50px per sigma; independent sample -->
   <g
      id="gaussian-scatter">
+    <!-- White background so points stand out on any slide background -->
+    <rect
+       x="520"
+       y="190"
+       width="300"
+       height="285"
+       fill="white"
+       opacity="1"
+       id="scatter-bg" />
     <!-- Axes -->
     <line
        x1="543"

@@ -270,6 +270,15 @@
   <g
      id="gaussian-scatter">
     <!-- Axes -->
+    <!-- White background so points stand out on any slide background -->
+    <rect
+       x="520"
+       y="190"
+       width="300"
+       height="285"
+       fill="white"
+       opacity="1"
+       id="scatter-bg" />
     <line
        x1="543"
        y1="330"
