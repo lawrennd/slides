@@ -100,8 +100,8 @@
 <li>Information theory and inference</li>
 <li>Neural networks and learning algorithms</li>
 <li>Sustainable energy and physical limits</li>
-<li>Cut through hype with careful reasoning</li>
 </ul>
+<p><em>Cut through hype with careful reasoning</em></p>
 </section>
 <section id="how-many-lightbulbs" class="slide level2">
 <h2>How many Lightbulbs?</h2>
@@ -117,14 +117,15 @@ A YouTube video featuring David’s clarity of thought and the ideas behind sust
 </section>
 <section id="this-talk" class="slide level2">
 <h2>This Talk</h2>
+<div>
 <p><strong>David’s Approach:</strong></p>
 <ul>
-<li>Start with fundamental principles</li>
-<li>Build rigorous mathematical framework</li>
-<li>Apply to real systems</li>
-<li>Use numbers to test claims</li>
+<li class="fragment">Start with fundamental principles</li>
+<li class="fragment">Build rigorous mathematical framework</li>
+<li class="fragment">Apply to real systems</li>
+<li class="fragment">Use numbers to test claims</li>
 </ul>
-<p><em>Today:</em> Ideas on applying this to information, energy and intelligence</p>
+</div>
 </section>
 <section id="ultimate" class="slide level2">
 <h2>Ultimate</h2>
@@ -139,8 +140,8 @@ A YouTube video featuring David’s clarity of thought and the ideas behind sust
 David playing ultimate. Picture is taken from <a href="https://itila.blogspot.com/2016/04/perhaps-my-last-post-well-see.html">one of his last blog posts</a>.
 </aside>
 </section>
-<section id="ultimate-1" class="slide level2">
-<h2>Ultimate</h2>
+<section id="games" class="slide level2">
+<h2>Games</h2>
 <div>
 <ul>
 <li class="fragment">David was a playful person.</li>
@@ -179,13 +180,18 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <blockquote>
 <p>Self-governing systems cannot refer to external arbitration.</p>
 </blockquote>
+<!-- SECTION Information -->
 </section>
-<section id="formalisation" class="slide level2">
-<h2>Formalisation</h2>
+<section id="information" class="slide level2">
+<h2>Information</h2>
+</section>
+<section id="information-and-entropy" class="slide level2">
+<h2>Information and Entropy</h2>
 <div>
 <ul>
-<li class="fragment">Use information theory.</li>
-<li class="fragment">Introduced to me in David’s group meetings from February 1998.</li>
+<li class="fragment">Probability and information theory …</li>
+<li class="fragment">David’s group meetings from February 1998.</li>
+<li class="fragment">MN codes, fountain codes, turbocodes</li>
 </ul>
 </div>
 </section>
@@ -229,41 +235,52 @@ Dasher is a single-mode text interface designed for use with a pointer. It also 
 The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.
 </aside>
 </section>
-<section id="entropy-billiards" class="slide level2">
-<h2>Entropy Billiards</h2>
+<section id="dasher-information-content-as-screen-space" class="slide level2">
+<h2>Dasher — Information Content as Screen Space</h2>
+<iframe src="https://inverseprobability.com/talks/../slides/diagrams//ml/dasher-demo.html" style="width:100%;height:520px;border:none;border-radius:4px;" allowfullscreen>
+</iframe>
+<!-- 
+
+
+
+
+
+
+## Entropy Billiards 
+
+
+
+
 <div class="figure">
-<div id="entropy-billiards-js-figure" class="figure-frame">
+<div class="figure-frame" id="entropy-billiards-js-figure">
+
 <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
 <div style="flex:1 1 400px;min-width:0">
-<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
-</canvas>
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%"></canvas>
 </div>
 <div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<div>
-Velocity-bin entropy:
-<output id="multiball-entropy">
-</output>
-</div>
-<div id="multiball-histogram-canvas" style="width:100%;height:250px">
-
-</div>
+<div>Velocity-bin entropy: <output id="multiball-entropy"></output></div>
+<div id="multiball-histogram-canvas" style="width:100%;height:250px"></div>
 <div style="display:flex;flex-wrap:wrap;gap:4px">
-<button id="multiball-newball">
-New Ball
-</button>
-<button id="multiball-pause">
-Pause
-</button>
-<button id="multiball-skip">
-Skip 1000s
-</button>
-<button id="multiball-histogram">
-Histogram
-</button>
+<button id="multiball-newball">New Ball</button>
+<button id="multiball-pause">Pause</button>
+<button id="multiball-skip">Skip 1000s</button>
+<button id="multiball-histogram">Histogram</button>
 </div>
 </div>
 </div>
+
+
+
+
+
+
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+
+
 <!--
 Loads the shared Ballworld runtime used by interactive physics demos
 (e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
@@ -276,27 +293,44 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <aside class="notes">
 Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
 </aside>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
+<p>–&gt; <!-- 
+
+
+
+
+
+##   {}
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="figure">
-<div id="gaussian-histogram-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" ">
-</object>
+<div class="figure-frame" id="gaussian-histogram-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" "></object>
 </div>
 </div>
-<aside class="notes">
-James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).
-</aside>
+<aside class="notes">James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).</aside>
+
+
+ --></p>
 </section>
 <section id="thermalisation-from-different-initial-conditions" class="slide level2">
 <h2>Thermalisation from Different Initial Conditions</h2>
-<p><strong>Thermalisation from Different Initial Conditions</strong></p>
 <ul>
 <li>9 balls on a <span class="math inline">\(3 \times 3\)</span> grid;</li>
+<li>Different starting conditions.</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="multigame-entropy-figure" class="figure-frame">
@@ -444,29 +478,84 @@ Ed Jaynes who developed the maximum entropy principle
 </section>
 <section id="dice-example" class="slide level2">
 <h2>Dice Example</h2>
+<div>
 <ul>
-<li>Dice example: Average result 4.5 instead of 3.5</li>
-<li>Constraints:
+<li class="fragment">Dice example: Average result 4.5 instead of 3.5</li>
+<li class="fragment">Constraints:
 <ul>
-<li><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
-<li><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
+<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
+<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
 </ul></li>
 </ul>
+</div>
+</section>
+<section id="die-roll-simulation" class="slide level2">
+<h2>Die Roll Simulation</h2>
+<ul>
+<li>Click the die (or Roll button) to sample outcomes</li>
+<li>Histogram shows empirical vs theoretical frequencies</li>
+<li>Adjust outcome weights to explore non-uniform distributions</li>
+<li><strong>Jaynes preset</strong>: max-entropy distribution with mean 4.5</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="dieroll-simulation-figure" class="figure-frame">
+<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.9em">
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;min-width:190px">
+<canvas id="dieroll-die" width="180" height="180" style="display:block;cursor:pointer">
+</canvas>
+<div style="font-size:0.75em;color:#888;text-align:center">
+click die or button to roll
+</div>
+<button id="dieroll-roll">Roll</button>
+<div style="text-align:center;line-height:2;font-size:0.85em">
+<pre><code>Rolls: &lt;strong id=&quot;dieroll-count&quot;&gt;0&lt;/strong&gt;&lt;br&gt;
+Sample mean: &lt;span id=&quot;dieroll-mean&quot;&gt;—&lt;/span&gt;&lt;br&gt;
+H(p): &lt;span id=&quot;dieroll-entropy&quot; style=&quot;color:#2ecc71&quot;&gt;—&lt;/span&gt;</code></pre>
+</div>
+<p><button id="dieroll-reset">Reset history</button></p>
+</div>
+<div style="flex:1;min-width:300px">
+<canvas id="dieroll-hist" width="500" height="260" style="display:block;width:100%;height:auto;border-radius:6px">
+</canvas>
+<div style="margin-top:10px">
+<pre><code>&lt;div style=&quot;font-style:italic;margin-bottom:6px;color:#888&quot;&gt;
+  Outcome weights (auto-normalised to probabilities)
+&lt;/div&gt;
+&lt;div id=&quot;dieroll-sliders&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-top:8px;display:flex;gap:6px;flex-wrap:wrap&quot;&gt;
+  &lt;button id=&quot;dieroll-uniform&quot;&gt;Uniform (mean 3.5)&lt;/button&gt;
+  &lt;button id=&quot;dieroll-jaynes&quot;&gt;Jaynes: mean 4.5&lt;/button&gt;
+  &lt;button id=&quot;dieroll-low&quot;&gt;Low-biased: mean 2&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
+</div>
+</div>
+<aside class="notes">
+Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).
+</aside>
 </section>
 <section id="the-general-maximum-entropy-formalism" class="slide level2">
 <h2>The General Maximum-Entropy Formalism</h2>
-<p><span class="math display">\[
-p_i = \frac{1}{Z(\lambda_1,\ldots,\lambda_m)}\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+<p><small> <span class="math display">\[
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
 \]</span> <span class="math display">\[
-Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
 \]</span> <span class="math display">\[
 \langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
-\]</span></p>
+\]</span></small></p>
 </section>
 <section id="exponential-family" class="slide level2">
 <h2>Exponential Family</h2>
 <p><span class="math display">\[
-p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
+p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta})\right)
 \]</span> where <span class="math inline">\(\theta_i = -\lambda_i\)</span></p>
 </section>
 <section id="waterhouse-mackay-and-robinson" class="slide level2">
@@ -718,6 +807,10 @@ Again the observer is monitoring the movements of the particles, but here their 
 <aside class="notes">
 Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).
 </aside>
+<!-- SECTION Back to self adjudication -->
+</section>
+<section id="back-to-self-adjudication" class="slide level2">
+<h2>Back to self adjudication</h2>
 </section>
 <section id="the-no-barber-principle" class="slide level2">
 <h2>The No-Barber Principle</h2>
@@ -816,6 +909,20 @@ Here the observer is blocked from monitoring anything inside the sytem.
 
  -->
 <!--  -->
+<!-- SECTION Energy -->
+</section>
+<section id="energy" class="slide level2">
+<h2>Energy</h2>
+</section>
+<section id="energy-constraints" class="slide level2">
+<h2>Energy Constraints</h2>
+<ul>
+<li>Normally we derive physical laws by</li>
+</ul>
+<p><em>Maximise entropy subject to energy conservation</em></p>
+</section>
+<section id="the-conservation-law" class="slide level2">
+<h2>The Conservation Law</h2>
 </section>
 <section id="marginal-entropy-conservation" class="slide level2">
 <h2>Marginal Entropy Conservation</h2>
@@ -823,8 +930,12 @@ Here the observer is blocked from monitoring anything inside the sytem.
 \sum_{i=1}^N h_i = C
 \]</span></p>
 </section>
-<section id="the-conservation-law" class="slide level2">
-<h2>The Conservation Law</h2>
+<section id="entropy-constraints" class="slide level2">
+<h2>Entropy Constraints</h2>
+<ul>
+<li>Now derive game rules by</li>
+</ul>
+<p>Maximise <em>joint</em> entropy subject to <em>marginal</em> entropy conservation</p>
 </section>
 <section id="the-i-h-c-structure" class="slide level2">
 <h2>The <span class="math inline">\(I + H = C\)</span> Structure</h2>
@@ -946,7 +1057,7 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 </ul>
 </div>
 </section>
-<section id="energy" class="slide level2">
+<section id="energy-1" class="slide level2">
 <h2>Energy</h2>
 <div class="figure">
 <div id="sustainable-energy-without-the-hot-air-figure" class="figure-frame">
@@ -1030,7 +1141,7 @@ Histogram
 Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right only if they are hot. The displayed entropy is the Shannon entropy of the velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
 </aside>
 </section>
-<section id="energy-1" class="slide level2">
+<section id="energy-2" class="slide level2">
 <h2>Energy</h2>
 <div>
 <ul>
@@ -1136,10 +1247,10 @@ Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) a
 <li class="fragment">Use reasoning to illuminate constraints</li>
 </ul>
 </div>
-<!-- SECTION Conclusions -->
+<!-- SECTION Conclusions and Inspiration -->
 </section>
-<section id="conclusions" class="slide level2">
-<h2>Conclusions</h2>
+<section id="conclusions-and-inspiration" class="slide level2">
+<h2>Conclusions and Inspiration</h2>
 <div>
 <ul>
 <li class="fragment">I see that approach in others</li>
