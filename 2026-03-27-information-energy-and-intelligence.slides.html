@@ -235,6 +235,53 @@ Dasher is a single-mode text interface designed for use with a pointer. It also 
 The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.
 </aside>
 </section>
+<section id="dasher-arithmetic-coding-as-interface" class="slide level2">
+<h2>Dasher: Arithmetic Coding as Interface</h2>
+<ul>
+<li>Letters sized by P(char | context) — large target = common = cheap</li>
+<li>Move mouse <strong>right</strong> to zoom toward your chosen letter</li>
+<li>Move mouse <strong>left</strong> to back up</li>
+<li>Character committed when zoomed close enough</li>
+<li><em>Ease of selection ∝ probability ∝ 1 / information cost</em></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="dasher-visualisation-figure" class="figure-frame">
+<div style="width:100%;font-family:&#39;Courier New&#39;,monospace;font-size:0.85em">
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:6px 14px;background:#131320;border-bottom:1px solid #2a2a3e">
+<p><span style="color:#4ecdc4;letter-spacing:3px;font-size:14px">DASHER</span> <span style="color:#404068;font-style:italic;font-size:10px;flex:1;margin:0 12px;
+               overflow:hidden;text-overflow:ellipsis;white-space:nowrap"> screen height ∝ probability ∝ ease of selection ∝ low information </span> <button id="dasher-reset"
+    style="background:#1a1a2e;border:1px solid #2a2a3e;color:#505080;
+           padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+           border-radius:3px">Reset</button></p>
+</div>
+<div style="display:flex;align-items:center;gap:12px;padding:5px 14px;
+            background:#0f0f1e;border-bottom:1px solid #1e1e32;min-height:34px">
+<p><span style="font-size:9px;color:#404068">TYPED:</span> <span id="dasher-text" style="font-size:16px;color:#4ecdc4;letter-spacing:2px;flex:1;
+           overflow:hidden;text-overflow:ellipsis;white-space:nowrap">▋</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
+               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> bits: <span id="dasher-bits" style="color:#ffd93d">0.0</span></span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
+               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> avg: <span id="dasher-avgbits" style="color:#ffd93d">—</span> b/ch</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
+               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> H(next): <span id="dasher-entropy" style="color:#ffd93d">—</span></span></p>
+</div>
+<div style="position:relative;width:100%;height:380px;cursor:crosshair;overflow:hidden">
+<canvas id="dasher-canvas" style="display:block;width:100%;height:100%">
+</canvas>
+</div>
+<div style="padding:5px 14px;background:#0f0f1e;border-top:1px solid #1e1e32;
+            font-size:9px;color:#303055;text-align:center">
+<p>Move mouse <strong style="color:#4ecdc460">right</strong> to write · <strong style="color:#4ecdc460">left</strong> to erase · vertical position aims · Backspace removes last · Escape resets</p>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dasher/dasher.js"></script>
+</div>
+</div>
+<aside class="notes">
+Dasher: continuous-zoom arithmetic coding interface. Move the mouse to the right to zoom toward the character at your vertical cursor position. Character height is proportional to P(char | context), so common letters present large targets. Try typing “th” — ‘e’ expands to fill nearly the whole display.
+</aside>
+</section>
 <section id="dasher-information-content-as-screen-space" class="slide level2">
 <h2>Dasher — Information Content as Screen Space</h2>
 <iframe src="https://inverseprobability.com/talks/../slides/diagrams//ml/dasher-demo.html" style="width:100%;height:520px;border:none;border-radius:4px;" allowfullscreen>
@@ -330,7 +377,7 @@ Bernoulli’s simple kinetic models of gases assume that the molecules of air op
 <li>Different starting conditions.</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="multigame-entropy-figure" class="figure-frame">
@@ -498,7 +545,7 @@ Ed Jaynes who developed the maximum entropy principle
 <li><strong>Jaynes preset</strong>: max-entropy distribution with mean 4.5</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="dieroll-simulation-figure" class="figure-frame">
@@ -510,27 +557,42 @@ Ed Jaynes who developed the maximum entropy principle
 <div style="font-size:0.75em;color:#888;text-align:center">
 click die or button to roll
 </div>
-<button id="dieroll-roll">Roll</button>
-<div style="text-align:center;line-height:2;font-size:0.85em">
-<pre><code>Rolls: &lt;strong id=&quot;dieroll-count&quot;&gt;0&lt;/strong&gt;&lt;br&gt;
-Sample mean: &lt;span id=&quot;dieroll-mean&quot;&gt;—&lt;/span&gt;&lt;br&gt;
-H(p): &lt;span id=&quot;dieroll-entropy&quot; style=&quot;color:#2ecc71&quot;&gt;—&lt;/span&gt;</code></pre>
+<div style="display:flex;gap:6px">
+<button id="dieroll-roll">
+Roll
+</button>
+<button id="dieroll-roll100">
+Roll ×100
+</button>
 </div>
-<p><button id="dieroll-reset">Reset history</button></p>
+<div style="text-align:center;line-height:2;font-size:0.85em">
+<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
+</div>
+<button id="dieroll-reset">
+Reset history
+</button>
 </div>
 <div style="flex:1;min-width:300px">
 <canvas id="dieroll-hist" width="500" height="260" style="display:block;width:100%;height:auto;border-radius:6px">
 </canvas>
 <div style="margin-top:10px">
-<pre><code>&lt;div style=&quot;font-style:italic;margin-bottom:6px;color:#888&quot;&gt;
-  Outcome weights (auto-normalised to probabilities)
-&lt;/div&gt;
-&lt;div id=&quot;dieroll-sliders&quot;&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-top:8px;display:flex;gap:6px;flex-wrap:wrap&quot;&gt;
-  &lt;button id=&quot;dieroll-uniform&quot;&gt;Uniform (mean 3.5)&lt;/button&gt;
-  &lt;button id=&quot;dieroll-jaynes&quot;&gt;Jaynes: mean 4.5&lt;/button&gt;
-  &lt;button id=&quot;dieroll-low&quot;&gt;Low-biased: mean 2&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+<div style="font-style:italic;margin-bottom:6px;color:#888">
+<p>Outcome weights (auto-normalised to probabilities)</p>
+</div>
+<div id="dieroll-sliders">
+
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+<button id="dieroll-uniform">
+Uniform (mean 3.5)
+</button>
+<button id="dieroll-jaynes">
+Jaynes: mean 4.5
+</button>
+<button id="dieroll-low">
+Low-biased: mean 2
+</button>
+</div>
 </div>
 </div>
 </div>
@@ -1074,7 +1136,7 @@ David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)
 <section id="pendulum-animation" class="slide level2">
 <h2>Pendulum Animation</h2>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pendulum-energy-conservation-figure" class="figure-frame">
@@ -1100,7 +1162,7 @@ Pendulum energy conservation: the pendulum (left) trades potential and kinetic e
 Maxwell’s demon was designed to highlight the statistical nature of the second law of thermodynamics.
 </aside>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="maxwells-demon-figure" class="figure-frame">
