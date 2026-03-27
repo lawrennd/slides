@@ -234,141 +234,9 @@ Dasher is a single-mode text interface designed for use with a pointer. It also 
 <aside class="notes">
 The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.
 </aside>
-</section>
-<section id="dasher-arithmetic-coding-as-interface" class="slide level2">
-<h2>Dasher: Arithmetic Coding as Interface</h2>
-<ul>
-<li>Letters sized by P(char | context) — large target = common = cheap</li>
-<li>Move mouse <strong>right</strong> to zoom toward your chosen letter</li>
-<li>Move mouse <strong>left</strong> to back up</li>
-<li>Character committed when zoomed close enough</li>
-<li><em>Ease of selection ∝ probability ∝ 1 / information cost</em></li>
-</ul>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="dasher-visualisation-figure" class="figure-frame">
-<div style="width:100%;font-family:&#39;Courier New&#39;,monospace;font-size:0.85em">
-<div style="display:flex;justify-content:space-between;align-items:center;
-            padding:6px 14px;background:#131320;border-bottom:1px solid #2a2a3e">
-<p><span style="color:#4ecdc4;letter-spacing:3px;font-size:14px">DASHER</span> <span style="color:#404068;font-style:italic;font-size:10px;flex:1;margin:0 12px;
-               overflow:hidden;text-overflow:ellipsis;white-space:nowrap"> screen height ∝ probability ∝ ease of selection ∝ low information </span> <button id="dasher-reset"
-    style="background:#1a1a2e;border:1px solid #2a2a3e;color:#505080;
-           padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
-           border-radius:3px">Reset</button></p>
-</div>
-<div style="display:flex;align-items:center;gap:12px;padding:5px 14px;
-            background:#0f0f1e;border-bottom:1px solid #1e1e32;min-height:34px">
-<p><span style="font-size:9px;color:#404068">TYPED:</span> <span id="dasher-text" style="font-size:16px;color:#4ecdc4;letter-spacing:2px;flex:1;
-           overflow:hidden;text-overflow:ellipsis;white-space:nowrap">▋</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
-               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> bits: <span id="dasher-bits" style="color:#ffd93d">0.0</span></span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
-               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> avg: <span id="dasher-avgbits" style="color:#ffd93d">—</span> b/ch</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
-               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> H(next): <span id="dasher-entropy" style="color:#ffd93d">—</span></span></p>
-</div>
-<div style="position:relative;width:100%;height:380px;cursor:crosshair;overflow:hidden">
-<canvas id="dasher-canvas" style="display:block;width:100%;height:100%">
-</canvas>
-</div>
-<div style="padding:5px 14px;background:#0f0f1e;border-top:1px solid #1e1e32;
-            font-size:9px;color:#303055;text-align:center">
-<p>Move mouse <strong style="color:#4ecdc460">right</strong> to write · <strong style="color:#4ecdc460">left</strong> to erase · vertical position aims · Backspace removes last · Escape resets</p>
-</div>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//dasher/dasher.js"></script>
-</div>
-</div>
-<aside class="notes">
-Dasher: continuous-zoom arithmetic coding interface. Move the mouse to the right to zoom toward the character at your vertical cursor position. Character height is proportional to P(char | context), so common letters present large targets. Try typing “th” — ‘e’ expands to fill nearly the whole display.
-</aside>
-</section>
-<section id="dasher-information-content-as-screen-space" class="slide level2">
-<h2>Dasher — Information Content as Screen Space</h2>
-<iframe src="https://inverseprobability.com/talks/../slides/diagrams//ml/dasher-demo.html" style="width:100%;height:520px;border:none;border-radius:4px;" allowfullscreen>
-</iframe>
-<!-- 
-
-
-
-
-
-
-## Entropy Billiards 
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="entropy-billiards-js-figure">
-
-<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
-<div style="flex:1 1 400px;min-width:0">
-<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%"></canvas>
-</div>
-<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<div>Velocity-bin entropy: <output id="multiball-entropy"></output></div>
-<div id="multiball-histogram-canvas" style="width:100%;height:250px"></div>
-<div style="display:flex;flex-wrap:wrap;gap:4px">
-<button id="multiball-newball">New Ball</button>
-<button id="multiball-pause">Pause</button>
-<button id="multiball-skip">Skip 1000s</button>
-<button id="multiball-histogram">Histogram</button>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-
-
-
-
-<!--
-Loads the shared Ballworld runtime used by interactive physics demos
-(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
-behaviour is provided by follow-on scripts such as maxwell.js.
--->
-<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/multiball.js"></script>
-</div>
-</div>
-<aside class="notes">
-Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
-</aside>
-<p>–&gt; <!-- 
-
-
-
-
-
-##   {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="gaussian-histogram-figure">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" "></object>
-</div>
-</div>
-<aside class="notes">James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).</aside>
-
-
- --></p>
+<!--include{_ml/includes/dasher.md}-->
+<!-- include{_physics/includes/entropy-billiards.md} -->
+<!-- include{_physics/includes/entropy-histogram.md} -->
 </section>
 <section id="thermalisation-from-different-initial-conditions" class="slide level2">
 <h2>Thermalisation from Different Initial Conditions</h2>
@@ -377,7 +245,7 @@ Bernoulli’s simple kinetic models of gases assume that the molecules of air op
 <li>Different starting conditions.</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="multigame-entropy-figure" class="figure-frame">
@@ -405,6 +273,12 @@ Skip 1000s
 <p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
 </div>
 </div>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
 </div>
 </div>
@@ -545,7 +419,7 @@ Ed Jaynes who developed the maximum entropy principle
 <li><strong>Jaynes preset</strong>: max-entropy distribution with mean 4.5</li>
 </ul>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="dieroll-simulation-figure" class="figure-frame">
@@ -633,170 +507,20 @@ p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\th
 Paragraph from <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span> just after equation (10) introducing a separable (mean-field) approximation to the full Bayesian posterior and the independent optimisation of each component.
 </aside>
 <p>From <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span></p>
-<!--
-
+<!-- 
 
 ## The Classical Observer 
 
 
-
-
-<div class="figure">
+ -->
+<!-- <div class="figure">
 <div class="figure-frame" id="observer-eye-figure">
 <object class="" data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye.svg" width="60%" style=" "></object>
 </div>
 </div>
-<aside class="notes">A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.</aside>
-
-
-
-
-
-
-
-
-## The Observer Outside the System 
-
-
-
-
-
-
-
-
-**The Observer Outside**
-
-* Classical observer watches without disturbing the gas.
-* Pupil tracks the centroid of all balls.
-* As entropy rises, the centroid stills — nothing left to follow.
-
-
-
-##   {}
-
-
-<div class="figure">
-<div class="figure-frame" id="observer-outside-figure">
-
-<div style="width:100%;max-width:1020px">
-<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
-<div style="flex:1 1 260px">
-<canvas id="observer-outside-canvas" width="500" height="360"
-  style="border:1px solid black;display:block;width:100%"></canvas>
-</div>
-<div style="flex:1 1 260px">
-<canvas id="observer-outside-eye" width="480" height="480"
-  style="border:1px solid #bbb;display:block;width:100%"></canvas>
-</div>
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="observer-outside-reset">Reset</button>
-<button id="observer-outside-pause">Pause / Resume</button>
-<button id="observer-outside-skip">Skip 1000s</button>
-<span style="font-family:sans-serif;font-size:0.9em;margin-left:6px">
-Initialisation:
-<select id="observer-outside-init">
-<option value="top">From top ↓</option>
-<option value="bottom">From bottom ↑</option>
-<option value="left">From left →</option>
-<option value="right">From right ←</option>
-<option value="cw">Clockwise ↻</option>
-<option value="ccw">Counter-CW ↺</option>
-</select>
-</span>
-</div>
-</div>
-
-
-
-
-
-
-<script src="https://inverseprobability.com/talks/scripts//ballworld/observer-outside.js"></script>
-
-
-
-</div>
-</div>
-<aside class="notes">Nine billiard balls with a classical observer eye to the right.  The
-pupil tracks the ball centroid: ordered initial conditions give a decisive
-sweep of the gaze; thermalised equilibrium leaves it nearly motionless.  The
-observer watches without perturbing the gas.</aside>
-
-
-
-
-
-
-
-
-
-
-## The Observer Inside the System 
-
-
-
-
-
-
-
-
-
-
-**The Observer Inside**
-
-* Observer enters the box — becomes a physical obstacle.
-* Balls bounce off the eye; pupil tracks the centroid nervously.
-* *Moral:* once inside, the observer cannot help but disturb the system.
-
-
-
-##   {}
-
-
-<div class="figure">
-<div class="figure-frame" id="observer-inside-figure">
-
-<div style="width:100%;max-width:700px">
-<canvas id="observer-inside-canvas" width="640" height="420"
-  style="border:1px solid black;display:block;width:100%"></canvas>
-<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="observer-inside-reset">Reset</button>
-<button id="observer-inside-pause">Pause / Resume</button>
-<span style="font-family:sans-serif;font-size:0.9em;margin-left:6px">
-Initialisation:
-<select id="observer-inside-init">
-<option value="top">From top ↓</option>
-<option value="bottom">From bottom ↑</option>
-<option value="left">From left →</option>
-<option value="right">From right ←</option>
-<option value="cw">Clockwise ↻</option>
-<option value="ccw">Counter-CW ↺</option>
-</select>
-</span>
-</div>
-</div>
-
-
-
-
-
-
-<script src="https://inverseprobability.com/talks/scripts//ballworld/observer-inside.js"></script>
-
-
-
-</div>
-</div>
-<aside class="notes">Nine billiard balls with the observer eye placed as an obstacle in the
-centre of the box.  Balls bounce off the eye elastically.  The pupil tracks
-the ball centroid — and flinches as they arrive.  The observer is no longer
-passive: its presence changes the trajectories of everything it was trying to
-watch.</aside>
-
-
-
--->
+<aside class="notes">A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.</aside> -->
+<!-- include{_physics/includes/observer-outside.md} -->
+<!-- include{_physics/includes/observer-inside.md} -->
 </section>
 <section id="independent-gaussians" class="slide level2">
 <h2>Independent Gaussians</h2>
@@ -939,37 +663,7 @@ Here the observer is blocked from monitoring anything inside the sytem.
 <section id="foundations-information-loss-and-entropy" class="slide level2">
 <h2>Foundations: Information Loss and Entropy</h2>
 <p>–&gt;</p>
-<!-- 
-
-
-
-
-
-
-
-## The Inaccessible Game Setup 
-
-
-
-
-::: incremental
-
-
-* Avoid external structure.
-* Represent information loss (via Entropy)
-* Enforce information conservation (information isolation, @Lawrence-inaccessible25)
-
-
-:::
-
-
-
-
-
-
-
-
- -->
+<!-- include{_information-game/includes/inaccessible-game-set-up.md} -->
 <!--  -->
 <!-- SECTION Energy -->
 </section>
@@ -1136,7 +830,7 @@ David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)
 <section id="pendulum-animation" class="slide level2">
 <h2>Pendulum Animation</h2>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pendulum-energy-conservation-figure" class="figure-frame">
@@ -1162,7 +856,7 @@ Pendulum energy conservation: the pendulum (left) trades potential and kinetic e
 Maxwell’s demon was designed to highlight the statistical nature of the second law of thermodynamics.
 </aside>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="maxwells-demon-figure" class="figure-frame">
