@@ -11,70 +11,70 @@
   </defs>
 
   <!-- Title -->
-  <!-- <text x="450" y="32" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Hub-and-Spoke Information Flow</text> -->
-  <!-- <text x="450" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#777" font-style="italic">All information routes through the centre</text> -->
+  <!-- <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Hub-and-Spoke Information Flow</text> -->
+  <!-- <text x="450" y="555" text-anchor="middle" font-size="13" fill="#777" font-style="italic">All information routes through the centre</text> -->
 
   <!-- Spoke lines (hub edge to box edge), bidirectional -->
 
   <!-- Hub to Sales (top) -->
   <line x1="450" y1="225" x2="450" y2="112"
-        stroke="#333" stroke-width="2"
+        stroke="#333" stroke-width="4"
         marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
 
   <!-- Hub to R&amp;D (top-right) -->
   <line x1="506" y1="257" x2="568" y2="190"
-        stroke="#333" stroke-width="2"
+        stroke="#333" stroke-width="4"
         marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
 
   <!-- Hub to IT (bottom-right) -->
   <line x1="506" y1="323" x2="568" y2="390"
-        stroke="#333" stroke-width="2"
+        stroke="#333" stroke-width="4"
         marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
 
   <!-- Hub to Operations (bottom) -->
   <line x1="450" y1="355" x2="450" y2="468"
-        stroke="#333" stroke-width="2"
+        stroke="#333" stroke-width="4"
         marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
 
   <!-- Hub to HR (bottom-left) -->
   <line x1="394" y1="323" x2="332" y2="390"
-        stroke="#333" stroke-width="2"
+        stroke="#333" stroke-width="4"
         marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
 
   <!-- Hub to Finance (top-left) -->
   <line x1="394" y1="257" x2="332" y2="190"
-        stroke="#333" stroke-width="2"
+        stroke="#333" stroke-width="4"
         marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
 
   <!-- Central hub -->
   <circle cx="450" cy="290" r="65" fill="#fff3cd" stroke="#c9a800" stroke-width="2.5"/>
-  <text x="450" y="285" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#6b4f00">HQ /</text>
-  <text x="450" y="303" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#6b4f00">Central</text>
+  <text x="450" y="284" text-anchor="middle" font-size="20" font-weight="bold" fill="#6b4f00">HQ/</text>
+  <text x="450" y="304" text-anchor="middle" font-size="20" font-weight="bold" fill="#6b4f00">Central</text>
 
   <!-- Spoke nodes -->
 
   <!-- Sales (top: center 450, 90) -->
   <rect x="395" y="67" width="110" height="45" rx="6" fill="#d4edda" stroke="#28a745" stroke-width="1.8"/>
-  <text x="450" y="95" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#155724">Sales</text>
+  <text x="450" y="95" text-anchor="middle" font-size="20" font-weight="bold" fill="#155724">Sales</text>
 
   <!-- R&amp;D (top-right: center 623, 190) -->
   <rect x="568" y="167" width="110" height="45" rx="6" fill="#d0e8f8" stroke="#4a90d9" stroke-width="1.8"/>
-  <text x="623" y="195" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#1a4a7a">R&amp;D</text>
+  <text x="623" y="195" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a4a7a">R&amp;D</text>
 
   <!-- IT (bottom-right: center 623, 390) -->
   <rect x="568" y="367" width="110" height="45" rx="6" fill="#d0e8f8" stroke="#4a90d9" stroke-width="1.8"/>
-  <text x="623" y="395" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#1a4a7a">IT</text>
+  <text x="623" y="395" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a4a7a">IT</text>
 
   <!-- Operations (bottom: center 450, 490) -->
   <rect x="395" y="468" width="110" height="45" rx="6" fill="#d4edda" stroke="#28a745" stroke-width="1.8"/>
-  <text x="450" y="496" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#155724">Operations</text>
+  <text x="450" y="496" text-anchor="middle" font-size="20" font-weight="bold" fill="#155724">Operations</text>
 
   <!-- HR (bottom-left: center 277, 390) -->
   <rect x="222" y="367" width="110" height="45" rx="6" fill="#f8d7da" stroke="#c0392b" stroke-width="1.8"/>
-  <text x="277" y="395" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#721c24">HR</text>
+  <text x="277" y="395" text-anchor="middle" font-size="20" font-weight="bold" fill="#721c24">HR</text>
 
   <!-- Finance (top-left: center 277, 190) -->
   <rect x="222" y="167" width="110" height="45" rx="6" fill="#f8d7da" stroke="#c0392b" stroke-width="1.8"/>
-  <text x="277" y="195" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#721c24">Finance</text>
+  <text x="277" y="195" text-anchor="middle" font-size="20" font-weight="bold" fill="#721c24">Finance</text>
 
 </svg>
