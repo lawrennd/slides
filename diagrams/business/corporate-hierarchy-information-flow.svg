@@ -26,10 +26,10 @@
 
   <!-- External entities row -->
   <rect x="0" y="55" width="150" height="500" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="75" y="290" text-anchor="middle" font-family="Arial" font-size="14" fill="#555" font-style="italic">Customers</text>
+  <text x="75" y="250" text-anchor="middle" font-family="Arial" font-size="25" fill="#555" font-style="italic">Customers</text>
 
   <rect x="750" y="55" width="150" height="500" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="825" y="290" text-anchor="middle" font-family="Arial" font-size="14" fill="#555" font-style="italic">Markets</text>
+  <text x="825" y="250" text-anchor="middle" font-family="Arial" font-size="25" fill="#555" font-style="italic">Markets</text>
 
   <!-- <!-\- Dashed signals: Customers to CEO -\-> -->
   <!-- <line x1="195" y1="80" x2="378" y2="178" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowDashedEnd)"/> -->
@@ -41,7 +41,7 @@
 
   <!-- CEO -->
   <rect x="370" y="155" width="160" height="55" rx="6" fill="#fff3cd" stroke="#c9a800" stroke-width="2"/>
-  <text x="450" y="187" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#6b4f00">CEO</text>
+  <text x="450" y="187" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#6b4f00">CEO</text>
 
   <!-- CEO to CFO (bidirectional) -->
   <line x1="406" y1="210" x2="228" y2="300" stroke="#333" stroke-width="2"
@@ -57,13 +57,13 @@
 
   <!-- C-suite row -->
   <rect x="120" y="300" width="130" height="50" rx="6" fill="#d0e8f8" stroke="#4a90d9" stroke-width="2"/>
-  <text x="185" y="330" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#1a4a7a">CFO</text>
+  <text x="185" y="330" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a4a7a">CFO</text>
 
   <rect x="385" y="300" width="130" height="50" rx="6" fill="#d0e8f8" stroke="#4a90d9" stroke-width="2"/>
-  <text x="450" y="330" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#1a4a7a">CIO</text>
+  <text x="450" y="330" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a4a7a">CIO</text>
 
   <rect x="650" y="300" width="130" height="50" rx="6" fill="#d0e8f8" stroke="#4a90d9" stroke-width="2"/>
-  <text x="715" y="330" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#1a4a7a">COO</text>
+  <text x="715" y="330" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a4a7a">COO</text>
 
   <!-- CFO to Finance (bidirectional) -->
   <line x1="155" y1="350" x2="120" y2="430" stroke="#333" stroke-width="1.8"
@@ -92,25 +92,25 @@
   <!-- Department row -->
   <!-- Under CFO -->
   <rect x="55" y="430" width="120" height="45" rx="6" fill="#eaf4fb" stroke="#4a90d9" stroke-width="1.5"/>
-  <text x="115" y="457" text-anchor="middle" font-family="Arial" font-size="13" fill="#1a4a7a">Finance</text>
+  <text x="115" y="457" text-anchor="middle" font-family="Arial" font-size="16" fill="#1a4a7a">Finance</text>
 
   <rect x="192" y="430" width="120" height="45" rx="6" fill="#eaf4fb" stroke="#4a90d9" stroke-width="1.5"/>
-  <text x="252" y="457" text-anchor="middle" font-family="Arial" font-size="13" fill="#1a4a7a">Risk</text>
+  <text x="252" y="457" text-anchor="middle" font-family="Arial" font-size="16" fill="#1a4a7a">Risk</text>
 
   <!-- Under CIO -->
   <rect x="335" y="430" width="115" height="45" rx="6" fill="#eaf4fb" stroke="#4a90d9" stroke-width="1.5"/>
-  <text x="392" y="457" text-anchor="middle" font-family="Arial" font-size="13" fill="#1a4a7a">IT Infra</text>
+  <text x="392" y="457" text-anchor="middle" font-family="Arial" font-size="16" fill="#1a4a7a">IT Infra</text>
 
   <rect x="460" y="430" width="115" height="45" rx="6" fill="#eaf4fb" stroke="#4a90d9" stroke-width="1.5"/>
-  <text x="517" y="450" text-anchor="middle" font-family="Arial" font-size="12" fill="#1a4a7a">Data &amp;</text>
-  <text x="517" y="466" text-anchor="middle" font-family="Arial" font-size="12" fill="#1a4a7a">Analytics</text>
+  <text x="517" y="450" text-anchor="middle" font-family="Arial" font-size="15" fill="#1a4a7a">Data &amp;</text>
+  <text x="517" y="466" text-anchor="middle" font-family="Arial" font-size="15" fill="#1a4a7a">Analytics</text>
 
   <!-- Under COO -->
   <rect x="590" y="430" width="120" height="45" rx="6" fill="#eaf4fb" stroke="#4a90d9" stroke-width="1.5"/>
-  <text x="650" y="457" text-anchor="middle" font-family="Arial" font-size="13" fill="#1a4a7a">Operations</text>
+  <text x="650" y="457" text-anchor="middle" font-family="Arial" font-size="16" fill="#1a4a7a">Operations</text>
 
   <rect x="722" y="430" width="120" height="45" rx="6" fill="#eaf4fb" stroke="#4a90d9" stroke-width="1.5"/>
-  <text x="782" y="457" text-anchor="middle" font-family="Arial" font-size="13" fill="#1a4a7a">HR</text>
+  <text x="782" y="457" text-anchor="middle" font-family="Arial" font-size="16" fill="#1a4a7a">HR</text>
 
   <!-- Left margin flow label -->
   <!-- <line x1="32" y1="160" x2="32" y2="490" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/> -->

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
+  <defs>
+    <!-- Grey information arrowhead (forward) -->
+    <marker id="infoEnd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#aaa"/>
+    </marker>
+    <!-- Grey information arrowhead (backward) -->
+    <marker id="infoStart" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#aaa"/>
+    </marker>
+    <!-- Gold money arrowhead -->
+    <marker id="moneyArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c9a800"/>
+    </marker>
+  </defs>
+
+  <!-- Background: Customers (left) and Markets (right) -->
+  <rect x="0" y="55" width="150" height="500" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="75" y="290" text-anchor="middle" font-family="Arial" font-size="25" fill="#555" font-style="italic">Customers</text>
+
+  <rect x="750" y="55" width="150" height="500" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="825" y="290" text-anchor="middle" font-family="Arial" font-size="25" fill="#555" font-style="italic">Markets</text>
+
+  <!-- Grey information connections (bidirectional, same mesh as edited P2P) -->
+
+  <!-- Hexagon edges -->
+  <!-- A to B -->
+  <line x1="485" y1="110" x2="588" y2="170"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- B to C -->
+  <line x1="623" y1="230" x2="623" y2="350"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- C to D -->
+  <line x1="588" y1="410" x2="485" y2="470"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- D to E -->
+  <line x1="415" y1="470" x2="312" y2="410"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- E to F -->
+  <line x1="277" y1="350" x2="277" y2="230"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- F to A -->
+  <line x1="312" y1="170" x2="415" y2="110"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+
+  <!-- Diagonals -->
+  <!-- A to C -->
+  <line x1="450" y1="130" x2="588" y2="370"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- B to F (horizontal) -->
+  <line x1="588" y1="210" x2="312" y2="210"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- D to F -->
+  <line x1="450" y1="450" x2="312" y2="210"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+  <!-- C to E (horizontal) -->
+  <line x1="588" y1="370" x2="312" y2="370"
+        stroke="#c9a800" stroke-width="2"
+        marker-end="url(#infoEnd)" marker-start="url(#infoStart)"/>
+
+  <!-- Gold money flows (one-directional: Customers -> mesh -> Markets) -->
+
+  <!-- External: Customers to F (top-left node) -->
+  <line x1="150" y1="190" x2="237" y2="190"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- External: Customers to E (bottom-left node) -->
+  <line x1="150" y1="390" x2="237" y2="390"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- Internal: F to A (top path) -->
+  <line x1="312" y1="170" x2="415" y2="110"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- Internal: A to B (top path) -->
+  <line x1="485" y1="110" x2="588" y2="170"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- Internal: E to D (bottom path) -->
+  <line x1="312" y1="410" x2="415" y2="470"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- Internal: D to C (bottom path) -->
+  <line x1="485" y1="470" x2="588" y2="410"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- External: B to Markets (top path) -->
+  <line x1="663" y1="190" x2="750" y2="190"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- External: C to Markets (bottom path) -->
+  <line x1="663" y1="390" x2="750" y2="390"
+        stroke="#c9a800" stroke-width="2.5" marker-end="url(#moneyArrow)"/>
+
+  <!-- Peer nodes (drawn last so they sit above all lines) -->
+
+  <!-- A (top: 450, 90) -->
+  <circle cx="450" cy="90" r="40" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <text x="450" y="86" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#155724">Team</text>
+  <text x="450" y="102" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#155724">A</text>
+
+  <!-- B (top-right: 623, 190) -->
+  <circle cx="623" cy="190" r="40" fill="#d0e8f8" stroke="#4a90d9" stroke-width="2"/>
+  <text x="623" y="186" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a4a7a">Team</text>
+  <text x="623" y="202" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a4a7a">B</text>
+
+  <!-- C (bottom-right: 623, 390) -->
+  <circle cx="623" cy="390" r="40" fill="#fff3cd" stroke="#c9a800" stroke-width="2"/>
+  <text x="623" y="386" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6b4f00">Team</text>
+  <text x="623" y="402" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6b4f00">C</text>
+
+  <!-- D (bottom: 450, 490) -->
+  <circle cx="450" cy="490" r="40" fill="#f8d7da" stroke="#c0392b" stroke-width="2"/>
+  <text x="450" y="486" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#721c24">Team</text>
+  <text x="450" y="502" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#721c24">D</text>
+
+  <!-- E (bottom-left: 277, 390) -->
+  <circle cx="277" cy="390" r="40" fill="#e2d9f3" stroke="#6f42c1" stroke-width="2"/>
+  <text x="277" y="386" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3a1f7a">Team</text>
+  <text x="277" y="402" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3a1f7a">E</text>
+
+  <!-- F (top-left: 277, 190) -->
+  <circle cx="277" cy="190" r="40" fill="#fde8d0" stroke="#e67e22" stroke-width="2"/>
+  <text x="277" y="186" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#7d3c00">Team</text>
+  <text x="277" y="202" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#7d3c00">F</text>
+
+</svg>
