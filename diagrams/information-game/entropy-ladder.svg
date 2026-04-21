@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="560" viewBox="0 0 420 560">
+  <defs>
+    <marker id="up-arrow" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto">
+      <polygon points="0 6, 4 0, 8 6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="210" y="30" text-anchor="middle" font-family="serif" font-size="17" fill="#222">
+    The Entropy Ladder
+  </text>
+
+  <!-- Left rail -->
+  <line x1="130" y1="60" x2="130" y2="490" stroke="#888" stroke-width="3"/>
+  <!-- Right rail -->
+  <line x1="250" y1="60" x2="250" y2="490" stroke="#888" stroke-width="3"/>
+
+  <!-- Up arrow above ladder -->
+  <line x1="190" y1="58" x2="190" y2="38" stroke="#333" stroke-width="2" marker-end="url(#up-arrow)"/>
+  <text x="210" y="50" font-family="serif" font-size="12" fill="#555" font-style="italic">increasing entropy</text>
+
+  <!-- RUNGS (bottom to top = increasing entropy) -->
+
+  <!-- Rung 0: S = 0, pure state (bottom) -->
+  <line x1="130" y1="470" x2="250" y2="470" stroke="#4477AA" stroke-width="3"/>
+  <circle cx="190" cy="470" r="8" fill="#4477AA"/>
+  <text x="260" y="474" font-family="serif" font-size="13" fill="#4477AA" font-weight="bold">S = 0</text>
+  <text x="260" y="489" font-family="serif" font-size="10" fill="#888" font-style="italic">pure state</text>
+
+  <!-- Rung 1: S = log 2 ~ 0.69 -->
+  <line x1="130" y1="390" x2="250" y2="390" stroke="#55AA66" stroke-width="2.5"/>
+  <circle cx="160" cy="390" r="6" fill="#55AA66" opacity="0.9"/>
+  <circle cx="190" cy="390" r="6" fill="#55AA66" opacity="0.9"/>
+  <circle cx="220" cy="390" r="6" fill="#55AA66" opacity="0.9"/>
+  <text x="260" y="394" font-family="serif" font-size="13" fill="#55AA66">S = log 2</text>
+
+  <!-- Rung 2: S = 1.0 -->
+  <line x1="130" y1="310" x2="250" y2="310" stroke="#EE7733" stroke-width="2.5"/>
+  <circle cx="148" cy="310" r="6" fill="#EE7733" opacity="0.9"/>
+  <circle cx="168" cy="310" r="6" fill="#EE7733" opacity="0.9"/>
+  <circle cx="190" cy="310" r="6" fill="#EE7733" opacity="0.9"/>
+  <circle cx="212" cy="310" r="6" fill="#EE7733" opacity="0.9"/>
+  <circle cx="232" cy="310" r="6" fill="#EE7733" opacity="0.9"/>
+  <text x="260" y="314" font-family="serif" font-size="13" fill="#EE7733">S = 1.0</text>
+
+  <!-- Rung 3: S = 1.5 -->
+  <line x1="130" y1="230" x2="250" y2="230" stroke="#CC4488" stroke-width="2.5"/>
+  <circle cx="143" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <circle cx="158" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <circle cx="173" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <circle cx="190" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <circle cx="207" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <circle cx="222" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <circle cx="237" cy="230" r="5" fill="#CC4488" opacity="0.85"/>
+  <text x="260" y="234" font-family="serif" font-size="13" fill="#CC4488">S = 1.5</text>
+
+  <!-- Rung 4: S = 2.0 -->
+  <line x1="130" y1="150" x2="250" y2="150" stroke="#AA3377" stroke-width="2.5"/>
+  <circle cx="140" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="153" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="166" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="179" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="192" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="205" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="218" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="231" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <circle cx="244" cy="150" r="5" fill="#AA3377" opacity="0.8"/>
+  <text x="260" y="154" font-family="serif" font-size="13" fill="#AA3377">S = 2.0</text>
+
+  <!-- Dotted continuation above -->
+  <circle cx="190" cy="100" r="3" fill="#888"/>
+  <circle cx="190" cy="85" r="3" fill="#888"/>
+  <circle cx="190" cy="70" r="3" fill="#888"/>
+  <text x="260" y="90" font-family="serif" font-size="13" fill="#888">... S_max</text>
+
+  <!-- S axis label on the left -->
+  <text x="115" y="265" text-anchor="middle" font-family="serif" font-size="14" fill="#333" font-style="italic"
+        transform="rotate(-90, 115, 265)">S (von Neumann entropy)</text>
+
+  <!-- Caption -->
+  <text x="210" y="520" text-anchor="middle" font-family="serif" font-size="11" fill="#555" font-style="italic">
+    Each rung = one isoentropy equivalence class
+  </text>
+  <text x="210" y="538" text-anchor="middle" font-family="serif" font-size="11" fill="#555" font-style="italic">
+    Rungs form a totally ordered chain
+  </text>
+</svg>
