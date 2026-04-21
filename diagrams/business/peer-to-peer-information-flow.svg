@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
+  <defs>
+    <!-- Standard forward arrowhead -->
+    <marker id="arrowEnd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#aaa"/>
+    </marker>
+    <!-- Backward arrowhead: reversed polygon, orient="auto" (no auto-start-reverse) -->
+    <marker id="arrowStart" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#aaa"/>
+    </marker>
+    <!-- Diagonal arrowheads (lighter) -->
+    <marker id="arrowEndDiag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#aaa"/>
+    </marker>
+    <marker id="arrowStartDiag" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <!-- <text x="450" y="32" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Peer-to-Peer Information Flow</text> -->
+  <!-- <text x="450" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#777" font-style="italic">Direct channels between peers -\- no central authority</text> -->
+
+  <!-- Hexagon edge connections (bidirectional) -->
+
+  <!-- A (450,90) to B (623,190) -->
+  <line x1="485" y1="110" x2="588" y2="170"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
+
+  <!-- B (623,190) to C (623,390) -->
+  <line x1="623" y1="230" x2="623" y2="350"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
+
+  <!-- C (623,390) to D (450,490) -->
+  <line x1="588" y1="410" x2="485" y2="470"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
+
+  <!-- D (450,490) to E (277,390) -->
+  <line x1="415" y1="470" x2="312" y2="410"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
+
+  <!-- E (277,390) to F (277,190) -->
+  <line x1="277" y1="350" x2="277" y2="230"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
+
+  <!-- F (277,190) to A (450,90) -->
+  <line x1="312" y1="170" x2="415" y2="110"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/>
+
+  <!-- Cross / diagonal connections (dashed) -->
+
+  <!-- A (450,90) to C (450,490) -->
+  <line x1="450" y1="130" x2="588" y2="370"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEndDiag)" marker-start="url(#arrowStartDiag)"/>
+
+  <!-- B (623,190) to F (277,390) -->
+  <line x1="588" y1="210" x2="312" y2="210"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEndDiag)" marker-start="url(#arrowStartDiag)"/>
+
+  <!-- D (623,390) to F (277,190) -->
+  <line x1="450" y1="450" x2="312" y2="210"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEndDiag)" marker-start="url(#arrowStartDiag)"/>
+
+  <!-- C (623,390) to F (277,190) -->
+  <line x1="588" y1="370" x2="312" y2="370"
+        stroke="#aaa" stroke-width="2"
+        marker-end="url(#arrowEndDiag)" marker-start="url(#arrowStartDiag)"/>
+  
+  <!-- Peer nodes (drawn after lines so they sit on top) -->
+
+  <!-- A (top: 450, 90) -->
+  <circle cx="450" cy="90" r="40" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <text x="450" y="86" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#155724">Team</text>
+  <text x="450" y="102" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#155724">A</text>
+
+  <!-- B (top-right: 623, 190) -->
+  <circle cx="623" cy="190" r="40" fill="#d0e8f8" stroke="#4a90d9" stroke-width="2"/>
+  <text x="623" y="186" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a4a7a">Team</text>
+  <text x="623" y="202" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a4a7a">B</text>
+
+  <!-- C (bottom-right: 623, 390) -->
+  <circle cx="623" cy="390" r="40" fill="#fff3cd" stroke="#c9a800" stroke-width="2"/>
+  <text x="623" y="386" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6b4f00">Team</text>
+  <text x="623" y="402" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6b4f00">C</text>
+
+  <!-- D (bottom: 450, 490) -->
+  <circle cx="450" cy="490" r="40" fill="#f8d7da" stroke="#c0392b" stroke-width="2"/>
+  <text x="450" y="486" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#721c24">Team</text>
+  <text x="450" y="502" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#721c24">D</text>
+
+  <!-- E (bottom-left: 277, 390) -->
+  <circle cx="277" cy="390" r="40" fill="#e2d9f3" stroke="#6f42c1" stroke-width="2"/>
+  <text x="277" y="386" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3a1f7a">Team</text>
+  <text x="277" y="402" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3a1f7a">E</text>
+
+  <!-- F (top-left: 277, 190) -->
+  <circle cx="277" cy="190" r="40" fill="#fde8d0" stroke="#e67e22" stroke-width="2"/>
+  <text x="277" y="186" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#7d3c00">Team</text>
+  <text x="277" y="202" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#7d3c00">F</text>
+
+  <!-- Legend -->
+  <!-- <rect x="690" y="490" width="185" height="55" rx="4" fill="#f9f9f9" stroke="#ccc" stroke-width="1"/> -->
+  <!-- <line x1="700" y1="508" x2="740" y2="508" stroke="#555" stroke-width="2" -->
+  <!--       marker-end="url(#arrowEnd)" marker-start="url(#arrowStart)"/> -->
+  <!-- <text x="748" y="512" font-family="Arial" font-size="11" fill="#555">adjacent channel</text> -->
+  <!-- <line x1="700" y1="530" x2="740" y2="530" stroke="#aaa" stroke-width="1.5" stroke-dasharray="6,4" -->
+  <!--       marker-end="url(#arrowEndDiag)" marker-start="url(#arrowStartDiag)"/> -->
+  <!-- <text x="748" y="534" font-family="Arial" font-size="11" fill="#777">cross channel</text> -->
+
+</svg>
