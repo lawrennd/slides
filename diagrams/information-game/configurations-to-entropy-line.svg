@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="740" height="380" viewBox="0 0 740 380">
   <defs>
     <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+      <polygon points="0 0, 8 3, 0 6"/>
     </marker>
     <marker id="arrowhead-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#3877AA"/>
@@ -15,7 +15,7 @@
   <!-- </text> -->
 
   <!-- LEFT PANEL: Configurations -->
-  <text x="220" y="35" text-anchor="middle" font-size="25">configurations</text>
+  <text x="150" y="35" text-anchor="middle" font-size="25">configurations</text>
 
   <!-- rho1: low entropy (near pure, small ellipse) -->
   <ellipse cx="90" cy="70" rx="28" ry="18" fill="none" stroke="#3877AA" stroke-width="4"/>
@@ -72,29 +72,29 @@
   <line x1="202" y1="325" x2="380" y2="296" stroke="#AA3377" stroke-width="3" opacity="0.7"/>
 
   <!-- RIGHT PANEL: Entropy number line -->
-  <line x1="380" y1="60" x2="380" y2="355" stroke="#333" stroke-width="4"/>
+  <line x1="380" y1="355" x2="380" y2="60" stroke="currentColor" stroke-width="4" marker-end="url(#arrowhead)"/>
 
   <!-- Axis label -->
   <text x="380" y="35" text-anchor="middle" font-size="25" font-style="italic">S(&#961;)</text>
 
   <!-- S = 0 (pure state) -->
-  <line x1="373" y1="355" x2="387" y2="355" stroke="#333" stroke-width="4"/>
-  <text x="395" y="355" font-size="20" fill="#333">0</text>
+  <line x1="373" y1="355" x2="387" y2="355" stroke="currentColor" stroke-width="4"/>
+  <text x="395" y="355" font-size="20" fill="currentColor">0</text>
   <text x="420" y="355" font-size="20" fill="#888" font-style="italic">pure state</text>
 
   <!-- S ~ 0.3 (rho1 and rho2) -->
-  <line x1="373" y1="115" x2="387" y2="115" stroke="#333" stroke-width="4"/>
+  <line x1="373" y1="115" x2="387" y2="115" stroke="currentColor" stroke-width="4"/>
   <circle cx="380" cy="115" r="7" fill="#3877AA" opacity="0.85"/>
   <text x="395" y="119" font-size="20" fill="#3877AA" font-style="italic"><tspan font-style="italic">&#961;</tspan><tspan baseline-shift="sub" font-style="normal" font-size="15">1</tspan>, <tspan font-style="italic">&#961;</tspan><tspan baseline-shift="sub" font-style="normal" font-size="15">2</tspan></text>
 
   <!-- S ~ 1.5 (rho3, rho4, rho5) -->
-  <line x1="373" y1="200" x2="387" y2="200" stroke="#333" stroke-width="4"/>
+  <line x1="373" y1="200" x2="387" y2="200" stroke="currentColor" stroke-width="4"/>
   <circle cx="380" cy="200" r="9" fill="#EE7733" opacity="0.85"/>
   <text x="395" y="204" font-size="20" fill="#EE7733"><tspan font-style="italic">&#961;</tspan><tspan baseline-shift="sub" font-style="normal" font-size="15">3</tspan>, <tspan font-style="italic">&#961;</tspan><tspan baseline-shift="sub" font-style="normal" font-size="15">4</tspan>, <tspan font-style="italic">&#961;</tspan><tspan baseline-shift="sub" font-style="normal" font-size="15">5</tspan></text>
   <!-- <text x="455" y="219" font-size="10" >  (isoentropy class)</text> -->
 
   <!-- S ~ 2.8 (rho6) -->
-  <line x1="373" y1="296" x2="387" y2="296" stroke="#333" stroke-width="4"/>
+  <line x1="373" y1="296" x2="387" y2="296" stroke="currentColor" stroke-width="4"/>
   <circle cx="380" cy="296" r="7" fill="#AA3377" opacity="0.85"/>
   <text x="395" y="300" font-size="20" fill="#AA3377"><tspan font-style="italic">&#961;</tspan><tspan baseline-shift="sub" font-style="normal" font-size="15">6</tspan></text>
 
