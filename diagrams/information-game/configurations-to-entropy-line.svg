@@ -5,105 +5,105 @@
       <polygon points="0 0, 8 3, 0 6" fill="#555"/>
     </marker>
     <marker id="arrowhead-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#4477AA"/>
+      <polygon points="0 0, 8 3, 0 6" fill="#3877AA"/>
     </marker>
   </defs>
 
   <!-- Title -->
-  <!-- <text x="400" y="32" text-anchor="middle" font-family="serif" font-size="18" fill="#222"> -->
+  <!-- <text x="400" y="32" text-anchor="middle" font-size="18" fill="#222"> -->
   <!--   Configurations map to entropy values -->
   <!-- </text> -->
 
   <!-- LEFT PANEL: Configurations -->
-  <text x="155" y="68" text-anchor="middle" font-size="20">configurations</text>
+  <text x="220" y="35" text-anchor="middle" font-size="25">configurations</text>
 
   <!-- rho1: low entropy (near pure, small ellipse) -->
-  <ellipse cx="90" cy="110" rx="28" ry="18" fill="none" stroke="#4477AA" stroke-width="2"/>
-  <ellipse cx="90" cy="110" rx="10" ry="6" fill="#4477AA" opacity="0.3"/>
-  <text x="90" y="115" text-anchor="middle" font-family="serif" font-size="13" fill="#4477AA">rho1</text>
+  <ellipse cx="90" cy="70" rx="28" ry="18" fill="none" stroke="#3877AA" stroke-width="4"/>
+  <ellipse cx="90" cy="70" rx="10" ry="6" fill="#3877AA" opacity="0.3"/>
+  <text x="90" y="75" text-anchor="middle" font-size="20" fill="#3877AA">&#961;1</text>
 
   <!-- rho2: low entropy (also small, different shape) -->
-  <rect x="152" y="94" width="52" height="34" rx="6" fill="none" stroke="#4477AA" stroke-width="2"/>
-  <rect x="162" y="104" width="32" height="14" rx="3" fill="#4477AA" opacity="0.25"/>
-  <text x="178" y="115" text-anchor="middle" font-family="serif" font-size="13" fill="#4477AA">rho2</text>
+  <rect x="152" y="94" width="52" height="34" rx="6" fill="none" stroke="#3877AA" stroke-width="4"/>
+  <rect x="162" y="104" width="32" height="14" rx="3" fill="#3877AA" opacity="0.25"/>
+  <text x="178" y="115" text-anchor="middle" font-size="20" fill="#3877AA">&#961;2</text>
 
   <!-- rho3: medium entropy -->
-  <ellipse cx="90" cy="210" rx="34" ry="24" fill="none" stroke="#EE7733" stroke-width="2"/>
-  <ellipse cx="90" cy="210" rx="22" ry="15" fill="#EE7733" opacity="0.2"/>
-  <text x="90" y="215" text-anchor="middle" font-family="serif" font-size="13" fill="#EE7733">rho3</text>
+  <ellipse cx="90" cy="145" rx="34" ry="24" fill="none" stroke="#EE7733" stroke-width="4"/>
+  <ellipse cx="90" cy="145" rx="22" ry="15" fill="#EE7733" opacity="0.2"/>
+  <text x="90" y="150" text-anchor="middle" font-size="20" fill="#EE7733">&#961;3</text>
 
   <!-- rho4: medium entropy, different density matrix -->
-  <rect x="148" y="190" width="58" height="40" rx="6" fill="none" stroke="#EE7733" stroke-width="2"/>
+  <rect x="148" y="190" width="58" height="40" rx="6" fill="none" stroke="#EE7733" stroke-width="4"/>
   <rect x="155" y="197" width="44" height="26" rx="3" fill="#EE7733" opacity="0.15"/>
-  <text x="178" y="215" text-anchor="middle" font-family="serif" font-size="13" fill="#EE7733">rho4</text>
+  <text x="178" y="215" text-anchor="middle" font-size="20" fill="#EE7733">&#961;4</text>
 
   <!-- rho5: medium entropy, third config -->
-  <ellipse cx="120" cy="265" rx="28" ry="18" fill="none" stroke="#EE7733" stroke-width="2" stroke-dasharray="4,3"/>
-  <text x="120" y="270" text-anchor="middle" font-family="serif" font-size="13" fill="#EE7733">rho5</text>
+  <ellipse cx="120" cy="265" rx="28" ry="18" fill="none" stroke="#EE7733" stroke-width="4"/>
+  <text x="120" y="270" text-anchor="middle" font-size="20" fill="#EE7733">&#961;5</text>
 
   <!-- rho6: high entropy (large, diffuse) -->
-  <ellipse cx="120" cy="330" rx="42" ry="28" fill="none" stroke="#AA3377" stroke-width="2"/>
-  <ellipse cx="120" cy="330" rx="38" ry="24" fill="#AA3377" opacity="0.1"/>
-  <text x="120" y="335" text-anchor="middle" font-family="serif" font-size="13" fill="#AA3377">rho6</text>
+  <ellipse cx="160" cy="330" rx="42" ry="28" fill="none" stroke="#AA3377" stroke-width="4"/>
+  <ellipse cx="160" cy="330" rx="38" ry="24" fill="#AA3377" opacity="0.1"/>
+  <text x="160" y="335" text-anchor="middle" font-size="20" fill="#AA3377">&#961;6</text>
 
   <!-- FUNCTOR LABEL -->
-  <text x="310" y="185" text-anchor="middle" font-size="20" font-style="italic">S</text>
-  <!-- <text x="310" y="205" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#777">von Neumann</text> -->
-  <text x="310" y="205" text-anchor="middle" font-size="20">entropy</text>
+  <!-- <text x="310" y="185" text-anchor="middle" font-size="20" font-style="italic">S</text> -->
+  <!-- <!-\- <text x="310" y="205" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#777">von Neumann</text> -\-> -->
+  <!-- <text x="310" y="205" text-anchor="middle" font-size="20">entropy</text> -->
 
   <!-- ARROWS from configurations to entropy axis -->
 
   <!-- rho1 -> S~0.3 -->
-  <line x1="118" y1="110" x2="415" y2="120" stroke="#4477AA" stroke-width="1.5" marker-end="url(#arrowhead-blue)" opacity="0.7"/>
+  <line x1="118" y1="70" x2="380" y2="115" stroke="#3877AA" stroke-width="3" opacity="0.7"/>
 
   <!-- rho2 -> S~0.3 (same as rho1) -->
-  <line x1="204" y1="111" x2="415" y2="126" stroke="#4477AA" stroke-width="1.5" marker-end="url(#arrowhead-blue)" opacity="0.7"/>
+  <line x1="204" y1="111" x2="380" y2="115" stroke="#3877AA" stroke-width="3" opacity="0.7"/>
 
   <!-- rho3 -> S~1.5 -->
-  <line x1="124" y1="210" x2="415" y2="215" stroke="#EE7733" stroke-width="1.5" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <line x1="124" y1="150" x2="380" y2="200" stroke="#EE7733" stroke-width="3" opacity="0.7"/>
 
   <!-- rho4 -> S~1.5 (same as rho3) -->
-  <line x1="206" y1="210" x2="415" y2="220" stroke="#EE7733" stroke-width="1.5" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <line x1="206" y1="210" x2="380" y2="200" stroke="#EE7733" stroke-width="3" opacity="0.7"/>
 
   <!-- rho5 -> S~1.5 (same as rho3 and rho4) -->
-  <line x1="148" y1="258" x2="415" y2="225" stroke="#EE7733" stroke-width="1.5" marker-end="url(#arrowhead)" opacity="0.7" stroke-dasharray="4,3"/>
+  <line x1="148" y1="258" x2="380" y2="200" stroke="#EE7733" stroke-width="3" opacity="0.7"/>
 
   <!-- rho6 -> S~2.8 -->
-  <line x1="162" y1="325" x2="415" y2="310" stroke="#AA3377" stroke-width="1.5" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <line x1="202" y1="325" x2="380" y2="296" stroke="#AA3377" stroke-width="3" opacity="0.7"/>
 
   <!-- RIGHT PANEL: Entropy number line -->
-  <line x1="440" y1="60" x2="440" y2="355" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="380" y1="60" x2="380" y2="355" stroke="#333" stroke-width="4"/>
 
   <!-- Axis label -->
-  <text x="490" y="55" text-anchor="start" font-size="20">$S(\rho)$</text>
+  <text x="380" y="35" text-anchor="middle" font-size="25" font-style="italic">S(&#961;)</text>
 
   <!-- S = 0 (pure state) -->
-  <line x1="433" y1="345" x2="447" y2="345" stroke="#333" stroke-width="2"/>
-  <text x="455" y="349" font-family="serif" font-size="13" fill="#333">0</text>
-  <text x="530" y="349" font-family="serif" font-size="11" fill="#888" font-style="italic">pure state</text>
+  <line x1="373" y1="355" x2="387" y2="355" stroke="#333" stroke-width="4"/>
+  <text x="395" y="355" font-size="20" fill="#333">0</text>
+  <text x="420" y="355" font-size="20" fill="#888" font-style="italic">pure state</text>
 
   <!-- S ~ 0.3 (rho1 and rho2) -->
-  <line x1="433" y1="296" x2="447" y2="296" stroke="#333" stroke-width="2"/>
-  <circle cx="440" cy="296" r="7" fill="#4477AA" opacity="0.85"/>
-  <text x="455" y="300" font-family="serif" font-size="13" fill="#4477AA">&lt;- rho1, rho2</text>
+  <line x1="373" y1="115" x2="387" y2="115" stroke="#333" stroke-width="4"/>
+  <circle cx="380" cy="115" r="7" fill="#3877AA" opacity="0.85"/>
+  <text x="395" y="119" font-size="20" fill="#3877AA" font-style="italic">&#961;1, &#961;2</text>
 
   <!-- S ~ 1.5 (rho3, rho4, rho5) -->
-  <line x1="433" y1="200" x2="447" y2="200" stroke="#333" stroke-width="2"/>
-  <circle cx="440" cy="200" r="9" fill="#EE7733" opacity="0.85"/>
-  <text x="455" y="204" font-family="serif" font-size="13" fill="#EE7733">&lt;- rho3, rho4, rho5</text>
-  <text x="455" y="219" font-family="serif" font-size="10" fill="#888" font-style="italic">  (isoentropy class)</text>
+  <line x1="373" y1="200" x2="387" y2="200" stroke="#333" stroke-width="4"/>
+  <circle cx="380" cy="200" r="9" fill="#EE7733" opacity="0.85"/>
+  <text x="395" y="204" font-size="20" fill="#EE7733">&#961;3, &#961;4, &#961;5</text>
+  <!-- <text x="455" y="219" font-size="10" >  (isoentropy class)</text> -->
 
   <!-- S ~ 2.8 (rho6) -->
-  <line x1="433" y1="115" x2="447" y2="115" stroke="#333" stroke-width="2"/>
-  <circle cx="440" cy="115" r="7" fill="#AA3377" opacity="0.85"/>
-  <text x="455" y="119" font-family="serif" font-size="13" fill="#AA3377">&lt;- rho6</text>
+  <line x1="373" y1="296" x2="387" y2="296" stroke="#333" stroke-width="4"/>
+  <circle cx="380" cy="296" r="7" fill="#AA3377" opacity="0.85"/>
+  <text x="395" y="300" font-size="20" fill="#AA3377">&#961;6</text>
 
   <!-- Brace annotation showing isoentropy -->
-  <path d="M 620 186 Q 635 200 620 218" fill="none" stroke="#EE7733" stroke-width="1.5"/>
-  <text x="642" y="200" font-family="serif" font-size="11" fill="#EE7733" font-style="italic">S(rho3)=S(rho4)=S(rho5)</text>
+  <!-- <path d="M 480 186 Q 495 200 480 218" fill="none" stroke="#EE7733" stroke-width="2"/> -->
+  <text x="395" y="234" font-size="18" fill="#EE7733" font-style="italic">S(&#961;3)=S(&#961;4)=S(&#961;5)</text>
 
   <!-- Note about proset -->
-  <text x="400" y="368" text-anchor="middle" font-family="serif" font-size="12" fill="#555" font-style="italic">
-    Multiple configurations share entropy values -- preorder (proset), not partial order
-  </text>
+  <!-- <text x="400" y="368" text-anchor="middle" font-size="12" fill="#555" font-style="italic"> -->
+  <!--   Multiple configurations share entropy values -\- preorder (proset), not partial order -->
+  <!-- </text> -->
 </svg>
