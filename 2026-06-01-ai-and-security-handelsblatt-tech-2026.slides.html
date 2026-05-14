@@ -108,13 +108,40 @@
 <li class="fragment">Despite rapid change, one constant remains: the attack surface keeps expanding.</li>
 <li class="fragment">Teams ship faster than ever; threats scale faster than most review and governance cycles.</li>
 <li class="fragment">Many organisations lack a <em>judgement layer</em> that turns security noise into “what matters now.”</li>
+<li class="fragment">The challenge is not knowledge — it is <em>contextual reasoning under time pressure</em>.</li>
 </ul>
 </div>
+</section>
+<section id="institutional-tacit-knowledge" class="slide level2">
+<h2>Institutional tacit knowledge</h2>
 <div>
 <ul>
 <li class="fragment">The “judgement layer” in organisations is often <em>tacit</em>: norms, exceptions, escalation paths, and context that rarely makes it into documentation.</li>
 <li class="fragment">It lives in handoffs and approvals: what gets challenged, what gets waived, and what triggers a halt.</li>
 <li class="fragment">Ceding this tacit knowlege without making it explicit is how we accumulate <em>agentic debt</em>.</li>
+</ul>
+</div>
+</section>
+<section id="the-judgment-layer" class="slide level2">
+<h2>The Judgment Layer</h2>
+</section>
+<section id="organisations-as-emulsions" class="slide level2">
+<h2>Organisations as emulsions</h2>
+<div>
+<ul>
+<li class="fragment">Organisations are a stable mixture: automatable <em>routines</em> and irreducible <em>human context</em>.</li>
+<li class="fragment">In a working emulsion the two phases are inseparable — like oil and water held in suspension.</li>
+<li class="fragment">The <em>judgment layer</em> is the interface: what gets challenged, what gets waived, what triggers a halt.</li>
+</ul>
+</div>
+</section>
+<section id="what-the-judgment-layer-looks-like" class="slide level2">
+<h2>What the judgment layer looks like</h2>
+<div>
+<ul>
+<li class="fragment">Approval exceptions: “we usually accept this class of risk without escalation.”</li>
+<li class="fragment">Escalation triggers: “this pattern always goes to a human, even if the rule says approve.”</li>
+<li class="fragment">Context-dependent waivers: policy says X, but the situation means Y is safer.</li>
 </ul>
 </div>
 <div>
@@ -462,6 +489,39 @@ Jonathan Zittrain’s term to describe the challenges of explanation that come w
 </ul>
 </div>
 </section>
+<section id="paying-down-agentic-debt" class="slide level2">
+<h2>Paying Down Agentic Debt</h2>
+</section>
+<section id="making-the-judgment-layer-explicit" class="slide level2">
+<h2>Making the judgment layer explicit</h2>
+<div>
+<ul>
+<li class="fragment">Agentic debt accumulates silently when automation buries judgment calls rather than surfacing them.</li>
+<li class="fragment">Paying it down means extracting tacit policies into <em>explicit, inspectable rules</em>.</li>
+<li class="fragment">Start with the edges: approval exceptions, escalation triggers, known-safe waivers.</li>
+</ul>
+</div>
+</section>
+<section id="i-dont-know-as-a-control-primitive" class="slide level2">
+<h2>“I don’t know” as a control primitive</h2>
+<div>
+<ul>
+<li class="fragment">Robust agentic systems need an explicit <em>“I don’t know”</em> action — not just low-confidence prose.</li>
+<li class="fragment">“I don’t know” must be operational: halt the task, escalate with evidence, or request human input.</li>
+<li class="fragment">This is not a model weakness. It is a safety control.</li>
+</ul>
+</div>
+</section>
+<section id="time-bounded-delegation" class="slide level2">
+<h2>Time-bounded delegation</h2>
+<div>
+<ul>
+<li class="fragment">Every delegated task should have a time budget and a termination policy.</li>
+<li class="fragment">At timeout: complete with evidence, or emit <em>“I don’t know”</em> and escalate.</li>
+<li class="fragment">Converts <em>hidden</em> judgment debt into <em>managed, measurable</em> risk.</li>
+</ul>
+</div>
+</section>
 <section id="lancelot" class="slide level2">
 <h2>Lancelot</h2>
 <div class="figure">
@@ -503,8 +563,10 @@ Lancelot quashing another software issue. Lancelot was Arthur’s most trusted k
 <ul>
 <li class="fragment">Bandwidth mismatch is the core risk: systems move faster than human sense-making.</li>
 <li class="fragment">Agentic AI turns text attacks into action attacks: model + tools = new threat model.</li>
+<li class="fragment">Organisations carry a <em>judgement layer</em> of tacit norms and escalation paths; automating without extracting it creates <em>agentic debt</em>.</li>
 <li class="fragment">Design for legibility: instruction hierarchies, provenance, and auditable action boundaries.</li>
 <li class="fragment">Prefer reversible, least-privilege delegation with strong defaults and fast containment.</li>
+<li class="fragment">Pay down agentic debt: make policies explicit, require evidence, and give every delegation a recovery path.</li>
 </ul>
 </div>
 </section>
