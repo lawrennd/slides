@@ -119,348 +119,6 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <blockquote>
 <p>Self-governing systems cannot refer to external arbitration.</p>
 </blockquote>
-<!-- SECTION Foundations: Information Loss and Entropy -->
-</section>
-<section id="foundations-information-loss-and-entropy" class="slide level2">
-<h2>Foundations: Information Loss and Entropy</h2>
-</section>
-<section id="the-inaccessible-game-setup" class="slide level2">
-<h2>The Inaccessible Game Setup</h2>
-<div>
-<ul>
-<li class="fragment">Avoid external structure.</li>
-<li class="fragment">Represent information loss (via Entropy)</li>
-<li class="fragment">Enforce information conservation (information isolation, <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span>)</li>
-</ul>
-</div>
-<!-- include{_physics/includes/entropy-billiards.md} -->
-<!-- include{_physics/includes/entropy-histogram.md} -->
-</section>
-<section id="thermalisation-from-different-initial-conditions" class="slide level2">
-<h2>Thermalisation from Different Initial Conditions</h2>
-<ul>
-<li>9 balls on a <span class="math inline">\(3 \times 3\)</span> grid;</li>
-<li>Different starting conditions.</li>
-</ul>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="multigame-entropy-figure" class="figure-frame">
-<div style="width:100%;max-width:1020px">
-<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
-<div style="flex:1 1 260px">
-<canvas id="multigame-canvas" width="500" height="360" style="border:1px solid black;display:block;width:100%">
-</canvas>
-</div>
-<div style="flex:1 1 260px">
-<canvas id="multigame-grid" width="480" height="480" style="border:1px solid #bbb;display:block;width:100%">
-</canvas>
-</div>
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="multigame-reset">
-Reset
-</button>
-<button id="multigame-pause">
-Pause / Resume
-</button>
-<button id="multigame-skip">
-Skip 1000s
-</button>
-<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
-</div>
-</div>
-<!--
-Loads the shared Ballworld runtime used by interactive physics demos
-(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
-behaviour is provided by follow-on scripts such as maxwell.js.
--->
-<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
-</div>
-</div>
-<aside class="notes">
-Nine billiard balls on a 3×3 grid. The histogram grid tracks each ball’s cumulative <span class="math inline">\((v_x, v_y)\)</span> velocity distribution. Entropy per ball rises from near zero (single bright dot at the initial velocity) to the Maxwell–Boltzmann value as collisions thermalise the gas. Use the Initialisation dropdown to compare directional starts (all balls move the same way) with propellor starts (adjacent balls move in opposite directions): all initial conditions converge to the same equilibrium, demonstrating ergodicity.
-</aside>
-</section>
-<section id="sampling-two-dimensional-variables" class="slide level2">
-<h2>Sampling Two Dimensional Variables</h2>
-<div>
-<script>
-showDivs(0, 'independent_velocities');
-</script>
-<p><small></small> <input id="range-independent_velocities" type="range" min="0" max="7" value="0" onchange="setDivs('independent_velocities')" oninput="setDivs('independent_velocities')"> <button onclick="plusDivs(-1, 'independent_velocities');">❮</button> <button onclick="plusDivs(1, 'independent_velocities');">❯</button></p>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities000.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities001.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities002.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities003.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities004.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities005.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities006.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="independent_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities007.svg" width="70%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="correlation" class="slide level2">
-<h2>Correlation</h2>
-<div>
-<ul>
-<li class="fragment">Correlation is when two variables are dependent</li>
-</ul>
-</div>
-</section>
-<section id="sampling-two-dimensional-variables-1" class="slide level2">
-<h2>Sampling Two Dimensional Variables</h2>
-<div>
-<script>
-showDivs(0, 'correlated_velocities');
-</script>
-<p><small></small> <input id="range-correlated_velocities" type="range" min="0" max="7" value="0" onchange="setDivs('correlated_velocities')" oninput="setDivs('correlated_velocities')"> <button onclick="plusDivs(-1, 'correlated_velocities');">❮</button> <button onclick="plusDivs(1, 'correlated_velocities');">❯</button></p>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities000.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities001.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities002.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities003.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities004.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities005.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities006.svg" width="70%" style=" ">
-</object>
-</div>
-<div class="correlated_velocities" style="text-align:center;">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities007.svg" width="70%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="jaynes-and-maximum-entropy" class="slide level2">
-<h2>Jaynes and Maximum Entropy</h2>
-<div class="figure">
-<div id="e-t-jaynes-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Ed Jaynes who developed the maximum entropy principle
-</aside>
-</section>
-<section id="maximum-entropy-motivation" class="slide level2">
-<h2>Maximum Entropy Motivation</h2>
-<ul>
-<li><span class="citation" data-cites="Jaynes-information57">Jaynes (1957)</span>: Statistical mechanics as inference with incomplete information</li>
-<li>Maximum entropy principle: maximise uncertainty given constraints</li>
-<li>Avoids unwarranted assumptions beyond available data</li>
-</ul>
-</section>
-<section id="dice-example" class="slide level2">
-<h2>Dice Example</h2>
-<div>
-<ul>
-<li class="fragment">Dice example: Average result 4.5 instead of 3.5</li>
-<li class="fragment">Constraints:
-<ul>
-<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
-<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="die-roll-simulation" class="slide level2">
-<h2>Die Roll Simulation</h2>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="dieroll-simulation-figure" class="figure-frame">
-<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
-<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
-<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
-<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
-</canvas>
-<div style="font-size:0.75em;color:#888;text-align:center">
-click die or button to roll
-</div>
-<div style="display:flex;gap:6px">
-<button id="dieroll-roll">
-Roll
-</button>
-<button id="dieroll-roll100">
-Roll ×100
-</button>
-</div>
-<div style="text-align:center;line-height:1.6;font-size:0.85em">
-<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
-</div>
-<button id="dieroll-reset">
-Reset history
-</button>
-</div>
-<div style="flex:1;min-width:280px">
-<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
-</canvas>
-<div style="margin-top:6px">
-<div style="font-style:italic;margin-bottom:6px;color:#888">
-<p>Outcome weights (auto-normalised to probabilities)</p>
-</div>
-<div id="dieroll-sliders">
-
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
-<button id="dieroll-uniform">
-Uniform (mean 3.5)
-</button>
-<button id="dieroll-jaynes">
-Jaynes: mean 4.5
-</button>
-<button id="dieroll-low">
-Low-biased: mean 2
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
-</div>
-</div>
-<aside class="notes">
-Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).
-</aside>
-</section>
-<section id="the-general-maximum-entropy-formalism" class="slide level2">
-<h2>The General Maximum-Entropy Formalism</h2>
-<p><small> <span class="math display">\[
-p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
-\]</span> <span class="math display">\[
-Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
-\]</span> <span class="math display">\[
-\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
-\]</span></small></p>
-</section>
-<section id="exponential-family" class="slide level2">
-<h2>Exponential Family</h2>
-<p><span class="math display">\[
-p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta})\right)
-\]</span> where <span class="math inline">\(\theta_i = -\lambda_i\)</span></p>
-</section>
-<section id="independent-gaussians" class="slide level2">
-<h2>Independent Gaussians</h2>
-<div class="figure">
-<div id="independent-gaussians-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent-gaussians.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Two independent Gaussians for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball.
-</aside>
-</section>
-<section id="correlated-gaussians" class="slide level2">
-<h2>Correlated Gaussians</h2>
-<div class="figure">
-<div id="correlated-gaussians-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated-gaussians.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-A correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right or bottom left.
-</aside>
-</section>
-<section id="anticorrelated-gaussians" class="slide level2">
-<h2>Anticorrelated Gaussians</h2>
-<div class="figure">
-<div id="anti-correlated-gaussians-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/anti-correlated-gaussians.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-An anti-correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.
-</aside>
-</section>
-<section id="the-classical-observer" class="slide level2">
-<h2>The Classical Observer</h2>
-<div class="figure">
-<div id="observer-composite-independent-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Here the observer is monitoring the movements of the particles. We’ve plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.
-</aside>
-</section>
-<section id="the-classical-observer---correlated" class="slide level2">
-<h2>The Classical Observer - Correlated</h2>
-<div class="figure">
-<div id="observer-composite-correlated-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-correlated.svg" width="90%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Again the observer is monitoring the movements of the particles, but here their motion is correlated (<span class="math inline">\(\rho=0.95\)</span>).
-</aside>
-</section>
-<section id="the-classical-observer---anti-correlated" class="slide level2">
-<h2>The Classical Observer - Anti-correlated</h2>
-<div class="figure">
-<div id="observer-composite-anti-correlated-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-anti-correlated.svg" width="90%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).
-</aside>
-<!-- SECTION Back to self adjudication -->
-</section>
-<section id="back-to-self-adjudication" class="slide level2">
-<h2>Back to self adjudication</h2>
 </section>
 <section id="the-no-barber-principle" class="slide level2">
 <h2>The No-Barber Principle</h2>
@@ -480,6 +138,103 @@ Here the observer is monitoring the movements of the particles, but here their m
 <li class="fragment">External time parameter</li>
 </ul>
 <p><em>No appeal to structure outside the game</em></p>
+</div>
+<!-- SECTION Information Loss -->
+</section>
+<section id="information-loss" class="slide level2">
+<h2>Information Loss</h2>
+</section>
+<section id="baez-fritz-leinster-characterization-of-information-loss" class="slide level2">
+<h2>Baez-Fritz-Leinster Characterization of Information Loss</h2>
+<p><strong><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>:</strong> * Entropy from category theory * Three axioms uniquely determine information loss * No probability needed initially</p>
+</section>
+<section id="the-three-axioms" class="slide level2">
+<h2>The Three Axioms</h2>
+<p><strong>Axiom 1: Functoriality</strong> <span class="math display">\[F(f \circ g) = F(f) + F(g)\]</span></p>
+<ul>
+<li>Information loss is additive</li>
+<li>Compose processes → add losses</li>
+</ul>
+</section>
+<section id="convex-linearity" class="slide level2">
+<h2>Convex Linearity</h2>
+<p><strong>Axiom 2: Convex Linearity</strong> <span class="math display">\[F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g)\]</span></p>
+<ul>
+<li>Probabilistic mixture of processes</li>
+<li>Linear in probability weights</li>
+</ul>
+</section>
+<section id="continuity" class="slide level2">
+<h2>Continuity</h2>
+<p><strong>Axiom 3: Continuity</strong></p>
+<ul>
+<li>Small change in process</li>
+<li>Small change in information loss</li>
+<li><span class="math inline">\(F(f)\)</span> continuous in <span class="math inline">\(f\)</span></li>
+</ul>
+</section>
+<section id="the-main-result" class="slide level2">
+<h2>The Main Result</h2>
+<p><strong>Theorem:</strong></p>
+<p>Three axioms <span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math display">\[F(f) = c(H(p) - H(q))\]</span></p>
+<ul>
+<li>Information loss = scaled entropy difference</li>
+<li>Shannon entropy emerges from axioms</li>
+<li>No other measure satisfies all three</li>
+</ul>
+</section>
+<section id="the-inaccessible-game-setup" class="slide level2">
+<h2>The Inaccessible Game Setup</h2>
+<div>
+<ul>
+<li class="fragment">Avoid external structure.</li>
+<li class="fragment">Represent information loss (via Entropy)</li>
+<li class="fragment">Enforce information conservation (information isolation, <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span>)</li>
+</ul>
+</div>
+<!-- SECTION Information Isolation -->
+</section>
+<section id="information-isolation" class="slide level2">
+<h2>Information Isolation</h2>
+</section>
+<section id="information-isolation-1" class="slide level2">
+<h2>Information Isolation</h2>
+<div>
+<ul>
+<li class="fragment">Define information loss </li>
+<li class="fragment">Isolate game is <em>isolated from observation</em></li>
+<li class="fragment">No external observer can extract or inject information</li>
+</ul>
+<p><em>Analogous to energy conservation in thermodynamics</em></p>
+</div>
+</section>
+<section id="marginal-entropy-conservation" class="slide level2">
+<h2>Marginal Entropy Conservation</h2>
+<div>
+<p><span class="math display">\[
+\sum_{i=1}^N h_i = C
+\]</span></p>
+<ul>
+<li class="fragment">Exchangeable: holds for any finite subset of variables</li>
+<li class="fragment">Extensive: scales linearly with system size</li>
+<li class="fragment">Analogous to energy conservation — but for information</li>
+</ul>
+</div>
+</section>
+<section id="why-this-form" class="slide level2">
+<h2>Why This Form?</h2>
+<p><strong>Uniqueness of the Form:</strong></p>
+<p>Any exchangeable, extensive conservation law over marginal entropies must be: <span class="math display">\[Q(\{h_i\}) = \sum_i f(h_i), \quad f(h) = c \cdot h\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math inline">\(\sum_i h_i = C\)</span></p>
+</section>
+<section id="coordinate-free-interpretation" class="slide level2">
+<h2>Coordinate-Free Interpretation</h2>
+<div>
+<ul>
+<li class="fragment">Enforces <em>internality</em>: no external reference structures</li>
+<li class="fragment">Enforces <em>relationality</em>: all quantities defined internally</li>
+</ul>
+<p><em>Marginal entropy conservation = information geometry’s built-in potential</em></p>
 </div>
 </section>
 <section id="the-classical-observer---inaccessible" class="slide level2">
@@ -523,157 +278,6 @@ Here the observer is blocked from monitoring anything inside the sytem.
 <li class="fragment">Multiinformation <span class="math inline">\(I = \sum_i h_i - H\)</span></li>
 </ul>
 </div>
-</section>
-<section id="two-candidates-for-information-loss" class="slide level2">
-<h2>Two Candidates for Information Loss</h2>
-<div>
-<ul>
-<li class="fragment">Two characterisations of information loss:
-<ul>
-<li class="fragment"><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>: <span class="math inline">\(\textsf{FinProb}\)</span>, Shannon entropy</li>
-<li class="fragment"><span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>: <span class="math inline">\(\textsf{NCFinProb}\)</span>, von Neumann entropy</li>
-</ul></li>
-<li class="fragment">Which is the right internal language for the game?</li>
-</ul>
-</div>
-</section>
-<section id="baez-fritz-leinster-textsffinprob" class="slide level2">
-<h2>Baez-Fritz-Leinster: <span class="math inline">\(\textsf{FinProb}\)</span></h2>
-<div>
-<ul>
-<li class="fragment">Three axioms <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(F(f) = c(H(p) - H(q))\)</span> uniquely</li>
-<li class="fragment"><span class="math inline">\(\textsf{FinProb}\)</span> is <em>cartesian</em></li>
-<li class="fragment">Canonical copying: <span class="math inline">\(\Delta_A : A \to A \times A\)</span> available for free</li>
-</ul>
-</div>
-</section>
-<section id="parzygnat-textsfncfinprob" class="slide level2">
-<h2>Parzygnat: <span class="math inline">\(\textsf{NCFinProb}\)</span></h2>
-<div>
-<ul>
-<li class="fragment">Analogous axioms <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(F(f) = c(S(\rho) - S(\sigma))\)</span> via von Neumann entropy</li>
-<li class="fragment"><span class="math inline">\(\textsf{NCFinProb}\)</span> is <em>symmetric monoidal</em></li>
-<li class="fragment">No canonical copying: <span class="math inline">\(A \to A \otimes A\)</span> not available by default</li>
-<li class="fragment">This is the quantum <em>no-cloning</em> property</li>
-</ul>
-</div>
-</section>
-<section id="applying-the-no-barber-principle" class="slide level2">
-<h2>Applying the No-Barber Principle</h2>
-<div>
-<ul>
-<li class="fragment">Lawvere diagonalisation needs: self-application <span class="math inline">\(\equiv\)</span> canonical copying</li>
-<li class="fragment"><em><span class="math inline">\(\textsf{FinProb}\)</span> (cartesian):</em> copying available <span class="math inline">\(\to\)</span> paradox constructible <span class="math inline">\(\to\)</span> external adjudication required</li>
-<li class="fragment"><em><span class="math inline">\(\textsf{NCFinProb}\)</span> (symmetric monoidal):</em> no canonical copying <span class="math inline">\(\to\)</span> diagonalisation blocked <span class="math inline">\(\to\)</span> no-barber satisfied</li>
-</ul>
-</div>
-</section>
-<section id="the-no-barber-selection" class="slide level2">
-<h2>The No-Barber Selection</h2>
-<blockquote>
-<p>The no-barber principle selects <span class="math inline">\(\textsf{NCFinProb}\)</span> over <span class="math inline">\(\textsf{FinProb}\)</span>.</p>
-</blockquote>
-<ul>
-<li>FinProb: cartesian <span class="math inline">\(\rightarrow\)</span> copying <span class="math inline">\(\rightarrow\)</span> Lawvere <span class="math inline">\(\rightarrow\)</span> paradox <span class="math inline">\(\rightarrow\)</span> external adjudication</li>
-<li>NCFinProb: monoidal <span class="math inline">\(\rightarrow\)</span> no-cloning <span class="math inline">\(\rightarrow\)</span> diagonalisation blocked <span class="math inline">\(\rightarrow\)</span> internally adjudicable</li>
-<li>Independently consistent with <span class="citation" data-cites="Lawrence-origin26">Lawrence (2026)</span></li>
-<li>Information loss <span class="math inline">\(\equiv\)</span> von Neumann entropy decrease</li>
-</ul>
-</section>
-<section id="configurations-without-visibility" class="slide level2">
-<h2>Configurations Without Visibility</h2>
-<div>
-<ul>
-<li class="fragment">Cannot inspect the configuration, <span class="math inline">\(\rho\)</span>, directly</li>
-<li class="fragment">But <em>entropy</em> requires no external reference</li>
-<li class="fragment">Internally accessible: no external adjudicator needed</li>
-</ul>
-</div>
-</section>
-<section id="entropy-orders-the-configurations" class="slide level2">
-<h2>Entropy Orders the Configurations</h2>
-<div>
-<ul>
-<li class="fragment"><span class="math inline">\(S\)</span> maps each configuration to <span class="math inline">\([0, \infty)\)</span></li>
-<li class="fragment">Pull back the order on <span class="math inline">\(\mathbb{R}\)</span>: <span class="math inline">\(\rho \leq \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) \leq S(\rho&#39;)\)</span></li>
-<li class="fragment">Reflexive ✓, Transitive ✓, Antisymmetric ✗ (distinct <span class="math inline">\(\rho\)</span> can share entropy)</li>
-<li class="fragment"><strong>Preorder</strong> (not a partial order): configurations form a <strong>proset</strong></li>
-</ul>
-</div>
-</section>
-<section id="isoentropy-and-the-quotient-poset" class="slide level2">
-<h2>Isoentropy and the Quotient Poset</h2>
-<div>
-<ul>
-<li class="fragment">Isoentropy: <span class="math inline">\(\rho \sim \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span> — an equivalence class</li>
-<li class="fragment">Quotient <span class="math inline">\([\rho]\)</span>: each class is one point <span class="math inline">\(\to\)</span> antisymmetry holds <span class="math inline">\(\to\)</span> <em>poset</em></li>
-<li class="fragment">Since <span class="math inline">\(S\)</span> maps into <span class="math inline">\(\mathbb{R}\)</span>: every two classes are comparable <span class="math inline">\(\to\)</span> <em>chain</em> (total order)</li>
-<li class="fragment">From outside: only the chain of entropy levels is visible</li>
-</ul>
-</div>
-</section>
-<section id="configuration-mapping" class="slide level2">
-<h2>Configuration Mapping</h2>
-<div class="figure">
-<div id="configurations-to-entropy-line-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/configurations-to-entropy-line.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Many configurations (density matrices <span class="math inline">\(\rho\)</span>) map under von Neumann entropy <span class="math inline">\(S\)</span> to a single real number. Configurations with the same entropy value are isoentropy; they form an equivalence class. The quotient is a totally ordered chain of entropy levels.
-</aside>
-</section>
-<section id="the-entropy-ladder" class="slide level2">
-<h2>The Entropy Ladder</h2>
-<div>
-<ul>
-<li class="fragment">Bottom (<span class="math inline">\(S=0\)</span>): pure state — fully ordered, single configuration</li>
-<li class="fragment">Higher rungs: mixed states — more equivalence classes at each level</li>
-<li class="fragment">No canonical top: maximum entropy grows with system dimension</li>
-<li class="fragment">Dynamics = movement along the ladder</li>
-<li class="fragment">Functor: <span class="math inline">\(S : \textsf{NCFinProb} \to (\mathbb{R}_{\geq 0}, \leq)\)</span></li>
-</ul>
-</div>
-</section>
-<section id="the-entropy-ladder-1" class="slide level2">
-<h2>The Entropy Ladder</h2>
-<div class="figure">
-<div id="entropy-ladder-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/entropy-ladder.svg" width="40%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-The entropy ladder: each rung is an isoentropy class. Multiple configurations sit at the same rung. Dynamics move the system up the ladder (entropy increase) subject to the marginal entropy conservation constraint.
-</aside>
-<!-- SECTION Energy -->
-</section>
-<section id="energy" class="slide level2">
-<h2>Energy</h2>
-</section>
-<section id="energy-constraints" class="slide level2">
-<h2>Energy Constraints</h2>
-<ul>
-<li>Normally we derive physical laws by</li>
-</ul>
-<p><em>Maximise entropy subject to energy conservation</em></p>
-</section>
-<section id="the-conservation-law" class="slide level2">
-<h2>The Conservation Law</h2>
-</section>
-<section id="marginal-entropy-conservation" class="slide level2">
-<h2>Marginal Entropy Conservation</h2>
-<p><span class="math display">\[
-\sum_{i=1}^N h_i = C
-\]</span></p>
-</section>
-<section id="entropy-constraints" class="slide level2">
-<h2>Entropy Constraints</h2>
-<ul>
-<li>Now derive game rules by</li>
-</ul>
-<p>Maximise <em>joint</em> entropy subject to <em>marginal</em> entropy conservation</p>
 </section>
 <section id="the-i-h-c-structure" class="slide level2">
 <h2>The <span class="math inline">\(I + H = C\)</span> Structure</h2>
@@ -772,17 +376,469 @@ I + H = C
 <aside class="notes">
 Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.
 </aside>
-</section>
-<section id="long-story-short" class="slide level2">
-<h2>Long Story Short</h2>
 <div>
 <ul>
-<li class="fragment">Can derive GENERIC-like dynamics.</li>
-<li class="fragment">Origin suggests von Neumann entropy more natural than Shannon.</li>
+<li class="fragment">Multi-information <span class="math inline">\(I\)</span> decreases (correlations break)</li>
+<li class="fragment">Joint entropy <span class="math inline">\(H\)</span> increases (disorder grows)</li>
+<li class="fragment">Conservation: <span class="math inline">\(I + H = C\)</span> (black line)</li>
+<li class="fragment">Marginals: <span class="math inline">\(h_1\)</span>, <span class="math inline">\(h_2\)</span> constant (inaccessible!)</li>
+</ul>
+<p><em>Internal reorganisation invisible to external observer</em></p>
+</div>
+</section>
+<section id="configurations-without-visibility" class="slide level2">
+<h2>Configurations Without Visibility</h2>
+<div>
+<ul>
+<li class="fragment">Cannot inspect the configuration, <span class="math inline">\(\rho\)</span>, directly</li>
+<li class="fragment">But <em>entropy</em> requires no external reference</li>
+<li class="fragment">Internally accessible: no external adjudicator needed</li>
 </ul>
 </div>
 </section>
+<section id="entropy-orders-the-configurations" class="slide level2">
+<h2>Entropy Orders the Configurations</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(S\)</span> maps each configuration to <span class="math inline">\([0, \infty)\)</span></li>
+<li class="fragment">Pull back the order on <span class="math inline">\(\mathbb{R}\)</span>: <span class="math inline">\(\rho \leq \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) \leq S(\rho&#39;)\)</span></li>
+<li class="fragment">Reflexive ✓, Transitive ✓, Antisymmetric ✗ (distinct <span class="math inline">\(\rho\)</span> can share entropy)</li>
+<li class="fragment"><strong>Preorder</strong> (not a partial order): configurations form a <strong>proset</strong></li>
+</ul>
+</div>
+</section>
+<section id="isoentropy-and-the-quotient-poset" class="slide level2">
+<h2>Isoentropy and the Quotient Poset</h2>
+<div>
+<ul>
+<li class="fragment">Isoentropy: <span class="math inline">\(\rho \sim \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span> — an equivalence class</li>
+<li class="fragment">Quotient <span class="math inline">\([\rho]\)</span>: each class is one point <span class="math inline">\(\to\)</span> antisymmetry holds <span class="math inline">\(\to\)</span> <em>poset</em></li>
+<li class="fragment">Since <span class="math inline">\(S\)</span> maps into <span class="math inline">\(\mathbb{R}\)</span>: every two classes are comparable <span class="math inline">\(\to\)</span> <em>chain</em> (total order)</li>
+<li class="fragment">From outside: only the chain of entropy levels is visible</li>
+</ul>
+</div>
+</section>
+<section id="configuration-mapping" class="slide level2">
+<h2>Configuration Mapping</h2>
+<div class="figure">
+<div id="configurations-to-entropy-line-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/configurations-to-entropy-line.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Many configurations (density matrices <span class="math inline">\(\rho\)</span>) map under von Neumann entropy <span class="math inline">\(S\)</span> to a single real number. Configurations with the same entropy value are isoentropy; they form an equivalence class. The quotient is a totally ordered chain of entropy levels.
+</aside>
+</section>
+<section id="the-entropy-ladder" class="slide level2">
+<h2>The Entropy Ladder</h2>
+<div>
+<ul>
+<li class="fragment">Bottom (<span class="math inline">\(S=0\)</span>): pure state — fully ordered, single configuration</li>
+<li class="fragment">Higher rungs: mixed states — more equivalence classes at each level</li>
+<li class="fragment">No canonical top: maximum entropy grows with system dimension</li>
+<li class="fragment">Dynamics = movement along the ladder</li>
+<li class="fragment">Functor: <span class="math inline">\(S : \textsf{NCFinProb} \to (\mathbb{R}_{\geq 0}, \leq)\)</span></li>
+</ul>
+</div>
+</section>
+<section id="the-entropy-ladder-1" class="slide level2">
+<h2>The Entropy Ladder</h2>
+<div class="figure">
+<div id="entropy-ladder-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/entropy-ladder.svg" width="40%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The entropy ladder: each rung is an isoentropy class. Multiple configurations sit at the same rung. Dynamics move the system up the ladder (entropy increase) subject to the marginal entropy conservation constraint.
+</aside>
+<!-- SECTION Axiomatically Distinguished Trajectory -->
+</section>
+<section id="axiomatically-distinguished-trajectory" class="slide level2">
+<h2>Axiomatically Distinguished Trajectory</h2>
+</section>
+<section id="natural-parameters-and-the-exponential-family" class="slide level2">
+<h2>Natural Parameters and the Exponential Family</h2>
+<div>
+<p><span class="math display">\[p(\mathbf{x}|\boldsymbol{\theta}) = \exp\!\left(\boldsymbol{\theta}^\top \mathbf{T}(\mathbf{x}) - \psi(\boldsymbol{\theta})\right)\]</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(\boldsymbol{\theta}\)</span>: natural parameters</li>
+<li class="fragment"><span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2\psi(\boldsymbol{\theta})\)</span>: Fisher information</li>
+</ul>
+</div>
+</section>
+<section id="constrained-maximum-entropy-production" class="slide level2">
+<h2>Constrained Maximum Entropy Production</h2>
+<div>
+<ul>
+<li class="fragment">Maximise <span class="math inline">\(\dot{H}\)</span> subject to <span class="math inline">\(\sum_i h_i = C\)</span></li>
+<li class="fragment">Constrained dynamics: <span class="math display">\[\dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta} + \nu(\tau)\,\mathbf{a}(\boldsymbol{\theta})\]</span></li>
+<li class="fragment"><span class="math inline">\(\mathbf{a} = \nabla\sum_i h_i\)</span>: constraint gradient</li>
+<li class="fragment"><span class="math inline">\(\nu(\tau)\)</span>: Lagrange multiplier, determined by <span class="math inline">\(\mathbf{a}^\top\dot{\boldsymbol{\theta}}=0\)</span></li>
+</ul>
+</div>
+</section>
+<section id="generic-like-structure" class="slide level2">
+<h2>GENERIC-like Structure</h2>
+<p><span class="math display">\[M = S + A, \qquad \dot{\mathbf{q}} = M\mathbf{q}\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Type</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S\)</span> (symmetric)</td>
+<td>Irreversible</td>
+<td>Entropy production</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span> (antisymmetric)</td>
+<td>Reversible</td>
+<td>Entropy-conserving rotation</td>
+</tr>
+</tbody>
+</table>
+<p><em>Emerges from constraint geometry — not imposed</em></p>
+</section>
+<section id="thermodynamic-vs-mechanical-regimes" class="slide level2">
+<h2>Thermodynamic vs Mechanical Regimes</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\|S\| \gg \|A\|\)</span>: thermodynamic regime — rapid entropy production</li>
+<li class="fragment"><span class="math inline">\(\|A\| \gtrsim \|S\|\)</span>: mechanical regime — oscillatory, reversible</li>
+<li class="fragment">Ratio <span class="math inline">\(\|A\|/\|S\|\)</span> varies across constraint manifold</li>
+</ul>
+<p><em>Fisher information <span class="math inline">\(G(\boldsymbol{\theta})\)</span> defines the information topography</em></p>
+</div>
+</section>
+<section id="axiomatically-distinguished" class="slide level2">
+<h2>Axiomatically Distinguished</h2>
+<blockquote>
+<p>A choice is axiomatically distinguished if it is uniquely identifiable within the game’s axioms — without external structure such as Hamiltonians, clocks, or coordinates.</p>
+</blockquote>
+<ul>
+<li>Maximum entropy direction: unique in Fisher metric</li>
+<li>Constraint: marginal entropy conservation</li>
+<li>Together: unique trajectory through information geometry</li>
+</ul>
+</section>
+<section id="jaynes-and-maximum-entropy" class="slide level2">
+<h2>Jaynes and Maximum Entropy</h2>
+<div class="figure">
+<div id="e-t-jaynes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Ed Jaynes who developed the maximum entropy principle
+</aside>
+</section>
+<section id="maximum-entropy-motivation" class="slide level2">
+<h2>Maximum Entropy Motivation</h2>
+<ul>
+<li><span class="citation" data-cites="Jaynes-information57">Jaynes (1957)</span>: Statistical mechanics as inference with incomplete information</li>
+<li>Maximum entropy principle: maximise uncertainty given constraints</li>
+<li>Avoids unwarranted assumptions beyond available data</li>
+</ul>
+</section>
+<section id="dice-example" class="slide level2">
+<h2>Dice Example</h2>
+<div>
+<ul>
+<li class="fragment">Dice example: Average result 4.5 instead of 3.5</li>
+<li class="fragment">Constraints:
+<ul>
+<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
+<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="die-roll-simulation" class="slide level2">
+<h2>Die Roll Simulation</h2>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="dieroll-simulation-figure" class="figure-frame">
+<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
+<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
+<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
+</canvas>
+<div style="font-size:0.75em;color:#888;text-align:center">
+click die or button to roll
+</div>
+<div style="display:flex;gap:6px">
+<button id="dieroll-roll">
+Roll
+</button>
+<button id="dieroll-roll100">
+Roll ×100
+</button>
+</div>
+<div style="text-align:center;line-height:1.6;font-size:0.85em">
+<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
+</div>
+<button id="dieroll-reset">
+Reset history
+</button>
+</div>
+<div style="flex:1;min-width:280px">
+<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
+</canvas>
+<div style="margin-top:6px">
+<div style="font-style:italic;margin-bottom:6px;color:#888">
+<p>Outcome weights (auto-normalised to probabilities)</p>
+</div>
+<div id="dieroll-sliders">
+
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+<button id="dieroll-uniform">
+Uniform (mean 3.5)
+</button>
+<button id="dieroll-jaynes">
+Jaynes: mean 4.5
+</button>
+<button id="dieroll-low">
+Low-biased: mean 2
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
+</div>
+</div>
+<aside class="notes">
+Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).
+</aside>
+</section>
+<section id="the-general-maximum-entropy-formalism" class="slide level2">
+<h2>The General Maximum-Entropy Formalism</h2>
+<p><small> <span class="math display">\[
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
+\]</span> <span class="math display">\[
+Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\]</span> <span class="math display">\[
+\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
+\]</span></small></p>
+<!-- SECTION The Quantum Origin -->
+</section>
+<section id="the-quantum-origin" class="slide level2">
+<h2>The Quantum Origin</h2>
+</section>
+<section id="the-classical-obstruction-at-the-origin" class="slide level2">
+<h2>The Classical Obstruction at the Origin</h2>
+<p>Information relaxation starts at: <span class="math display">\[I = C, \quad H = 0 \quad \text{(maximally correlated, zero joint entropy)}\]</span></p>
+<p>Classical Shannon: <span class="math inline">\(H_{X_1|X_2} \geq 0\)</span> always.</p>
+<p><em>This forbids <span class="math inline">\(H=0\)</span> with positive marginals.</em></p>
+</section>
+<section id="why-shannon-fails" class="slide level2">
+<h2>Why Shannon Fails</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(I_{1,2} = H_1 - H_{1|2} \leq H_1\)</span> (since <span class="math inline">\(H_{1|2}\geq 0\)</span>)</li>
+<li class="fragment">Origin needs <span class="math inline">\(H_{1,2}=0 \Rightarrow I_{1,2} = H_1+H_2\)</span></li>
+<li class="fragment">But <span class="math inline">\(I_{1,2} \leq H_1\)</span> requires <span class="math inline">\(H_2 = 0\)</span>, and vice versa</li>
+<li class="fragment">Classical origin <span class="math inline">\(\Rightarrow\)</span> all marginals zero <span class="math inline">\(\Rightarrow\)</span> no game</li>
+</ul>
+<p><em>Shannon entropy structurally forbids the game’s natural origin</em></p>
+</div>
+</section>
+<section id="von-neumann-entropy-resolution" class="slide level2">
+<h2>Von Neumann Entropy Resolution</h2>
+<p>Von Neumann: <span class="math inline">\(S_{A|B} = S_{AB} - S_B\)</span> <strong>can be negative</strong> (entanglement).</p>
+<p>Pure entangled state: <span class="math display">\[S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0\]</span></p>
+<ul>
+<li>Axiomatised by <span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span> (quantum analogue of BFL)</li>
+<li>Origin = globally pure, maximally entangled state</li>
+</ul>
+</section>
+<section id="two-candidates-for-information-loss" class="slide level2">
+<h2>Two Candidates for Information Loss</h2>
+<div>
+<ul>
+<li class="fragment">Two characterisations of information loss:
+<ul>
+<li class="fragment"><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>: <span class="math inline">\(\textsf{FinProb}\)</span>, Shannon entropy</li>
+<li class="fragment"><span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>: <span class="math inline">\(\textsf{NCFinProb}\)</span>, von Neumann entropy</li>
+</ul></li>
+<li class="fragment">Which is the right internal language for the game?</li>
+</ul>
+</div>
+</section>
+<section id="baez-fritz-leinster-textsffinprob" class="slide level2">
+<h2>Baez-Fritz-Leinster: <span class="math inline">\(\textsf{FinProb}\)</span></h2>
+<div>
+<ul>
+<li class="fragment">Three axioms <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(F(f) = c(H(p) - H(q))\)</span> uniquely</li>
+<li class="fragment"><span class="math inline">\(\textsf{FinProb}\)</span> is <em>cartesian</em></li>
+<li class="fragment">Canonical copying: <span class="math inline">\(\Delta_A : A \to A \times A\)</span> available for free</li>
+</ul>
+</div>
+</section>
+<section id="parzygnat-textsfncfinprob" class="slide level2">
+<h2>Parzygnat: <span class="math inline">\(\textsf{NCFinProb}\)</span></h2>
+<div>
+<ul>
+<li class="fragment">Analogous axioms <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(F(f) = c(S(\rho) - S(\sigma))\)</span> via von Neumann entropy</li>
+<li class="fragment"><span class="math inline">\(\textsf{NCFinProb}\)</span> is <em>symmetric monoidal</em></li>
+<li class="fragment">No canonical copying: <span class="math inline">\(A \to A \otimes A\)</span> not available by default</li>
+<li class="fragment">This is the quantum <em>no-cloning</em> property</li>
+</ul>
+</div>
+</section>
+<section id="applying-the-no-barber-principle" class="slide level2">
+<h2>Applying the No-Barber Principle</h2>
+<div>
+<ul>
+<li class="fragment">Lawvere diagonalisation needs: self-application <span class="math inline">\(\equiv\)</span> canonical copying</li>
+<li class="fragment"><em><span class="math inline">\(\textsf{FinProb}\)</span> (cartesian):</em> copying available <span class="math inline">\(\to\)</span> paradox constructible <span class="math inline">\(\to\)</span> external adjudication required</li>
+<li class="fragment"><em><span class="math inline">\(\textsf{NCFinProb}\)</span> (symmetric monoidal):</em> no canonical copying <span class="math inline">\(\to\)</span> diagonalisation blocked <span class="math inline">\(\to\)</span> no-barber satisfied</li>
+</ul>
+</div>
+</section>
+<section id="the-no-barber-selection" class="slide level2">
+<h2>The No-Barber Selection</h2>
+<blockquote>
+<p>The no-barber principle selects <span class="math inline">\(\textsf{NCFinProb}\)</span> over <span class="math inline">\(\textsf{FinProb}\)</span>.</p>
+</blockquote>
+<ul>
+<li>FinProb: cartesian <span class="math inline">\(\rightarrow\)</span> copying <span class="math inline">\(\rightarrow\)</span> Lawvere <span class="math inline">\(\rightarrow\)</span> paradox <span class="math inline">\(\rightarrow\)</span> external adjudication</li>
+<li>NCFinProb: monoidal <span class="math inline">\(\rightarrow\)</span> no-cloning <span class="math inline">\(\rightarrow\)</span> diagonalisation blocked <span class="math inline">\(\rightarrow\)</span> internally adjudicable</li>
+<li>Independently consistent with <span class="citation" data-cites="Lawrence-origin26">Lawrence (2026)</span></li>
+<li>Information loss <span class="math inline">\(\equiv\)</span> von Neumann entropy decrease</li>
+</ul>
+</section>
+<section id="variational-derivation-of-the-initial-curvature-structure" class="slide level2">
+<h2>Variational Derivation of the Initial Curvature Structure</h2>
+</section>
+<section id="variational-derivation" class="slide level2">
+<h2>Variational Derivation</h2>
+<ul>
+<li>Determine constraints on Fisher Information Matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span></li>
+<li>Follow Jaynes’ approach to solve variational problem</li>
+<li>Capture structure of system’s minimal entropy state</li>
+</ul>
+</section>
+<section id="uncertainty-principles" class="slide level2">
+<h2>Uncertainty Principles</h2>
+<ul>
+<li>Hirschman uncertainty principle: entropy of function and Fourier transform</li>
+<li>Beckner strengthened the inequality with optimal constant</li>
+<li>Bialynicki extended to information entropy in wave mechanics</li>
+<li>System respects these limits via von Neumann entropy</li>
+</ul>
+</section>
+<section id="density-matrix-form" class="slide level2">
+<h2>Density Matrix Form</h2>
+<ul>
+<li><span class="math inline">\(\rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)\)</span></li>
+<li><span class="math inline">\(Z(\boldsymbol{\theta}) = \mathrm{tr}\left[\exp\left( \sum_i \theta_i H_i \right)\right]\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^d\)</span>, <span class="math inline">\(H_i\)</span> are Hermitian observables</li>
+</ul>
+</section>
+<section id="von-neumann-entropy" class="slide level2">
+<h2>Von Neumann Entropy</h2>
+<ul>
+<li><span class="math inline">\(S[\rho] = -\text{tr} (\rho \log \rho)\)</span></li>
+<li>Minimal entropy configuration via Jaynes’ variational approach</li>
+<li>Derive density matrix from information-theoretic constraints</li>
+</ul>
+</section>
+<section id="the-lme-origin" class="slide level2">
+<h2>The LME Origin</h2>
+<ul>
+<li>Globally pure state: <span class="math inline">\(S(\rho)=0\)</span></li>
+<li>Each marginal maximally mixed: <span class="math inline">\(s_i = \log d_i\)</span></li>
+<li><span class="math inline">\(C = C_{\max} = \sum_i \log d_i\)</span> (axiomatically distinguished)</li>
+</ul>
+<p><em>Maximally entangled pure state — selected without external structure</em></p>
+</section>
+<section id="constraint-saturation-and-the-gibbs-lock" class="slide level2">
+<h2>Constraint Saturation and the Gibbs Lock</h2>
+<div>
+<ul>
+<li class="fragment">At <span class="math inline">\(C=C_{\max}\)</span>: every <span class="math inline">\(s_i = \log d_i\)</span> — at individual ceiling</li>
+<li class="fragment">Marginals locked: <span class="math inline">\(s_i(\tau) = \log d_i\)</span> for all time</li>
+<li class="fragment">Constraint gradient <span class="math inline">\(\mathbf{a}=\mathbf{0}\)</span> — first-order condition vacuous</li>
+<li class="fragment">Admissible velocities: <span class="math inline">\(\dot{\boldsymbol{\theta}}\in\ker\nabla^2 C(\boldsymbol{\theta}^*)\)</span></li>
+</ul>
+<p><em>Constraint becomes second-order only</em></p>
+</div>
+</section>
+<section id="generic-dynamics-at-the-origin" class="slide level2">
+<h2>GENERIC Dynamics at the Origin</h2>
+<p><span class="math display">\[\dot{\boldsymbol{\theta}} \propto \underbrace{-\Pi_{\mathrm{marg}}\boldsymbol{\theta}}_{\text{dissipative}} + \underbrace{\mathrm{ad}_\xi\,\boldsymbol{\theta}}_{\text{reversible (Lax)}}\]</span></p>
+<ul>
+<li>Reversible: <span class="math inline">\(\dot{\rho} = -\mathrm{i}[K,\rho]\)</span> — von Neumann equation emerges</li>
+<li>Irreversible: steepest entropy ascent in marginal-preserving subspace</li>
+<li>No Hamiltonian assumed — it emerges from constraint geometry</li>
+</ul>
+</section>
+<section id="the-origin-is-unreachable" class="slide level2">
+<h2>The Origin is Unreachable</h2>
+<div>
+<ul>
+<li class="fragment">Origin: boundary of natural-parameter space</li>
+<li class="fragment"><span class="math inline">\(\|\boldsymbol{\theta}\|\to\infty\)</span> as <span class="math inline">\(\rho\to\rho_{\mathrm{pure}}\)</span></li>
+<li class="fragment">Fisher (BKM) metric degenerates at boundary</li>
+<li class="fragment">Infinite Fisher distance — never literally reached</li>
+<li class="fragment"><em>Trajectory distinguished by its asymptotic origin, not a literal start</em></li>
+</ul>
+</div>
+</section>
+<section id="entropy-time" class="slide level2">
+<h2>Entropy Time</h2>
+</section>
+<section id="entropy-time-1" class="slide level2">
+<h2>Entropy Time</h2>
+<div>
+<ul>
+<li class="fragment">Game time <span class="math inline">\(\tau\)</span>: affine parameter, degenerates at origin</li>
+<li class="fragment"><span class="math inline">\(\|\boldsymbol{\theta}\|\to\infty\)</span>, entropy production <span class="math inline">\(\to 0\)</span></li>
+<li class="fragment">Infinite game time to cover finite entropy range</li>
+<li class="fragment">Need: an <em>internal</em> clock — external clocks forbidden by isolation</li>
+</ul>
+</div>
+</section>
+<section id="entropy-time-2" class="slide level2">
+<h2>Entropy Time</h2>
+<p><span class="math display">\[\frac{\text{d}S}{\text{d}t} = c \quad \text{(constant entropy production)}\]</span></p>
+<ul>
+<li>1 unit of <span class="math inline">\(t\)</span> = <span class="math inline">\(c\)</span> nats of entropy produced</li>
+<li>Unique reparametrisation (up to affine shift) with this property</li>
+<li>External clock forbidden by isolation — entropy provides the clock</li>
+<li>Finite entropy-time interval replaces infinite affine-time approach</li>
+</ul>
+</section>
+<section id="entropy-time-is-axiomatically-distinguished" class="slide level2">
+<h2>Entropy Time is Axiomatically Distinguished</h2>
+<div>
+<ul>
+<li class="fragment">No external clock, temperature, or Hamiltonian needed</li>
+<li class="fragment">Axiomatically distinguished: uniquely specifiable from within the game</li>
+<li class="fragment">Uniformises the irreversible (dissipative) sector</li>
+<li class="fragment">Resolves the boundary degeneration of natural-parameter flow</li>
+<li class="fragment"><em>Progress measured by entropy produced, not by an external tick</em></li>
+</ul>
+</div>
+<!-- SECTION Connections -->
+</section>
 <section id="connections" class="slide level2">
+<h2>Connections</h2>
+</section>
+<section id="connections-1" class="slide level2">
 <h2>Connections</h2>
 <div>
 <ul>
@@ -798,7 +854,7 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 <section id="pendulum-animation" class="slide level2">
 <h2>Pendulum Animation</h2>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pendulum-energy-conservation-figure" class="figure-frame">
@@ -810,111 +866,39 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 <aside class="notes">
 Pendulum energy conservation: the pendulum (left) trades potential and kinetic energy while total energy (red line, right) remains constant. Green shows kinetic energy, orange shows potential energy.
 </aside>
+<!-- SECTION Hamiltonian Emergence (In Preparation) -->
 </section>
-<section id="energy-1" class="slide level2">
-<h2>Energy</h2>
+<section id="hamiltonian-emergence-in-preparation" class="slide level2">
+<h2>Hamiltonian Emergence (In Preparation)</h2>
+</section>
+<section id="from-information-geometry-to-hamiltonian-mechanics" class="slide level2">
+<h2>From Information Geometry to Hamiltonian Mechanics</h2>
+<p>The inaccessible game has <strong>no Hamiltonian</strong> in its axioms.</p>
+<p>Yet in metastable <em>Gibbs-locked</em> regions, an effective Hamiltonian description emerges from the information geometry.</p>
+<p><em>(Work in preparation)</em></p>
+</section>
+<section id="the-gibbs-lock-condition" class="slide level2">
+<h2>The Gibbs-lock Condition</h2>
+<p><span class="math display">\[K(\boldsymbol{\theta}) \approx -\beta(\boldsymbol{\theta})\,H\]</span></p>
+<ul>
+<li><span class="math inline">\(H\)</span>: approximately fixed operator direction</li>
+<li><span class="math inline">\(\beta(\boldsymbol{\theta})\)</span>: smoothly varying inverse temperature</li>
+<li>Exact lock: <span class="math inline">\(\rho_0 = e^{-\beta_0 H}/Z\)</span> (Gibbs state), reversible flow stops</li>
+<li><span class="math inline">\(H\)</span> <strong>not assumed</strong> — selected from modular generator</li>
+</ul>
+</section>
+<section id="the-hamiltonian-clock" class="slide level2">
+<h2>The Hamiltonian Clock</h2>
 <div>
 <ul>
-<li class="fragment">In certain thermodynamic limits:
-<ul>
-<li class="fragment">Marginal entropy conservation <span class="math inline">\(\equiv\)</span> Energy conservation</li>
-</ul></li>
+<li class="fragment">Hamiltonian clock: <span class="math inline">\(\text{d}\tau_H = \beta(t)\,\text{d}t\)</span></li>
+<li class="fragment">Derived from entropy time — not independent</li>
+<li class="fragment"><span class="math inline">\(\beta(t)\)</span>: conversion between entropy-time and Hamiltonian phase</li>
+<li class="fragment">Within locked frame: reversible Lax sector + uniform dephasing</li>
+<li class="fragment">Operational: requires <span class="math inline">\(W_{\mathcal{R}} \gg 1\)</span></li>
 </ul>
-<p>See <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span></p>
+<p><em>Effective Hamiltonian mechanics as a local, emergent, conditional description</em></p>
 </div>
-<!-- SECTION Intelligence -->
-</section>
-<section id="intelligence" class="slide level2">
-<h2>Intelligence</h2>
-</section>
-<section id="perpetual-motion-and-superintelligence" class="slide level2">
-<h2>Perpetual Motion and Superintelligence</h2>
-<div>
-<ul>
-<li class="fragment">1925: Promises of perpetual motion cars</li>
-<li class="fragment">2025: Promises of superintelligence singularity</li>
-<li class="fragment">Same fundamental impossibility?</li>
-</ul>
-</div>
-</section>
-<section id="why-perpetual-motion-failed" class="slide level2">
-<h2>Why Perpetual Motion Failed</h2>
-<div>
-<p><span class="math display">\[\frac{\text{d}H}{\text{d}t} \geq 0\]</span></p>
-<ul>
-<li class="fragment">Entropy always increases</li>
-<li class="fragment">No motion without entropy production</li>
-<li class="fragment">No work without energy input</li>
-</ul>
-</div>
-</section>
-<section id="an-equivalent-statement-for-intelligence" class="slide level2">
-<h2>An Equivalent Statement for Intelligence?</h2>
-<div>
-<p><strong>Maxwell’s Demon:</strong></p>
-<ul>
-<li class="fragment">“Intelligent” entity that violates 2nd law</li>
-<li class="fragment">Resolution: Landauer’s principle?</li>
-<li class="fragment">Information erasure requires energy</li>
-</ul>
-</div>
-</section>
-<section id="implication" class="slide level2">
-<h2>Implication</h2>
-<div>
-<ul>
-<li class="fragment">Intelligence has thermodynamic cost</li>
-<li class="fragment">Information processing has physical limits</li>
-</ul>
-</div>
-</section>
-<section id="information-theoretic-limits" class="slide level2">
-<h2>Information-Theoretic Limits</h2>
-</section>
-<section id="information-theoretic-limits-on-intelligence" class="slide level2">
-<h2>Information-Theoretic Limits on Intelligence</h2>
-<div>
-<ul>
-<li class="fragment"><p>Thermodynamics limits mechanical engines</p></li>
-<li class="fragment"><p>Information theory limits information engines</p></li>
-</ul>
-<p><em>Same kind of fundamental constraint</em></p>
-</div>
-</section>
-<section id="what-intelligent-systems-must-do" class="slide level2">
-<h2>What Intelligent Systems Must Do</h2>
-<div>
-<ul>
-<li class="fragment">Acquire information (sensing)</li>
-<li class="fragment">Store information (memory)</li>
-<li class="fragment">Process information (computation)<br />
-</li>
-<li class="fragment">Erase information (memory mgmt)</li>
-<li class="fragment">Act on information (output)</li>
-</ul>
-<p><em>What is the thermodynamic cost?</em></p>
-</div>
-</section>
-<section id="landauers-principle" class="slide level2">
-<h2>Landauer’s Principle</h2>
-<div>
-<p>Erasing 1 bit requires: <span class="math inline">\(Q \geq k_BT\log 2\)</span></p>
-<ul>
-<li class="fragment">Not engineering limitation</li>
-<li class="fragment">Fundamental thermodynamic bound</li>
-<li class="fragment">Entropy must go somewhere</li>
-</ul>
-<p>At room temperature: <span class="math inline">\(\sim 3 \times 10^{-21}\)</span> Joules/bit</p>
-</div>
-</section>
-<section id="open-questions" class="slide level2">
-<h2>Open Questions</h2>
-<p><strong>Open Questions:</strong></p>
-<ul>
-<li>Formalise no barber principle</li>
-<li>What is the stage/game board/space</li>
-<li>Much to explore</li>
-</ul>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
