@@ -146,11 +146,16 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="baez-fritz-leinster-characterization-of-information-loss" class="slide level2">
 <h2>Baez-Fritz-Leinster Characterization of Information Loss</h2>
-<p><strong><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>:</strong> * Entropy from category theory * Three axioms uniquely determine information loss * No probability needed initially</p>
+<p><strong><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>:</strong></p>
+<ul>
+<li>Entropy from category theory</li>
+<li>Three axioms uniquely determine information loss</li>
+<li>No probability needed initially</li>
+</ul>
 </section>
 <section id="the-three-axioms" class="slide level2">
 <h2>The Three Axioms</h2>
-<p><strong>Axiom 1: Functoriality</strong> <span class="math display">\[F(f \circ g) = F(f) + F(g)\]</span></p>
+<p><span class="math display">\[F(f \circ g) = F(f) + F(g)\]</span></p>
 <ul>
 <li>Information loss is additive</li>
 <li>Compose processes → add losses</li>
@@ -158,7 +163,7 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="convex-linearity" class="slide level2">
 <h2>Convex Linearity</h2>
-<p><strong>Axiom 2: Convex Linearity</strong> <span class="math display">\[F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g)\]</span></p>
+<p><span class="math display">\[F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g)\]</span></p>
 <ul>
 <li>Probabilistic mixture of processes</li>
 <li>Linear in probability weights</li>
@@ -166,7 +171,6 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="continuity" class="slide level2">
 <h2>Continuity</h2>
-<p><strong>Axiom 3: Continuity</strong></p>
 <ul>
 <li>Small change in process</li>
 <li>Small change in information loss</li>
@@ -175,7 +179,6 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="the-main-result" class="slide level2">
 <h2>The Main Result</h2>
-<p><strong>Theorem:</strong></p>
 <p>Three axioms <span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math display">\[F(f) = c(H(p) - H(q))\]</span></p>
 <ul>
 <li>Information loss = scaled entropy difference</li>
@@ -527,111 +530,52 @@ The entropy ladder: each rung is an isoentropy class. Multiple configurations si
 <li>Together: unique trajectory through information geometry</li>
 </ul>
 </section>
-<section id="jaynes-and-maximum-entropy" class="slide level2">
-<h2>Jaynes and Maximum Entropy</h2>
-<div class="figure">
-<div id="e-t-jaynes-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Ed Jaynes who developed the maximum entropy principle
-</aside>
-</section>
-<section id="maximum-entropy-motivation" class="slide level2">
-<h2>Maximum Entropy Motivation</h2>
-<ul>
-<li><span class="citation" data-cites="Jaynes-information57">Jaynes (1957)</span>: Statistical mechanics as inference with incomplete information</li>
-<li>Maximum entropy principle: maximise uncertainty given constraints</li>
-<li>Avoids unwarranted assumptions beyond available data</li>
-</ul>
-</section>
-<section id="dice-example" class="slide level2">
-<h2>Dice Example</h2>
+<section id="information-relaxation-1" class="slide level2">
+<h2>Information Relaxation</h2>
 <div>
 <ul>
-<li class="fragment">Dice example: Average result 4.5 instead of 3.5</li>
-<li class="fragment">Constraints:
-<ul>
-<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
-<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
-</ul></li>
+<li class="fragment">Second law: Entropy increases (<span class="math inline">\(\dot{H} &gt; 0\)</span>)</li>
+<li class="fragment">Conservation: <span class="math inline">\(I + H = C\)</span> (constant)</li>
+<li class="fragment">Therefore: Correlation decreases (<span class="math inline">\(\dot{I} &lt; 0\)</span>)</li>
 </ul>
 </div>
 </section>
-<section id="die-roll-simulation" class="slide level2">
-<h2>Die Roll Simulation</h2>
+<section id="physical-intuition-1" class="slide level2">
+<h2>Physical intuition</h2>
+<div>
+<ul>
+<li class="fragment">Compressed spring <span class="math inline">\(\rightarrow\)</span> released energy</li>
+<li class="fragment">Correlated variables <span class="math inline">\(\rightarrow\)</span> independent variables</li>
+<li class="fragment">Potential <span class="math inline">\(\rightarrow\)</span> kinetic</li>
+</ul>
+</div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="visualisation-relaxation-dynamics-1" class="slide level2">
+<h2>Visualisation: Relaxation Dynamics</h2>
+</section>
+<section id="information-relaxation-dynamics-1" class="slide level2">
+<h2>Information Relaxation Dynamics</h2>
 <div class="figure">
-<div id="dieroll-simulation-figure" class="figure-frame">
-<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
-<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
-<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
-<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
-</canvas>
-<div style="font-size:0.75em;color:#888;text-align:center">
-click die or button to roll
-</div>
-<div style="display:flex;gap:6px">
-<button id="dieroll-roll">
-Roll
-</button>
-<button id="dieroll-roll100">
-Roll ×100
-</button>
-</div>
-<div style="text-align:center;line-height:1.6;font-size:0.85em">
-<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
-</div>
-<button id="dieroll-reset">
-Reset history
-</button>
-</div>
-<div style="flex:1;min-width:280px">
-<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
-</canvas>
-<div style="margin-top:6px">
-<div style="font-style:italic;margin-bottom:6px;color:#888">
-<p>Outcome weights (auto-normalised to probabilities)</p>
-</div>
-<div id="dieroll-sliders">
-
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
-<button id="dieroll-uniform">
-Uniform (mean 3.5)
-</button>
-<button id="dieroll-jaynes">
-Jaynes: mean 4.5
-</button>
-<button id="dieroll-low">
-Low-biased: mean 2
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
+<div id="i-plus-h-relaxation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
+</object>
 </div>
 </div>
 <aside class="notes">
-Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).
+Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.
 </aside>
 </section>
-<section id="the-general-maximum-entropy-formalism" class="slide level2">
-<h2>The General Maximum-Entropy Formalism</h2>
-<p><small> <span class="math display">\[
-p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
-\]</span> <span class="math display">\[
-Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
-\]</span> <span class="math display">\[
-\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
-\]</span></small></p>
+<section id="information-relaxation-dynamics-2" class="slide level2">
+<h2>Information Relaxation Dynamics</h2>
+<div>
+<ul>
+<li class="fragment">Multi-information <span class="math inline">\(I\)</span> decreases (correlations break)</li>
+<li class="fragment">Joint entropy <span class="math inline">\(H\)</span> increases (disorder grows)</li>
+<li class="fragment">Conservation: <span class="math inline">\(I + H = C\)</span> (black line)</li>
+<li class="fragment">Marginals: <span class="math inline">\(h_1\)</span>, <span class="math inline">\(h_2\)</span> constant (inaccessible!)</li>
+</ul>
+<p><em>Internal reorganisation invisible to external observer</em></p>
+</div>
 <!-- SECTION The Quantum Origin -->
 </section>
 <section id="the-quantum-origin" class="slide level2">
@@ -854,7 +798,7 @@ Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
 <section id="pendulum-animation" class="slide level2">
 <h2>Pendulum Animation</h2>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pendulum-energy-conservation-figure" class="figure-frame">
@@ -919,9 +863,6 @@ Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in term
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
-</div>
-<div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
-Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
 </div>
 <div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>
