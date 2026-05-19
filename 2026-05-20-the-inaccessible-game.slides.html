@@ -139,7 +139,7 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <p><strong>Forbidden:</strong></p>
 <ul>
 <li class="fragment">External observer</li>
-<li class="fragment">Pre-specified outcome space</li>
+<li class="fragment">Pre-specified outcome space/Hamiltonian</li>
 <li class="fragment">Privileged decomposition</li>
 <li class="fragment">External time parameter</li>
 </ul>
@@ -197,8 +197,8 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <div>
 <ul>
 <li class="fragment">Avoid external structure.</li>
-<li class="fragment">Represent information loss (via Entropy)</li>
-<li class="fragment">Enforce information conservation (information isolation, <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span>)</li>
+<li class="fragment">Represent information loss</li>
+<li class="fragment">Enforce information conservation</li>
 </ul>
 </div>
 <!-- SECTION Information Isolation -->
@@ -210,11 +210,10 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <h2>Information Isolation</h2>
 <div>
 <ul>
-<li class="fragment">Define information loss </li>
-<li class="fragment">Isolate game is <em>isolated from observation</em></li>
+<li class="fragment">Define information loss</li>
+<li class="fragment">Isolate game from observation/interaction</li>
 <li class="fragment">No external observer can extract or inject information</li>
 </ul>
-<p><em>Analogous to energy conservation in thermodynamics</em></p>
 </div>
 </section>
 <section id="marginal-entropy-conservation" class="slide level2">
@@ -224,15 +223,14 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 \sum_{i=1}^N h_i = C
 \]</span></p>
 <ul>
-<li class="fragment">Exchangeable: holds for any finite subset of variables</li>
+<li class="fragment">(Entropically) Exchangeable: holds for any finite subset of variables</li>
 <li class="fragment">Extensive: scales linearly with system size</li>
-<li class="fragment">Analogous to energy conservation — but for information</li>
+<li class="fragment">Isolation: <em>cf</em> energy conservation — but for information</li>
 </ul>
 </div>
 </section>
 <section id="why-this-form" class="slide level2">
 <h2>Why This Form?</h2>
-<p><strong>Uniqueness of the Form:</strong></p>
 <p>Any exchangeable, extensive conservation law over marginal entropies must be: <span class="math display">\[Q(\{h_i\}) = \sum_i f(h_i), \quad f(h) = c \cdot h\]</span></p>
 <p><span class="math inline">\(\Rightarrow\)</span> unique form: <span class="math inline">\(\sum_i h_i = C\)</span></p>
 </section>
@@ -243,8 +241,44 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <li class="fragment">Enforces <em>internality</em>: no external reference structures</li>
 <li class="fragment">Enforces <em>relationality</em>: all quantities defined internally</li>
 </ul>
-<p><em>Marginal entropy conservation = information geometry’s built-in potential</em></p>
+<p><em>Marginal entropy conservation <span class="math inline">\(\equiv\)</span> information geometry’s built-in potential</em></p>
 </div>
+</section>
+<section id="the-classical-observer" class="slide level2">
+<h2>The Classical Observer</h2>
+<div class="figure">
+<div id="observer-composite-independent-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Here the observer is monitoring the movements of the particles. We’ve plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.
+</aside>
+</section>
+<section id="the-classical-observer---correlated" class="slide level2">
+<h2>The Classical Observer - Correlated</h2>
+<div class="figure">
+<div id="observer-composite-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Again the observer is monitoring the movements of the particles, but here their motion is correlated (<span class="math inline">\(\rho=0.95\)</span>).
+</aside>
+</section>
+<section id="the-classical-observer---anti-correlated" class="slide level2">
+<h2>The Classical Observer - Anti-correlated</h2>
+<div class="figure">
+<div id="observer-composite-anti-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-anti-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).
+</aside>
 </section>
 <section id="the-classical-observer---inaccessible" class="slide level2">
 <h2>The Classical Observer - Inaccessible</h2>
@@ -831,9 +865,6 @@ Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in term
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
-</div>
-<div id="ref-Lawrence-inaccessible25" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/arXiv.2511.06795">https://doi.org/10.48550/arXiv.2511.06795</a>
 </div>
 <div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
 Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
