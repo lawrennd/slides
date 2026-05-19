@@ -385,40 +385,8 @@ I + H = C
 </table>
 <p><em>System “rolls downhill” from correlation to entropy</em></p>
 </section>
-<section id="configurations-without-visibility" class="slide level2">
-<h2>Configurations Without Visibility</h2>
-<div>
-<ul>
-<li class="fragment">Cannot inspect the configuration, <span class="math inline">\(\rho\)</span>, directly</li>
-<li class="fragment">But <em>entropy</em> requires no external reference</li>
-<li class="fragment">Internally accessible: no external adjudicator needed</li>
-</ul>
-</div>
-</section>
-<section id="entropy-orders-the-configurations" class="slide level2">
-<h2>Entropy Orders the Configurations</h2>
-<div>
-<ul>
-<li class="fragment"><span class="math inline">\(S\)</span> maps each configuration to <span class="math inline">\([0, \infty)\)</span></li>
-<li class="fragment">Pull back the order on <span class="math inline">\(\mathbb{R}\)</span>: <span class="math inline">\(\rho \leq \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) \leq S(\rho&#39;)\)</span></li>
-<li class="fragment">Reflexive ✓, Transitive ✓, Antisymmetric ✗ (distinct <span class="math inline">\(\rho\)</span> can share entropy)</li>
-<li class="fragment"><strong>Preorder</strong> (not a partial order): configurations form a <strong>proset</strong></li>
-</ul>
-</div>
-</section>
-<section id="isoentropy-and-the-quotient-poset" class="slide level2">
-<h2>Isoentropy and the Quotient Poset</h2>
-<div>
-<ul>
-<li class="fragment">Isoentropy: <span class="math inline">\(\rho \sim \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span> — an equivalence class</li>
-<li class="fragment">Quotient <span class="math inline">\([\rho]\)</span>: each class is one point <span class="math inline">\(\to\)</span> antisymmetry holds <span class="math inline">\(\to\)</span> <em>poset</em></li>
-<li class="fragment">Since <span class="math inline">\(S\)</span> maps into <span class="math inline">\(\mathbb{R}\)</span>: every two classes are comparable <span class="math inline">\(\to\)</span> <em>chain</em> (total order)</li>
-<li class="fragment">From outside: only the chain of entropy levels is visible</li>
-</ul>
-</div>
-</section>
-<section id="configuration-mapping" class="slide level2">
-<h2>Configuration Mapping</h2>
+<section id="entropy-configuration-mapping" class="slide level2">
+<h2>Entropy Configuration Mapping</h2>
 <div class="figure">
 <div id="configurations-to-entropy-line-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/configurations-to-entropy-line.svg" width="80%" style=" ">
@@ -664,42 +632,6 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 <li>Copyable data enables Lawvere self-application</li>
 <li>Noncommutative states do not expose basis-independent outcomes</li>
 <li>The selection is operational: no primitive outcome-copying</li>
-</ul>
-</section>
-<section id="variational-derivation-of-the-initial-curvature-structure" class="slide level2">
-<h2>Variational Derivation of the Initial Curvature Structure</h2>
-</section>
-<section id="variational-derivation" class="slide level2">
-<h2>Variational Derivation</h2>
-<ul>
-<li>Determine constraints on Fisher Information Matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span></li>
-<li>Follow Jaynes’ approach to solve variational problem</li>
-<li>Capture structure of system’s minimal entropy state</li>
-</ul>
-</section>
-<section id="uncertainty-principles" class="slide level2">
-<h2>Uncertainty Principles</h2>
-<ul>
-<li>Hirschman uncertainty principle: entropy of function and Fourier transform</li>
-<li>Beckner strengthened the inequality with optimal constant</li>
-<li>Bialynicki extended to information entropy in wave mechanics</li>
-<li>System respects these limits via von Neumann entropy</li>
-</ul>
-</section>
-<section id="density-matrix-form" class="slide level2">
-<h2>Density Matrix Form</h2>
-<ul>
-<li><span class="math inline">\(\rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)\)</span></li>
-<li><span class="math inline">\(Z(\boldsymbol{\theta}) = \mathrm{tr}\left[\exp\left( \sum_i \theta_i H_i \right)\right]\)</span></li>
-<li><span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^d\)</span>, <span class="math inline">\(H_i\)</span> are Hermitian observables</li>
-</ul>
-</section>
-<section id="von-neumann-entropy" class="slide level2">
-<h2>Von Neumann Entropy</h2>
-<ul>
-<li><span class="math inline">\(S[\rho] = -\text{tr} (\rho \log \rho)\)</span></li>
-<li>Minimal entropy configuration via Jaynes’ variational approach</li>
-<li>Derive density matrix from information-theoretic constraints</li>
 </ul>
 </section>
 <section id="the-lme-origin" class="slide level2">
