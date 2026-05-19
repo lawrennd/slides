@@ -401,11 +401,12 @@ Many configurations (density matrices <span class="math inline">\(\rho\)</span>)
 <h2>The Entropy Ladder</h2>
 <div>
 <ul>
-<li class="fragment">Bottom (<span class="math inline">\(S=0\)</span>): pure state — fully ordered, single configuration</li>
-<li class="fragment">Higher rungs: mixed states — more equivalence classes at each level</li>
+<li class="fragment">Bottom (<span class="math inline">\(S=0\)</span>): pure states — many configurations, one entropy class</li>
+<li class="fragment">Higher rungs: mixed states — many configurations per isoentropy class</li>
 <li class="fragment">No canonical top: maximum entropy grows with system dimension</li>
 <li class="fragment">Dynamics = movement along the ladder</li>
-<li class="fragment">Functor: <span class="math inline">\(S : \textsf{NCFinProb} \to (\mathbb{R}_{\geq 0}, \leq)\)</span></li>
+<li class="fragment">Entropy induces a preorder: <span class="math inline">\(\rho \preceq_S \sigma \iff S(\rho)\leq S(\sigma)\)</span></li>
+<li class="fragment">Isoentropy quotient <span class="math inline">\(\mathrm{Conf}/{\sim_S}\)</span> is a totally ordered entropy ladder</li>
 </ul>
 </div>
 </section>
@@ -711,39 +712,6 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 <li class="fragment"><em>Progress measured by entropy produced, not by an external tick</em></li>
 </ul>
 </div>
-<!-- SECTION Connections -->
-</section>
-<section id="connections" class="slide level2">
-<h2>Connections</h2>
-</section>
-<section id="connections-1" class="slide level2">
-<h2>Connections</h2>
-<div>
-<ul>
-<li class="fragment">Nice connections between.
-<ul>
-<li class="fragment">Thermodynamics and Inference (Jaynes).</li>
-<li class="fragment">Information Geometry and GENERIC.</li>
-<li class="fragment">Inaccessibility and noncommutative probability.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="pendulum-animation" class="slide level2">
-<h2>Pendulum Animation</h2>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="pendulum-energy-conservation-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/pendulum-energy-conservation.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Pendulum energy conservation: the pendulum (left) trades potential and kinetic energy while total energy (red line, right) remains constant. Green shows kinetic energy, orange shows potential energy.
-</aside>
 <!-- SECTION Hamiltonian Emergence (In Preparation) -->
 </section>
 <section id="hamiltonian-emergence-in-preparation" class="slide level2">
