@@ -648,12 +648,52 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 <h2>Constraint Saturation and the Gibbs Lock</h2>
 <div>
 <ul>
-<li class="fragment">At <span class="math inline">\(C=C_{\max}\)</span>: every <span class="math inline">\(s_i = \log d_i\)</span> — at individual ceiling</li>
-<li class="fragment">Marginals locked: <span class="math inline">\(s_i(\tau) = \log d_i\)</span> for all time</li>
-<li class="fragment">Constraint gradient <span class="math inline">\(\mathbf{a}=\mathbf{0}\)</span> — first-order condition vacuous</li>
-<li class="fragment">Admissible velocities: <span class="math inline">\(\dot{\boldsymbol{\theta}}\in\ker\nabla^2 C(\boldsymbol{\theta}^*)\)</span></li>
+<li class="fragment">Marginal entropies linked: <span class="math inline">\(s_1 + s_2 = C\)</span> (conserved sum)</li>
+<li class="fragment">Individual ceilings: <span class="math inline">\(s_i \leq \log d_i\)</span></li>
+<li class="fragment">Trade-off: as one marginal rises, the other must fall</li>
 </ul>
-<p><em>Constraint becomes second-order only</em></p>
+</div>
+</section>
+<section id="linked-marginal-entropies" class="slide level2">
+<h2>Linked Marginal Entropies</h2>
+<div class="figure">
+<div id="marginal-entropy-tradeoff-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/marginal-entropy-tradeoff.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The marginal-entropy conservation constraint <span class="math inline">\(s_1 + s_2 = C\)</span> in the <span class="math inline">\((s_1,s_2)\)</span> plane. The dashed lines mark the individual ceilings <span class="math inline">\(s_i = \log d\)</span>. Along the constraint segment, increasing one marginal entropy forces a decrease in the other.
+</aside>
+</section>
+<section id="saturation-and-second-order" class="slide level2">
+<h2>Saturation and Second Order</h2>
+<div>
+<ul>
+<li class="fragment">At <span class="math inline">\(C=C_{\max}\)</span>: every <span class="math inline">\(s_i = \log d_i\)</span> — each at its individual ceiling</li>
+<li class="fragment">Marginals locked: <span class="math inline">\(s_i(\tau) = \log d_i\)</span> for all time</li>
+</ul>
+</div>
+</section>
+<section id="saturation-of-constraint" class="slide level2">
+<h2>Saturation of Constraint</h2>
+<div class="figure">
+<div id="marginal-entropy-saturation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/marginal-entropy-saturation.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+As <span class="math inline">\(C\)</span> increases toward <span class="math inline">\(C_{\max} = \sum_i \log d_i\)</span>, the accessible constraint segment (coloured lines) shrinks. At <span class="math inline">\(C = C_{\max}\)</span> the constraint collapses to the single corner point (red dot), the LME origin, where every marginal entropy is individually at its ceiling and the constraint gradient vanishes.
+</aside>
+</section>
+<section id="saturation-of-constraint-1" class="slide level2">
+<h2>Saturation of Constraint</h2>
+<div>
+<ul>
+<li class="fragment">First-order condition vacuous</li>
+<li class="fragment">Admissible velocities: <span class="math inline">\(\dot{\boldsymbol{\theta}}\in \ker\nabla^2 \sum_i h_i\)</span></li>
+</ul>
 </div>
 </section>
 <section id="generic-dynamics-at-the-origin" class="slide level2">
