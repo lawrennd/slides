@@ -346,6 +346,9 @@ p(\mathbf{ y}|\naturalParameters) = \exp\!\left(\naturalParameters^\top T(\mathb
 <li>Maximum entropy production: unique in Fisher metric</li>
 <li>Constraint: marginal entropy conservation</li>
 </ul>
+</section>
+<section id="maximum-entropy-production-1" class="slide level2">
+<h2>Maximum Entropy Production</h2>
 <p>Maximise <span class="math display">\[
 \frac{\text{d}H}{\text{d}\tau}
 \]</span> subject to <span class="math inline">\(\sum_i h_i = C\)</span></p>
@@ -359,7 +362,11 @@ p(\mathbf{ y}|\naturalParameters) = \exp\!\left(\naturalParameters^\top T(\mathb
 </section>
 <section id="linearised-flow" class="slide level2">
 <h2>Linearised Flow</h2>
-<p><span class="math display">\[\dot{\mathbf{q}} = M\mathbf{q}\]</span> where <span class="math inline">\(M = S + A\)</span> * <span class="math inline">\(S\)</span> is symmetric and irreversible (entropy production) * *<span class="math inline">\(A\)</span> is antisymmetric and reversible (entropy-conserving)</p>
+<p><span class="math display">\[\dot{\mathbf{q}} = M\mathbf{q}\]</span> where <span class="math inline">\(M = S + A\)</span></p>
+<ul>
+<li><span class="math inline">\(S\)</span> is symmetric and irreversible (entropy production)</li>
+<li>*<span class="math inline">\(A\)</span> is antisymmetric and reversible (entropy-conserving)</li>
+</ul>
 </section>
 <section id="information-relaxation-dynamics" class="slide level2">
 <h2>Information Relaxation Dynamics</h2>
@@ -504,65 +511,50 @@ As <span class="math inline">\(C\)</span> increases toward <span class="math inl
 </section>
 <section id="entropy-time" class="slide level2">
 <h2>Entropy Time</h2>
-<div>
 <ul>
-<li class="fragment">Game time <span class="math inline">\(\tau\)</span>: affine parameter, degenerates at origin</li>
-<li class="fragment"><span class="math inline">\(\|\boldsymbol{\theta}\|\to\infty\)</span>, entropy production <span class="math inline">\(\to 0\)</span></li>
-<li class="fragment">Infinite game time to cover finite entropy range</li>
-<li class="fragment">Need: an <em>internal</em> clock — external clocks forbidden by isolation</li>
+<li>Need: an <em>internal</em> clock — external clocks forbidden by isolation</li>
+<li>Game time <span class="math inline">\(\tau\)</span>: affine parameter, degenerates at origin</li>
 </ul>
-</div>
 </section>
 <section id="entropy-time-1" class="slide level2">
 <h2>Entropy Time</h2>
 <p><span class="math display">\[\frac{\text{d}S}{\text{d}t} = c \quad \text{(constant entropy production)}\]</span></p>
 <ul>
-<li>1 unit of <span class="math inline">\(t\)</span> = <span class="math inline">\(c\)</span> nats of entropy produced</li>
-<li>Unique reparametrisation (up to affine shift) with this property</li>
-<li>External clock forbidden by isolation — entropy provides the clock</li>
-<li>Finite entropy-time interval replaces infinite affine-time approach</li>
+<li><p>1 unit of <span class="math inline">\(t\)</span> = <span class="math inline">\(c\)</span> nats of entropy produced</p></li>
+<li><p>No external clock, temperature, or Hamiltonian</p></li>
+<li><p>Progress measured by entropy produced</p></li>
 </ul>
-</section>
-<section id="entropy-time-is-axiomatically-distinguished" class="slide level2">
-<h2>Entropy Time is Axiomatically Distinguished</h2>
-<div>
-<ul>
-<li class="fragment">No external clock, temperature, or Hamiltonian needed</li>
-<li class="fragment">Axiomatically distinguished: uniquely specifiable from within the game</li>
-<li class="fragment">Uniformises the irreversible (dissipative) sector</li>
-<li class="fragment">Resolves the boundary degeneration of natural-parameter flow</li>
-<li class="fragment"><em>Progress measured by entropy produced, not by an external tick</em></li>
-</ul>
-</div>
 </section>
 <section id="from-information-geometry-to-hamiltonian-mechanics" class="slide level2">
 <h2>From Information Geometry to Hamiltonian Mechanics</h2>
-<p>The inaccessible game has <strong>no Hamiltonian</strong> in its axioms.</p>
-<p>Yet in metastable <em>Gibbs-locked</em> regions, an effective Hamiltonian description emerges from the information geometry.</p>
-<p><em>(Work in preparation)</em></p>
+<ul>
+<li>No imposed Hamiltonian</li>
+<li>Gibbs-locked regions, effective Hamitonian emergence <em>(Work in preparation)</em></li>
+</ul>
 </section>
 <section id="the-gibbs-lock-condition" class="slide level2">
 <h2>The Gibbs-lock Condition</h2>
 <p><span class="math display">\[K(\boldsymbol{\theta}) \approx -\beta(\boldsymbol{\theta})\,H\]</span></p>
 <ul>
-<li><span class="math inline">\(H\)</span>: approximately fixed operator direction</li>
+<li><span class="math inline">\(H\)</span>: fixed operator</li>
 <li><span class="math inline">\(\beta(\boldsymbol{\theta})\)</span>: smoothly varying inverse temperature</li>
-<li>Exact lock: <span class="math inline">\(\rho_0 = e^{-\beta_0 H}/Z\)</span> (Gibbs state), reversible flow stops</li>
-<li><span class="math inline">\(H\)</span> <strong>not assumed</strong> — selected from modular generator</li>
 </ul>
 </section>
 <section id="the-hamiltonian-clock" class="slide level2">
 <h2>The Hamiltonian Clock</h2>
-<div>
 <ul>
-<li class="fragment">Hamiltonian clock: <span class="math inline">\(\text{d}\tau_H = \beta(t)\,\text{d}t\)</span></li>
-<li class="fragment">Derived from entropy time — not independent</li>
-<li class="fragment"><span class="math inline">\(\beta(t)\)</span>: conversion between entropy-time and Hamiltonian phase</li>
-<li class="fragment">Within locked frame: reversible Lax sector + uniform dephasing</li>
-<li class="fragment">Operational: requires <span class="math inline">\(W_{\mathcal{R}} \gg 1\)</span></li>
+<li>Has an associated Hamiltonian clock</li>
+<li><span class="math inline">\(\beta(t)\)</span>: conversion between entropy-time and Hamiltonian clock</li>
 </ul>
-<p><em>Effective Hamiltonian mechanics as a local, emergent, conditional description</em></p>
-</div>
+</section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+<ul>
+<li>No barber principle</li>
+<li>Information isolation</li>
+<li>Axiomatic selection</li>
+<li>Emergent effective rules</li>
+</ul>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
