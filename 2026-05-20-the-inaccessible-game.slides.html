@@ -350,6 +350,33 @@ p(\mathbf{ y}|\boldsymbol{ \theta}) = \exp\!\left(\boldsymbol{ \theta}^\top T(\m
 \frac{\text{d}H}{\text{d}\tau}
 \]</span> subject to <span class="math inline">\(\sum_i h_i = C\)</span></p>
 </section>
+<section id="constrained-entropy-ascent" class="slide level2">
+<h2>Constrained Entropy Ascent</h2>
+</section>
+<section id="entropy-via-the-log-partition-function" class="slide level2">
+<h2>Entropy via the Log-Partition Function</h2>
+<p><span class="math display">\[H(\boldsymbol{\theta}) = \psi(\boldsymbol{\theta}) - \boldsymbol{\theta}\cdot\nabla\psi(\boldsymbol{\theta})\]</span></p>
+<ul>
+<li><span class="math inline">\(\psi(\boldsymbol{\theta})\)</span>: log-partition function (CGF)</li>
+<li><span class="math inline">\(\boldsymbol{\eta} = \nabla\psi\)</span>: moment parameters <span class="math inline">\(\eta_k = \mathbb{E}[f_k]\)</span></li>
+<li><span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2\psi\)</span>: Fisher information matrix</li>
+</ul>
+</section>
+<section id="natural-gradient-of-entropy" class="slide level2">
+<h2>Natural Gradient of Entropy</h2>
+<p><span class="math display">\[\nabla_{\!\boldsymbol{\theta}} H = -G(\boldsymbol{\theta})\boldsymbol{\theta}\]</span></p>
+<p>Natural gradient: <span class="math display">\[\nabla^{\mathrm{nat}} H = G^{-1}\nabla_{\!\boldsymbol{\theta}} H = -\boldsymbol{\theta}\]</span></p>
+<ul>
+<li>Steepest entropy ascent <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\dot{\boldsymbol{\theta}} \propto -\boldsymbol{\theta}\)</span></li>
+<li>Descent in natural parameters — the symmetric part</li>
+</ul>
+</section>
+<section id="constrained-natural-gradient-dynamics" class="slide level2">
+<h2>Constrained Natural Gradient Dynamics</h2>
+<p><span class="math display">\[\dot{\boldsymbol{\theta}} = -\boldsymbol{\theta} + \nu(\tau)\,G^{-1}(\boldsymbol{\theta}) \mathbf{a}(\boldsymbol{\theta})\]</span></p>
+<p><span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}) = \nabla_{\!\boldsymbol{\theta}}\!\sum_i h_i\)</span> — constraint gradient.</p>
+<p><span class="math display">\[\nu(\tau) = \frac{\mathbf{a}^\top\boldsymbol{\theta}}{\mathbf{a}^\top G^{-1}\mathbf{a}}\]</span></p>
+</section>
 <section id="generic-like-structure" class="slide level2">
 <h2>GENERIC-like Structure</h2>
 <ul>
