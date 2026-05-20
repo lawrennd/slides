@@ -33,11 +33,11 @@
 
   <!-- Tick: s1 = log d -->
   <line x1="340" y1="297" x2="340" y2="304" stroke="currentColor" stroke-width="1.5"/>
-  <text x="340" y="320" text-anchor="middle" font-size="13" fill="currentColor">log d</text>
+  <text x="340" y="320" text-anchor="middle" font-size="13" fill="currentColor">log <tspan font-style="italic">d</tspan></text>
 
   <!-- Tick: s2 = log d -->
   <line x1="76" y1="40" x2="84" y2="40" stroke="currentColor" stroke-width="1.5"/>
-  <text x="72" y="44" text-anchor="end" font-size="13" fill="currentColor">log d</text>
+  <text x="72" y="44" text-anchor="end" font-size="13" fill="currentColor">log <tspan font-style="italic">d</tspan></text>
 
   <!-- Origin -->
   <text x="80" y="320" text-anchor="middle" font-size="13" fill="currentColor">0</text>
@@ -50,8 +50,8 @@
         stroke="#888" stroke-width="1.5" stroke-dasharray="5,4"/>
 
   <!-- Ceiling labels -->
-  <text x="344" y="185" font-size="12" fill="#888">s<tspan dy="4" font-size="9">1</tspan><tspan dy="-4"> = log d</tspan></text>
-  <text x="210" y="34" text-anchor="middle" font-size="12" fill="#888">s<tspan dy="4" font-size="9">2</tspan><tspan dy="-4"> = log d</tspan></text>
+  <text x="344" y="185" font-size="12" fill="#888"><tspan font-style="italic">s</tspan><tspan dy="4" font-size="9">1</tspan><tspan dy="-4"> = log <tspan font-style="italic">d</tspan></tspan></text>
+  <text x="210" y="34" text-anchor="middle" font-size="12" fill="#888">s<tspan dy="4" font-size="9">2</tspan><tspan dy="-4"> = log <tspan font-style="italic">d</tspan></tspan></text>
 
   <!-- Feasible square (faint guide) -->
   <rect x="80" y="40" width="260" height="260"
@@ -62,8 +62,10 @@
         stroke="#4477AA" stroke-width="2.5"/>
 
   <!-- Constraint label (below-right of centre, clear of arrows) -->
-  <text x="258" y="218" font-size="14" fill="#4477AA">s<tspan dy="5" font-size="10">1</tspan><tspan dy="-5"> + s</tspan><tspan dy="5" font-size="10">2</tspan><tspan dy="-5"> = C</tspan></text>
-  <text x="258" y="235" font-size="12" fill="#4477AA" font-style="italic">(conserved)</text>
+  <text x="258" y="218" font-size="14" fill="#4477AA"><tspan
+  font-style="italic">s</tspan><tspan dy="5"
+  font-size="10">1</tspan><tspan dy="-5"> + s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="8">2</tspan><tspan baseline-shift="sub" font-style="normal" font-size="8"> = C</tspan></text>
+  <text x="258" y="235" font-size="12" fill="#4477AA">(conserved)</text>
 
   <!--
     Trade-off arrows from midpoint M=(236,144).
@@ -76,9 +78,9 @@
         stroke="#CC4400" stroke-width="2" marker-end="url(#tarr)"/>
 
   <!-- Trade-off labels (plain ASCII, near arrowheads) -->
-  <text x="96" y="95" font-size="12" fill="#CC4400">s<tspan dy="4" font-size="9">2</tspan><tspan dy="-4"> rises, s</tspan><tspan dy="4" font-size="9">1</tspan><tspan dy="-4"> falls</tspan></text>
-  <text x="214" y="204" font-size="12" fill="#CC4400">s<tspan dy="4" font-size="9">1</tspan><tspan dy="-4"> rises, s</tspan><tspan dy="4" font-size="9">2</tspan><tspan dy="-4"> falls</tspan></text>
+  <text x="96" y="95" font-size="12" fill="#CC4400"><tspan font-style="italic">s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="9">2</tspan> rises, <tspan font-style="italic">s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="9">1</tspan> falls</text>
+  <text x="214" y="204" font-size="12" fill="#CC4400"><tspan font-style="italic">s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="9">1</tspan> rises, <tspan font-style="italic">s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="10">2</tspan> falls</text>
 
   <!-- Caption -->
-  <text x="210" y="350" text-anchor="middle" font-size="12" fill="#555" font-style="italic">Conservation: s1 + s2 = C fixed. If one rises, the other must fall.</text>
+  <text x="210" y="350" text-anchor="middle" font-size="12" fill="#555">Conservation: <tspan font-style="italic">s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="10">1</tspan> + <tspan font-style="italic">s</tspan><tspan baseline-shift="sub" font-style="normal" font-size="10">2</tspan> = C fixed. If one rises, the other must fall.</text>
 </svg>
