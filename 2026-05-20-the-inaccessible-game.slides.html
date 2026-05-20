@@ -296,9 +296,6 @@ I + H = C
 </ul>
 </div>
 </section>
-<section id="physical-analogy" class="slide level2">
-<h2>Physical Analogy</h2>
-</section>
 <section id="entropy-configuration-mapping" class="slide level2">
 <h2>Entropy Configuration Mapping</h2>
 <div class="figure">
@@ -326,12 +323,12 @@ The entropy ladder: each rung is an isoentropy class. Multiple configurations si
 <section id="the-exponential-family" class="slide level2">
 <h2>The Exponential Family</h2>
 <p><span class="math display">\[
-p(\mathbf{ y}|\naturalParameters) = \exp\!\left(\naturalParameters^\top T(\mathbf{ y}) - A(\naturalParameters)\right)
+p(\mathbf{ y}|\boldsymbol{ \theta}) = \exp\!\left(\boldsymbol{ \theta}^\top T(\mathbf{ y}) - \psi(\boldsymbol{ \theta})\right)
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\naturalParameters\)</span>: natural parameters</li>
-<li><span class="math inline">\(A(\cdot)\)</span>: cumulant generating function</li>
-<li><span class="math inline">\(G(\naturalParameters) = \nabla^2A(\naturalParameters)\)</span>: Fisher information</li>
+<li><span class="math inline">\(\boldsymbol{ \theta}\)</span>: natural parameters</li>
+<li><span class="math inline">\(\psi(\cdot)\)</span>: cumulant generating function</li>
+<li><span class="math inline">\(G(\boldsymbol{ \theta}) = \nabla^2\psi(\boldsymbol{ \theta})\)</span>: Fisher information</li>
 </ul>
 </section>
 <section id="axiomatically-distinguished" class="slide level2">
@@ -365,7 +362,7 @@ p(\mathbf{ y}|\naturalParameters) = \exp\!\left(\naturalParameters^\top T(\mathb
 <p><span class="math display">\[\dot{\mathbf{q}} = M\mathbf{q}\]</span> where <span class="math inline">\(M = S + A\)</span></p>
 <ul>
 <li><span class="math inline">\(S\)</span> is symmetric and irreversible (entropy production)</li>
-<li>*<span class="math inline">\(A\)</span> is antisymmetric and reversible (entropy-conserving)</li>
+<li><span class="math inline">\(A\)</span> is antisymmetric and reversible (entropy-conserving)</li>
 </ul>
 </section>
 <section id="information-relaxation-dynamics" class="slide level2">
@@ -379,14 +376,6 @@ p(\mathbf{ y}|\naturalParameters) = \exp\!\left(\naturalParameters^\top T(\mathb
 <aside class="notes">
 Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.
 </aside>
-</section>
-<section id="information-relaxation-dynamics-1" class="slide level2">
-<h2>Information Relaxation Dynamics</h2>
-<ul>
-<li>Multi-information <span class="math inline">\(I\)</span> decreases (correlations break)</li>
-<li>Joint entropy <span class="math inline">\(H\)</span> increases (disorder grows)</li>
-<li>Conservation: <span class="math inline">\(I + H = C\)</span> (black line)</li>
-</ul>
 </section>
 <section id="classical-obstruction-at-the-origin" class="slide level2">
 <h2>Classical Obstruction at the Origin</h2>
@@ -410,7 +399,7 @@ S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
 <section id="information-loss-axioms" class="slide level2">
 <h2>Information Loss Axioms</h2>
 <ul>
-<li>Provided by <span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span> (quantum analogue of BFL)</li>
+<li>Provided by <span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span> (quantum analogue of <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>)</li>
 </ul>
 </section>
 <section id="the-matrix-exponential-family" class="slide level2">
@@ -421,7 +410,7 @@ S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
 <ul>
 <li><span class="math inline">\(\boldsymbol{\theta}\)</span>: natural parameters</li>
 <li><span class="math inline">\(\psi(\boldsymbol{\theta}) = \log\,\mathrm{tr}\exp\!\left(\sum_k\theta_k F_k\right)\)</span>: cumulant generating function</li>
-<li><span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2\Psi(\boldsymbol{\theta})\)</span>: BKM metric (quantum Fisher information)</li>
+<li><span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2\psi(\boldsymbol{\theta})\)</span>: BKM metric (quantum Fisher information)</li>
 </ul>
 </section>
 <section id="faithful-states" class="slide level2">
