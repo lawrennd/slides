@@ -187,9 +187,11 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <section id="the-inaccessible-game-setup" class="slide level2">
 <h2>The Inaccessible Game Setup</h2>
 <ul>
-<li>Avoid external structure.</li>
-<li>Represent information loss</li>
-<li>Enforce information conservation</li>
+<li><p>Avoid external structure.</p></li>
+<li><p>Represent information loss</p></li>
+<li><p>Enforce information conservation</p></li>
+<li><p>Partition of system into subsystems <span class="math inline">\(\{X_i\}\)</span>: model specification (not derived internally)</p></li>
+<li><p>No-barber principle applies <em>within</em> this choice — the partition is an irreducible input</p></li>
 </ul>
 </section>
 <section id="information-isolation" class="slide level2">
@@ -482,11 +484,10 @@ As <span class="math inline">\(C\)</span> increases toward <span class="math inl
 </section>
 <section id="generic-dynamics-at-the-origin" class="slide level2">
 <h2>GENERIC Dynamics at the Origin</h2>
-<p><span class="math display">\[\dot{\boldsymbol{\theta}} \propto \underbrace{-\Pi_{\mathrm{marg}}\boldsymbol{\theta}}_{\text{dissipative}} + \underbrace{\mathrm{ad}_\xi\,\boldsymbol{\theta}}_{\text{reversible (Lax)}}\]</span></p>
+<p>At the LME origin, constraint geometry produces a GENERIC decomposition <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>:</p>
 <ul>
-<li>Reversible: <span class="math inline">\(\dot{\rho} = -\mathrm{i}[K,\rho]\)</span> — von Neumann equation emerges</li>
-<li>Irreversible: steepest entropy ascent in marginal-preserving subspace</li>
-<li>No Hamiltonian assumed — it emerges from constraint geometry</li>
+<li>Reversible (Lax): <span class="math inline">\(\dot{\rho} = -\mathrm{i}[K,\rho]\)</span> — von Neumann equation emerges</li>
+<li>Irreversible (SEA): steepest entropy ascent in marginal-preserving subspace</li>
 </ul>
 </section>
 <section id="the-origin-is-unreachable" class="slide level2">
@@ -564,6 +565,9 @@ Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in term
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
+</div>
+<div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>
 </div>
 <div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
 Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
