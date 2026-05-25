@@ -95,6 +95,9 @@
 </section>
 <section id="the-munchkin-provision" class="slide level2">
 <h2>The Munchkin Provision</h2>
+<aside class="notes">
+So there’s a board game called Munchkin — it’s a card game I used to play with my kids. You have cards that battle each other. The interesting thing about this game is that it explicitly says in the rules that the rules can be inconsistent. There’s a set of written rules, and then there are cards which have different rules on them.
+</aside>
 <div class="figure">
 <div id="munchkin-game-cover-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -108,6 +111,9 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="munchkin-card-game" class="slide level2">
 <h2>Munchkin Card Game</h2>
+<aside class="notes">
+And it says: if the rules are inconsistent, any other dispute should be settled by loud arguments, with the owner of the game having the last word. And it occurs to me that the Munchkin provision is a property of almost every game or activity we engage in — there has to be an arbitrator to settle how the rules go. But you can reverse that and say: a self-governing system cannot refer to external arbitration. That’s a tautology. If you want a self-governing system, it can’t ask the owner of the game what to do next. And the interesting thing I want to explore today is whether there’s anything interesting in that tautology that we can use to say something about self-governing systems.
+</aside>
 <p>Rules may be inconsistent … so …</p>
 <blockquote>
 <p>Any other disputes should be settled by loud arguments, with the owner of the game having the last word.</p>
@@ -119,9 +125,15 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <blockquote>
 <p>Self-governing systems cannot refer to external arbitration.</p>
 </blockquote>
+<aside class="notes">
+Why should we care about self-governing systems? Well, you’d expect the rules of physics to be self-governing. It would be a problem if a rule of physics had to pause and check VAR — an external decision made outside the game. That clearly cannot work for a dynamical system we expect to be self-sustaining and self-adjudicating. So I’m going to try and formalise this tautology and see what mathematical structure it forces on us.
+</aside>
 </section>
 <section id="the-no-barber-principle" class="slide level2">
 <h2>The No-Barber Principle</h2>
+<aside class="notes">
+So I’ve got three papers in this series so far, and the third paper is actually about this. It talks about what I call the no-barber principle, which is inspired by Russell’s paradox — the idea that the barber shaves everyone in the village apart from those who shave themselves, followed by the question: does the barber shave themselves? In set theory it’s a question around the set of all sets that don’t belong to themselves. This leads to what one would call impredicative circularity. If the barber does shave themselves, then the rules say they don’t; if they don’t, the rules say they do.
+</aside>
 <p><strong>Russell’s Barber Paradox:</strong></p>
 <ul>
 <li><em>Barber shaves all who don’t shave themselves</em></li>
@@ -141,9 +153,18 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <li>External time parameter</li>
 </ul>
 <p><em>No appeal to structure outside the game</em></p>
+<aside class="notes">
+That’s the sort of thing we want to forbid. And that’s what motivates the no-barber principle. The no-barber principle basically says we want to be in a situation where there are no external adjudicators. That means no external observer, no predefined outcome space, no external time parameter, and no privileged decomposition in the game. Nothing dictated from outside. And I’ll give you a very disconnected sense of how this manifests. Imagine if you had an external time parameter in the game, and as part of that game an entity’s time parameter was manipulated so it could move in time. A time travel paradox has the same impredicative circularity feel as Russell’s paradox — went back in time, met your mother, do you continue to exist? And that seems to come from someone outside the system playing with the time. If something emerged consistently inside the system, that shouldn’t be able to happen. So the idea is to create a game where you’re not appealing to any structure outside the game.
+</aside>
+<aside class="notes">
+The core idea actually came to me on the train on the way back from watching Sheffield United lose the playoff final. I was sober enough to think clearly, and this is almost exactly a year ago, though I’ve been thinking about this problem for longer.
+</aside>
 </section>
 <section id="baez-fritz-leinster-characterization-of-information-loss" class="slide level2">
 <h2>Baez-Fritz-Leinster Characterization of Information Loss</h2>
+<aside class="notes">
+The key thing I need if I want to avoid external structure is a mechanism for representing information loss. And the thing I reached for is this paper by Baez, Fritz, and Leinster from 2011. It’s an applied category theory paper.
+</aside>
 <p><strong><span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>:</strong></p>
 <ul>
 <li>Entropy from category theory</li>
@@ -153,6 +174,9 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="the-three-axioms" class="slide level2">
 <h2>The Three Axioms</h2>
+<aside class="notes">
+What they show is that from three axioms — functoriality (information loss adds when you compose processes)
+</aside>
 <p><span class="math display">\[F(f \circ g) = F(f) + F(g)\]</span></p>
 <ul>
 <li>Information loss is additive</li>
@@ -161,6 +185,9 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="convex-linearity" class="slide level2">
 <h2>Convex Linearity</h2>
+<aside class="notes">
+Convex linearity (if you choose between two processes with probability lambda, the information loss is the weighted sum)
+</aside>
 <p><span class="math display">\[F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g)\]</span></p>
 <ul>
 <li>Probabilistic mixture of processes</li>
@@ -169,6 +196,9 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="continuity" class="slide level2">
 <h2>Continuity</h2>
+<aside class="notes">
+And continuity — from those three axioms alone, the unique form for information loss is the Shannon entropy difference, scaled by some factor.
+</aside>
 <ul>
 <li>Small change in process</li>
 <li>Small change in information loss</li>
@@ -183,9 +213,15 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <li>Shannon entropy emerges from axioms</li>
 <li>No other measure satisfies all three</li>
 </ul>
+<aside class="notes">
+I really like this because it appeals to some idea I’d like to be true: that entropy is more fundamental than probability. Probability always asks what will happen, what does happen. Entropy, especially in things like channel coding, gives you impossibilities. Impossibilities are much more robust than predictions. That’s one reason I’m fascinated by entropy, though I’m probably less expert in it than everyone else in the room.
+</aside>
 </section>
 <section id="the-inaccessible-game-setup" class="slide level2">
 <h2>The Inaccessible Game Setup</h2>
+<aside class="notes">
+So what does the no-barber principle help us with? If I want to avoid external structure, and I now have a mechanism for representing information loss, what I want to do is enforce information conservation. If we have defined a form of information loss, it feels like we can now isolate the game from observation or interaction — we can say that no external observer can extract or inject information. The aim is to build a game in the following way: a representation of information loss and a prohibition of information exchange with the game. I’m certainly not doing this perfectly, but that’s the sort of thing I’m aiming for. It’s like a selection principle for the mathematics I want to use in the game.
+</aside>
 <ul>
 <li>Avoid external structure.</li>
 <li>Represent information loss</li>
@@ -194,6 +230,9 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="information-isolation" class="slide level2">
 <h2>Information Isolation</h2>
+<aside class="notes">
+The constraint I use is this: I don’t know what the variables in this game are, because I can’t look inside the game. But I use <span class="math inline">\(h_i\)</span> for what I’m calling an atomic marginal entropy — the marginal entropy of each subsystem.
+</aside>
 <ul>
 <li>Define information loss</li>
 <li>Isolate game from observation/interaction</li>
@@ -202,6 +241,9 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 </section>
 <section id="marginal-entropy-conservation" class="slide level2">
 <h2>Marginal Entropy Conservation</h2>
+<aside class="notes">
+And then the claim is that the sum of those marginal entropies is conserved. I haven’t seen this type of constraint before. And I sort of pause there — everything falls from that. If it’s flawed in some way, everything else I’ve done collapses, but don’t let that make you shy about criticising it.
+</aside>
 <div>
 <p><span class="math display">\[
 \sum_{i=1}^N h_i = C
@@ -210,6 +252,12 @@ The Munchkin card came has both cards and rules. The game explicitly acknowledge
 <li class="fragment">Isolation: <em>cf</em> energy conservation — but for information</li>
 </ul>
 </div>
+<aside class="notes">
+The reason I want it to be this atomic form is a notion of exchangeability amongst the game’s variables. If I start talking about interactions, I think there’s a danger of breaking that. It’s also an extensive property — it feels like the type of property where in the future I could take it to infinity and do something non-parametric. I haven’t done that, but I’m not ruling it out. And I don’t know what the underlying dimension is — that would be an external thing. The aim is to isolate the system, which will prevent barbers from intervening.
+</aside>
+<aside class="notes">
+So why was I looking for something like this? Well, in these kinds of systems, if you look at how effective rules emerge in things like physics, energy conservation tends to be a thing. There has to be something conserved — some constraint.
+</aside>
 </section>
 <section id="the-classical-observer" class="slide level2">
 <h2>The Classical Observer</h2>
@@ -246,6 +294,9 @@ Again the observer is monitoring the movements of the particles, but here their 
 <aside class="notes">
 Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).
 </aside>
+<aside class="notes">
+Conceptually, imagine a classic physics setup where you can see inside a box: there are a number of particles moving around, sampled from random Gaussians. If you plot their velocities, they sit within a circle. In this case, the marginal <span class="math inline">\(h_i\)</span> would be their velocity in each direction. The marginal distribution in each direction is Gaussian. Now, if the particles are correlated — everything tending to move in one diagonal direction — interestingly, the marginal entropies are the same. Although these are correlated, I’m not saying anything about the correlation when I conserve the marginal entropies, because if you look at the marginal distribution in each direction, it’s the same as in the uncorrelated case. And if they’re anti-correlated, it’s the same again. So I’m not making any statements about independence with this constraint.
+</aside>
 </section>
 <section id="the-classical-observer---inaccessible" class="slide level2">
 <h2>The Classical Observer - Inaccessible</h2>
@@ -265,9 +316,15 @@ Here the observer is blocked from monitoring anything inside the sytem.
 <li>We don’t see see the outcome space</li>
 <li>But we know it has a joint entropy</li>
 </ul>
+<aside class="notes">
+Now imagine that the observer is not integrated. They cannot see inside the system. They don’t have access to the outcome space. We don’t see the individual outcomes; we just know there’s a joint entropy associated with the system. The observer has a marginal entropy for each variable they interact with, but they don’t have access to the joint. This is the inaccessible part — the inner workings are hidden. The observer has their own perspective, not direct access to the internals of the game.
+</aside>
 </section>
 <section id="the-i-h-c-structure" class="slide level2">
 <h2>The <span class="math inline">\(I + H = C\)</span> Structure</h2>
+<aside class="notes">
+So here’s the key relationship. From <span class="math inline">\(\sum_i h_i = C\)</span>, with a little algebra — using the fact that for a joint distribution the joint entropy equals the sum of marginal entropies minus the multi-information — I can show that <span class="math inline">\(I + H = C\)</span>.
+</aside>
 <p><span class="math display">\[
 \sum_{i=1}^N h_i = C
 \]</span></p>
@@ -278,9 +335,15 @@ Here the observer is blocked from monitoring anything inside the sytem.
 <p><span class="math display">\[
 I = \sum_{i=1}^N h_i - H
 \]</span></p>
+<aside class="notes">
+So the multi-information <span class="math inline">\(I\)</span> and the joint entropy <span class="math inline">\(H\)</span> sum to a constant. The joint entropy is basically how spread out the distribution is. The multi-information is how correlated the variables are.
+</aside>
 </section>
 <section id="information-action" class="slide level2">
 <h2>‘Information Action’</h2>
+<aside class="notes">
+So you have this trade-off: you can have maximum correlation, or maximum entropy, but not both at the same time. The game will be about converting multi-information into entropy.
+</aside>
 <p><span class="math display">\[
 I + H = C
 \]</span></p>
@@ -295,6 +358,12 @@ I + H = C
 <li class="fragment">System “rolls downhill” from correlation to disorder</li>
 </ul>
 </div>
+<aside class="notes">
+Think of it like potential energy and kinetic energy: the correlation is potential energy, the entropy is kinetic energy. In equilibrium you’d have an equal mix. But we start in a highly correlated state — that’s what I mean by the origin — and the system evolves to maximize entropy.
+</aside>
+<aside class="notes">
+So now I have the game. I’ve got <span class="math inline">\(I + H = C\)</span>. And I want the dynamics of the system to maximise <span class="math inline">\(H\)</span>. But to set up what those dynamics look like, I need to parameterise the configuration space.
+</aside>
 </section>
 <section id="entropy-configuration-mapping" class="slide level2">
 <h2>Entropy Configuration Mapping</h2>
@@ -319,6 +388,9 @@ Many configurations (density matrices <span class="math inline">\(\rho\)</span>)
 <aside class="notes">
 The entropy ladder: each rung is an isoentropy class. Multiple configurations sit at the same rung. Dynamics move the system up the ladder (entropy increase) subject to the marginal entropy conservation constraint.
 </aside>
+<aside class="notes">
+In between are all the mixed states. And entropy labels the rungs. The entropy induces a preorder on configurations — not a total order, because many configurations share the same entropy value. If you quotient by the equivalence relation that says two configurations are equivalent if they have the same entropy, you get a poset of entropy levels, which embeds totally ordered in the non-negative reals.
+</aside>
 </section>
 <section id="the-exponential-family" class="slide level2">
 <h2>The Exponential Family</h2>
@@ -330,15 +402,24 @@ p(\mathbf{ y}|\boldsymbol{ \theta}) = \exp\!\left(\boldsymbol{ \theta}^\top T(\m
 <li><span class="math inline">\(\psi(\cdot)\)</span>: cumulant generating function</li>
 <li><span class="math inline">\(G(\boldsymbol{ \theta}) = \nabla^2\psi(\boldsymbol{ \theta})\)</span>: Fisher information</li>
 </ul>
+<aside class="notes">
+The standard exponential family is the right parameterisation for working with entropy on this configuration space. The normaliser is what machine learners would call the evidence — the cumulant generating function. The natural parameters are what you’d use to label where you are in the information geometry. The Fisher information matrix <span class="math inline">\(G\)</span> is the second derivative of the cumulant generating function with respect to the natural parameters. This is the metric on the configuration space. It tells you the local geometry of the space. And the natural gradient is the direction you move in this space that maximises entropy production most efficiently in terms of Fisher information. This becomes the core of the dynamics.
+</aside>
 </section>
 <section id="axiomatically-distinguished" class="slide level2">
 <h2>Axiomatically Distinguished</h2>
+<aside class="notes">
+</aside>
+<p>{Now I want to say what the dynamics of this game look like. I want to choose the dynamics that maximise entropy production, subject to the conservation constraint. The motivation is the no-barber idea: without external structure, there’s no privileged reference, so I should select the dynamics that most efficiently increase entropy. In the Fisher information geometry, the most efficient direction is the natural gradient of entropy.</p>
 <blockquote>
 <p>A choice is axiomatically distinguished if it is uniquely identifiable within the game’s axioms — without external structure such as Hamiltonians, clocks, or coordinates.</p>
 </blockquote>
 </section>
 <section id="maximum-entropy-production" class="slide level2">
 <h2>Maximum Entropy Production</h2>
+<aside class="notes">
+And the natural gradient of entropy with respect to the natural parameters turns out to be <span class="math inline">\(-\boldsymbol{\theta}\)</span>. So without the constraint, the dynamics are <span class="math inline">\(\dot{\boldsymbol{\theta}} = -\boldsymbol{\theta}\)</span> — just exponential decay to equilibrium. That’s the axiomatically distinguished trajectory for an unconstrained system.
+</aside>
 <ul>
 <li>Maximum entropy production: unique in Fisher metric</li>
 <li>Constraint: marginal entropy conservation</li>
@@ -376,9 +457,15 @@ p(\mathbf{ y}|\boldsymbol{ \theta}) = \exp\!\left(\boldsymbol{ \theta}^\top T(\m
 <p><span class="math display">\[\dot{\boldsymbol{\theta}} = -\boldsymbol{\theta} + \nu(\tau)\,G^{-1}(\boldsymbol{\theta}) \mathbf{a}(\boldsymbol{\theta})\]</span></p>
 <p><span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}) = \nabla_{\!\boldsymbol{\theta}}\!\sum_i h_i\)</span> — constraint gradient.</p>
 <p><span class="math display">\[\nu(\tau) = \frac{\mathbf{a}^\top\boldsymbol{\theta}}{\mathbf{a}^\top G^{-1}\mathbf{a}}\]</span></p>
+<aside class="notes">
+When you add the constraint, you get a Lagrange multiplier. And the Lagrange multiplier has to be solved for from the consistency condition. You get a projected natural gradient flow. The projection of <span class="math inline">\(-\boldsymbol{\theta}\)</span> onto the constraint surface, using the Fisher metric, is the constrained dynamics. And the key thing — which is the reason this connects to GENERIC — is that when you linearise around an equilibrium point, the Lagrange multiplier is a function of <span class="math inline">\(\boldsymbol{\theta}\)</span>. Its <span class="math inline">\(\boldsymbol{\theta}\)</span>-dependence, when you differentiate, generates an antisymmetric term in the linearised dynamics. That antisymmetric term is what becomes the reversible Hamiltonian dynamics.
+</aside>
 </section>
 <section id="generic-like-structure" class="slide level2">
 <h2>GENERIC-like Structure</h2>
+<aside class="notes">
+The linearised dynamics decompose into a symmetric part and an antisymmetric part. The symmetric part is irreversible and produces entropy. The antisymmetric part is reversible — entropy-conserving rotations.
+</aside>
 <ul>
 <li>Linearise around <span class="math inline">\(\boldsymbol{\theta}^*\)</span></li>
 <li><span class="math inline">\(\mathbf{q} = \boldsymbol{\theta} - \boldsymbol{\theta}^*\)</span></li>
@@ -391,9 +478,15 @@ p(\mathbf{ y}|\boldsymbol{ \theta}) = \exp\!\left(\boldsymbol{ \theta}^\top T(\m
 <li><span class="math inline">\(S\)</span> is symmetric and irreversible (entropy production)</li>
 <li><span class="math inline">\(A\)</span> is antisymmetric and reversible (entropy-conserving)</li>
 </ul>
+<aside class="notes">
+And this structure is exactly what’s called GENERIC: General Equation for Non-Equilibrium Reversible–Irreversible Coupling. It was derived by Öttinger and collaborators in a very different way — from a first-principles non-equilibrium thermodynamics perspective. What’s interesting here is that this structure is being derived from the information-geometric setting of the inaccessible game, not imposed from outside. It’s a consequence of maximum entropy production plus information isolation.
+</aside>
 </section>
 <section id="information-relaxation-dynamics" class="slide level2">
 <h2>Information Relaxation Dynamics</h2>
+<aside class="notes">
+A toy example illustrates this. Start with a bivariate Gaussian with correlation <span class="math inline">\(\rho\)</span> close to one — highly correlated, low entropy. The system evolves to decorrelate. The multi-information decreases, the entropy increases, and the total <span class="math inline">\(I + H\)</span> stays constant. The marginal entropies don’t change throughout. If you were only monitoring the marginals you’d see nothing — the system is inaccessible. The dynamics are happening in the correlations, which the outside observer can’t see.
+</aside>
 <div class="figure">
 <div id="i-plus-h-relaxation-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
@@ -406,6 +499,12 @@ Left: Multi-information <span class="math inline">\(I\)</span> decreases as join
 </section>
 <section id="classical-obstruction-at-the-origin" class="slide level2">
 <h2>Classical Obstruction at the Origin</h2>
+<aside class="notes">
+Here’s what I think is the most interesting result from the origin paper. We want the game to start from some origin state. Thinking about it like thermodynamics, you start with zero entropy — the most ordered state possible — and the system evolves towards maximum entropy. In the classical world, the origin would be a probability distribution with zero joint entropy, which means a point mass, a delta function. But a delta function has zero marginal entropies too.
+</aside>
+<aside class="notes">
+So if the marginal entropies sum to a constant, and the constant is <span class="math inline">\(C\)</span>, then <span class="math inline">\(\sum_i h_i = C &gt; 0\)</span>. We’ve derived that the marginal entropies must be positive at the origin. But classical probability cannot give zero joint entropy with positive marginal entropies — information sub-additivity means the joint entropy is at least as large as each marginal.
+</aside>
 <ul>
 <li>Boundary Condition <span class="math display">\[
 I = C, \quad H = 0
@@ -416,6 +515,9 @@ I = C, \quad H = 0
 </section>
 <section id="von-neumann-entropy-resolution" class="slide level2">
 <h2>Von Neumann Entropy Resolution</h2>
+<aside class="notes">
+The only way out is von Neumann entropy and entanglement. An entangled pure state has zero joint entropy and positive marginal entropies. That is the mathematical necessity of going to von Neumann. Within this programme, the move is forced.
+</aside>
 <ul>
 <li><p>Entanglement leads to negative conditional entropy.</p></li>
 <li><p>Pure entangled state: <span class="math display">\[
@@ -431,6 +533,9 @@ S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
 </section>
 <section id="the-matrix-exponential-family" class="slide level2">
 <h2>The Matrix Exponential Family</h2>
+<aside class="notes">
+In the quantum version, the probability distribution is replaced by a density matrix. The exponential family becomes the matrix exponential family. The natural parameters now label operators, and the state is <span class="math inline">\(\rho = \exp(K - \psi I)\)</span> where <span class="math inline">\(K\)</span> is a Hermitian operator. The BKM metric — the Bogoliubov–Kubo–Mori metric — plays the role of the Fisher information.
+</aside>
 <p><span class="math display">\[
 \rho(\boldsymbol{\theta}) = \exp\!\left(\sum_k \theta_k F_k - \psi(\boldsymbol{\theta})\,\mathbf{I}\right)
 \]</span></p>
@@ -442,6 +547,9 @@ S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
 </section>
 <section id="faithful-states" class="slide level2">
 <h2>Faithful States</h2>
+<aside class="notes">
+And the faithful states, the ones where <span class="math inline">\(\rho\)</span> is strictly positive definite, are the interior of this family. The boundary consists of pure states, and the BKM metric diverges at the boundary. This is what makes the pure-state origin special — it is infinitely distant in the BKM metric.
+</aside>
 <ul>
 <li>Implies <em>faithful</em> states (full rank <span class="math inline">\(\rho\)</span>)</li>
 <li>Pure states are on <em>boundary</em> of family</li>
@@ -451,6 +559,12 @@ S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
 </section>
 <section id="the-lme-origin" class="slide level2">
 <h2>The LME Origin</h2>
+<aside class="notes">
+There’s a beautiful consequence of all this. The LME origin — the locally maximally entangled state — is the unique pure state where all marginal entropies are at their maximum allowed value. It’s the state that saturates the constraint. When you compute the BKM distance from any mixed state to this pure state, you get infinity — it’s infinitely far away in the quantum information geometry.
+</aside>
+<aside class="notes">
+But what should the value of <span class="math inline">\(C\)</span> be? By our axiomatically distinguished principle we should set it to some unique number. For example the maximum value.
+</aside>
 <ul>
 <li>Globally pure state: <span class="math inline">\(S(\rho)=0\)</span></li>
 <li><span class="math inline">\(C = C_{\max} = \sum_i \log d_i\)</span> (axiomatically distinguished)</li>
@@ -459,6 +573,9 @@ S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
 </section>
 <section id="constraint-saturation-and-the-gibbs-lock" class="slide level2">
 <h2>Constraint Saturation and the Gibbs Lock</h2>
+<aside class="notes">
+So the trajectory that maximises entropy production approaches this state only asymptotically as you go backwards in time. The origin is never actually reached; it is a distinguished asymptote. And the saturation diagrams show this: the marginal entropies are constrained to sum to <span class="math inline">\(C\)</span>, and they can’t both be individually at their maximum unless the system is at the LME state, which would require zero joint entropy. That’s the second-order constraint kicking in: as the system approaches the saturation boundary, a new constraint is activated.
+</aside>
 <ul>
 <li>Marginal entropies linked: <span class="math inline">\(s_1 + s_2 = C\)</span> (conserved sum)</li>
 <li>Individual ceilings: <span class="math inline">\(s_i \leq \log d_i\)</span></li>
@@ -526,6 +643,9 @@ As <span class="math inline">\(C\)</span> increases toward <span class="math inl
 </section>
 <section id="entropy-time" class="slide level2">
 <h2>Entropy Time</h2>
+<aside class="notes">
+One of the things that the no-barber principle prohibits is an external time parameter. So there’s no external clock. Instead, we use entropy as a measure of progress. You can reparameterise the trajectory so that entropy increases by a fixed amount per unit of the new parameter — entropy-time. This is an internally defined clock.
+</aside>
 <ul>
 <li>Need: an <em>internal</em> clock — external clocks forbidden by isolation</li>
 <li>Game time <span class="math inline">\(\tau\)</span>: affine parameter, degenerates at origin</li>
@@ -539,9 +659,15 @@ As <span class="math inline">\(C\)</span> increases toward <span class="math inl
 <li><p>No external clock, temperature, or Hamiltonian</p></li>
 <li><p>Progress measured by entropy produced</p></li>
 </ul>
+<aside class="notes">
+In any reparameterisation, what you really care about is the rate at which entropy is produced per unit entropy-time. Once you do this, you get a very clean separation between the reversible dynamics and the irreversible dynamics, because the irreversible part is the one that produces entropy. The reversible part — the antisymmetric part — produces no entropy. It’s pure rotation.
+</aside>
 </section>
 <section id="from-information-geometry-to-hamiltonian-mechanics" class="slide level2">
 <h2>From Information Geometry to Hamiltonian Mechanics</h2>
+<aside class="notes">
+The most speculative part of all this — and the current paper paper — is about how a Hamiltonian emerges. The claim is that if the system gets into what I call a Gibbs-locked regime, where the density matrix has the Gibbs form <span class="math inline">\(\rho = e^{-\beta H} / Z\)</span> and stays close to it, then the reversible part of the dynamics is generated by the modular Hamiltonian, which is <span class="math inline">\(-\log \rho\)</span>. And there’s an associated inverse temperature <span class="math inline">\(\beta(t)\)</span> that converts entropy-time into Hamiltonian time. So the Hamiltonian clock emerges from the entropy clock, conditionally on being in a Gibbs-locked region. This is where I’m most tentative, but it’s the direction I’m heading.
+</aside>
 <ul>
 <li>No imposed Hamiltonian</li>
 <li>Gibbs-locked regions, effective Hamitonian emergence <em>(Work in preparation)</em></li>
@@ -570,6 +696,11 @@ As <span class="math inline">\(C\)</span> increases toward <span class="math inl
 <li>Axiomatic selection</li>
 <li>Emergent effective rules</li>
 </ul>
+<aside class="notes">
+<p>So to summarise: starting from a tautology — self-governing systems can’t appeal to external arbitration — and applying information theory, you get a surprisingly specific set of conclusions. The no-barber principle rules out external outcome spaces, clocks, Hamiltonians, and observers as primitives. Information isolation gives you a conservation law for marginal entropies. The requirement for a pure-state origin with positive marginals forces you into quantum probability — you can’t stay classical. The GENERIC structure and entropy time emerge from the dynamics. And the idea is that a Hamiltonian would have to emerge conditionally, in Gibbs-locked regions.</p>
+<p>There are three papers now: the inaccessible game sets up the framework and derives the GENERIC structure. The origin paper derives the necessity of quantum probability. And the Hamiltonian paper derives the emergence of Hamiltonian dynamics from the Gibbs-locked region. Each paper has a “work in progress” quality — I’m not claiming these are complete. What I hope to have shown is that the tautology is not empty: it has mathematical teeth.</p>
+I was told I should finish with a question. Here’s mine: can we show that quantum mechanics — density matrices, von Neumann entropy, unitary evolution, Gibbs states — is, within the assumptions of the no-barber programme, the unique internally consistent language for a self-governing system that enforces information isolation? I don’t know the answer yet, but I think it’s the right question to be asking.
+</aside>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
