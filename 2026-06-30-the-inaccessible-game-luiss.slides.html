@@ -253,6 +253,250 @@ The reason I want it to be this atomic form is a notion of exchangeability among
 So why was I looking for something like this? Well, in these kinds of systems, if you look at how effective rules emerge in things like physics, energy conservation tends to be a thing. There has to be something conserved — some constraint.
 </aside>
 </section>
+<section id="thermalisation-from-different-initial-conditions" class="slide level2">
+<h2>Thermalisation from Different Initial Conditions</h2>
+<ul>
+<li>9 balls on a <span class="math inline">\(3 \times 3\)</span> grid;</li>
+<li>Different starting conditions.</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="multigame-entropy-figure" class="figure-frame">
+<div style="width:100%;max-width:1020px">
+<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
+<div style="flex:1 1 260px">
+<canvas id="multigame-canvas" width="500" height="360" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:1 1 260px">
+<canvas id="multigame-grid" width="480" height="480" style="border:1px solid #bbb;display:block;width:100%">
+</canvas>
+</div>
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+<button id="multigame-reset">
+Reset
+</button>
+<button id="multigame-pause">
+Pause / Resume
+</button>
+<button id="multigame-skip">
+Skip 1000s
+</button>
+<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
+</div>
+</div>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
+</div>
+</div>
+<aside class="notes">
+Nine billiard balls on a 3×3 grid. The histogram grid tracks each ball’s cumulative <span class="math inline">\((v_x, v_y)\)</span> velocity distribution. Entropy per ball rises from near zero (single bright dot at the initial velocity) to the Maxwell–Boltzmann value as collisions thermalise the gas. Use the Initialisation dropdown to compare directional starts (all balls move the same way) with propellor starts (adjacent balls move in opposite directions): all initial conditions converge to the same equilibrium, demonstrating ergodicity.
+</aside>
+</section>
+<section id="sampling-two-dimensional-variables" class="slide level2">
+<h2>Sampling Two Dimensional Variables</h2>
+<div>
+<script>
+showDivs(0, 'independent_velocities');
+</script>
+<p><small></small> <input id="range-independent_velocities" type="range" min="0" max="7" value="0" onchange="setDivs('independent_velocities')" oninput="setDivs('independent_velocities')"> <button onclick="plusDivs(-1, 'independent_velocities');">❮</button> <button onclick="plusDivs(1, 'independent_velocities');">❯</button></p>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities000.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities001.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities002.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities003.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities004.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities005.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities006.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="independent_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities007.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="correlation" class="slide level2">
+<h2>Correlation</h2>
+<div>
+<ul>
+<li class="fragment">Correlation is when two variables are dependent</li>
+</ul>
+</div>
+</section>
+<section id="sampling-two-dimensional-variables-1" class="slide level2">
+<h2>Sampling Two Dimensional Variables</h2>
+<div>
+<script>
+showDivs(0, 'correlated_velocities');
+</script>
+<p><small></small> <input id="range-correlated_velocities" type="range" min="0" max="7" value="0" onchange="setDivs('correlated_velocities')" oninput="setDivs('correlated_velocities')"> <button onclick="plusDivs(-1, 'correlated_velocities');">❮</button> <button onclick="plusDivs(1, 'correlated_velocities');">❯</button></p>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities000.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities001.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities002.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities003.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities004.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities005.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities006.svg" width="70%" style=" ">
+</object>
+</div>
+<div class="correlated_velocities" style="text-align:center;">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities007.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="jaynes-and-maximum-entropy" class="slide level2">
+<h2>Jaynes and Maximum Entropy</h2>
+<div class="figure">
+<div id="e-t-jaynes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Ed Jaynes who developed the maximum entropy principle
+</aside>
+</section>
+<section id="maximum-entropy-motivation" class="slide level2">
+<h2>Maximum Entropy Motivation</h2>
+<ul>
+<li><span class="citation" data-cites="Jaynes-information57">Jaynes (1957)</span>: Statistical mechanics as inference with incomplete information</li>
+<li>Maximum entropy principle: maximise uncertainty given constraints</li>
+<li>Avoids unwarranted assumptions beyond available data</li>
+</ul>
+</section>
+<section id="dice-example" class="slide level2">
+<h2>Dice Example</h2>
+<div>
+<ul>
+<li class="fragment">Dice example: Average result 4.5 instead of 3.5</li>
+<li class="fragment">Constraints:
+<ul>
+<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 P_n = 1\)</span> (normalization)</li>
+<li class="fragment"><span class="math inline">\(\sum_{n=1}^6 nP_n = 4.5\)</span> (observed average)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="die-roll-simulation" class="slide level2">
+<h2>Die Roll Simulation</h2>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="dieroll-simulation-figure" class="figure-frame">
+<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
+<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
+<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
+</canvas>
+<div style="font-size:0.75em;color:#888;text-align:center">
+click die or button to roll
+</div>
+<div style="display:flex;gap:6px">
+<button id="dieroll-roll">
+Roll
+</button>
+<button id="dieroll-roll100">
+Roll ×100
+</button>
+</div>
+<div style="text-align:center;line-height:1.6;font-size:0.85em">
+<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
+</div>
+<button id="dieroll-reset">
+Reset history
+</button>
+</div>
+<div style="flex:1;min-width:280px">
+<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
+</canvas>
+<div style="margin-top:6px">
+<div style="font-style:italic;margin-bottom:6px;color:#888">
+<p>Outcome weights (auto-normalised to probabilities)</p>
+</div>
+<div id="dieroll-sliders">
+
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+<button id="dieroll-uniform">
+Uniform (mean 3.5)
+</button>
+<button id="dieroll-jaynes">
+Jaynes: mean 4.5
+</button>
+<button id="dieroll-low">
+Low-biased: mean 2
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
+</div>
+</div>
+<aside class="notes">
+Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).
+</aside>
+</section>
+<section id="the-general-maximum-entropy-formalism" class="slide level2">
+<h2>The General Maximum-Entropy Formalism</h2>
+<p><small> <span class="math display">\[
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
+\]</span> <span class="math display">\[
+Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\]</span> <span class="math display">\[
+\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
+\]</span></small></p>
+</section>
 <section id="the-classical-observer" class="slide level2">
 <h2>The Classical Observer</h2>
 <div class="figure">
@@ -291,6 +535,10 @@ Here the observer is monitoring the movements of the particles, but here their m
 <aside class="notes">
 Conceptually, imagine a classic physics setup where you can see inside a box: there are a number of particles moving around, sampled from random Gaussians. If you plot their velocities, they sit within a circle. In this case, the marginal <span class="math inline">\(h_i\)</span> would be their velocity in each direction. The marginal distribution in each direction is Gaussian. Now, if the particles are correlated — everything tending to move in one diagonal direction — interestingly, the marginal entropies are the same. Although these are correlated, I’m not saying anything about the correlation when I conserve the marginal entropies, because if you look at the marginal distribution in each direction, it’s the same as in the uncorrelated case. And if they’re anti-correlated, it’s the same again. So I’m not making any statements about independence with this constraint.
 </aside>
+<!-- SECTION Back to self adjudication -->
+</section>
+<section id="back-to-self-adjudication" class="slide level2">
+<h2>Back to self adjudication</h2>
 </section>
 <section id="the-classical-observer---inaccessible" class="slide level2">
 <h2>The Classical Observer - Inaccessible</h2>
@@ -425,261 +673,70 @@ And the natural gradient of entropy with respect to the natural parameters turns
 \frac{\text{d}H}{\text{d}\tau}
 \]</span> subject to <span class="math inline">\(\sum_i h_i = C\)</span></p>
 </section>
-<section id="constrained-entropy-ascent" class="slide level2">
-<h2>Constrained Entropy Ascent</h2>
-</section>
-<section id="entropy-via-the-log-partition-function" class="slide level2">
-<h2>Entropy via the Log-Partition Function</h2>
-<p><span class="math display">\[H(\boldsymbol{\theta}) = \psi(\boldsymbol{\theta}) - \boldsymbol{\theta}\cdot\nabla\psi(\boldsymbol{\theta})\]</span></p>
-<ul>
-<li><span class="math inline">\(\psi(\boldsymbol{\theta})\)</span>: log-partition function (CGF)</li>
-<li><span class="math inline">\(\boldsymbol{\eta} = \nabla\psi\)</span>: moment parameters <span class="math inline">\(\eta_k = \mathbb{E}[f_k]\)</span></li>
-<li><span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2\psi\)</span>: Fisher information matrix</li>
-</ul>
-</section>
-<section id="natural-gradient-of-entropy" class="slide level2">
-<h2>Natural Gradient of Entropy</h2>
-<p><span class="math display">\[\nabla_{\!\boldsymbol{\theta}} H = -G(\boldsymbol{\theta})\boldsymbol{\theta}\]</span></p>
-<p>Natural gradient: <span class="math display">\[\nabla^{\mathrm{nat}} H = G^{-1}\nabla_{\!\boldsymbol{\theta}} H = -\boldsymbol{\theta}\]</span></p>
-<ul>
-<li>Steepest entropy ascent <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\dot{\boldsymbol{\theta}} \propto -\boldsymbol{\theta}\)</span></li>
-<li>Descent in natural parameters — the symmetric part</li>
-</ul>
-</section>
-<section id="constrained-natural-gradient-dynamics" class="slide level2">
-<h2>Constrained Natural Gradient Dynamics</h2>
-<p><span class="math display">\[\dot{\boldsymbol{\theta}} = -\boldsymbol{\theta} + \nu(\tau)\,G^{-1}(\boldsymbol{\theta}) \mathbf{a}(\boldsymbol{\theta})\]</span></p>
-<p><span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}) = \nabla_{\!\boldsymbol{\theta}}\!\sum_i h_i\)</span> — constraint gradient.</p>
-<p><span class="math display">\[\nu(\tau) = \frac{\mathbf{a}^\top\boldsymbol{\theta}}{\mathbf{a}^\top G^{-1}\mathbf{a}}\]</span></p>
-<aside class="notes">
-When you add the constraint, you get a Lagrange multiplier. And the Lagrange multiplier has to be solved for from the consistency condition. You get a projected natural gradient flow. The projection of <span class="math inline">\(-\boldsymbol{\theta}\)</span> onto the constraint surface, using the Fisher metric, is the constrained dynamics. And the key thing — which is the reason this connects to GENERIC — is that when you linearise around an equilibrium point, the Lagrange multiplier is a function of <span class="math inline">\(\boldsymbol{\theta}\)</span>. Its <span class="math inline">\(\boldsymbol{\theta}\)</span>-dependence, when you differentiate, generates an antisymmetric term in the linearised dynamics. That antisymmetric term is what becomes the reversible Hamiltonian dynamics.
-</aside>
-</section>
-<section id="generic-like-structure" class="slide level2">
-<h2>GENERIC-like Structure</h2>
-<aside class="notes">
-The linearised dynamics decompose into a symmetric part and an antisymmetric part. The symmetric part is irreversible and produces entropy. The antisymmetric part is reversible — entropy-conserving rotations.
-</aside>
-<ul>
-<li>Linearise around <span class="math inline">\(\boldsymbol{\theta}^*\)</span></li>
-<li><span class="math inline">\(\mathbf{q} = \boldsymbol{\theta} - \boldsymbol{\theta}^*\)</span></li>
-</ul>
-</section>
-<section id="linearised-flow" class="slide level2">
-<h2>Linearised Flow</h2>
-<p><span class="math display">\[\dot{\mathbf{q}} = M\mathbf{q}\]</span> where <span class="math inline">\(M = S + A\)</span></p>
-<ul>
-<li><span class="math inline">\(S\)</span> is symmetric and irreversible (entropy production)</li>
-<li><span class="math inline">\(A\)</span> is antisymmetric and reversible (entropy-conserving)</li>
-</ul>
-<aside class="notes">
-And this structure is exactly what’s called GENERIC: General Equation for Non-Equilibrium Reversible–Irreversible Coupling. It was derived by Öttinger and collaborators in a very different way — from a first-principles non-equilibrium thermodynamics perspective. What’s interesting here is that this structure is being derived from the information-geometric setting of the inaccessible game, not imposed from outside. It’s a consequence of maximum entropy production plus information isolation.
-</aside>
-</section>
-<section id="information-relaxation-dynamics" class="slide level2">
-<h2>Information Relaxation Dynamics</h2>
-<aside class="notes">
-A toy example illustrates this. Start with a bivariate Gaussian with correlation <span class="math inline">\(\rho\)</span> close to one — highly correlated, low entropy. The system evolves to decorrelate. The multi-information decreases, the entropy increases, and the total <span class="math inline">\(I + H\)</span> stays constant. The marginal entropies don’t change throughout. If you were only monitoring the marginals you’d see nothing — the system is inaccessible. The dynamics are happening in the correlations, which the outside observer can’t see.
-</aside>
-<div class="figure">
-<div id="i-plus-h-relaxation-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.
-</aside>
-</section>
-<section id="classical-obstruction-at-the-origin" class="slide level2">
-<h2>Classical Obstruction at the Origin</h2>
-<aside class="notes">
-Here’s what I think is the most interesting result from the origin paper. We want the game to start from some origin state. Thinking about it like thermodynamics, you start with zero entropy — the most ordered state possible — and the system evolves towards maximum entropy. In the classical world, the origin would be a probability distribution with zero joint entropy, which means a point mass, a delta function. But a delta function has zero marginal entropies too.
-</aside>
-<aside class="notes">
-So if the marginal entropies sum to a constant, and the constant is <span class="math inline">\(C\)</span>, then <span class="math inline">\(\sum_i h_i = C &gt; 0\)</span>. We’ve derived that the marginal entropies must be positive at the origin. But classical probability cannot give zero joint entropy with positive marginal entropies — information sub-additivity means the joint entropy is at least as large as each marginal.
-</aside>
-<ul>
-<li>Boundary Condition <span class="math display">\[
-I = C, \quad H = 0
-\]</span></li>
-<li>Conditional Shannon entropies always <span class="math inline">\(\geq 0\)</span>.</li>
-<li>Prohibits <span class="math inline">\(H=0\)</span> with positive marginals.</li>
-</ul>
-</section>
-<section id="von-neumann-entropy-resolution" class="slide level2">
-<h2>Von Neumann Entropy Resolution</h2>
-<aside class="notes">
-The only way out is von Neumann entropy and entanglement. An entangled pure state has zero joint entropy and positive marginal entropies. That is the mathematical necessity of going to von Neumann. Within this programme, the move is forced.
-</aside>
-<ul>
-<li><p>Entanglement leads to negative conditional entropy.</p></li>
-<li><p>Pure entangled state: <span class="math display">\[
-S(\rho_{AB}) = 0, \quad S(\rho_A) &gt; 0, \quad S(\rho_B) &gt; 0
-\]</span></p></li>
-</ul>
-</section>
-<section id="information-loss-axioms" class="slide level2">
-<h2>Information Loss Axioms</h2>
-<ul>
-<li>Provided by <span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span> (quantum analogue of <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>)</li>
-</ul>
-</section>
-<section id="the-matrix-exponential-family" class="slide level2">
-<h2>The Matrix Exponential Family</h2>
-<aside class="notes">
-In the quantum version, the probability distribution is replaced by a density matrix. The exponential family becomes the matrix exponential family. The natural parameters now label operators, and the state is <span class="math inline">\(\rho = \exp(K - \psi I)\)</span> where <span class="math inline">\(K\)</span> is a Hermitian operator. The BKM metric — the Bogoliubov–Kubo–Mori metric — plays the role of the Fisher information.
-</aside>
-<p><span class="math display">\[
-\rho(\boldsymbol{\theta}) = \exp\!\left(\sum_k \theta_k F_k - \psi(\boldsymbol{\theta})\,\mathbf{I}\right)
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{\theta}\)</span>: natural parameters</li>
-<li><span class="math inline">\(\psi(\boldsymbol{\theta}) = \log\,\mathrm{tr}\exp\!\left(\sum_k\theta_k F_k\right)\)</span>: cumulant generating function</li>
-<li><span class="math inline">\(G(\boldsymbol{\theta}) = \nabla^2\psi(\boldsymbol{\theta})\)</span>: BKM metric (quantum Fisher information)</li>
-</ul>
-</section>
-<section id="faithful-states" class="slide level2">
-<h2>Faithful States</h2>
-<aside class="notes">
-And the faithful states, the ones where <span class="math inline">\(\rho\)</span> is strictly positive definite, are the interior of this family. The boundary consists of pure states, and the BKM metric diverges at the boundary. This is what makes the pure-state origin special — it is infinitely distant in the BKM metric.
-</aside>
-<ul>
-<li>Implies <em>faithful</em> states (full rank <span class="math inline">\(\rho\)</span>)</li>
-<li>Pure states are on <em>boundary</em> of family</li>
-<li>BKM Metric is <em>divergent</em></li>
-</ul>
-</section>
-<section id="the-lme-origin" class="slide level2">
-<h2>The LME Origin</h2>
-<aside class="notes">
-There’s a beautiful consequence of all this. The LME origin — the locally maximally entangled state — is the unique pure state where all marginal entropies are at their maximum allowed value. It’s the state that saturates the constraint. When you compute the BKM distance from any mixed state to this pure state, you get infinity — it’s infinitely far away in the quantum information geometry.
-</aside>
-<aside class="notes">
-But what should the value of <span class="math inline">\(C\)</span> be? By our axiomatically distinguished principle we should set it to some unique number. For example the maximum value.
-</aside>
-<ul>
-<li>Globally pure state: <span class="math inline">\(S(\rho)=0\)</span></li>
-<li><span class="math inline">\(C = C_{\max} = \sum_i \log d_i\)</span> (axiomatically distinguished)</li>
-<li>Implies each marginal maximally mixed: <span class="math inline">\(s_i = \log d_i\)</span></li>
-</ul>
-</section>
-<section id="constraint-saturation-and-the-gibbs-lock" class="slide level2">
-<h2>Constraint Saturation and the Gibbs Lock</h2>
-<aside class="notes">
-So the trajectory that maximises entropy production approaches this state only asymptotically as you go backwards in time. The origin is never actually reached; it is a distinguished asymptote. And the saturation diagrams show this: the marginal entropies are constrained to sum to <span class="math inline">\(C\)</span>, and they can’t both be individually at their maximum unless the system is at the LME state, which would require zero joint entropy. That’s the second-order constraint kicking in: as the system approaches the saturation boundary, a new constraint is activated.
-</aside>
-<ul>
-<li>Marginal entropies linked: <span class="math inline">\(s_1 + s_2 = C\)</span> (conserved sum)</li>
-<li>Individual ceilings: <span class="math inline">\(s_i \leq \log d_i\)</span></li>
-<li>Trade-off: as one marginal rises, the other must fall</li>
-</ul>
-</section>
-<section id="linked-marginal-entropies" class="slide level2">
-<h2>Linked Marginal Entropies</h2>
-<div class="figure">
-<div id="marginal-entropy-tradeoff-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/marginal-entropy-tradeoff.svg" width="70%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-The marginal-entropy conservation constraint <span class="math inline">\(s_1 + s_2 = C\)</span> in the <span class="math inline">\((s_1,s_2)\)</span> plane. The dashed lines mark the individual ceilings <span class="math inline">\(s_i = \log d\)</span>. Along the constraint segment, increasing one marginal entropy forces a decrease in the other.
-</aside>
-</section>
-<section id="saturation-and-second-order" class="slide level2">
-<h2>Saturation and Second Order</h2>
+<section id="long-story-short" class="slide level2">
+<h2>Long Story Short</h2>
 <div>
 <ul>
-<li class="fragment">At <span class="math inline">\(C=C_{\max}\)</span>: every <span class="math inline">\(s_i = \log d_i\)</span> — each at its individual ceiling</li>
-<li class="fragment">Marginals locked: <span class="math inline">\(s_i(\tau) = \log d_i\)</span> for all time</li>
+<li class="fragment">Can derive GENERIC-like dynamics.</li>
+<li class="fragment">Origin suggests von Neumann entropy more natural than Shannon.</li>
 </ul>
 </div>
 </section>
-<section id="saturation-of-constraint" class="slide level2">
-<h2>Saturation of Constraint</h2>
-<div class="figure">
-<div id="marginal-entropy-saturation-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/marginal-entropy-saturation.svg" width="70%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-As <span class="math inline">\(C\)</span> increases toward <span class="math inline">\(C_{\max} = \sum_i \log d_i\)</span>, the accessible constraint segment (coloured lines) shrinks. At <span class="math inline">\(C = C_{\max}\)</span> the constraint collapses to the single corner point (red dot), the LME origin, where every marginal entropy is individually at its ceiling and the constraint gradient vanishes.
-</aside>
-</section>
-<section id="saturation-of-constraint-1" class="slide level2">
-<h2>Saturation of Constraint</h2>
+<section id="connections" class="slide level2">
+<h2>Connections</h2>
 <div>
 <ul>
-<li class="fragment">First-order condition vacuous</li>
-<li class="fragment">Admissible velocities: <span class="math inline">\(\dot{\boldsymbol{\theta}}\in \ker\nabla^2 \sum_i h_i\)</span></li>
+<li class="fragment">Nice connections between.
+<ul>
+<li class="fragment">Thermodynamics and Inference (Jaynes).</li>
+<li class="fragment">Information Geometry and GENERIC.</li>
+<li class="fragment">Inaccessibility and noncommutative probability.</li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="generic-dynamics-at-the-origin" class="slide level2">
-<h2>GENERIC Dynamics at the Origin</h2>
-<p>At the LME origin, constraint geometry produces a GENERIC decomposition <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>:</p>
-<ul>
-<li>Reversible (Lax): <span class="math inline">\(\dot{\rho} = -\mathrm{i}[K,\rho]\)</span> — von Neumann equation emerges</li>
-<li>Irreversible (SEA): steepest entropy ascent in marginal-preserving subspace</li>
-</ul>
-</section>
-<section id="the-origin-is-unreachable" class="slide level2">
-<h2>The Origin is Unreachable</h2>
-<ul>
-<li><span class="math inline">\(\|\boldsymbol{\theta}\|\to\infty\)</span> as <span class="math inline">\(\rho\to\rho_{\text{pure}}\)</span></li>
-<li>Fisher (BKM) metric degenerates at boundary</li>
-<li>Infinite Fisher distance — never literally reached</li>
-<li><em>Trajectory distinguished by its asymptotic origin, not a literal start</em></li>
-</ul>
-</section>
-<section id="entropy-time" class="slide level2">
-<h2>Entropy Time</h2>
+<section id="energy" class="slide level2">
+<h2>Energy</h2>
+<div class="figure">
+<div id="sustainable-energy-without-the-hot-air-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/sustainable-energy-without-the-hot-air.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
 <aside class="notes">
-One of the things that the no-barber principle prohibits is an external time parameter. So there’s no external clock. Instead, we use entropy as a measure of progress. You can reparameterise the trajectory so that entropy increases by a fixed amount per unit of the new parameter — entropy-time. This is an internally defined clock.
+David’s book <span class="citation" data-cites="MacKay-energy08">MacKay (2008)</span> brought his clarity of thought to the challenge of sustainable energy.
 </aside>
-<ul>
-<li>Need: an <em>internal</em> clock — external clocks forbidden by isolation</li>
-<li>Game time <span class="math inline">\(\tau\)</span>: affine parameter, degenerates at origin</li>
-</ul>
+<p><span class="citation" data-cites="MacKay-energy08">MacKay (2008)</span></p>
 </section>
-<section id="entropy-time-1" class="slide level2">
-<h2>Entropy Time</h2>
-<p><span class="math display">\[\frac{\text{d}S}{\text{d}t} = c \quad \text{(constant entropy production)}\]</span></p>
-<ul>
-<li><p>1 unit of <span class="math inline">\(t\)</span> = <span class="math inline">\(c\)</span> nats of entropy produced</p></li>
-<li><p>No external clock, temperature, or Hamiltonian</p></li>
-<li><p>Progress measured by entropy produced</p></li>
-</ul>
+<section id="pendulum-animation" class="slide level2">
+<h2>Pendulum Animation</h2>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="pendulum-energy-conservation-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/pendulum-energy-conservation.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
 <aside class="notes">
-In any reparameterisation, what you really care about is the rate at which entropy is produced per unit entropy-time. Once you do this, you get a very clean separation between the reversible dynamics and the irreversible dynamics, because the irreversible part is the one that produces entropy. The reversible part — the antisymmetric part — produces no entropy. It’s pure rotation.
+Pendulum energy conservation: the pendulum (left) trades potential and kinetic energy while total energy (red line, right) remains constant. Green shows kinetic energy, orange shows potential energy.
 </aside>
+<!-- include{_physics/includes/maxwells-demon.md} -->
 </section>
-<section id="from-information-geometry-to-hamiltonian-mechanics" class="slide level2">
-<h2>From Information Geometry to Hamiltonian Mechanics</h2>
-<aside class="notes">
-The most speculative part of all this — and the current paper paper — is about how a Hamiltonian emerges. The claim is that if the system gets into what I call a Gibbs-locked regime, where the density matrix has the Gibbs form <span class="math inline">\(\rho = e^{-\beta H} / Z\)</span> and stays close to it, then the reversible part of the dynamics is generated by the modular Hamiltonian, which is <span class="math inline">\(-\log \rho\)</span>. And there’s an associated inverse temperature <span class="math inline">\(\beta(t)\)</span> that converts entropy-time into Hamiltonian time. So the Hamiltonian clock emerges from the entropy clock, conditionally on being in a Gibbs-locked region. This is where I’m most tentative, but it’s the direction I’m heading.
-</aside>
+<section id="energy-1" class="slide level2">
+<h2>Energy</h2>
+<div>
 <ul>
-<li>No imposed Hamiltonian</li>
-<li>Gibbs-locked regions, effective Hamitonian emergence <em>(Work in preparation)</em></li>
-</ul>
-</section>
-<section id="the-gibbs-lock-condition" class="slide level2">
-<h2>The Gibbs-lock Condition</h2>
-<p><span class="math display">\[K(\boldsymbol{\theta}) \approx -\beta(\boldsymbol{\theta})\,H\]</span></p>
+<li class="fragment">In certain thermodynamic limits:
 <ul>
-<li><span class="math inline">\(H\)</span>: fixed operator</li>
-<li><span class="math inline">\(\beta(\boldsymbol{\theta})\)</span>: smoothly varying inverse temperature</li>
+<li class="fragment">Marginal entropy conservation <span class="math inline">\(\equiv\)</span> Energy conservation</li>
+</ul></li>
 </ul>
-</section>
-<section id="the-hamiltonian-clock" class="slide level2">
-<h2>The Hamiltonian Clock</h2>
-<ul>
-<li>Has an associated Hamiltonian clock</li>
-<li><span class="math inline">\(\beta(t)\)</span>: conversion between entropy-time and Hamiltonian clock</li>
-</ul>
+<p>See <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span></p>
+</div>
 <!-- SECTION Intelligence -->
 </section>
 <section id="intelligence" class="slide level2">
@@ -726,6 +783,9 @@ The most speculative part of all this — and the current paper paper — is abo
 </ul>
 </div>
 </section>
+<section id="information-theoretic-limits" class="slide level2">
+<h2>Information-Theoretic Limits</h2>
+</section>
 <section id="information-theoretic-limits-on-intelligence" class="slide level2">
 <h2>Information-Theoretic Limits on Intelligence</h2>
 <div>
@@ -761,6 +821,109 @@ The most speculative part of all this — and the current paper paper — is abo
 </ul>
 <p>At room temperature: <span class="math inline">\(\sim 3 \times 10^{-21}\)</span> Joules/bit</p>
 </div>
+<!--
+include{_information-game/includes/constrained-entropy-ascent.md}
+
+include{_information-game/includes/generic-like-structure.md}
+
+include{_information-game/includes/information-relaxation-dynamics.md}
+
+include{_information-game/includes/shannon-origin-impossibility.md}
+
+include{_information/includes/the-matrix-exponential-family.md}
+
+include{_information-game/includes/lme-origin-confinement.md}
+
+include{_information-game/includes/entropy-time.md}
+
+include{_information-game/includes/hamiltonian-emergence-preview.md}
+
+<!-- SECTION Intelligence -->
+</section>
+<section id="intelligence-1" class="slide level2">
+<h2>Intelligence</h2>
+<p>–&gt;</p>
+</section>
+<section id="new-flow-of-information" class="slide level2">
+<h2>New Flow of Information</h2>
+<div class="figure">
+<div id="new-flow-of-information-1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information001.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="new-flow-of-information-1" class="slide level2">
+<h2>New Flow of Information</h2>
+<div class="figure">
+<div id="new-flow-of-information-1a-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information001a.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="evolved-relationship" class="slide level2">
+<h2>Evolved Relationship</h2>
+<div class="figure">
+<div id="new-flow-of-information-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information002.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="evolved-relationship-1" class="slide level2">
+<h2>Evolved Relationship</h2>
+<div class="figure">
+<div id="new-flow-of-information-3-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information003.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
+</aside>
+</section>
+<section id="how-information-flows-in-organisations" class="slide level2">
+<h2>How Information Flows in Organisations</h2>
+<div class="figure">
+<div id="corporate-hierarchy-information-flow-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//business/corporate-hierarchy-information-flow.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In a classical corporate hierarchy, information travels vertically. Strategic decisions flow downward from the CEO through the C-suite (CFO, CIO, COO) to functional departments. Data and reports flow upward. External signals from customers and markets enter at the top. Each layer introduces delay and compression.
+</aside>
+</section>
+<section id="hub-and-spoke" class="slide level2">
+<h2>Hub-and-Spoke</h2>
+<div class="figure">
+<div id="hub-and-spoke-information-flow-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//business/hub-and-spoke-information-flow.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In a hub-and-spoke model, all information routes through a central node. This can result in low latency (good command and control) but the central hub can become overloaded.
+</aside>
+</section>
+<section id="peer-to-peer" class="slide level2">
+<h2>Peer-to-Peer</h2>
+<div class="figure">
+<div id="peer-to-peer-information-flow-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//business/peer-to-peer-information-flow.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In a peer-to-peer network, teams communicate directly with each other through adjacent and cross-cutting channels, without routing through a central authority. This structure is resilient and high-bandwidth, but requires shared protocols and trust. It mirrors how open-source software communities and federated data ecosystems operate.
+</aside>
 </section>
 <section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>
@@ -768,8 +931,14 @@ The most speculative part of all this — and the current paper paper — is abo
 <li>No-barber principle</li>
 <li>Information isolation</li>
 <li>Axiomatic selection</li>
+</ul>
+</section>
+<section id="conclusions-1" class="slide level2">
+<h2>Conclusions</h2>
+<ul>
 <li>Emergent effective rules</li>
 <li>Limits on intelligence</li>
+<li>Social Oranisation</li>
 </ul>
 </section>
 <section id="thanks" class="slide level2 scrollable">
@@ -778,7 +947,7 @@ The most speculative part of all this — and the current paper paper — is abo
 <li>company: <a href="https://trent.ai">Trent AI</a></li>
 <li>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li><a href="https://the-atomic-human.ai">The Atomic Human</a></li>
+<li><a href="https://the-atomic-human.ai">The Atomic Human</a> pages topography, information 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5 , anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342.</li>
 <li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
@@ -792,11 +961,14 @@ Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in term
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
-<div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>
+<div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
+Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
 </div>
-<div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
-Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
+<div id="ref-Lawrence-inaccessible25" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/arXiv.2511.06795">https://doi.org/10.48550/arXiv.2511.06795</a>
+</div>
+<div id="ref-MacKay-energy08" class="csl-entry" role="doc-biblioentry">
+MacKay, D.J.C., 2008. Sustainable energy — without the hot air. UIT Cambridge, Cambridge, UK.
 </div>
 </div>
 </section>
