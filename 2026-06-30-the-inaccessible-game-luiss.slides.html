@@ -825,63 +825,63 @@ Pendulum energy conservation: the pendulum (left) trades potential and kinetic e
 <section id="information-theoretic-limits" class="slide level2">
 <h2>Information-Theoretic Limits</h2>
 </section>
-<section id="information-theoretic-limits-on-intelligence" class="slide level2">
-<h2>Information-Theoretic Limits on Intelligence</h2>
-<div>
-<ul>
-<li class="fragment"><p>Thermodynamics limits mechanical engines</p></li>
-<li class="fragment"><p>Information theory limits information engines</p></li>
-</ul>
-<p><em>Same kind of fundamental constraint</em></p>
+<section id="maxwells-demon" class="slide level2">
+<h2>Maxwell’s Demon</h2>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div class="centered" style="">
+<a href="https://play.google.com/books/reader?id=0p8AAAAAMAAJ&amp;pg=PA308"><img data-src="https://inverseprobability.com/talks/../slides/diagrams//books/0p8AAAAAMAAJ-PA308.png" /></a>
 </div>
-</section>
-<section id="what-intelligent-systems-must-do" class="slide level2">
-<h2>What Intelligent Systems Must Do</h2>
-<div>
-<ul>
-<li class="fragment">Acquire information (sensing)</li>
-<li class="fragment">Store information (memory)</li>
-<li class="fragment">Process information (computation)<br />
-</li>
-<li class="fragment">Erase information (memory mgmt)</li>
-<li class="fragment">Act on information (output)</li>
-</ul>
-<p><em>What is the thermodynamic cost?</em></p>
 </div>
-</section>
-<section id="landauers-principle" class="slide level2">
-<h2>Landauer’s Principle</h2>
-<div>
-<p>Erasing 1 bit requires: <span class="math inline">\(Q \geq k_BT\log 2\)</span></p>
-<ul>
-<li class="fragment">Not engineering limitation</li>
-<li class="fragment">Fundamental thermodynamic bound</li>
-<li class="fragment">Entropy must go somewhere</li>
-</ul>
-<p>At room temperature: <span class="math inline">\(\sim 3 \times 10^{-21}\)</span> Joules/bit</p>
 </div>
-<!--
-include{_information-game/includes/constrained-entropy-ascent.md}
-
-include{_information-game/includes/generic-like-structure.md}
-
-include{_information-game/includes/information-relaxation-dynamics.md}
-
-include{_information-game/includes/shannon-origin-impossibility.md}
-
-include{_information/includes/the-matrix-exponential-family.md}
-
-include{_information-game/includes/lme-origin-confinement.md}
-
-include{_information-game/includes/entropy-time.md}
-
-include{_information-game/includes/hamiltonian-emergence-preview.md}
-
-<!-- SECTION Intelligence -->
+<aside class="notes">
+Maxwell’s demon was designed to highlight the statistical nature of the second law of thermodynamics.
+</aside>
 </section>
-<section id="intelligence-1" class="slide level2">
-<h2>Intelligence</h2>
-<p>–&gt; <!-- SECTION Information Infrastructures --> ## Information Infrastructures</p>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
+<output id="maxwell-entropy">
+</output>
+</div>
+<div id="maxwell-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="maxwell-newball">
+New Ball
+</button>
+<button id="maxwell-pause">
+Pause
+</button>
+<button id="maxwell-skip">
+Skip 1000s
+</button>
+<button id="maxwell-histogram">
+Histogram
+</button>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
+</div>
+</div>
+<aside class="notes">
+Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right only if they are hot. The displayed entropy is the Shannon entropy of the velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).
+</aside>
+<!-- SECTION Information Infrastructures -->
+</section>
+<section id="information-infrastructures" class="slide level2">
+<h2>Information Infrastructures</h2>
 <ul>
 <li>Information limits apply to institutions, not just individuals</li>
 <li>Embodiment factor shapes organisational information topography</li>
