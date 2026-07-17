@@ -682,33 +682,54 @@ In any reparameterisation, what you really care about is the rate at which entro
 <section id="the-ritz-criterion-back-fitting-a-hamiltonian" class="slide level2">
 <h2>The Ritz Criterion: Back-fitting a Hamiltonian</h2>
 <ul>
-<li>Ritz combination rule <span class="math inline">\(\omega_{ik} = \omega_{ij} + \omega_{jk}\)</span> — a flatness condition</li>
+<li>Ritz combination rule <span class="math inline">\(\omega_{ik} = \omega_{ij} + \omega_{jk}\)</span>
+<ul>
+<li>a flatness condition</li>
+</ul></li>
 <li>Back-fitted Hamiltonian iff connection is <em>exact</em> (vertex potential exists)</li>
 <li>This is the criterion, not an assumption</li>
 </ul>
-</section>
-<section id="compliance-dichotomy-and-the-dressing-field" class="slide level2">
-<h2>Compliance Dichotomy and the Dressing Field</h2>
-<ul>
-<li>Vacuous compliance: bare frequency <span class="math inline">\(x\)</span> (thermmal-time sector)</li>
-<li>Active compliance: dressed frequency <span class="math inline">\(x\lambda_\kappa &lt; x\)</span></li>
-<li><span class="math inline">\(\lambda_\kappa = \sqrt{(d^2{-}4)/(d^2{-}4{+}4\eta)}\)</span></li>
-<li>Qubit pairs: no clock; qutrit pairs: minimal clock</li>
-</ul>
-</section>
-<section id="composite-backgrounds-holonomy-and-locality" class="slide level2">
-<h2>Composite Backgrounds, Holonomy, and Locality</h2>
-<ul>
-<li>Composite: two compliance classes on same level pair — a <em>digon</em></li>
-<li>Holonomy: <span class="math inline">\(e^{ix(1-\lambda_\kappa)t}\)</span> — flat connection breaks</li>
-<li>Two rival flat subgraphs: generated (dressed) vs inherited (bare/thermal-time)</li>
-<li>Locality from no-barber: global clock needs external frame, local clocks don’t</li>
-</ul>
+<!--
+
+
+## Compliance Dichotomy and the Dressing Field 
+
+
+
+
+
+
+
+* Vacuous compliance: bare frequency $x$ (thermmal-time sector)
+* Active compliance: dressed frequency $x\lambda_\kappa < x$
+* $\lambda_\kappa = \sqrt{(d^2{-}4)/(d^2{-}4{+}4\eta)}$
+* Qubit pairs: no clock; qutrit pairs: minimal clock
+
+
+
+
+## Composite Backgrounds, Holonomy, and Locality 
+
+
+
+
+
+
+
+* Composite: two compliance classes on same level pair — a *digon*
+* Holonomy: $e^{ix(1-\lambda_\kappa)t}$ — flat connection breaks
+* Two rival flat subgraphs: generated (dressed) vs inherited (bare/thermal-time)
+* Locality from no-barber: global clock needs external frame, local clocks don't
+
+
 <aside class="notes">
-<p>The third paper is about how Hamiltonian structure emerges. The framing has changed significantly from the version I presented at DAMTP. The key condition is no longer a “Gibbs-locked” alignment — it’s saturation. When the constraint saturates, all marginals are pinned to the maximally mixed state and all structure lives in the correlations. The oscillating modes of the compressed commutator on the correlation sector are the candidates for Hamiltonian transitions. Whether a Hamiltonian can be back-fitted is the Ritz criterion: do those modes satisfy the combination rule <span class="math inline">\(\omega_{ik} = \omega_{ij} + \omega_{jk}\)</span>?</p>
-<p>There’s a beautiful compliance dichotomy. Modes with at least two traceless site factors are invisible to every marginal — the constraint cannot see them, so they pass through undressed and oscillate at the bare modular gap. These are the thermal-time modes. Single-site modes must be projected to stay within the correlation sector; they pay a spectral price, the dressing factor <span class="math inline">\(\lambda_\kappa\)</span>. For qubits, <span class="math inline">\(\lambda_\kappa = 0\)</span> — no clock. For qutrits, you get the minimal bipartite clock.</p>
-Composite backgrounds create a multigraph with parallel edges: a digon connecting the same level pair at two different frequencies — dressed and bare. The connection curves. There are two rival flat subgraphs. And locality emerges from the no-barber principle: a global clock across <span class="math inline">\(N\)</span> parties would require a flat frame connection on a cyclic party graph, which only an external frame could enforce. Pairwise and cluster clocks are forests — no cycles, no coordination, no barber needed.
+The third paper is about how Hamiltonian structure emerges. The framing has changed significantly from the version I presented at DAMTP. The key condition is no longer a "Gibbs-locked" alignment — it's saturation. When the constraint saturates, all marginals are pinned to the maximally mixed state and all structure lives in the correlations. The oscillating modes of the compressed commutator on the correlation sector are the candidates for Hamiltonian transitions. Whether a Hamiltonian can be back-fitted is the Ritz criterion: do those modes satisfy the combination rule $\omega_{ik} = \omega_{ij} + \omega_{jk}$?
+
+There's a beautiful compliance dichotomy. Modes with at least two traceless site factors are invisible to every marginal — the constraint cannot see them, so they pass through undressed and oscillate at the bare modular gap. These are the thermal-time modes. Single-site modes must be projected to stay within the correlation sector; they pay a spectral price, the dressing factor $\lambda_\kappa$. For qubits, $\lambda_\kappa = 0$ — no clock. For qutrits, you get the minimal bipartite clock.
+
+Composite backgrounds create a multigraph with parallel edges: a digon connecting the same level pair at two different frequencies — dressed and bare. The connection curves. There are two rival flat subgraphs. And locality emerges from the no-barber principle: a global clock across $N$ parties would require a flat frame connection on a cyclic party graph, which only an external frame could enforce. Pairwise and cluster clocks are forests — no cycles, no coordination, no barber needed.
 </aside>
+-->
 </section>
 <section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>
