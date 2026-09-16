@@ -640,12 +640,8 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
         // Whitton Island (OSM way) — scale check; also stroked as coast.
         var WHITTON_LON = -0.6704;
         var WHITTON_LAT = 53.7147;
-        var LOGO_W = 156;
         var LOGO_VB_W = 290;
         var LOGO_VB_MARK_D = 95.06; // navy circle diameter in logo.svg
-        // Drop slightly so the Ouse arm (north of the join) stays on-slide.
-        var LOGO_TOP = 48;
-        var LOGO_RIGHT = 18;
         // Confluence in mark / logo viewBox (circle origin at 0,0).
         var MARK_JOIN_X = 42;
         var MARK_JOIN_Y = 54;
@@ -710,6 +706,10 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
       var seedPathIndex = -1;
       // Debug freeze for screenshots (?ambient=hold|early|alt); null in live play.
       var debugPhase = null;
+      // Logo chrome layout — IIFE scope so draw()'s soft wipe can read them.
+      var LOGO_W = 156;
+      var LOGO_TOP = 48;
+      var LOGO_RIGHT = 18;
       // Logo mark screen helpers — set in buildPaths for soft wipe under the SVG.
       var logoJoinScreen = null;
       var markDPx = 0;
@@ -989,38 +989,39 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
 
       function draw(ts) {
         if (!running) return;
-        if (t0 === null) t0 = ts;
-        var t = (ts - t0) / 1000;
-        var w = cssW || canvas.clientWidth || window.innerWidth || 1920;
-        var h = cssH || canvas.clientHeight || window.innerHeight || 1080;
-        // Soft peach → white wash so orange rivers read clearly
-        var g = ctx.createLinearGradient(0, 0, w, h);
-        g.addColorStop(0, '#ffffff');
-        g.addColorStop(0.45, '#FDE9D8');
-        g.addColorStop(1, '#fff5eb');
-        ctx.fillStyle = g;
-        ctx.fillRect(0, 0, w, h);
+        try {
+          if (t0 === null) t0 = ts;
+          var t = (ts - t0) / 1000;
+          var w = cssW || canvas.clientWidth || window.innerWidth || 1920;
+          var h = cssH || canvas.clientHeight || window.innerHeight || 1080;
+          // Soft peach → white wash so orange rivers read clearly
+          var g = ctx.createLinearGradient(0, 0, w, h);
+          g.addColorStop(0, '#ffffff');
+          g.addColorStop(0.45, '#FDE9D8');
+          g.addColorStop(1, '#fff5eb');
+          ctx.fillStyle = g;
+          ctx.fillRect(0, 0, w, h);
 
-        var vg = ctx.createRadialGradient(w * 0.5, h * 0.45, h * 0.15, w * 0.5, h * 0.5, h * 0.9);
-        vg.addColorStop(0, 'rgba(255,255,255,0)');
-        vg.addColorStop(1, 'rgba(245, 130, 31, 0.06)');
-        ctx.fillStyle = vg;
-        ctx.fillRect(0, 0, w, h);
+          var vg = ctx.createRadialGradient(w * 0.5, h * 0.45, h * 0.15, w * 0.5, h * 0.5, h * 0.9);
+          vg.addColorStop(0, 'rgba(255,255,255,0)');
+          vg.addColorStop(1, 'rgba(245, 130, 31, 0.06)');
+          ctx.fillStyle = vg;
+          ctx.fillRect(0, 0, w, h);
 
-        if (!project || !paths.length) {
-          raf = requestAnimationFrame(draw);
-          return;
-        }
+          if (!project || !paths.length) {
+            raf = requestAnimationFrame(draw);
+            return;
+          }
 
-        var phase = debugPhase || cyclePhase(t);
-        ensureSeeds(phase.cycle);
-        var i;
-        for (i = 0; i < paths.length; i++) {
-          if (!paths[i].isMain) strokeFeature(paths[i], w, h, phase);
-        }
-        for (i = 0; i < paths.length; i++) {
-          if (paths[i].isMain) strokeFeature(paths[i], w, h, phase);
-        }
+          var phase = debugPhase || cyclePhase(t);
+          ensureSeeds(phase.cycle);
+          var i;
+          for (i = 0; i < paths.length; i++) {
+            if (!paths[i].isMain) strokeFeature(paths[i], w, h, phase);
+          }
+          for (i = 0; i < paths.length; i++) {
+            if (paths[i].isMain) strokeFeature(paths[i], w, h, phase);
+          }
           // Soft wipe under the logo chrome — SVG owns the confluence; canvas
           // rivers are cleared under the full wordmark so faceted chords never
           // sit beside the sharp SVG mark.
@@ -1051,25 +1052,35 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
             ctx.fill();
             ctx.restore();
           }
-        // Ember at active seed origins while unfurling
-        if (phase.kind === 'unfurl' && phase.p < 0.85 && project && activeSeeds.length) {
-          for (i = 0; i < activeSeeds.length; i++) {
-            var sp = project(activeSeeds[i].lon, activeSeeds[i].lat, w, h);
-            var er = 10 + 8 * (1 - phase.p);
-            var eg = ctx.createRadialGradient(sp[0], sp[1], 0, sp[0], sp[1], er);
-            eg.addColorStop(0, 'rgba(255, 200, 80, ' + (0.7 * phase.alpha) + ')');
-            eg.addColorStop(1, 'rgba(245, 130, 31, 0)');
-            ctx.fillStyle = eg;
-            ctx.beginPath();
-            ctx.arc(sp[0], sp[1], er, 0, Math.PI * 2);
-            ctx.fill();
+          // Ember at active seed origins while unfurling
+          if (phase.kind === 'unfurl' && phase.p < 0.85 && project && activeSeeds.length) {
+            for (i = 0; i < activeSeeds.length; i++) {
+              var sp = project(activeSeeds[i].lon, activeSeeds[i].lat, w, h);
+              var er = 10 + 8 * (1 - phase.p);
+              var eg = ctx.createRadialGradient(sp[0], sp[1], 0, sp[0], sp[1], er);
+              eg.addColorStop(0, 'rgba(255, 200, 80, ' + (0.7 * phase.alpha) + ')');
+              eg.addColorStop(1, 'rgba(245, 130, 31, 0)');
+              ctx.fillStyle = eg;
+              ctx.beginPath();
+              ctx.arc(sp[0], sp[1], er, 0, Math.PI * 2);
+              ctx.fill();
+            }
           }
+        } catch (err) {
+          if (typeof console !== 'undefined' && console.error) {
+            console.error('lamd-trent-ambient draw failed', err);
+          }
+          running = false;
+          raf = null;
+          return;
         }
 
         raf = requestAnimationFrame(draw);
       }
 
       function startAmbient() {
+        // Recover if a prior draw threw after setting running=true with no raf.
+        if (running && raf === null) running = false;
         if (running || isPrintPdf()) return;
         running = true;
         t0 = null;
