@@ -317,3 +317,13 @@
 .reveal li {
     text-align: left;
 }
+
+/* Section dividers (\\section with data-state="trent-section") */
+.reveal.trent-section .slide-background.present {
+    background-image: linear-gradient(135deg, #1A1A3E 0%, #2a3a5c 45%, #F5821F 100%) !important;
+    background-color: transparent !important;
+}
+
+.reveal.trent-section .slides section.present h2 {
+    color: #ffffff !important;
+}
