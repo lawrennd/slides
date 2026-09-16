@@ -180,12 +180,13 @@
 <li class="fragment"><em>Dynamics</em>: how stores, channels, and links evolve under constraint.</li>
 </ul>
 </div>
+<!-- SECTION The judgment layer -->
 </section>
-<section id="the-judgment-layer" class="slide level2">
-<h2>The Judgment Layer</h2>
+<section id="the-judgment-layer" class="slide level2" data-state="trent-section">
+<h2 data-state="trent-section">The judgment layer</h2>
 </section>
-<section id="organisations-as-emulsions" class="slide level2">
-<h2>Organisations as emulsions</h2>
+<section id="judgment-layer-organisations-as-emulsions" class="slide level2">
+<h2>Judgment Layer: Organisations as emulsions</h2>
 <div>
 <ul>
 <li class="fragment">Organisations are a stable mixture: automatable <em>routines</em> and irreducible <em>human context</em>.</li>
@@ -949,11 +950,12 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
 
         var a = phase.alpha;
         // Soften the main stem during unfurl so it doesn't dominate; full weight on hold.
+        // Keep rivers quieter than slide text (foreground stays primary).
         var mainBoost = (phase.kind === 'unfurl') ? (0.55 + 0.45 * local) : 1;
         if (p.isMain) {
-          strokeRange(2.4 * mainBoost, 'rgba(245, 130, 31, ' + (0.72 * mainBoost * a) + ')');
+          strokeRange(2.0 * mainBoost, 'rgba(245, 130, 31, ' + (0.32 * mainBoost * a) + ')');
         } else {
-          strokeRange(1.8, 'rgba(245, 130, 31, ' + (0.78 * a) + ')');
+          strokeRange(1.45, 'rgba(245, 130, 31, ' + (0.36 * a) + ')');
         }
 
         // Single tip glow on the seed-bearing path while it is still growing
@@ -977,7 +979,7 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
             }
             var glowR = 16;
             var glow = ctx.createRadialGradient(hx, hy, 0, hx, hy, glowR);
-            glow.addColorStop(0, 'rgba(255, 200, 80, ' + (0.6 * a) + ')');
+            glow.addColorStop(0, 'rgba(255, 200, 80, ' + (0.28 * a) + ')');
             glow.addColorStop(1, 'rgba(245, 130, 31, 0)');
             ctx.fillStyle = glow;
             ctx.beginPath();
@@ -1004,7 +1006,7 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
 
           var vg = ctx.createRadialGradient(w * 0.5, h * 0.45, h * 0.15, w * 0.5, h * 0.5, h * 0.9);
           vg.addColorStop(0, 'rgba(255,255,255,0)');
-          vg.addColorStop(1, 'rgba(245, 130, 31, 0.06)');
+          vg.addColorStop(1, 'rgba(245, 130, 31, 0.03)');
           ctx.fillStyle = vg;
           ctx.fillRect(0, 0, w, h);
 
@@ -1058,7 +1060,7 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
               var sp = project(activeSeeds[i].lon, activeSeeds[i].lat, w, h);
               var er = 10 + 8 * (1 - phase.p);
               var eg = ctx.createRadialGradient(sp[0], sp[1], 0, sp[0], sp[1], er);
-              eg.addColorStop(0, 'rgba(255, 200, 80, ' + (0.7 * phase.alpha) + ')');
+              eg.addColorStop(0, 'rgba(255, 200, 80, ' + (0.3 * phase.alpha) + ')');
               eg.addColorStop(1, 'rgba(245, 130, 31, 0)');
               ctx.fillStyle = eg;
               ctx.beginPath();
