@@ -485,12 +485,13 @@ Skelton, M., Pais, M., 2019. Team topologies: Organising business and technology
       color: rgba(26, 26, 62, 0.45);
       letter-spacing: 0.02em;
     }
-    /* Section dividers: navy→orange gradient (Reveal data-state="trent-section") */
-    .reveal.trent-section .slide-background.present {
+    /* Section dividers: navy→orange gradient.
+       Reveal 3.x applies data-state classes to <html>, not .reveal. */
+    html.trent-section .reveal .slide-background.present {
       background-image: linear-gradient(135deg, #1A1A3E 0%, #2a3a5c 45%, #F5821F 100%) !important;
       background-color: transparent !important;
     }
-    .reveal.trent-section .slides section.present h2 {
+    html.trent-section .reveal .slides section.present h2 {
       color: #ffffff !important;
     }
     </style>
