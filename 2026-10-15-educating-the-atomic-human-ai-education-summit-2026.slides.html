@@ -79,6 +79,42 @@
     showDivs(slideIndex, group);
   }
   </script>
+  <script>
+  /* Theme chrome (logos) sits on Reveal's full-viewport .slide-background,
+     which does not receive the deck transform. Sync --slide-scale so CSS can
+     size that chrome with the slides (see ai-cam.css / mlatcl.css / trent.css). */
+  (function () {
+    var bound = false;
+    function syncSlideScale() {
+      if (typeof Reveal === "undefined" || typeof Reveal.getScale !== "function") return false;
+      try {
+        var s = Reveal.getScale();
+        if (!s || !isFinite(s)) return false;
+        document.documentElement.style.setProperty("--slide-scale", String(s));
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+    function bind() {
+      if (bound) return typeof Reveal !== "undefined";
+      if (typeof Reveal === "undefined" || typeof Reveal.addEventListener !== "function") return false;
+      Reveal.addEventListener("ready", syncSlideScale);
+      window.addEventListener("resize", function () {
+        setTimeout(syncSlideScale, 0);
+        setTimeout(syncSlideScale, 50);
+      });
+      bound = true;
+      return true;
+    }
+    var n = 0;
+    var t = setInterval(function () {
+      bind();
+      /* Keep polling until getScale() works — Reveal exists before initialize. */
+      if (syncSlideScale() || ++n > 200) clearInterval(t);
+    }, 50);
+  })();
+  </script>
       
 </head>
 <body>
@@ -139,8 +175,8 @@ Open by acknowledging the dominant emotional frame: awe, fear and helplessness. 
 <section id="artificial-general-vehicle" class="slide level2">
 <h2>Artificial General Vehicle</h2>
 </section>
-<section id="artificial-general-vehicle-1" class="slide level2">
-<h2>Artificial General Vehicle</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="artificial-general-vehicle-figure" class="figure-frame">
 <div class="centered" style="">
@@ -162,19 +198,7 @@ The notion of artificial general intelligence is as absurd as the notion of an a
 </ul>
 </div>
 </section>
-<section id="people-communication-and-culture" class="slide level2">
-<h2>People, Communication and Culture</h2>
-<div class="figure">
-<div id="people-culture-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/slides/diagrams/ai/people-culture.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-People communicate through artifacts and culture.
-</aside>
-</section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="automatons-scribeysense-figure" class="figure-frame">
@@ -248,7 +272,7 @@ Thirty to forty-five seconds. Image, one sentence of continuity, then into where
 </ul>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="-figure" class="figure-frame">
@@ -267,7 +291,7 @@ This is the drawing Dan was inspired to create for Chapter 10. The warning sugge
 <div class="figure">
 <div id="epilogue-sorcerers-apprentice-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue-detail-sorcerers-apprentice.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue-detail-sorcerers-apprentice.png" width="55%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -275,17 +299,10 @@ This is the drawing Dan was inspired to create for Chapter 10. The warning sugge
 Like the sorcerer’s apprentice, we have technology companies deploying software systems that cannot be controlled by their creators. Detail from Dan Andrews’ Epilogue illustration for <em>The Atomic Human</em> <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span>.
 </aside>
 </section>
-<section id="counter-example-river-gods-decide" class="slide level2">
-<h2>Counter-example: River Gods Decide</h2>
-<div>
-<ul>
-<li class="fragment">When people feel powerless, they defer to greater authorities.</li>
-<li class="fragment">“Let the AI decide” is the modern river god.</li>
-<li class="fragment">Losing enfranchisement looks like handing hard cases away.</li>
-</ul>
-</div>
+<section id="river-gods" class="slide level2">
+<h2>River Gods</h2>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="river-gods-decide-figure" class="figure-frame">
@@ -298,6 +315,16 @@ Like the sorcerer’s apprentice, we have technology companies deploying softwar
 This is the drawing Dan was inspired to create for Chapter 11. It captures the core idea in our tendency to devolve complex decisions to what we perceive as greater authorities, but what are in reality ill equipped to deliver a human response.
 </aside>
 <p>.</p>
+</section>
+<section id="let-the-ai-decide" class="slide level2">
+<h2>Let the AI decide!</h2>
+<div>
+<ul>
+<li class="fragment">When people feel powerless, they defer to greater authorities.</li>
+<li class="fragment">“Let the AI decide” is the modern river god.</li>
+<li class="fragment">Losing enfranchisement looks like handing hard cases away.</li>
+</ul>
+</div>
 </section>
 <section id="ai-in-education-public-perspectives" class="slide level2">
 <h2>AI in Education: Public Perspectives</h2>
@@ -321,7 +348,7 @@ This is the drawing Dan was inspired to create for Chapter 11. It captures the c
 </blockquote>
 </section>
 <section id="what-enfranchise-human-accountability" class="slide level2">
-<h2>What: Enfranchise Human Accountability</h2>
+<h2>What: Enfranchise human accountability</h2>
 <div>
 <ul>
 <li class="fragment">Keep people able to understand, challenge and own decisions.</li>
@@ -347,22 +374,21 @@ This is the drawing Dan was inspired to create for Chapter 11. It captures the c
 </section>
 <section id="piecemeal-social-engineers" class="slide level2">
 <h2>Piecemeal Social Engineers</h2>
-<ul>
-<li>Piecemeal social engineering (Popper):
+<p>Piecemeal social engineering (Popper) ::: incremental</p>
 <ul>
 <li>Incremental changes vs revolutionary transformation</li>
 <li>Learning from mistakes</li>
 <li>Focus on specific problems</li>
 <li>Democratic institutionalism</li>
-</ul></li>
 </ul>
+<p>:::</p>
 </section>
 <section id="the-open-society" class="slide level2">
 <h2>The Open Society</h2>
 <div class="figure">
 <div id="epilogue-open-society-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue-detail-open-society.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue-detail-open-society.png" width="55%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -402,7 +428,7 @@ Get AI off of chores and onto society’s wicked problems: health, society, soci
 </ul>
 </div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="attention-reinvestment-cycle-figure" class="figure-frame">
@@ -414,13 +440,15 @@ Get AI off of chores and onto society’s wicked problems: health, society, soci
 The attention reinvestment cycle represents a new approach to deploying innovation where the value created is measured in freed human attention rather than purely financial returns.
 </aside>
 </section>
-<section id="how-reinvest-attention-through-open-institutions" class="slide level2">
-<h2>How: Reinvest Attention Through Open Institutions</h2>
+<section id="how-reinvest-attention-open-institutions" class="slide level2">
+<h2>How: Reinvest attention &amp; open institutions</h2>
+<div>
 <ul>
-<li>Use AI to free human attention.</li>
-<li>Reinvest that attention through knowledge networks.</li>
-<li>Trust piecemeal social engineers, not grand narratives.</li>
+<li class="fragment">Use AI to free human attention.</li>
+<li class="fragment">Reinvest that attention through knowledge networks.</li>
+<li class="fragment">Trust piecemeal social engineers, not grand narratives.</li>
 </ul>
+</div>
 <!-- SECTION Do -->
 </section>
 <section id="do" class="slide level2">
@@ -429,7 +457,7 @@ The attention reinvestment cycle represents a new approach to deploying innovati
 <section id="example-data-science-africa" class="slide level2">
 <h2>Example: Data Science Africa</h2>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="data-science-africa-figure" class="figure-frame">
@@ -443,7 +471,7 @@ Data Science Africa <a href="https://www.datascienceafrica.org/">https://datasci
 </aside>
 <p>Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and AI on the African continent</p>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="dsa-events-october-2021-figure" class="figure-frame">
@@ -455,7 +483,7 @@ Data Science Africa <a href="https://www.datascienceafrica.org/">https://datasci
 Data Science Africa meetings held up to October 2021.
 </aside>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="africa-benefit-data-revolution-figure" class="figure-frame">
@@ -481,7 +509,7 @@ Data Science Africa meetings held up to October 2021.
 </div>
 </section>
 <section id="do-build-capability-where-the-need-is" class="slide level2">
-<h2>Do: Build Capability Where the Need Is</h2>
+<h2>Do: Build capability where the need Is</h2>
 <div>
 <ul>
 <li class="fragment">Start with local problems and local partners.</li>
@@ -509,11 +537,13 @@ Only different voices and perspectives together can provide good steerage. Detai
 </section>
 <section id="celebrate-the-builders" class="slide level2">
 <h2>Celebrate the Builders</h2>
+<div>
 <ul>
-<li>Celebrate teachers and learners who improve practice.</li>
-<li>Celebrate institutions that share evidence openly.</li>
-<li>Celebrate tools that increase agency rather than dependency.</li>
+<li class="fragment">Celebrate teachers and learners who improve practice.</li>
+<li class="fragment">Celebrate institutions that share evidence openly.</li>
+<li class="fragment">Celebrate tools that increase agency rather than dependency.</li>
 </ul>
+</div>
 <aside class="notes">
 Close positively here. Keep Cambridge light: DSA is the main Do example; the local government accelerator is the only ai@cam pointer. AI in Education is the education-sector Document example.
 </aside>
@@ -576,7 +606,7 @@ Flag that Sarah Alcock is presenting earlier in the Summit (Responsible AI imple
 </ul>
 </div>
 </section>
-<section id="section-8" class="slide level2" data-background-image="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue_scaled.png" data-background-size="contain" data-background-color="#ffffff">
+<section id="section-9" class="slide level2" data-background-image="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue_scaled.png" data-background-size="contain" data-background-color="#ffffff">
 <h2 data-background-image="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue_scaled.png" data-background-size="contain" data-background-color="#ffffff"></h2>
 <aside class="notes">
 Close on the full Epilogue drawing. The panels we have been zooming into reassemble as one picture: sorcerer’s apprentice, open society, wicked problems, who’s stepping up.
@@ -588,7 +618,7 @@ Close on the full Epilogue drawing. The panels we have been zooming into reassem
 <li><p>company: <a href="https://trent.ai">Trent AI</a></p></li>
 <li><p>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></p></li>
 <li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
-<li><p><a href="https://the-atomic-human.ai">The Atomic Human</a> pages Terminator image embodies 7, 9, 12, 13, 21, 30, 31, 216, 220, 257, 333, 353 , Terminator (movie character) 7, 9, 12, 13, 21, 30, 31, 216, 220, 257, 333, 353, anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342, Cicero and culture 20-21, cuneiform 337, 360, 390.</p></li>
+<li><p><a href="https://the-atomic-human.ai">The Atomic Human</a> pages Terminator image embodies 7, 9, 12, 13, 21, 30, 31, 216, 220, 257, 333, 353 , Terminator (movie character) 7, 9, 12, 13, 21, 30, 31, 216, 220, 257, 333, 353, anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342, cuneiform 337, 360, 390.</p></li>
 <li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">Beware the rise of the digital oligarchy</a></p></li>
 <li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How African can benefit from the data revolution</a></p></li>
 <li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">Data Science Africa</a></p></li>
