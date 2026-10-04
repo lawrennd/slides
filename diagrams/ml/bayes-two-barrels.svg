@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" width="740" height="420">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 740 420" width="740" height="420">
   <!--
     Both cups are identical in size (200px wide, same U-shape).
-    Both use the same 6-column grid, 28px step, fruit radius 11.
+    Both use the same 6-column grid, 28px step.
     Fruit rows are bottom-aligned: bottom row at y=225, stepping up by 28.
     Barrel 1 (4 rows): y = 141, 169, 197, 225
     Barrel 2 (2 rows): y = 197, 225
@@ -17,6 +18,19 @@
     <clipPath id="b2clip">
       <rect x="440" y="75" width="200" height="175"/>
     </clipPath>
+
+    <!-- Braeburn-style apple, centred at origin, ~22px across.
+         Two lobes separated by a notch at the top, gently tapered base. -->
+    <g id="apple">
+      <path d="M 0,-6
+               C -2,-11 -11,-10 -11,-2
+               C -11,5 -5,11 0,11
+               C 5,11 11,5 11,-2
+               C 11,-10 2,-11 0,-6 Z"
+            fill="#CC2222" stroke="#881414" stroke-width="1"/>
+      <line x1="0" y1="-6" x2="1" y2="-12"
+            stroke="#5A3010" stroke-width="2" stroke-linecap="round"/>
+    </g>
   </defs>
 
   <!-- =========================================================
@@ -28,57 +42,36 @@
   <path d="M 120,80 L 120,245 C 170,262 270,262 320,245 L 320,80 Z"
         fill="#EDD9A3" stroke="none"/>
 
-  <!-- row 0, y=141 - all apples -->
-  <circle cx="148" cy="141" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="176" cy="141" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="204" cy="141" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="232" cy="141" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="260" cy="141" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="288" cy="141" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <line x1="148" y1="130" x2="150" y2="125" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="176" y1="130" x2="178" y2="125" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="204" y1="130" x2="206" y2="125" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="232" y1="130" x2="234" y2="125" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="260" y1="130" x2="262" y2="125" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="288" y1="130" x2="290" y2="125" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-
-  <!-- row 1, y=169 - all apples -->
-  <circle cx="148" cy="169" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="176" cy="169" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="204" cy="169" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="232" cy="169" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="260" cy="169" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="288" cy="169" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <line x1="148" y1="158" x2="150" y2="153" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="176" y1="158" x2="178" y2="153" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="204" y1="158" x2="206" y2="153" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="232" y1="158" x2="234" y2="153" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="260" y1="158" x2="262" y2="153" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="288" y1="158" x2="290" y2="153" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-
-  <!-- row 2, y=197 - all apples -->
-  <circle cx="148" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="176" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="204" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="232" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="260" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="288" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <line x1="148" y1="186" x2="150" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="176" y1="186" x2="178" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="204" y1="186" x2="206" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="232" y1="186" x2="234" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="260" y1="186" x2="262" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="288" y1="186" x2="290" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-
-  <!-- row 3, y=225 - cols 0-1 apple, cols 2-5 orange -->
-  <circle cx="148" cy="225" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="176" cy="225" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b1clip)"/>
-  <line x1="148" y1="214" x2="150" y2="209" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <line x1="176" y1="214" x2="178" y2="209" stroke="#5A3010" stroke-width="2" clip-path="url(#b1clip)"/>
-  <circle cx="204" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="232" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="260" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b1clip)"/>
-  <circle cx="288" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b1clip)"/>
+  <g clip-path="url(#b1clip)">
+    <!-- row 0, y=141 -->
+    <use xlink:href="#apple" transform="translate(148,141)"/>
+    <use xlink:href="#apple" transform="translate(176,141)"/>
+    <use xlink:href="#apple" transform="translate(204,141)"/>
+    <use xlink:href="#apple" transform="translate(232,141)"/>
+    <use xlink:href="#apple" transform="translate(260,141)"/>
+    <use xlink:href="#apple" transform="translate(288,141)"/>
+    <!-- row 1, y=169 -->
+    <use xlink:href="#apple" transform="translate(148,169)"/>
+    <use xlink:href="#apple" transform="translate(176,169)"/>
+    <use xlink:href="#apple" transform="translate(204,169)"/>
+    <use xlink:href="#apple" transform="translate(232,169)"/>
+    <use xlink:href="#apple" transform="translate(260,169)"/>
+    <use xlink:href="#apple" transform="translate(288,169)"/>
+    <!-- row 2, y=197 -->
+    <use xlink:href="#apple" transform="translate(148,197)"/>
+    <use xlink:href="#apple" transform="translate(176,197)"/>
+    <use xlink:href="#apple" transform="translate(204,197)"/>
+    <use xlink:href="#apple" transform="translate(232,197)"/>
+    <use xlink:href="#apple" transform="translate(260,197)"/>
+    <use xlink:href="#apple" transform="translate(288,197)"/>
+    <!-- row 3, y=225: cols 0-1 apple, cols 2-5 orange -->
+    <use xlink:href="#apple" transform="translate(148,225)"/>
+    <use xlink:href="#apple" transform="translate(176,225)"/>
+    <circle cx="204" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="232" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="260" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="288" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+  </g>
 
   <!-- cup border -->
   <path d="M 120,80 L 120,245 C 170,262 270,262 320,245 L 320,80"
@@ -88,8 +81,7 @@
   <text x="220" y="282"
         font-family="sans-serif" font-size="18" font-weight="bold"
         text-anchor="middle" fill="#2A2A2A">Barrel One</text>
-  <circle cx="157" cy="304" r="8" fill="#CC2222" stroke="#881414" stroke-width="1"/>
-  <line x1="157" y1="296" x2="158" y2="292" stroke="#5A3010" stroke-width="2"/>
+  <use xlink:href="#apple" transform="translate(157,304) scale(0.72)"/>
   <text x="170" y="309"
         font-family="sans-serif" font-size="14" fill="#444">20 apples</text>
   <circle cx="157" cy="326" r="8" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
@@ -105,25 +97,22 @@
   <path d="M 440,80 L 440,245 C 490,262 590,262 640,245 L 640,80 Z"
         fill="#EDD9A3" stroke="none"/>
 
-  <!-- row 0, y=197 - cols 0-3 apple, cols 4-5 orange -->
-  <circle cx="468" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="496" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="524" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="552" cy="197" r="11" fill="#CC2222" stroke="#881414" stroke-width="1" clip-path="url(#b2clip)"/>
-  <line x1="468" y1="186" x2="470" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b2clip)"/>
-  <line x1="496" y1="186" x2="498" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b2clip)"/>
-  <line x1="524" y1="186" x2="526" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b2clip)"/>
-  <line x1="552" y1="186" x2="554" y2="181" stroke="#5A3010" stroke-width="2" clip-path="url(#b2clip)"/>
-  <circle cx="580" cy="197" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="608" cy="197" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-
-  <!-- row 1, y=225 - all oranges -->
-  <circle cx="468" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="496" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="524" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="552" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="580" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
-  <circle cx="608" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1" clip-path="url(#b2clip)"/>
+  <g clip-path="url(#b2clip)">
+    <!-- row 0, y=197: cols 0-3 apple, cols 4-5 orange -->
+    <use xlink:href="#apple" transform="translate(468,197)"/>
+    <use xlink:href="#apple" transform="translate(496,197)"/>
+    <use xlink:href="#apple" transform="translate(524,197)"/>
+    <use xlink:href="#apple" transform="translate(552,197)"/>
+    <circle cx="580" cy="197" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="608" cy="197" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <!-- row 1, y=225: all oranges -->
+    <circle cx="468" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="496" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="524" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="552" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="580" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+    <circle cx="608" cy="225" r="11" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
+  </g>
 
   <!-- cup border -->
   <path d="M 440,80 L 440,245 C 490,262 590,262 640,245 L 640,80"
@@ -133,8 +122,7 @@
   <text x="540" y="282"
         font-family="sans-serif" font-size="18" font-weight="bold"
         text-anchor="middle" fill="#2A2A2A">Barrel Two</text>
-  <circle cx="477" cy="304" r="8" fill="#CC2222" stroke="#881414" stroke-width="1"/>
-  <line x1="477" y1="296" x2="478" y2="292" stroke="#5A3010" stroke-width="2"/>
+  <use xlink:href="#apple" transform="translate(477,304) scale(0.72)"/>
   <text x="490" y="309"
         font-family="sans-serif" font-size="14" fill="#444">4 apples</text>
   <circle cx="477" cy="326" r="8" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
