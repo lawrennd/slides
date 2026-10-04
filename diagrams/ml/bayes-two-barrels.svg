@@ -86,17 +86,14 @@
 
   <!-- label and legend -->
   <text x="220" y="282"
-        font-family="Georgia, 'Times New Roman', serif"
         font-size="18" font-weight="bold"
         text-anchor="middle" fill="#2A2A2A">Barrel One</text>
   <circle cx="157" cy="304" r="8" fill="#CC2222" stroke="#881414" stroke-width="1"/>
   <line x1="157" y1="296" x2="158" y2="292" stroke="#5A3010" stroke-width="2"/>
   <text x="170" y="309"
-        font-family="Georgia, 'Times New Roman', serif"
         font-size="14" fill="#444">20 apples</text>
   <circle cx="157" cy="326" r="8" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
   <text x="170" y="331"
-        font-family="Georgia, 'Times New Roman', serif"
         font-size="14" fill="#444">4 oranges</text>
 
   <!-- =========================================================
@@ -134,27 +131,15 @@
 
   <!-- label and legend -->
   <text x="680" y="282"
-        font-family="Georgia, 'Times New Roman', serif"
         font-size="18" font-weight="bold"
         text-anchor="middle" fill="#2A2A2A">Barrel Two</text>
   <circle cx="617" cy="304" r="8" fill="#CC2222" stroke="#881414" stroke-width="1"/>
   <line x1="617" y1="296" x2="618" y2="292" stroke="#5A3010" stroke-width="2"/>
   <text x="630" y="309"
-        font-family="Georgia, 'Times New Roman', serif"
         font-size="14" fill="#444">4 apples</text>
   <circle cx="617" cy="326" r="8" fill="#FF8800" stroke="#CC5500" stroke-width="1"/>
   <text x="630" y="331"
-        font-family="Georgia, 'Times New Roman', serif"
         font-size="14" fill="#444">8 oranges</text>
 
-  <!-- central prompt -->
-  <text x="450" y="356"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="15" font-style="italic"
-        text-anchor="middle" fill="#666">Choose a barrel at random,</text>
-  <text x="450" y="378"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="15" font-style="italic"
-        text-anchor="middle" fill="#666">then draw one fruit.</text>
 
 </svg>
