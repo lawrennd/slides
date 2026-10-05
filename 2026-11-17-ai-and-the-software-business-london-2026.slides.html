@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2026-11-17">
+  <title>AI and Software</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      /* scrollable slides: start content at top, left-align text */
+      .reveal section.scrollable {
+          overflow-y: auto !important;
+          height: 100% !important;
+          top: 0 !important;
+          text-align: left;
+      }
+      .reveal section.scrollable > h2:first-child,
+      .reveal section.scrollable > h2.scrollable:first-child {
+          margin-top: 0.2em;
+      }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2/css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
+  <![endif]-->
+   <!-- Mermaid -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="https://inverseprobability.com/assets/js/figure-animate.js"></script>
+  <script>
+  /* Map range slider values (min..max, often 0-based in LaMD content) to the
+     1-based frame index expected by figure-animate.js showDivs(). */
+  function lamdFrameIndex(group) {
+    var range = document.getElementById("range-" + group);
+    var val = parseInt(range.value, 10);
+    var min = parseInt(range.min, 10);
+    return val - min + 1;
+  }
+  function lamdSetDivs(group) {
+    if (typeof showDivs !== "function") return;
+    slideIndex = lamdFrameIndex(group);
+    showDivs(slideIndex, group);
+  }
+  function lamdPlusDivs(n, group) {
+    if (typeof showDivs !== "function") return;
+    var range = document.getElementById("range-" + group);
+    var min = parseInt(range.min, 10);
+    var max = parseInt(range.max, 10);
+    var val = parseInt(range.value, 10) + n;
+    if (val < min) val = max;
+    if (val > max) val = min;
+    range.value = val;
+    range.setAttribute("aria-valuenow", val);
+    slideIndex = val - min + 1;
+    showDivs(slideIndex, group);
+  }
+  </script>
+  <script>
+  /* Theme chrome (logos) sits on Reveal's full-viewport .slide-background,
+     which does not receive the deck transform. Sync --slide-scale so CSS can
+     size that chrome with the slides (see ai-cam.css / mlatcl.css / trent.css). */
+  (function () {
+    var bound = false;
+    function syncSlideScale() {
+      if (typeof Reveal === "undefined" || typeof Reveal.getScale !== "function") return false;
+      try {
+        var s = Reveal.getScale();
+        if (!s || !isFinite(s)) return false;
+        document.documentElement.style.setProperty("--slide-scale", String(s));
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+    function bind() {
+      if (bound) return typeof Reveal !== "undefined";
+      if (typeof Reveal === "undefined" || typeof Reveal.addEventListener !== "function") return false;
+      Reveal.addEventListener("ready", syncSlideScale);
+      window.addEventListener("resize", function () {
+        setTimeout(syncSlideScale, 0);
+        setTimeout(syncSlideScale, 50);
+      });
+      bound = true;
+      return true;
+    }
+    var n = 0;
+    var t = setInterval(function () {
+      bind();
+      /* Keep polling until getScale() works — Reveal exists before initialize. */
+      if (syncSlideScale() || ++n > 200) clearInterval(t);
+    }, 50);
+  })();
+  </script>
+      
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">AI and Software</h1>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2026-11-17</time></p>
+  <p class="venue" style="text-align:center">TBC, Central London</p>
+</section>
+
+<section class="slide level2">
+
+<!-- CIP-0012 Track A: no-op outside HTML (overridden in talk-macros-html.gpp). -->
+<!-- Do not edit this file locally. -->
+<!---->
+<!-- CIP-0012 Track A: content script load. Once-guard with alphanumeric
+     names stays in the surrounding ifndef wrapper (GPP ifndef limitation). -->
+<!-- Do not edit this file locally. -->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<!--
+LCORPORATE KEYNOTE
+Event date: Tuesday 17 November 2026
+Arrive: no later than 17:30 | Speak: 18:00 | Leave: ~20:00
+All timings TBC. Venue TBC, Central London.
+
+AUDIENCE:
+- 100+ software CEOs, founders, senior executives
+- Private equity investors and investment bankers
+- Across the technology ecosystem
+
+BRIEF:
+- 30-minute keynote: impact of AI on software businesses
+- How AI is reshaping SaaS and how it may evolve
+- Followed by up to 30 minutes Q&A
+- Subject to be refined on briefing call (Paula Nieuwoudt, LSB)
+
+CONSTRAINTS:
+- Dress: Business
+- Travel: speaker arranges and pays (included in fee)
+- Tech: client provides and pays for equipment
+- Recording: NO audio/video (incl. back projection) without prior
+  consent of London Speaker Bureau / Speaker
+
+TALK STRUCTURE (30 minutes + up to 30 Q&A):
+============================================================
+0:00–0:03   Opening and framing for software leaders
+0:03–0:11   Part 1: What AI is (and isn't) for software businesses
+0:11–0:20   Part 2: How AI is reshaping SaaS
+0:20–0:26   Part 3: Evolution — HAMs, debt, and the judgment layer
+0:26–0:30   Close: Trent and the judgment layer in practice
+0:30–1:00   Q&A
+
+JUDGMENT LAYER / TRENT THREAD (from Agentic AI Summit, Berkeley 2026):
+- Safety/advantage become organisational: who decides when the answer matters?
+- Good Regulator: judgement must still model what it oversees
+- Automating without preserving judgment → agentic debt
+- Intervention: make the judgment layer explicit; deliver it to the
+  AI-augmented engineer — that is what Trent builds
+
+FT THREAD:
+- Op-ed (Dec 2024): AI cannot replace the atomic human
+  https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316
+- Letter (May 2026): AI arrives workflow by workflow / software group valuation
+  https://www.ft.com/content/75ebaeb0-e250-4030-93b9-25fb517109ca
+
+OPTIONAL CUTS (if briefing shortens the slot):
+- Skip baby-shoes (save ~2 min)
+- Collapse productivity + attention flywheel into one beat (save ~2 min)
+- Drop Horizon to a single cautionary note (save ~2 min)
+- Shorten Part 1 embodiment to celsius only (save ~2 min)
+- Keep Good Regulator to one slide if Part 3 runs long (save ~2 min)
+- Show FT op-ed image only (skip letter slides) if over time (save ~2 min)
+
+POST-BRIEFING TODO:
+- Confirm venue, exact title, and any client framing
+- Confirm whether PPTX handoff is required and by when
+- Tune Part 2 examples to any verticals the client emphasises
+- Confirm how much Trent product detail is appropriate for this room
+-->
+<!-- SECTION Opening: Software Advantage When Code Gets Cheap -->
+</section>
+<section id="opening-software-advantage-when-code-gets-cheap" class="slide level2">
+<h2>Opening: Software Advantage When Code Gets Cheap</h2>
+</section>
+<section id="todays-arc" class="slide level2">
+<h2>Today’s Arc</h2>
+<div>
+<ul>
+<li class="fragment">What AI is — and what it is not</li>
+<li class="fragment">How AI is reshaping SaaS</li>
+<li class="fragment">The judgment layer — and what we are building at Trent</li>
+</ul>
+</div>
+<!-- SECTION Part 1: What AI Is (and Isn't) for Software Businesses -->
+</section>
+<section id="part-1-what-ai-is-and-isnt-for-software-businesses" class="slide level2">
+<h2>Part 1: What AI Is (and Isn’t) for Software Businesses</h2>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="ford-model-t-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/ai/1925_Ford_Model_T_touring.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+A 1925 Ford Model T built at Henry Ford’s Highland Park Plant in Dearborn, Michigan. This example now resides in Australia, owned by the founder of FordModelT.net. From <a href="https://commons.wikimedia.org/wiki/File:1925_Ford_Model_T_touring.jpg" class="uri">https://commons.wikimedia.org/wiki/File:1925_Ford_Model_T_touring.jpg</a>
+</aside>
+<p></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="artificial-general-vehicle-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/atomic-human/Artificial_General_Vehicle_211224_Final.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The notion of artificial general intelligence is as absurd as the notion of an artificial general vehicle - no single vehicle is optimal for every journey. (Illustration by Dan Andrews inspired by a conversation about “The Atomic Human” <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span>)
+</aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="the-atomic-eye-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/slides/diagrams/ai/atomic-eye.svg" width="45%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The Atomic Eye, by slicing away aspects of the human that we used to believe to be unique to us, but are now the preserve of the machine, we learn something about what it means to be human.
+</aside>
+</section>
+<section id="information-and-embodiment" class="slide level2">
+<h2>Information and Embodiment</h2>
+<div class="figure">
+<div id="claude-shannon-figure" class="figure-frame">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/ClaudeShannon_MFO3807.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+<center>
+<em>Claude Shannon</em>
+</center>
+</div>
+</div>
+<aside class="notes">
+Claude Shannon (1916-2001)
+</aside>
+<aside class="notes">
+Just as we measure temperature. Just as Celsius gave us the scale for temperature, so entropy measures ignorance. Formalised most famously by Claude Shannon
+</aside>
+</section>
+<section id="embodiment-factors" class="slide level2">
+<h2>Embodiment Factors</h2>
+<div class="figure">
+<div id="embodiment-factors-table-figure" class="figure-frame">
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/ai/processor.svg" width="15%" style=" ">
+</object>
+</td>
+<td align="center">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/human.svg" width="60%" style=" ">
+</object>
+</td>
+</tr>
+<tr>
+<td>
+bits/min
+</td>
+<td align="center">
+billions
+</td>
+<td align="center">
+2,000
+</td>
+</tr>
+<tr>
+<td>
+billion <br>calculations/s
+</td>
+<td align="center">
+~100
+</td>
+<td align="center">
+a billion
+</td>
+</tr>
+<tr>
+<td>
+embodiment
+</td>
+<td align="center">
+20 minutes
+</td>
+<td align="center">
+5 billion years
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second’s worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years.
+</aside>
+</section>
+<section id="communication-bandwidth" class="slide level2">
+<h2>Communication Bandwidth</h2>
+<div>
+<ul>
+<li class="fragment">Human communication: walking pace (2000 bits/minute)</li>
+<li class="fragment">Machine communication: light speed (billions of bits/second)</li>
+<li class="fragment">Our sharing walks, machine sharing …</li>
+</ul>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation000.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation001.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation002.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation003.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation004.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation005.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
+</object>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="classic-baby-shoes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+For sale: baby shoes, never worn
+</center>
+</div>
+</div>
+<aside class="notes">
+Consider the six-word novel, apocryphally credited to Ernest Hemingway, “For sale: baby shoes, never worn.” To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.
+</aside>
+<aside class="notes">
+Ernest Hemingway’s apocryphal six-word novel would mean nothing to a computer.
+</aside>
+</section>
+<section id="homo-atomicus" class="slide level2">
+<h2><em>Homo Atomicus</em></h2>
+<ul>
+<li>Where we have <em>homo economicus</em> the machine can step in.</li>
+<li>Quantitative vs Qualitative gap</li>
+<li>Homo atomicus is …
+<ul>
+<li>Not in A-level results</li>
+<li>Not in hospital waiting lists</li>
+<li>In the quality of human interaction</li>
+</ul></li>
+</ul>
+</section>
+<section id="implication-for-saas" class="slide level2">
+<h2>Implication for SaaS</h2>
+<div>
+<ul>
+<li class="fragment">AI commoditises <em>production</em> of many software artefacts</li>
+<li class="fragment">It does not create the <em>judgment layer</em></li>
+<li class="fragment">Durable advantage sits where humans still own consequence</li>
+</ul>
+</div>
+<!-- SECTION Part 2: How AI Is Reshaping SaaS -->
+</section>
+<section id="part-2-how-ai-is-reshaping-saas" class="slide level2">
+<h2>Part 2: How AI Is Reshaping SaaS</h2>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="the-alchemist-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/paintings/Joseph_Wright_of_Derby_The_Alchemist.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The Alchemist by Joseph Wright of Derby (1771). The picture depicts Hennig Brand discovering the element phosphorus when searching for the Philosopher’s Stone.
+</aside>
+<!-- SECTION The Great AI Fallacy -->
+</section>
+<section id="the-great-ai-fallacy" class="slide level2">
+<h2>The Great AI Fallacy</h2>
+<div class="figure">
+<div id="jeeves-springtime-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/ai/Jeeves_in_the_Springtime_01.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+We seem to have fallen for a perspective on AI that suggests it will adapt to our schedule, rather in the manner of a 1930s manservant.
+</aside>
+<aside class="notes">
+Since the machine learning field was rebranded as AI, done public understanding, but also more interconnection with other fields. Struggled to find a consistent definition for AI. But the definitions I think public uses have one thing in common. The idea that AI will be the first generation of automation to adapt to us.
+</aside>
+</section>
+<section id="the-attention-economy" class="slide level2">
+<h2>The Attention Economy</h2>
+<div>
+<ul>
+<li class="fragment">Human intelligence is locked-in</li>
+<li class="fragment">This makes it a bottleneck</li>
+</ul>
+</div>
+</section>
+<section id="herbert-simon-on-information" class="slide level2">
+<h2>Herbert Simon on Information</h2>
+<blockquote>
+<p>What information consumes is rather obvious: it consumes the attention of its recipients. Hence a wealth of information creates a poverty of attention …</p>
+<p><span class="citation" data-cites="Simon-information71">Simon (1971)</span></p>
+</blockquote>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="new-flow-of-information-1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/data-science/new-flow-of-information001.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="new-flow-of-information-1a-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/data-science/new-flow-of-information001a.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="new-flow-of-information-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/data-science/new-flow-of-information002.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+</aside>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="new-flow-of-information-3-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/data-science/new-flow-of-information003.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
+</aside>
+</section>
+<section id="how-information-flows-in-organisations" class="slide level2">
+<h2>How Information Flows in Organisations</h2>
+<div class="figure">
+<div id="corporate-hierarchy-information-flow-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/slides/diagrams/business/corporate-hierarchy-information-flow.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In a classical corporate hierarchy, information travels vertically. Strategic decisions flow downward from the CEO through the C-suite (CFO, CIO, COO) to functional departments. Data and reports flow upward. External signals from customers and markets enter at the top. Each layer introduces delay and compression.
+</aside>
+</section>
+<section id="hub-and-spoke" class="slide level2">
+<h2>Hub-and-Spoke</h2>
+<div class="figure">
+<div id="hub-and-spoke-information-flow-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/slides/diagrams/business/hub-and-spoke-information-flow.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In a hub-and-spoke model, all information routes through a central node. This can result in low latency (good command and control) but the central hub can become overloaded.
+</aside>
+</section>
+<section id="peer-to-peer" class="slide level2">
+<h2>Peer-to-Peer</h2>
+<div class="figure">
+<div id="peer-to-peer-information-flow-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/slides/diagrams/business/peer-to-peer-information-flow.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In a peer-to-peer network, teams communicate directly with each other through adjacent and cross-cutting channels, without routing through a central authority. This structure is resilient and high-bandwidth, but requires shared protocols and trust. It mirrors how open-source software communities and federated data ecosystems operate.
+</aside>
+</section>
+<section id="bezos-memo-to-amazon-in-2002" class="slide level2">
+<h2>Bezos memo to Amazon in 2002</h2>
+</section>
+<section id="the-api-mandate" class="slide level2">
+<h2>The API Mandate</h2>
+<ul>
+<li>All teams will henceforth expose their data and functionality through service interfaces.</li>
+<li>Teams must communicate with each other through these interfaces.</li>
+</ul>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<ul>
+<li>There will be no other form of inter-process communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only communication allowed is via service interface calls over the network.</li>
+</ul>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<ul>
+<li>It doesn’t matter what technology they use.</li>
+<li>All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in the outside world. No exceptions.</li>
+</ul>
+</section>
+<section id="duality-of-corporation-and-information" class="slide level2">
+<h2>Duality of Corporation and Information</h2>
+<div>
+<ul>
+<li class="fragment">What is less written about is <em>corporate structure</em>.</li>
+<li class="fragment">This <em>information infrastructure</em> is reflected in the corporation.</li>
+<li class="fragment">Two pizza teams with <em>devolved autonomy</em>.</li>
+<li class="fragment">Bound together through <em>corporate culture</em>.</li>
+</ul>
+</div>
+</section>
+<section id="conways-law" class="slide level2">
+<h2>Conway’s Law</h2>
+<blockquote>
+<p>Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization’s communication structure.</p>
+<p><span class="citation" data-cites="Conway-committees68">Conway (n.d.)</span></p>
+</blockquote>
+</section>
+<section id="intellectual-debt-in-software-organisations" class="slide level2">
+<h2>Intellectual Debt in Software Organisations</h2>
+</section>
+<section id="intellectual-debt" class="slide level2">
+<h2>Intellectual Debt</h2>
+<div class="figure">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/ai/2020-02-12-intellectual-debt.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.
+</aside>
+</section>
+<section id="technical-debt" class="slide level2">
+<h2>Technical Debt</h2>
+<div>
+<ul>
+<li class="fragment">Compare with <em>technical debt</em>.</li>
+<li class="fragment">Highlighted by <span class="citation" data-cites="Sculley:debt15">Sculley et al. (2015)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="separation-of-concerns" class="slide level2">
+<h2>Separation of Concerns</h2>
+<div>
+<ul>
+<li class="fragment">Decompose your complex problem/task into parts.</li>
+<li class="fragment">Each part manageable (e.g. by a small team)</li>
+<li class="fragment">Recompose to solve total problem</li>
+</ul>
+</div>
+</section>
+<section id="addresses-complex-challenge" class="slide level2">
+<h2>Addresses Complex Challenge</h2>
+<div>
+<ul>
+<li class="fragment">Highly successful approach to complex tasks.</li>
+<li class="fragment">Tuned to the human bandwidth limitation.</li>
+<li class="fragment">But the whole system still hard to understand.</li>
+</ul>
+</div>
+</section>
+<section id="intellectual-debt-1" class="slide level2">
+<h2>Intellectual Debt</h2>
+<div>
+<ul>
+<li class="fragment">Technical debt is the inability to <em>maintain</em> your complex software system.</li>
+<li class="fragment">Intellectual debt is the inability to <em>explain</em> your software system.</li>
+</ul>
+</div>
+</section>
+<section id="where-superficial-automation-fails" class="slide level2">
+<h2>Where Superficial Automation Fails</h2>
+<!-- SECTION Superficial Automation -->
+</section>
+<section id="superficial-automation" class="slide level2">
+<h2>Superficial Automation</h2>
+<div>
+<ul>
+<li class="fragment">AI enables automation of surface-level tasks</li>
+<li class="fragment">Examples: Email writing, document summarization</li>
+<li class="fragment">Risk of losing deeper value in the process</li>
+</ul>
+</div>
+</section>
+<section id="hidden-value" class="slide level2">
+<h2>Hidden Value</h2>
+<div>
+<ul>
+<li class="fragment">Email writing builds relationships</li>
+<li class="fragment">Documentation creates institutional memory<br />
+</li>
+<li class="fragment">Human pauses enable reflection</li>
+</ul>
+</div>
+</section>
+<section id="the-automation-challenge" class="slide level2">
+<h2>The Automation Challenge</h2>
+<div>
+<ul>
+<li class="fragment">Complex ≠ Complicated</li>
+<li class="fragment">Speed isn’t always progress</li>
+<li class="fragment">Augment humans, don’t replace them
+<ul>
+<li class="fragment">See e.g. ai@cam public dialogues: <a href="https://ai.cam.ac.uk/projects/public-dialogues.html" class="uri">https://ai.cam.ac.uk/projects/public-dialogues.html</a></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="good-process-drives-purpose" class="slide level2">
+<h2>Good Process Drives Purpose</h2>
+<div class="figure">
+<div id="liverpool-public-dialogue-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/business/liverpool-public-dialogue.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Public dialogue held in Liverpool alongside the 2024 Labour Party Conference. The process of discussion is as important as the material discussed. In line with previous dialogues attendees urged us to develop technology where AI operates as a tool for human augmentation, not replacement.
+</aside>
+</section>
+<section id="atrophy-and-cognitive-flattening" class="slide level2">
+<h2>Atrophy and Cognitive Flattening</h2>
+<div class="figure">
+<div id="hippocampus-lifesciencedb-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/anatomy/hippocampus-lifesciencedb.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The hippocampus within the brain. Image generated from Anatomography, <a href="https://lifesciencedb.jp/" class="uri">https://lifesciencedb.jp/</a>.
+</aside>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="tourist-boat-ramp-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/ai/tourist-boat-ramp.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Navigation is helpful but we can become overreliant on it. News article from <a href="https://people.com/tourist-drove-down-boat-ramp-into-hawaii-harbor-gps-told-her-take-this-route-police-7507088">people.com</a>.
+</aside>
+</section>
+<section id="section-21" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="innovators-dilemma-book-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/business/the-innovators-dilemma-clayton-christensen-book-cover-768x1090.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The innovator’s dilemma explains the challenge of being the incumbent business with refined processes, but not being agile enough to respond when new technology arrives. This is what keeps the little Jeff in my head awake at night.
+</aside>
+</section>
+<section id="a-warning-on-trust" class="slide level2">
+<h2>A Warning on Trust</h2>
+</section>
+<section id="the-horizon-scandal" class="slide level2">
+<h2>The Horizon scandal</h2>
+<div class="figure">
+<div id="horizon-scandal-figure" class="figure-frame">
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 25%; max-width:25%;">
+<center>
+<object class data="https://inverseprobability.com/slides/diagrams/logos/fujitsu-logo.svg" width="100%" style=" ">
+</object>
+</center>
+</div>
+<div style="flex:0 0 49%; max-width:49%;">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/software/horizon-select-committee.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</div>
+<div style="flex:0 0 25%; max-width:25%;">
+<center>
+<object class data="https://inverseprobability.com/slides/diagrams/logos/post-office-logo.svg" width="100%" style=" ">
+</object>
+</center>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+The still is from <a href="https://www.parliamentlive.tv/Event/Index/d05cb9e7-04d0-4d05-8a43-ddd74b1eecc0">the 2015 select committee</a>.
+</aside>
+<!-- SECTION Part 3: How the Industry May Evolve -->
+</section>
+<section id="part-3-how-the-industry-may-evolve" class="slide level2">
+<h2>Part 3: How the Industry May Evolve</h2>
+</section>
+<section id="from-features-to-interfaces" class="slide level2">
+<h2>From Features to Interfaces</h2>
+<div>
+<ul>
+<li class="fragment">Generative AI as a human-analogue machine (HAM)</li>
+<li class="fragment">Information amplifier — not a substitute for judgment</li>
+<li class="fragment">Old org charts and pricing models become obsolete</li>
+</ul>
+</div>
+</section>
+<section id="human-analogue-machine" class="slide level2">
+<h2>Human Analogue Machine</h2>
+<div class="figure">
+<div id="human-analogue-machine-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/ai/processor-ham.svg" width="40%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The human analogue machine is the new interface that large language models have enabled the human to present. It has the capabilities of the computer in terms of communication, but it appears to present a “human face” to the user in terms of its ability to communicate on our terms. (Image quite obviously <em>not</em> drawn by generative AI!)
+</aside>
+</section>
+<section id="ham" class="slide level2">
+<h2>HAM</h2>
+<div class="figure">
+<div id="new-flow-of-information-4-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/data-science/new-flow-of-information004.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
+</aside>
+</section>
+<section id="ham-1" class="slide level2">
+<h2>HAM</h2>
+<div class="figure">
+<div id="new-flow-of-information-ham-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/data-science/new-flow-of-information-ham.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The HAM now sits between us and the traditional digital computer.
+</aside>
+</section>
+<section id="productivity-flywheel" class="slide level2">
+<h2>Productivity Flywheel</h2>
+<div class="figure">
+<div id="productivity-flywheel-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/economics/productivity-flywheel.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The productivity flywheel suggests technical innovation is reinvested.
+</aside>
+</section>
+<section id="attention-reinvestment-cycle" class="slide level2">
+<h2>Attention Reinvestment Cycle</h2>
+<div class="figure">
+<div id="attention-flywheel-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/slides/diagrams/economics/attention-flywheel.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The attention flywheel focusses on reinvesting human capital.
+</aside>
+</section>
+<section id="ai-cannot-replace-atomic-human" class="slide level2">
+<h2>AI cannot replace atomic human</h2>
+<div class="figure">
+<div id="ft-opinion-neil-lawrence-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/business/ft-opinion-neil-lawrence.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+<a href="https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316">Opinion piece in the FT</a> that describes the idea of a social flywheel to drive the targeted growth we need in AI innovation.
+</aside>
+</section>
+<section id="agentic-debt" class="slide level2">
+<h2>Agentic Debt</h2>
+<div>
+<ul>
+<li class="fragment">Agentic AI could <em>pay down</em> technical and intellectual debt.</li>
+<li class="fragment">But it can create <em>agentic debt</em>: delegation without authority/authorship</li>
+</ul>
+</div>
+</section>
+<section id="agentic-debt-1" class="slide level2">
+<h2>Agentic Debt</h2>
+<div>
+<ul>
+<li class="fragment">Delegation of workflows without crisp boundaries.</li>
+<li class="fragment">Agentic debt is about unsafe or illegible delegation.</li>
+</ul>
+</div>
+</section>
+<section id="the-judgment-layer" class="slide level2">
+<h2>The Judgment Layer</h2>
+</section>
+<section id="judgment-layer-organisations-as-emulsions" class="slide level2">
+<h2>Judgment Layer: Organisations as emulsions</h2>
+<div>
+<ul>
+<li class="fragment">Organisations are a stable mixture: automatable <em>routines</em> and irreducible <em>human context</em>.</li>
+<li class="fragment">In a working emulsion the two phases are inseparable — like oil and water held in suspension.</li>
+<li class="fragment">The <em>judgment layer</em> is the interface: what gets challenged, what gets waived, what triggers a halt.</li>
+</ul>
+</div>
+</section>
+<section id="what-the-judgment-layer-looks-like" class="slide level2">
+<h2>What the judgment layer looks like</h2>
+<div>
+<ul>
+<li class="fragment">Approval exceptions: “we usually accept this class of risk without escalation.”</li>
+<li class="fragment">Escalation triggers: “this pattern always goes to a human, even if the rule says approve.”</li>
+<li class="fragment">Context-dependent waivers: policy says X, but the situation means Y is safer.</li>
+</ul>
+</div>
+</section>
+<section id="the-good-regulator-theorem" class="slide level2">
+<h2>The Good Regulator Theorem</h2>
+</section>
+<section id="the-good-regulator-theorem-1" class="slide level2">
+<h2>The Good Regulator theorem</h2>
+<div>
+<ul>
+<li class="fragment">Every good regulator of a system must be a <em>model</em> of that system.</li>
+<li class="fragment">The judgement layer is the regulator: it must still <em>model</em> what it oversees.</li>
+<li class="fragment">If the system outruns the model, regulation fails — even if the tools still run.</li>
+</ul>
+</div>
+</section>
+<section id="why-we-minimise-models" class="slide level2">
+<h2>Why we minimise models</h2>
+<div>
+<ul>
+<li class="fragment">We minimise so that we can <em>maintain a model</em>.</li>
+<li class="fragment">Smallest decision-relevant representation that still supports oversight.</li>
+<li class="fragment">Prefer decomposable systems over opaque monoliths.</li>
+</ul>
+</div>
+</section>
+<section id="against-maximisation-by-default" class="slide level2">
+<h2>Against maximisation by default</h2>
+<div>
+<ul>
+<li class="fragment">“Use the largest model” is a default, not a design.</li>
+<li class="fragment">Capability without a modellable envelope is how debt compounds.</li>
+<li class="fragment">Ask: what is the <em>least</em> system that still earns regulated trust?</li>
+</ul>
+</div>
+</section>
+<section id="strategic-priorities-for-software-leaders" class="slide level2">
+<h2>Strategic Priorities for Software Leaders</h2>
+<div>
+<ul>
+<li class="fragment">People first, not model first</li>
+<li class="fragment">Make the judgment layer <em>explicit</em> in product and ops</li>
+<li class="fragment">Keep human authority where consequence lives</li>
+<li class="fragment">Watch for intellectual <em>and</em> agentic debt</li>
+</ul>
+</div>
+</section>
+<section id="what-will-evolve-in-saas" class="slide level2">
+<h2>What will evolve in SaaS</h2>
+<div>
+<ul>
+<li class="fragment">Production of software gets cheaper; <em>judgment</em> gets scarcer</li>
+<li class="fragment">Seat-based pricing under pressure as agents multiply work</li>
+<li class="fragment">Moats shift toward data, distribution, trust, and domain judgment</li>
+<li class="fragment">Winners redesign the firm around a legible judgment layer</li>
+</ul>
+</div>
+</section>
+<section id="ai-arrives-workflow-by-workflow" class="slide level2">
+<h2>AI arrives workflow by workflow</h2>
+<!-- PLACEHOLDER: drop screenshot at
+     slides/diagrams/business/ft-letter-workflow-by-workflow.png
+     Source URL: slides/diagrams/business/ft-letter-workflow-by-workflow.url -->
+<div class="figure">
+<div id="ft-letter-workflow-by-workflow-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/business/ft-letter-workflow-by-workflow.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+<a href="https://www.ft.com/content/75ebaeb0-e250-4030-93b9-25fb517109ca">Letter in the FT</a>: AI arrives workflow by workflow — markets err when they value software groups as if AI were one centralised deployment.
+</aside>
+</section>
+<section id="a-mistake-markets-make" class="slide level2">
+<h2>A mistake markets make</h2>
+<div>
+<ul>
+<li class="fragment">Markets often treat AI as one centralised deployment</li>
+<li class="fragment">Value arrives <em>workflow by workflow</em>, with people who know the work</li>
+<li class="fragment">“Centralised deployment” is a supplier story; useful deployment is a demand story</li>
+</ul>
+</div>
+</section>
+<section id="implication-for-software-groups" class="slide level2">
+<h2>Implication for software groups</h2>
+<div>
+<ul>
+<li class="fragment">Do not value a portfolio as if AI were a single centre-led programme</li>
+<li class="fragment">Underwrite the <em>local</em> judgment layer in each workflow</li>
+<li class="fragment">Support demand-side adoption — do not only sell a supplier story</li>
+</ul>
+</div>
+</section>
+<section id="section-22" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="the-atomic-human-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/books/the-atomic-human.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+<a href="https://the-atomic-human.ai">The Atomic Human</a> <span class="citation" data-cites="Lawrence-atomic24">(Lawrence, 2024)</span>.
+</aside>
+<!-- SECTION Close: Trent and the Judgment Layer in Practice -->
+</section>
+<section id="close-trent-and-the-judgment-layer-in-practice" class="slide level2">
+<h2>Close: Trent and the Judgment Layer in Practice</h2>
+</section>
+<section id="why-did-i-start-trent" class="slide level2">
+<h2>Why did I start Trent?</h2>
+<div class="figure">
+<div id="trent-logo-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/logos/trent-white.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Trent.ai is a company co-founded with Zhenwen Dai and Eno Thereska that is working at the interface of agentic AI and complex software systems.
+</aside>
+</section>
+<section id="the-trent-approach" class="slide level2">
+<h2>The Trent Approach</h2>
+<ul>
+<li>Work with People who are close to Systems.</li>
+<li>Address real pain points now.</li>
+<li>Hold a view on the long term change (information systems).</li>
+<li>Use the best agentic AI technology (proprietary).</li>
+</ul>
+</section>
+<section id="what-trent-delivers" class="slide level2">
+<h2>What Trent Delivers</h2>
+<div>
+<ul>
+<li class="fragment">Make the judgment layer <em>explicit</em> — not buried in tacit ops</li>
+<li class="fragment">Preserve authority of the AI-augmented engineer</li>
+<li class="fragment">Delegate with evidence, time bounds, and recovery paths</li>
+<li class="fragment">Pay down agentic debt instead of accumulating it</li>
+</ul>
+</div>
+</section>
+<section id="takeaways" class="slide level2">
+<h2>Takeaways</h2>
+<div>
+<ul>
+<li class="fragment">AI commoditises many software artefacts — not the judgment layer</li>
+<li class="fragment">Advantage sits in attention, trust, and <em>legible</em> human authority</li>
+<li class="fragment">Intellectual and agentic debt are balance-sheet risks</li>
+<li class="fragment">Build so judgment remains structurally authoritative — as we are at Trent</li>
+</ul>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ul>
+<li>Where is your judgment layer today — and is it legible?</li>
+<li>Where is agentic debt already accruing in the product?</li>
+<li>How does your pricing survive when agents do the work?</li>
+</ul>
+</section>
+<section id="thanks" class="slide level2 scrollable">
+<h2 class="scrollable">Thanks!</h2>
+<ul>
+<li><p>company: <a href="https://trent.ai">Trent AI</a></p></li>
+<li><p>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></p></li>
+<li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
+<li><p><a href="https://the-atomic-human.ai">The Atomic Human</a> pages atomic human, the 13 , baby shoes 368, topography, information 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5, anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342, intellectual debt 84, 85, 349, 365, separation of concerns 84-85, 103, 109, 199, 284, 371, intellectual debt 84-85, 349, 365, 376, Horizon scandal 371, ignorance: HAMs 347, test pilot 163-8, 189, 190, 192-3, 196, 197, 200, 211, 245, human-analogue machine (HAMs) 343-347, 359-359, 365-368.</p></li>
+<li><p><a href="https://www.ft.com/content/75ebaeb0-e250-4030-93b9-25fb517109ca">A mistake markets make when they value software groups</a></p></li>
+<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+</ul>
+</section>
+<section id="references" class="slide level2 unnumbered scrollable">
+<h2 class="unnumbered scrollable">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Conway-committees68" class="csl-entry" role="doc-biblioentry">
+Conway, M.E., n.d. How do committees invent? Datamation 14, 28–31.
+</div>
+<div id="ref-Lawrence-atomic24" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2024. The atomic human: Understanding ourselves in the age of AI. Allen Lane.
+</div>
+<div id="ref-Sculley:debt15" class="csl-entry" role="doc-biblioentry">
+Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., Dennison, D., 2015. Hidden technical debt in machine learning systems, in: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 28. Curran Associates, Inc., pp. 2503–2511.
+</div>
+<div id="ref-Simon-information71" class="csl-entry" role="doc-biblioentry">
+Simon, H.A., 1971. Designing organizations for an information-rich world. Johns Hopkins University Press, Baltimore, MD.
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://unpkg.com/reveal.js@3.9.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  <!-- Mermaid: after Reveal.initialize (CIP-0012 template hygiene) -->
+  <script>
+    if (typeof Reveal !== 'undefined' && Reveal.addEventListener) {
+      Reveal.addEventListener('ready', function () {
+        if (typeof mermaid === 'undefined') return;
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'base',
+          themeVariables: {
+            primaryColor: '#4a90e2',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#357abd',
+            lineColor: '#67b246',
+            fontSize: '30px',
+            fontFamily: 'arial',
+            edgeLabelBackground: 'transparent',
+            tertiaryColor: 'transparent'
+          }
+        });
+      });
+    }
+  </script>
+    </body>
+</html>
