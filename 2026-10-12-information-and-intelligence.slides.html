@@ -651,6 +651,82 @@ So I’ve got three papers in this series so far, and the third paper is actuall
 That’s the sort of thing we want to forbid. And that’s what motivates the no-barber principle. The no-barber principle basically says we want to be in a situation where there are no external adjudicators. That means no external observer, no predefined outcome space, no external time parameter, and no privileged decomposition in the game. Nothing dictated from outside. And I’ll give you a very disconnected sense of how this manifests. Imagine if you had an external time parameter in the game, and as part of that game an entity’s time parameter was manipulated so it could move in time. A time travel paradox has the same impredicative circularity feel as Russell’s paradox — went back in time, met your mother, do you continue to exist? And that seems to come from someone outside the system playing with the time. If something emerged consistently inside the system, that shouldn’t be able to happen. So the idea is to create a game where you’re not appealing to any structure outside the game.
 </aside>
 </section>
+<section id="lawvere-diagonalisation" class="slide level2">
+<h2>Lawvere Diagonalisation</h2>
+<p><strong>Impossibility results sharing a structure:</strong></p>
+<ul>
+<li>Russell’s paradox</li>
+<li>Cantor’s theorem</li>
+<li>Gödel incompleteness</li>
+<li>Turing’s halting problem</li>
+<li>Tarski’s undefinability</li>
+</ul>
+<p><em>Unified by Lawvere diagonalisation</em> <span class="citation" data-cites="Lawvere-diagonal69">(Lawvere, 1969)</span></p>
+</section>
+<section id="the-five-move-recipe" class="slide level2">
+<h2>The Five-Move Recipe</h2>
+<p><strong>Lawvere’s Five-Move Recipe:</strong></p>
+<ol type="1">
+<li>Rules: operations from inputs to outputs</li>
+<li>Universal evaluator: run any rule on any input</li>
+<li>Internalise syntax: rules can reference all operations</li>
+<li>Self-application: rules can serve as their own input</li>
+<li>Twist: negate or complement outputs</li>
+</ol>
+<p><em>When all five hold: contradiction is derivable</em></p>
+</section>
+<section id="the-barber-paradox-as-lawvere-diagonalisation" class="slide level2">
+<h2>The Barber Paradox as Lawvere Diagonalisation</h2>
+<p><strong>Barber as Lawvere:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Barber interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rules</td>
+<td>shaving rules <span class="math inline">\(R\)</span></td>
+</tr>
+<tr class="even">
+<td>Evaluator</td>
+<td><span class="math inline">\(\text{shaves}((R,p),q)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Internalisation</td>
+<td>each person <span class="math inline">\(p\)</span> carries rule <span class="math inline">\(R_p\)</span></td>
+</tr>
+<tr class="even">
+<td>Self-application</td>
+<td><span class="math inline">\(R_p(p)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Twist</td>
+<td><span class="math inline">\(T(p) = \neg R_p(p)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\Rightarrow\)</span> contradiction: <span class="math inline">\(\text{shaves}(B,b) = \neg\text{shaves}(B,b)\)</span></p>
+</section>
+<section id="blocking-diagonalisation-by-blocking-copying" class="slide level2">
+<h2>Blocking Diagonalisation by Blocking Copying</h2>
+<p><strong>Blocking the Construction:</strong></p>
+<p>Self-application requires <em>cloning</em>: <span class="math display">\[\Delta : A \to A \times A, \quad \Delta(a) = (a,a)\]</span></p>
+<ul>
+<li><strong>Cartesian category</strong>: canonical <span class="math inline">\(\Delta\)</span> exists — Lawvere diagonalisation possible</li>
+<li><strong>Symmetric monoidal category</strong>: no canonical <span class="math inline">\(\Delta\)</span> — self-application step fails</li>
+</ul>
+<p><em>Removing free copying blocks the diagonal construction</em></p>
+</section>
+<section id="linear-logic-and-no-cloning" class="slide level2">
+<h2>Linear Logic and No-Cloning</h2>
+<p><strong>Two programmes that block copying:</strong></p>
+<p><strong>Linear logic</strong> <span class="citation" data-cites="Girard-linear87">(Girard, 1987)</span>: * Assumptions are resources — can’t duplicate freely * Cartesian <span class="math inline">\(\to\)</span> symmetric monoidal</p>
+<p><strong>Quantum probability (no-cloning)</strong>: * No canonical <span class="math inline">\(A \to A \otimes A\)</span> for unknown states * Noncommutative <span class="math inline">\(C^*\)</span>-algebras replace Boolean event spaces</p>
+<p><em>Both satisfy the no-barber constraint for independent reasons</em></p>
+</section>
 <section id="baez-fritz-leinster-characterization-of-information-loss" class="slide level2">
 <h2>Baez-Fritz-Leinster Characterization of Information Loss</h2>
 <aside class="notes">
@@ -938,6 +1014,9 @@ Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) a
 <div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
 Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
 </div>
+<div id="ref-Girard-linear87" class="csl-entry" role="doc-biblioentry">
+Girard, J.-Y., 1987. Linear logic. Theoretical Computer Science 50, 1–101. <a href="https://doi.org/10.1016/0304-3975(87)90045-4">https://doi.org/10.1016/0304-3975(87)90045-4</a>
+</div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
@@ -946,6 +1025,9 @@ Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Revie
 </div>
 <div id="ref-Lawrence-inaccessible25" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/arXiv.2511.06795">https://doi.org/10.48550/arXiv.2511.06795</a>
+</div>
+<div id="ref-Lawvere-diagonal69" class="csl-entry" role="doc-biblioentry">
+Lawvere, F.W., 1969. Diagonal arguments and cartesian closed categories, in: Category Theory, Homology Theory and Their Applications II, Lecture Notes in Mathematics. Springer, Berlin, pp. 134–145. <a href="https://doi.org/10.1007/BFb0080769">https://doi.org/10.1007/BFb0080769</a>
 </div>
 </div>
 </section>
