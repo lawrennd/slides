@@ -79,6 +79,42 @@
     showDivs(slideIndex, group);
   }
   </script>
+  <script>
+  /* Theme chrome (logos) sits on Reveal's full-viewport .slide-background,
+     which does not receive the deck transform. Sync --slide-scale so CSS can
+     size that chrome with the slides (see ai-cam.css / mlatcl.css / trent.css). */
+  (function () {
+    var bound = false;
+    function syncSlideScale() {
+      if (typeof Reveal === "undefined" || typeof Reveal.getScale !== "function") return false;
+      try {
+        var s = Reveal.getScale();
+        if (!s || !isFinite(s)) return false;
+        document.documentElement.style.setProperty("--slide-scale", String(s));
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+    function bind() {
+      if (bound) return typeof Reveal !== "undefined";
+      if (typeof Reveal === "undefined" || typeof Reveal.addEventListener !== "function") return false;
+      Reveal.addEventListener("ready", syncSlideScale);
+      window.addEventListener("resize", function () {
+        setTimeout(syncSlideScale, 0);
+        setTimeout(syncSlideScale, 50);
+      });
+      bound = true;
+      return true;
+    }
+    var n = 0;
+    var t = setInterval(function () {
+      bind();
+      /* Keep polling until getScale() works — Reveal exists before initialize. */
+      if (syncSlideScale() || ++n > 200) clearInterval(t);
+    }, 50);
+  })();
+  </script>
       
 </head>
 <body>
@@ -141,6 +177,7 @@ OPTIONAL CUTS (if running long under SI):
 - Skip baby-shoes (save ~2 min)
 - Shorten Horizon to one slide + one note (save ~3 min)
 - Collapse productivity + attention flywheel into one beat (save ~3 min)
+- Keep Good Regulator to the first slide if Part 3 runs long (save ~2 min)
 - Shorten judgment-layer emulsion if already covered in discussion (save ~3 min)
 -->
 <!-- SECTION Opening: Commercial Advantage in the Age of Intelligent Machines -->
@@ -777,8 +814,8 @@ This is the drawing Dan was inspired to create for Chapter 5. An AI parrot repea
 <div>
 <ul>
 <li class="fragment">Generative AI as a human-analogue machine (HAM)</li>
-<li class="fragment">Information amplifier — not a substitute for judgment</li>
-<li class="fragment">Organisational models designed for the old interface become obsolete</li>
+<li class="fragment">Progress driven by <em>harnesses</em> and <em>small models</em>, not only scale</li>
+<li class="fragment">Model minimisation keeps the judgement layer solvent</li>
 </ul>
 </div>
 </section>
@@ -941,6 +978,149 @@ The attention flywheel focusses on reinvesting human capital.
 <section id="future-directions-opportunity-and-new-forms-of-debt" class="slide level2">
 <h2>Future Directions: Opportunity and New Forms of Debt</h2>
 </section>
+<section id="the-good-regulator-theorem" class="slide level2">
+<h2>The Good Regulator Theorem</h2>
+</section>
+<section id="the-good-regulator-theorem-1" class="slide level2">
+<h2>The Good Regulator theorem</h2>
+<div>
+<ul>
+<li class="fragment">Every good regulator of a system must be a <em>model</em> of that system.</li>
+<li class="fragment">The judgement layer is the regulator: it must still <em>model</em> what it oversees.</li>
+<li class="fragment">If the system outruns the model, regulation fails — even if the tools still run.</li>
+</ul>
+</div>
+</section>
+<section id="why-we-minimise-models" class="slide level2">
+<h2>Why we minimise models</h2>
+<div>
+<ul>
+<li class="fragment">We minimise so that we can <em>maintain a model</em>.</li>
+<li class="fragment">Smallest decision-relevant representation that still supports oversight.</li>
+<li class="fragment">Prefer decomposable systems over opaque monoliths.</li>
+</ul>
+</div>
+</section>
+<section id="against-maximisation-by-default" class="slide level2">
+<h2>Against maximisation by default</h2>
+<div>
+<ul>
+<li class="fragment">“Use the largest model” is a default, not a design.</li>
+<li class="fragment">Capability without a modellable envelope is how debt compounds.</li>
+<li class="fragment">Ask: what is the <em>least</em> system that still earns regulated trust?</li>
+</ul>
+</div>
+</section>
+<section id="harnesses-and-small-models" class="slide level2">
+<h2>Harnesses and Small Models</h2>
+</section>
+<section id="two-ideas-behind-commercial-progress" class="slide level2">
+<h2>Two ideas behind commercial progress</h2>
+<div>
+<ul>
+<li class="fragment">The <em>unreasonable effectiveness of orchestration</em></li>
+<li class="fragment">The <em>model minimisation</em> principle</li>
+<li class="fragment">Together: harnesses + small models on <em>cognitive toil</em></li>
+</ul>
+</div>
+</section>
+<section id="the-unreasonable-effectiveness-of-orchestration" class="slide level2">
+<h2>The unreasonable effectiveness of orchestration</h2>
+<div>
+<ul>
+<li class="fragment">Models emulate human behaviour</li>
+<li class="fragment">Humans collaborate naturally, so the models to too</li>
+<li class="fragment">A harness is a set of tools and instructions</li>
+<li class="fragment">Can be specified by a worker with knowledge of job</li>
+</ul>
+</div>
+</section>
+<section id="example-oscar" class="slide level2">
+<h2>Example: OSCAR</h2>
+<div>
+<ul>
+<li class="fragment"><a href="https://www.local.gov.uk/case-studies/oscar-orchestrated-service-citizen-ai-router">OSCAR</a>: Orchestrated Service &amp; Citizen AI Router</li>
+<li class="fragment">Peterborough City Council — led by Julian Patmore (Digital &amp; Customer Access)</li>
+<li class="fragment">A governed harness: routes requests to specialist services; staff keep the judgment</li>
+</ul>
+</div>
+</section>
+<section id="local-government-ai-accelerator" class="slide level2">
+<h2>Local Government AI Accelerator</h2>
+<div>
+<ul>
+<li class="fragment">ai@cam programme with local authorities</li>
+<li class="fragment">Councils as partners from the outset</li>
+<li class="fragment">Proof-of-concept AI for real operational needs</li>
+<li class="fragment">Built on public dialogue about AI in local government</li>
+</ul>
+</div>
+</section>
+<section id="small-models-on-cognitive-toil" class="slide level2">
+<h2>Small models on cognitive toil</h2>
+<div>
+<ul>
+<li class="fragment">Cognitive toil: high-volume, low-novelty mental work that consumes attention.</li>
+<li class="fragment">Prefer the <em>least</em> model that handles the routine class reliably.</li>
+</ul>
+</div>
+</section>
+<section id="who-introduces-and-monitors-the-harness" class="slide level2">
+<h2>Who introduces and monitors the harness</h2>
+<div>
+<ul>
+<li class="fragment">Deploy with the people who already <em>manage that role</em>.</li>
+<li class="fragment">They hold the live model of exceptions, escalation, and “good enough.”</li>
+<li class="fragment">If they cannot introduce and monitor it, the Good Regulator condition fails.</li>
+</ul>
+</div>
+</section>
+<section id="ai-arrives-workflow-by-workflow" class="slide level2">
+<h2>AI arrives workflow by workflow</h2>
+<!-- PLACEHOLDER: drop screenshot at
+     slides/diagrams/business/ft-letter-workflow-by-workflow.png
+     Source URL: slides/diagrams/business/ft-letter-workflow-by-workflow.url -->
+<div class="figure">
+<div id="ft-letter-workflow-by-workflow-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/slides/diagrams/business/ft-letter-workflow-by-workflow.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+<a href="https://www.ft.com/content/75ebaeb0-e250-4030-93b9-25fb517109ca">Letter in the FT</a>: AI arrives workflow by workflow — markets err when they value software groups as if AI were one centralised deployment.
+</aside>
+</section>
+<section id="a-mistake-markets-make" class="slide level2">
+<h2>A mistake markets make</h2>
+<div>
+<ul>
+<li class="fragment">Markets often treat AI as one centralised deployment</li>
+<li class="fragment">Value arrives <em>workflow by workflow</em>, with people who know the work</li>
+<li class="fragment">“Centralised deployment” is a supplier story; useful deployment is a demand story</li>
+</ul>
+</div>
+</section>
+<section id="implication-for-software-groups" class="slide level2">
+<h2>Implication for software groups</h2>
+<div>
+<ul>
+<li class="fragment">Do not value a portfolio as if AI were a single centre-led programme</li>
+<li class="fragment">Underwrite the <em>local</em> judgment layer in each workflow</li>
+<li class="fragment">Support demand-side adoption — do not only sell a supplier story</li>
+</ul>
+</div>
+</section>
+<section id="do-not-lose-the-judgment" class="slide level2">
+<h2>Do not lose the judgment</h2>
+<div>
+<ul>
+<li class="fragment">Workflow-by-workflow only works if the <em>judgment</em> stays with the role.</li>
+<li class="fragment">Automating toil without preserving exceptions makes judgment <em>invisible</em>, not absent.</li>
+<li class="fragment">That invisibility is how agentic debt begins.</li>
+</ul>
+</div>
+</section>
 <section id="agentic-debt" class="slide level2">
 <h2>Agentic Debt</h2>
 <div>
@@ -992,8 +1172,8 @@ This is the drawing Dan was inspired to create for Chapter 7. Reflective and rea
 <div>
 <ul>
 <li class="fragment">People first, not AI first</li>
-<li class="fragment">Redesign information flows before buying tools</li>
-<li class="fragment">Keep human judgment in high-consequence decisions</li>
+<li class="fragment">Prefer harnesses and small models for cognitive toil</li>
+<li class="fragment">Let role-holders introduce and monitor those harnesses</li>
 <li class="fragment">Watch for agentic debt as systems begin to act</li>
 </ul>
 </div>
@@ -1089,7 +1269,7 @@ This is the drawing Dan was inspired to create for Chapter 11. It captures the c
 <li><p>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></p></li>
 <li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
 <li><p><a href="https://the-atomic-human.ai">The Atomic Human</a> pages atomic human, the 13 , baby shoes 368, topography, information 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5, anthropomorphization (‘anthrox’) 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342, trust 43, 79, 100, embodiment factor 13, 29, 35, 79, 87, 105, 197, 216-217, 249, 269, 327, 353, 363, 369, topography, information 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5, Horizon scandal 371, MONIAC 232-233, 266, 343, ignorance: HAMs 347, test pilot 163-8, 189, 190, 192-3, 196, 197, 200, 211, 245, human-analogue machine (HAMs) 343-347, 359-359, 365-368.</p></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
+<li><p><a href="https://www.ft.com/content/75ebaeb0-e250-4030-93b9-25fb517109ca">A mistake markets make when they value software groups</a></p></li>
 <li><p>blog posts:</p>
 <p><a href="http://the-atomic-human.ai//images/dan-andrews-chapter-1/">Dan Andrews image of our reflective obsession with AI</a></p>
 <p><a href="http://the-atomic-human.ai//images/dan-andrews-chapter-3/">Dan Andrews image from Chapter 3</a></p>
